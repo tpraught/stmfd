@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import DeleteBtn from "../../components/DeleteBtn";
 import Jumbotron from "../../components/Jumbotron";
+//API calls the axios methods. Not sure exactly what it does. Does it represent the client side of the calls?
 import API from "../../utils/API";
+
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
 import { List, ListItem } from "../../components/List";

@@ -1,7 +1,11 @@
+//Index API 
+//Imports fthe Books API
 const router = require("express").Router();
-const bookRoutes = require("./books");
+const rosterRoutes = require("./roster");
 
-// Book routes
-router.use("/books", bookRoutes);
+// Book routes - WHAT DOES THIS DO?????
+//=====================================
+router.use("/books", rosterRoutes);
+//========================================
 
 module.exports = router;
