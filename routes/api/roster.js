@@ -5,12 +5,12 @@
 const router = require("express").Router();
 const rosterController = require("../../controllers/rosterController");//insert controller
 
-// Matches with "/api/books"
+// Matches with "/api/roster"
 router.route("/")
   .get(rosterController.findAll)
   .post(rosterController.create);
 
-// Matches with "/api/books/:id"
+// Matches with "/api/roster/:id"
 router
   .route("/:id")
   .get(rosterController.findById)
