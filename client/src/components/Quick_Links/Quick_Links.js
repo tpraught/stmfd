@@ -1,7 +1,7 @@
 import React from "react";
-import "./Nav.css";
+import "./Quick_Links.css";
 
-const Nav = () => (
+const Quick_Links = () => (
 
   //Example of nav bar
   {/* <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -11,4 +11,4 @@ const Nav = () => (
   </nav> */}
 );
 
-export default Nav;
+export default Quick_Links;
