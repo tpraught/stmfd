@@ -1,9 +1,9 @@
 import React from "react";
-import "./Nav.css";
+import "./Header.css";
 
-const Nav = () => (
+const Header = () => (
 
-  //Example of nav bar
+//Example
   {/* <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
     <a className="navbar-brand" href="/">
       React Reading List
@@ -11,4 +11,4 @@ const Nav = () => (
   </nav> */}
 );
 
-export default Nav;
+export default Header;
