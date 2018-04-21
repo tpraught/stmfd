@@ -3,23 +3,8 @@ import "./Table.css";
 
     const Table = props => (
      <div>
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Fire #</th>
-            <th>Year</th>
-            <th>Title</th>
-            <th>Rank</th>
-            <th>Station</th>
-            <th>Company</th>
-            <th>Admin</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
+        
+            <th scope="row"></th>
             <td>{props.id}</td>
             <td>{props.firstName}</td>
             <td>{props.lastName}</td>
@@ -30,9 +15,7 @@ import "./Table.css";
             <td>{props.station}</td>
             <td>{props.company}</td>
             <td><button  id={props.id} type="submit" className="btn btn-success ">EDIT</button> <button id={props.id} type="submit" className="btn btn-danger">DELETE</button></td>
-          </tr>
-                  
-        </tbody>
+         
         </div>
     );
 
