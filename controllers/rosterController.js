@@ -7,11 +7,15 @@ const db = require("../models");
 module.exports = {
   findAll: function(req, res) {
 	console.log("in findAll");
+	//console.log("req is ");
+	//console.log(req);
     db.Roster
       .find(req.query)
       .sort({ date: -1 })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
+	 console.log("res is ");
+	 console.log(res);
   },
   findById: function(req, res) {
 	console.log("in findById");
@@ -22,6 +26,8 @@ module.exports = {
   },
   create: function(req, res) {
 	console.log("in create");
+	console.log("req.body");
+	console.log(req.body);
     db.Roster
       .create(req.body)
       .then(dbModel => res.json(dbModel))
