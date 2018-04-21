@@ -11,8 +11,7 @@ router.route("/")
   .post(rosterController.create);
 
 // Matches with "/api/roster/:id"
-router
-  .route("/:id")
+router.route("/:id")
   .get(rosterController.findById)
   .put(rosterController.update)
   .delete(rosterController.remove);

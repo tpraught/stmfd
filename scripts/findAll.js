@@ -173,19 +173,20 @@ const roster = [
 
   ];
 
-//remove all records from Roster, then insert the 'seed' records from above
+//reseed database with the above documents,
+//then run db.Roster.find() to find all the documents.
 db.Roster
   .remove({})
   .then(() => db.Roster.collection.insertMany(roster))
+  .then(() => db.Roster.find())
   .then(data => {
-	console.log("data is \n" + JSON.stringify(data));
-    console.log(data.ops.length + " records inserted!");
-	process.exit(0);
+     console.log("find all data is \n" + JSON.stringify(data));
+     console.log(data.length + " records found!");
+	 process.exit(0);
   })
   .catch(err => {
     console.error(err);
     process.exit(1);
   });
 
- 
  

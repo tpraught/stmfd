@@ -172,20 +172,29 @@ const roster = [
   },
 
   ];
-
-//remove all records from Roster, then insert the 'seed' records from above
+  
+ const johnDoeDoc =   {
+	  first_name: "John",
+	   last_name: "Doe",
+     fire_number: "43",
+    year_started: "1999",	 
+		   title: "",			  
+		    rank: "Firefighter",
+		 station: "Station #2",
+		 company: "n/a",
+  };
+  
+//reseed database, by removing all existing documents and adding the list above
+//create a new "John Doe" doc 
 db.Roster
   .remove({})
   .then(() => db.Roster.collection.insertMany(roster))
+  .then(() => db.Roster.collection.insert( johnDoeDoc ))
   .then(data => {
-	console.log("data is \n" + JSON.stringify(data));
-    console.log(data.ops.length + " records inserted!");
-	process.exit(0);
+	    process.exit(0);
   })
   .catch(err => {
     console.error(err);
     process.exit(1);
   });
 
- 
- 

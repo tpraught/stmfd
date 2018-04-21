@@ -173,19 +173,24 @@ const roster = [
 
   ];
 
-//remove all records from Roster, then insert the 'seed' records from above
+var deleteRecordId = "";
+//reseed database, by removing all existing documents and adding the list above
+//find Gordy Dehmer's doc and delete it.
 db.Roster
   .remove({})
   .then(() => db.Roster.collection.insertMany(roster))
+  .then(() => db.Roster.find({first_name:"Gordy"}))  //find Gordy's document, and then delete it
   .then(data => {
-	console.log("data is \n" + JSON.stringify(data));
-    console.log(data.ops.length + " records inserted!");
-	process.exit(0);
+     console.log("found - Gordy's data is \n" + JSON.stringify(data));
+	 deleteRecordId = data[0]._id;  //save the id of the document that will be deleted.
+  })
+  .then(() => db.Roster.remove({"_id":mongoose.Types.ObjectId(deleteRecordId)})) //delete doc 
+  .then(data => {
+	  process.exit(0);
   })
   .catch(err => {
     console.error(err);
     process.exit(1);
   });
 
- 
- 
+
