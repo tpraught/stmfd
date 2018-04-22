@@ -37,7 +37,7 @@ class FireRoster extends Component {
     if (buttonValue ==="delete") {
       this.deleteRecord(id);
     } else {
-      this.EditModal.toggle();
+      this.EditModal.toggle();//React can't access the child component's methods
     } 
 
   }

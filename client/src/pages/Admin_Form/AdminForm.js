@@ -4,6 +4,9 @@ import { Container, Row, Col } from 'reactstrap';
 import { Button, Form, FormGroup, Label, Input} from 'reactstrap';
 
 export default class AdminTable  extends React.Component {
+
+    
+
   render() {
     return (
        <Container fluid>
