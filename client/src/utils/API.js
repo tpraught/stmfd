@@ -1,10 +1,11 @@
-// import axios from "axios";
+import axios from "axios";
 
-// export default {
-//   // Gets all books
-//   getBooks: function() {
-//     return axios.get("/api/books");
-//   },
+export default {
+  // Gets all books
+  getRoster: function() {
+    return axios.get("/api/admin/roster");
+  }
+//   ,
 //   // Gets the book with the given id
 //   getBook: function(id) {
 //     return axios.get("/api/books/" + id);
@@ -17,4 +18,4 @@
 //   saveBook: function(bookData) {
 //     return axios.post("/api/books", bookData);
 //   }
-// };
+};

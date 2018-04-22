@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { Table } from 'reactstrap';
+import RosterTable from "../../components/Roster";
+import API from "../../utils/API";
 
 class FireRoster extends Component { 
  
@@ -27,7 +29,6 @@ class FireRoster extends Component {
       <Table>  
        <thead>
           <tr>
-            <th>#</th>
             <th>First Name</th>
             <th>Last Name</th>
             <th>Fire #</th>
@@ -42,18 +43,21 @@ class FireRoster extends Component {
        
         <tbody>
         {this.state.fireFighters.map(fireFighter =>( 
-          <tr 
+         
+            <RosterTable
+            key={fireFighter._id} 
             id={fireFighter._id} 
-            firstName= {fireFighter.web_url}
-            lastName = {fireFighter.headline.main}  
-            fireNumber={fireFighter.pub_date}   
-            year={fireFighter.pub_date}  
-            title={fireFighter.pub_date}  
-            rank={fireFighter.pub_date}  
-            station={fireFighter.pub_date}  
-            company={fireFighter.pub_date}  
-          >
-          </tr>
+            firstName= {fireFighter.first_name}
+            lastName = {fireFighter.last_name}  
+            fireNumber={fireFighter.fire_number}   
+            year={fireFighter.year_started}  
+            title={fireFighter.title}  
+            rank={fireFighter.rank}  
+            station={fireFighter.station}  
+            company={fireFighter.company}>
+            </RosterTable>  
+          
+        
         ))}
         </tbody>
       </Table>

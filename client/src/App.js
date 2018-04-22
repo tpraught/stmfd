@@ -18,7 +18,7 @@ const App = () => (
         <Route exact path="/admin/add" component={AdminForm} />
         <Route exact path="/admin/roster" component={AdminRoster} />
         {/* KUMARI, below is the path for the login */}
-        {/* <Route exact path="admin/login" component={Books} />
+        {/* <Route exact path="admin/login" component={Books} />z
         <Route exact path="/books/:id" component={Detail} />
         <Route component={NoMatch} /> */}
       </Switch>
