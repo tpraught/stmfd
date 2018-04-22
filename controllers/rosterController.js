@@ -41,7 +41,8 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   remove: function(req, res) {
-	console.log("in remove");	  
+	console.log(req.params.id);	  
+	console.log("About tp remove record");	  
     db.Roster
       .findById({ _id: req.params.id })
       .then(dbModel => dbModel.remove())

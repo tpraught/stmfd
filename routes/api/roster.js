@@ -11,9 +11,9 @@ router.route("/roster")
   // .post(rosterController.create);
 
 // Matches with "/api/roster/:id"
-router.route("/:id")
-  .get(rosterController.findById)
-  .put(rosterController.update)
+router.route("/roster/:id")
+  // .get(rosterController.findById)
+  // .put(rosterController.update)
   .delete(rosterController.remove);
 
 module.exports = router;

@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Table } from 'reactstrap';
 import RosterTable from "../../components/Roster";
+// import Button from "../../components/Button";
+import { Col, Row, Container } from "../../components/Grid";
 import API from "../../utils/API";
 
 class FireRoster extends Component { 
@@ -20,12 +22,21 @@ class FireRoster extends Component {
    .then(res => this.setState({ fireFighters: res.data}))
    .catch(err => console.log(err));
   };
+
+  deleteRecord = id => {
+    console.log("I'm clicked to delete",id);
+    API.deleteRecord(id)
+      .then(res => this.loadRoster())
+      .catch(err => console.log(err));
+  };
   
  
     render() {
 
     return (
-
+      <Container fluid>
+        <Row>
+          <Col size="md-9">
       <Table>  
        <thead>
           <tr>
@@ -43,7 +54,7 @@ class FireRoster extends Component {
        
         <tbody>
         {this.state.fireFighters.map(fireFighter =>( 
-         
+          
             <RosterTable
             key={fireFighter._id} 
             id={fireFighter._id} 
@@ -54,13 +65,18 @@ class FireRoster extends Component {
             title={fireFighter.title}  
             rank={fireFighter.rank}  
             station={fireFighter.station}  
-            company={fireFighter.company}>
+            company={fireFighter.company}
+            onClick={() => this.deleteRecord(fireFighter._id)}
+            >
             </RosterTable>  
-          
+            
         
         ))}
         </tbody>
       </Table>
+      </Col>
+        </Row>
+      </Container>
     )
   }
 }
