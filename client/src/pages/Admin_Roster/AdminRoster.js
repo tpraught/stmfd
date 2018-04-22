@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import { Table } from 'reactstrap';
 import RosterTable from "../../components/Roster";
+import EditModal from "../../components/Modal";
 // import Button from "../../components/Button";
 import { Col, Row, Container } from "../../components/Grid";
+
 import API from "../../utils/API";
 
 class FireRoster extends Component { 
@@ -29,6 +31,16 @@ class FireRoster extends Component {
       .then(res => this.loadRoster())
       .catch(err => console.log(err));
   };
+
+  modifyRecord = (e,id) =>{
+    let buttonValue = e.target.value
+    if (buttonValue ==="delete") {
+      this.deleteRecord(id);
+    } else {
+      this.EditModal.toggle();
+    } 
+
+  }
   
  
     render() {
@@ -37,6 +49,7 @@ class FireRoster extends Component {
       <Container fluid>
         <Row>
           <Col size="md-9">
+          <EditModal/>
       <Table>  
        <thead>
           <tr>
@@ -66,7 +79,7 @@ class FireRoster extends Component {
             rank={fireFighter.rank}  
             station={fireFighter.station}  
             company={fireFighter.company}
-            onClick={() => this.deleteRecord(fireFighter._id)}
+            onClick={(e) => this.modifyRecord(e,fireFighter._id)}
             >
             </RosterTable>  
             
