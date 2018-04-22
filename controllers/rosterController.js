@@ -6,7 +6,7 @@ const db = require("../models");
 // Defining methods for the rosterController
 module.exports = {
   findAll: function(req, res) {
-	console.log("in findAll");
+	console.log("Getting fire fighters");
 	//console.log("req is ");
 	//console.log(req);
     db.Roster
@@ -14,8 +14,8 @@ module.exports = {
       .sort({ date: -1 })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
-	 console.log("res is ");
-	 console.log(res);
+	//  console.log("res is ");
+	//  console.log(res);
   },
   findById: function(req, res) {
 	console.log("in findById");
@@ -41,7 +41,8 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   remove: function(req, res) {
-	console.log("in remove");	  
+	console.log(req.params.id);	  
+	console.log("About tp remove record");	  
     db.Roster
       .findById({ _id: req.params.id })
       .then(dbModel => dbModel.remove())

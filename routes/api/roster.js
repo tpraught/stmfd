@@ -6,14 +6,14 @@ const router = require("express").Router();
 const rosterController = require("../../controllers/rosterController");//insert controller
 
 // Matches with "/api/roster"
-router.route("/")
+router.route("/roster")
   .get(rosterController.findAll)
-  .post(rosterController.create);
+  // .post(rosterController.create);
 
 // Matches with "/api/roster/:id"
-router.route("/:id")
-  .get(rosterController.findById)
-  .put(rosterController.update)
+router.route("/roster/:id")
+  // .get(rosterController.findById)
+  // .put(rosterController.update)
   .delete(rosterController.remove);
 
 module.exports = router;
