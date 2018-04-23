@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Table } from 'reactstrap';
 import RosterTable from "../../components/Roster";
+import Weather from "../../components/Weather";
 // import Button from "../../components/Button";
 import { Col, Row, Container } from "../../components/Grid";
 import API from "../../utils/API";
@@ -37,6 +38,7 @@ class FireRoster extends Component {
       <Container fluid>
         <Row>
           <Col size="md-9">
+          <Weather/>
       <Table>  
        <thead>
           <tr>
