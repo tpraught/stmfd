@@ -1,9 +1,12 @@
 import React from 'react';
 import "./Modal.css";
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import { Button, Form, FormGroup, Label, Input} from 'reactstrap';
 
 class EditModal extends React.Component {
   state = {}
+
+
 
   save = () => {
     let newFireFighter = {
@@ -13,18 +16,50 @@ class EditModal extends React.Component {
     this.props.onSave(newFireFighter)
   }
 
+  
 
   render() {
     return (
       <div>
         
-        <Modal isOpen={this.props.isOpen}  className={this.props.className}>
-          <ModalHeader >Modal title</ModalHeader>
+        <Modal isOpen={this.props.isOpen}>
+          <ModalHeader >FIRE FIGHTER</ModalHeader>
           <ModalBody>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+       
+            <Form>
+              <FormGroup>
+                <Label for="firstName">First Name</Label>
+                <Input type="text" name="firstName" id="firstName" placeholder ={this.props.firstName} />
+                <Label for="lastName">Last Name</Label>
+                <Input type="text" name="lastName" id="lastName" placeholder ={this.props.lastName}/>
+                <Label for="fireNumber">Fire Number</Label>
+                <Input type="text" name="fireNumber" id="fireNumber" placeholder ={this.props.fireNumber}/>
+                <Label for="memberSince">Member Since Year</Label>
+                <Input type="text" name="memberSince" id="memberSince" placeholder ={this.props.memberSince}/>
+                <Label for="title">Title</Label>
+                <Input type="text" name="title" id="title" placeholder ={this.props.title}/>
+                <Label for="rank">Rank</Label>
+                <Input type="select" name="rank" id="rank" placeholder ={this.props.rank}>
+                  <option>Fire Fighter</option>
+                  <option>Officer</option>
+                </Input>
+                <Label for="station">Station</Label>
+                <Input type="select" name="station" id="station" placeholder ={this.props.station}>
+                  <option>Station #1</option>
+                  <option>Station #2</option>
+                </Input>
+                <Label for="company">Company</Label>
+                <Input type="select" name="company" id="company" placeholder ={this.props.company}> 
+                  <option>Company A</option>
+                  <option>Company B</option>
+                  <option>Company C</option>
+                </Input>
+              </FormGroup>
+         </Form>
+
           </ModalBody>
           <ModalFooter>
-            <Button color="primary" onClick={this.save}>Do Something</Button>{' '}
+            <Button color="primary" onClick={this.save}>Save</Button>{' '}
             <Button color="secondary" onClick={this.props.onCancel}>Cancel</Button>
           </ModalFooter>
         </Modal>

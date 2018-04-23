@@ -12,7 +12,15 @@ class FireRoster extends Component {
   state = {
     fireFighters:[],
     editing: false,
-    currentFireFighter: null
+    currentFireFighter: null, 
+    firstName : "",
+    lastName: "",
+    fireNumber:"",
+    memberSince: "",
+    title:"",
+    rank:"",
+    station:"",
+    company:""
   
   };
 
@@ -41,22 +49,22 @@ class FireRoster extends Component {
   };
 
   editRecord = (fireFighter) => {
-    console.log(fireFighter)
+    console.log(fireFighter);
+    
     this.setState({
       editing: true,
-      currentFireFighter: fireFighter
+      currentFireFighter: fireFighter,
+      firstName:fireFighter.first_name,
+      lastName:fireFighter.last_name,
+      fireNumber:fireFighter.fire_number,
+      memberSince:fireFighter.year_started,
+      title:fireFighter.title,
+      rank:fireFighter.rank,
+      station:fireFighter.station,
+      company:fireFighter.company
     })
   }
-  modifyRecord = (e,id) =>{
-    let buttonValue = e.target.value
-    if (buttonValue ==="delete") {
-      this.deleteRecord(id);
-    } else {
-      this.EditModal.toggle();//React can't access the child component's methods
-    } 
-
-  }
-  
+   
  
     render() {
 
@@ -65,17 +73,19 @@ class FireRoster extends Component {
         <Row>
           <Col size="md-9">
           <EditModal
-            isOpen= {this.state.editing} //Add an onSave method that will be passed to Modal's button to replace {this.toggle}
-            //Ad an on Cancel to toggle the sate and close the modal
-            //pass the folowong props: fire fighter object, isOpen, onSave,onCancel
-          />
-
-          <EditModal
             isOpen = {this.state.editing}
             onSave = {(newFireFighter) => {
               alert(newFireFighter.firstName)
               // API call here to save the data
             }}
+           firstName = {this.state.firstName}
+           lastName = {this.state.lastName}
+           fireNumber = {this.state.fireNumber}
+           memberSince = {this.state.memberSince}
+           title = {this.state.title}
+           rank = {this.state.rank}
+           station = {this.state.station} //drop-down values are not populating the fields
+           company = {this.state.company}
             onCancel = {() => {
               this.setState({
                 editing: false
