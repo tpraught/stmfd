@@ -3,6 +3,10 @@ import API from "../../utils/API";
 import { Container, Row, Col } from 'reactstrap';
 import { Button, Form, FormGroup, Label, Input} from 'reactstrap';
 
+export default class AdminTable  extends React.Component {
+
+    
+
 class AdminTable  extends Component {
 
   state = {
@@ -38,6 +42,7 @@ class AdminTable  extends Component {
         company: this.state.company
       })
   };
+
 
   render() {
     return (
