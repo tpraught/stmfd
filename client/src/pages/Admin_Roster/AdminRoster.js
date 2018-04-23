@@ -11,11 +11,19 @@ class FireRoster extends Component {
  
   state = {
     fireFighters:[],
+    editing: false,
+    currentFireFighter: null
   
   };
 
   componentDidMount() {
     this.loadRoster()
+  }
+
+  saveRecord = (newFireFighter) => {
+    //AI call for save
+    //set this.state.editig = false
+    //reload the page  this.loadRoster()
   }
   
   loadRoster = () => {
@@ -32,6 +40,13 @@ class FireRoster extends Component {
       .catch(err => console.log(err));
   };
 
+  editRecord = (fireFighter) => {
+    console.log(fireFighter)
+    this.setState({
+      editing: true,
+      currentFireFighter: fireFighter
+    })
+  }
   modifyRecord = (e,id) =>{
     let buttonValue = e.target.value
     if (buttonValue ==="delete") {
@@ -49,7 +64,23 @@ class FireRoster extends Component {
       <Container fluid>
         <Row>
           <Col size="md-9">
-          <EditModal/>
+          <EditModal
+            isOpen= {this.state.editing} //Add an onSave method that will be passed to Modal's button to replace {this.toggle}
+            //Ad an on Cancel to toggle the sate and close the modal
+            //pass the folowong props: fire fighter object, isOpen, onSave,onCancel
+          />
+
+          <EditModal
+            isOpen = {this.state.editing}
+            onSave = {(newFireFighter) => {
+              alert(newFireFighter.firstName)
+              // API call here to save the data
+            }}
+            onCancel = {() => {
+              this.setState({
+                editing: false
+              })
+            }} />
       <Table>  
        <thead>
           <tr>
@@ -79,7 +110,8 @@ class FireRoster extends Component {
             rank={fireFighter.rank}  
             station={fireFighter.station}  
             company={fireFighter.company}
-            onClick={(e) => this.modifyRecord(e,fireFighter._id)}
+            onEdit={() => this.editRecord(fireFighter)}
+            onDelete={() => this.deleteRecord(fireFighter._id)}
             >
             </RosterTable>  
             

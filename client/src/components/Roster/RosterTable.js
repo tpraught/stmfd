@@ -15,7 +15,8 @@ import "./RosterTable.css";
         <td>{props.station}</td>
         <td>{props.company}</td>
         <td>
-            <button  id={props.id} onClick = {props.onClick}  type="button" value = "edit" className="btn btn-success ">EDIT</button> <button id={props.id} onClick = {props.onClick} type="submit" value = "delete" className="delete btn btn-danger">DELETE</button></td>
+            <button  id={props.id} onClick = {props.onEdit}  type="button" className="btn btn-success ">EDIT</button> 
+            <button id={props.id} onClick = {props.onDelete} type="submit" className="delete btn btn-danger">DELETE</button></td>
          
         </tr>
     );
