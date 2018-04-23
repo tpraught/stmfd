@@ -13,9 +13,10 @@ export default {
   deleteRecord: function(id) {
     console.log("I'll route for deletion")
     return axios.delete("/api/admin/roster/" + id);
+  },
+  // Saves a book to the database
+  saveRecord: function(recordData) {
+    console.log("I'm savings this - ", recordData);
+    return axios.post("/api/admin/add", recordData);
   }
-//   // Saves a book to the database
-//   saveBook: function(bookData) {
-//     return axios.post("/api/books", bookData);
-//   }
 };

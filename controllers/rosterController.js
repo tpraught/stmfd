@@ -30,7 +30,7 @@ module.exports = {
 	console.log(req.body);
     db.Roster
       .create(req.body)
-      .then(dbModel => res.json(dbModel))
+      .then(console.log("Record successfully created"))
       .catch(err => res.status(422).json(err));
   },
   update: function(req, res) {
