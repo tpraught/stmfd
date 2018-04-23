@@ -40,6 +40,7 @@ class EditModal extends React.Component {
                 <Input type="text" name="title" id="title" placeholder ={this.props.title}/>
                 <Label for="rank">Rank</Label>
                 <Input type="select" name="rank" id="rank" placeholder ={this.props.rank}>
+                  <option>{this.props.rank}</option>
                   <option>Fire Fighter</option>
                   <option>Officer</option>
                 </Input>
