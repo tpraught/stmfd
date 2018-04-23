@@ -8,7 +8,10 @@ const rosterController = require("../../controllers/rosterController");//insert 
 // Matches with "/api/roster"
 router.route("/roster")
   .get(rosterController.findAll)
-  // .post(rosterController.create);
+  
+
+  router.route("/add")
+  .post(rosterController.create);
 
 // Matches with "/api/roster/:id"
 router.route("/roster/:id")
