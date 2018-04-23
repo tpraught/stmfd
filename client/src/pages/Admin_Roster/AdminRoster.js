@@ -1,7 +1,11 @@
 import React, { Component } from "react";
 import { Table } from 'reactstrap';
 import RosterTable from "../../components/Roster";
+
+import Weather from "../../components/Weather";
+
 import EditModal from "../../components/Modal";
+
 // import Button from "../../components/Button";
 import { Col, Row, Container } from "../../components/Grid";
 
@@ -72,6 +76,9 @@ class FireRoster extends Component {
       <Container fluid>
         <Row>
           <Col size="md-9">
+
+          <Weather/>
+=======
           <EditModal
             isOpen = {this.state.editing}
             onSave = {(newFireFighter) => {
@@ -91,6 +98,7 @@ class FireRoster extends Component {
                 editing: false
               })
             }} />
+
       <Table>  
        <thead>
           <tr>
