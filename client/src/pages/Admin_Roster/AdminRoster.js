@@ -1,20 +1,41 @@
 import React, { Component } from "react";
 import { Table } from 'reactstrap';
 import RosterTable from "../../components/Roster";
+
 import Weather from "../../components/Weather";
+
+import EditModal from "../../components/Modal";
+
 // import Button from "../../components/Button";
 import { Col, Row, Container } from "../../components/Grid";
+
 import API from "../../utils/API";
 
 class FireRoster extends Component { 
  
   state = {
     fireFighters:[],
+    editing: false,
+    currentFireFighter: null, 
+    firstName : "",
+    lastName: "",
+    fireNumber:"",
+    memberSince: "",
+    title:"",
+    rank:"",
+    station:"",
+    company:""
   
   };
 
   componentDidMount() {
     this.loadRoster()
+  }
+
+  saveRecord = (newFireFighter) => {
+    //AI call for save
+    //set this.state.editig = false
+    //reload the page  this.loadRoster()
   }
   
   loadRoster = () => {
@@ -30,7 +51,24 @@ class FireRoster extends Component {
       .then(res => this.loadRoster())
       .catch(err => console.log(err));
   };
-  
+
+  editRecord = (fireFighter) => {
+    console.log(fireFighter);
+    
+    this.setState({
+      editing: true,
+      currentFireFighter: fireFighter,
+      firstName:fireFighter.first_name,
+      lastName:fireFighter.last_name,
+      fireNumber:fireFighter.fire_number,
+      memberSince:fireFighter.year_started,
+      title:fireFighter.title,
+      rank:fireFighter.rank,
+      station:fireFighter.station,
+      company:fireFighter.company
+    })
+  }
+   
  
     render() {
 
@@ -38,7 +76,29 @@ class FireRoster extends Component {
       <Container fluid>
         <Row>
           <Col size="md-9">
+
           <Weather/>
+=======
+          <EditModal
+            isOpen = {this.state.editing}
+            onSave = {(newFireFighter) => {
+              alert(newFireFighter.firstName)
+              // API call here to save the data
+            }}
+           firstName = {this.state.firstName}
+           lastName = {this.state.lastName}
+           fireNumber = {this.state.fireNumber}
+           memberSince = {this.state.memberSince}
+           title = {this.state.title}
+           rank = {this.state.rank}
+           station = {this.state.station} //drop-down values are not populating the fields
+           company = {this.state.company}
+            onCancel = {() => {
+              this.setState({
+                editing: false
+              })
+            }} />
+
       <Table>  
        <thead>
           <tr>
@@ -68,7 +128,8 @@ class FireRoster extends Component {
             rank={fireFighter.rank}  
             station={fireFighter.station}  
             company={fireFighter.company}
-            onClick={() => this.deleteRecord(fireFighter._id)}
+            onEdit={() => this.editRecord(fireFighter)}
+            onDelete={() => this.deleteRecord(fireFighter._id)}
             >
             </RosterTable>  
             
