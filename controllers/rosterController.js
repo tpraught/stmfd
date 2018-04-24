@@ -11,7 +11,7 @@ module.exports = {
 	//console.log(req);
     db.Roster
       .find(req.query)
-      .sort({ date: -1 })
+      .sort({ last_name: 1 })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
 	//  console.log("res is ");
