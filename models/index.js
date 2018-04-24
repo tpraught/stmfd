@@ -1,3 +1,4 @@
 module.exports = {
-  Roster: require("./roster")
+  Roster: require("./roster"),
+  Admin: require("./admin")
 };

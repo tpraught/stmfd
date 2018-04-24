@@ -19,7 +19,7 @@ const admin = [
 //remove all records from Roster, then insert the 'seed' records from above
 db.Admin
   .remove({})
-  .then(() => db.Admin.collection.insertMany(roster))
+  .then(() => db.Admin.collection.insertMany(admin))
   .then(data => {
 	console.log("Admin data is \n" + JSON.stringify(data));
     console.log(data.ops.length + " records inserted!");
