@@ -3,8 +3,6 @@ import API from "../../utils/API";
 import { Container, Row, Col } from 'reactstrap';
 import { Button, Form, FormGroup, Label, Input} from 'reactstrap';
 
-
-
 class AdminTable extends Component {
 
   state = {
