@@ -1,0 +1,157 @@
+body{
+    font-style: normal;
+    font-weight: 100;
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+    color:#2f2f2f;
+    margin: 0px auto;
+}
+
+.row {
+    margin: 0px !important;
+}
+
+/* Header CSS */
+#smallNav {
+    background: #b60c00;
+    font-style: normal;
+    font-weight: 100;
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+    color:#ffffff;
+    border-bottom: 10px solid #2f2f2f;
+}
+#brand {
+    background: #0b1f3f;
+    border-bottom: 10px solid #b60c00;
+    color:#ffffff;
+    text-align: center;    
+}
+#brand h1 {
+    font-style: normal;
+    font-size: 60px;
+    font-family: 'Playfair Display', serif;
+    -webkit-transform: scaleY(0.8);
+}
+#brand h2 {
+    font-style: normal;
+    font-weight: 100;
+    font-size: 26px;
+    font-family: 'Roboto', sans-serif;
+}
+
+#badge {
+    z-index: 1000;
+}
+/* Navigation CSS */
+
+.navbar {
+    background: #2f2f2f;
+    font-size:22px;
+    width: 100%;
+    margin: 0 auto;
+}
+.innerNav {
+    max-width: 1400px !important;
+    width: 100%;
+}
+.dropdown-item {
+    margin: 5px 30px;
+    padding: 0;
+    width: auto;
+    color: #ffffff;
+    font-weight: 100;
+}
+.dropdown-item:hover {
+    background: none;
+    font-weight: 400;
+    color: #ffffff;
+    border-bottom: 1px solid #ffffff;
+}
+.dropdown-item a {
+    color: #ffffff;
+}
+/* Wrapper CSS */
+
+/* a and a:hover is also used in Quick Links */
+a {
+    color: #ffbe00;
+    font-weight: 400;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+h3, h4 {
+    font-family: 'Playfair Display', serif;
+    color: #0b1f3f;
+    margin-bottom: 15px;
+}
+h3 {
+    font-size: 36px !important;
+}
+h4 {
+    font-size: 24px important;
+}
+p, ul {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+    color:#2f2f2f;
+}
+p.small {
+    font-size: 14px;
+}
+ul {
+    list-style-type: square;
+    margin: 5px 0px 5px 50px;
+}
+.bg-light {
+    background-color: #f1f1f1 !important;
+}
+/* .bg-dark is also used in Quick Links */
+.bg-dark {
+    background-color: #0b1f3f !important;
+}
+
+/* Quick Links */
+#quickLinks {
+    max-width: 1300px !important;
+}
+h5 {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+h6 {
+    font-style: normal;
+    font-weight: 100;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+}
+a.quick-link {
+    color: #ffffff;
+    font-weight: 100;
+}
+
+/* Footer */
+footer {
+    border-top: 10px solid #b60c00;
+}
+#footerLinks, #copyRight {
+    border-top: 40px solid #2f2f2f;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    font-family: 'Roboto', sans-serif;
+}
+#footerLinks a {
+    font-weight: 300;
+    font-size: 12px;
+    font-family: 'Roboto', sans-serif;
+    color: #2f2f2f;
+    border-left: 1px solid #7e7e7e;
+    padding: 0px 10px;
+}
