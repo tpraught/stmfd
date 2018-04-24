@@ -78,7 +78,6 @@ class FireRoster extends Component {
           <Col size="md-9">
 
           <Weather/>
-=======
           <EditModal
             isOpen = {this.state.editing}
             onSave = {(newFireFighter) => {
