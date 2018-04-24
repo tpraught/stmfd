@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Table } from 'reactstrap';
-import RosterTable from "../../components/Roster";
+import AdminRosterTable from "../../components/AdminRoster";
 
 import Weather from "../../components/Weather";
 
@@ -116,7 +116,7 @@ class FireRoster extends Component {
         <tbody>
         {this.state.fireFighters.map(fireFighter =>( 
           
-            <RosterTable
+            <AdminRosterTable
             key={fireFighter._id} 
             id={fireFighter._id} 
             firstName= {fireFighter.first_name}
@@ -130,7 +130,7 @@ class FireRoster extends Component {
             onEdit={() => this.editRecord(fireFighter)}
             onDelete={() => this.deleteRecord(fireFighter._id)}
             >
-            </RosterTable>  
+            </AdminRosterTable>  
             
         
         ))}
