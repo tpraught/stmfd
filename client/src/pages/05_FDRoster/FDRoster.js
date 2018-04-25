@@ -27,7 +27,7 @@ class FrontEndRoster extends Component {
   
   loadRoster = () => {
     console.log("I'm triggered")
-    API.getRoster()
+    API.getFrontEndRoster()
    .then(res => this.setState({ fireFighters: res.data}))
    .catch(err => console.log(err));
   };
