@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Table } from 'reactstrap';
-import OfficerRoster from "../../components/OfficerRoster";
+// import OfficerRoster from "../../components/OfficerRoster";
 // import Button from "../../components/Button";
 import { Col, Row, Container } from "../../components/Grid";
 import API from "../../utils/API";
@@ -49,22 +49,38 @@ class FrontEndRoster extends Component {
                   </thead>
               
                 <tbody>
-                  
+                <tr > 
+                    <td colSpan = "3" > OFFICERS</td>
+                   </tr>
                 {this.state.fireFighters.map(fireFighter =>( 
                    fireFighter.title ? (
-                    <OfficerRoster
-                    key={fireFighter._id} 
-                    firstName= {fireFighter.first_name}
-                    lastName = {fireFighter.last_name}  
-                    fireNumber={fireFighter.fire_number}   
-                    year={fireFighter.year_started}  
-                    title={fireFighter.title}  
-                    >
-                    </OfficerRoster> ) : (
-                      <Table />
-                    )
+                    
+                    <tr key={fireFighter._id}>
+                      
+                       <td>{fireFighter.fire_number}</td>
+                       <td>{fireFighter.first_name} {fireFighter.last_name} - {fireFighter.title} </td>
+                       <td>{fireFighter.year_started}</td>
+        
+                    </tr>
+                                        
+                   ) :(null)
                 ))} 
-                
+                  <tr > 
+                    <td colSpan = "3" > FIRE FIGHTERS</td>
+                   </tr>
+                   {this.state.fireFighters.map(fireFighter =>( 
+                   !fireFighter.title ? (
+                    
+                    <tr key={fireFighter._id}>
+                      
+                       <td>{fireFighter.fire_number}</td>
+                       <td>{fireFighter.first_name} {fireFighter.last_name} {fireFighter.title} </td>
+                       <td>{fireFighter.year_started}</td>
+        
+                    </tr>
+                                        
+                   ) :(null)
+                ))} 
                 </tbody>
               </Table>
            </Col>
