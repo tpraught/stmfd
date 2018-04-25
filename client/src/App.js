@@ -7,8 +7,8 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // import Detail from "./pages/Detail";
 // import NoMatch from "./pages/NoMatch";
 // import Nav from "./components/Nav";
-import AdminForm from "./pages/Admin_Form";
-import AdminRoster from "./pages/Admin_Roster";
+import AdminForm from "./pages/07_Admin_Form";
+import AdminRoster from "./pages/07_Admin_Roster";
 
 const App = () => (
   <Router>

@@ -1,11 +1,12 @@
 import React from "react";
+import { Jumbotron } from "reactstrap";
 import "./Jumbotron.css";
 
-const Jumbotron = ({ children }) => (
-  <div
-     className="jumbotron"
-  >
-    {children}
+const Jumbotron = props => (
+  <div>
+    <Jumbotron fluid>
+      <img className="img-fluid" alt={props.name} src={props.image} />
+    </Jumbotron>
   </div>
 );
 
