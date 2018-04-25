@@ -5,6 +5,9 @@ export default {
   getRoster: function() {
     return axios.get("/api/admin/roster");
   },
+  getFrontEndRoster: function() {
+    return axios.get("/api/roster");
+  },
 //   // Gets the book with the given id
 //   getBook: function(id) {
 //     return axios.get("/api/books/" + id);

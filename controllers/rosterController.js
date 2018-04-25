@@ -17,6 +17,17 @@ module.exports = {
 	//  console.log("res is ");
 	//  console.log(res);
   },
+  findAllforFrontEnd: function(req, res) {
+	console.log("Front End Roster");
+
+    db.Roster
+      .find(req.query)
+      .sort({ year_started: 1 })
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+	//  console.log("res is ");
+	//  console.log(res);
+  },
   findById: function(req, res) {
 	console.log("in findById");
     db.Roster
