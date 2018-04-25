@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Table } from 'reactstrap';
 // import OfficerRoster from "../../components/OfficerRoster";
 // import Button from "../../components/Button";
-import { Col, Row, Container } from "../../components/Grid";
+import { Container, Row, Col } from 'reactstrap';
 import API from "../../utils/API";
 
 class FrontEndRoster extends Component { 
@@ -37,21 +37,23 @@ class FrontEndRoster extends Component {
     return (
       <Container fluid>
         <Row>
-          <Col size="md-9">
+          <Col sm="12" md={{ size: 6, offset: 3 }}>
               <Table>  
                 <thead>
                     <tr>
                       <th>FIRE #</th>
                       <th>NAME</th>
                       <th>MEMBER SINCE</th>
-                      {/* <th rowSpan = "3"> OFFICERS </th> */}
+                     
                     </tr>
                   </thead>
               
                 <tbody>
-                <tr > 
+           
+                  <tr > 
                     <td colSpan = "3" > OFFICERS</td>
                    </tr>
+             
                 {this.state.fireFighters.map(fireFighter =>( 
                    fireFighter.title ? (
                     

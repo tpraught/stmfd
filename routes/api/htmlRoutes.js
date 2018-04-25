@@ -6,6 +6,9 @@ const rosterController = require("../../controllers/rosterController");//insert 
 // Matches with "/roster"
 router.route("/roster")
   .get(rosterController.findAllforFrontEnd)
+
+  router.route("/medicalroster")
+  .get(rosterController.findAllforFrontEnd)
   
 
 //   router.route("/add")
