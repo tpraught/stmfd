@@ -24,10 +24,10 @@ class Weather extends Component {
     
      
       render() {
-  
+        
       return (
         <div>
-          <p>Current Tempreture {this.state.temp} degrees</p>      
+          St. Michael, MN {this.state.temp}&#8457;
          </div>
       )
     }
