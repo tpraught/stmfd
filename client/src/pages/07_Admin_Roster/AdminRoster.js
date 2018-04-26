@@ -1,12 +1,13 @@
 import React, { Component } from "react";
-import { Table } from 'reactstrap';
+import { Table, Button } from 'reactstrap';
+import { Link } from "react-router-dom";
 import AdminRosterTable from "../../components/AdminRoster";
 import AdminHeader from "../../components/AdminHeader";
 
 import EditModal from "../../components/Modal";
 
 // import Button from "../../components/Button";
-import { Col, Row, Container } from "../../components/Grid";
+import {  Col, Row, Container } from "../../components/Grid";
 
 import API from "../../utils/API";
 
@@ -98,8 +99,17 @@ class FireRoster extends Component {
                 editing: false
               })
             }} />
+            <Row>
+              <Col size="md-9"> 
+              <Link to="/admin/add"> 
+                <Button outline color="danger">ADD FIREFIGHTER 
+                </Button>
+               </Link>
+               
+               </Col> 
+           </Row>
 
-      <Table>  
+      <Table className = "rosterTable">  
        <thead>
           <tr>
             <th>First Name</th>

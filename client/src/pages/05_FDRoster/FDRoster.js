@@ -57,8 +57,8 @@ class FrontEndRoster extends Component {
       <Container fluid>
         <Row>
           <Col sm="12" md={{ size: 5, offset: 3 }}>
-              <Table>  
-                <thead className= "rosterTable" >
+              <Table className= "rosterTable">  
+                <thead  >
                     <tr>
                       <th>FIRE #</th>
                       <th>NAME</th>
