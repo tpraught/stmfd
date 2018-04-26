@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import { Table } from 'reactstrap';
 import AdminRosterTable from "../../components/AdminRoster";
-
-import Weather from "../../components/Weather";
+import AdminHeader from "../../components/AdminHeader";
 
 import EditModal from "../../components/Modal";
 
@@ -73,11 +72,13 @@ class FireRoster extends Component {
     render() {
 
     return (
+     <div> 
+      <AdminHeader/>
       <Container fluid>
         <Row>
           <Col size="md-9">
 
-          <Weather/>
+      
           <EditModal
             isOpen = {this.state.editing}
             onSave = {(newFireFighter) => {
@@ -139,6 +140,8 @@ class FireRoster extends Component {
       </Col>
         </Row>
       </Container>
+
+      </div>
     )
   }
 }
