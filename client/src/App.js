@@ -12,7 +12,7 @@ import FrontEndRoster from "./pages/05_FDRoster";
 import AdminForm from "./pages/07_Admin_Form";
 import AdminRoster from "./pages/07_Admin_Roster";
 import Home from "./pages/00_Home";
-import AdminLogin from "./pages/07_Admin_Login";
+// import AdminLogin from "./pages/07_Admin_Login";
 
 
 const App = () => (
@@ -28,9 +28,7 @@ const App = () => (
         <Route exact path="/medicalroster" component={MedicalRoster} />
        
 
-   
-
-        <Route exact path="admin/login" component={AdminLogin} />
+       {/* <Route exact path="/admin/login" component={AdminLogin} /> */}
      
 
         {/* <Route component={NoMatch} />  */}

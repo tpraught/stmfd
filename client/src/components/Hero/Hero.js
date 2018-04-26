@@ -5,7 +5,7 @@ import "./Hero.css";
 const Hero = (props) => (
   <div>
     <Jumbotron fluid>
-      <img className="img-fluid" alt={props.name} src={props.image} />
+      <img className="img-fluid" id = {props.id} alt={props.name} src={props.src} />
     </Jumbotron>
   </div>
 );
