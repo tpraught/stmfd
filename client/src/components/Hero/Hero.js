@@ -1,8 +1,8 @@
 import React from "react";
 import { Jumbotron } from "reactstrap";
-import "./Jumbotron.css";
+import "./Hero.css";
 
-const Jumbotron = props => (
+const Hero = (props) => (
   <div>
     <Jumbotron fluid>
       <img className="img-fluid" alt={props.name} src={props.image} />
@@ -10,4 +10,4 @@ const Jumbotron = props => (
   </div>
 );
 
-export default Jumbotron;
+export default Hero;

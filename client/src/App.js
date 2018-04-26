@@ -9,12 +9,14 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // import Nav from "./components/Nav";
 import AdminForm from "./pages/07_Admin_Form";
 import AdminRoster from "./pages/07_Admin_Roster";
+import Home from "./pages/00_Home";
 
 const App = () => (
   <Router>
     <div>
       {/* <Nav /> */}
       <Switch>
+        <Route exact path="/" component={Home} />
         <Route exact path="/admin/add" component={AdminForm} />
         <Route exact path="/admin/roster" component={AdminRoster} />
         {/* KUMARI, below is the path for the login */}
