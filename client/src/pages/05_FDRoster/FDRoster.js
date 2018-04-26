@@ -1,51 +1,95 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import { Col, Row, Container } from "../../components/Grid";
-import Jumbotron from "../../components/Jumbotron";
+import { Table } from 'reactstrap';
+// import OfficerRoster from "../../components/OfficerRoster";
+// import Button from "../../components/Button";
+import { Container, Row, Col } from 'reactstrap';
 import API from "../../utils/API";
 
-class Detail extends Component {
+class FrontEndRoster extends Component { 
+ 
   state = {
-    book: {}
+    fireFighters:[],
+    firstName : "",
+    lastName: "",
+    fireNumber:"",
+    memberSince: "",
+    title:"",
+    rank:"",
+    station:"",
+    company:""
+  
   };
-  // When this component mounts, grab the book with the _id of this.props.match.params.id
-  // e.g. localhost:3000/books/599dcb67f0f16317844583fc
+
   componentDidMount() {
-    API.getBook(this.props.match.params.id)
-      .then(res => this.setState({ book: res.data }))
-      .catch(err => console.log(err));
+    this.loadRoster()
   }
 
-  render() {
+  
+  loadRoster = () => {
+    console.log("I'm triggered")
+    API.getFrontEndRoster()
+   .then(res => this.setState({ fireFighters: res.data}))
+   .catch(err => console.log(err));
+  };
+
+    render() {
+
     return (
       <Container fluid>
         <Row>
-          <Col size="md-12">
-            <Jumbotron>
-              <h1>
-                {this.state.book.title} by {this.state.book.author}
-              </h1>
-            </Jumbotron>
-          </Col>
-        </Row>
-        <Row>
-          <Col size="md-10 md-offset-1">
-            <article>
-              <h1>Synopsis</h1>
-              <p>
-                {this.state.book.synopsis}
-              </p>
-            </article>
-          </Col>
-        </Row>
-        <Row>
-          <Col size="md-2">
-            <Link to="/">← Back to Authors</Link>
-          </Col>
+          <Col sm="12" md={{ size: 6, offset: 3 }}>
+              <Table>  
+                <thead>
+                    <tr>
+                      <th>FIRE #</th>
+                      <th>NAME</th>
+                      <th>MEMBER SINCE</th>
+                     
+                    </tr>
+                  </thead>
+              
+                <tbody>
+           
+                  <tr > 
+                    <td colSpan = "3" > OFFICERS</td>
+                   </tr>
+             
+                {this.state.fireFighters.map(fireFighter =>( 
+                   fireFighter.title ? (
+                    
+                    <tr key={fireFighter._id}>
+                      
+                       <td>{fireFighter.fire_number}</td>
+                       <td>{fireFighter.first_name} {fireFighter.last_name} - {fireFighter.title} </td>
+                       <td>{fireFighter.year_started}</td>
+        
+                    </tr>
+                                        
+                   ) :(null)
+                ))} 
+                  <tr > 
+                    <td colSpan = "3" > FIRE FIGHTERS</td>
+                   </tr>
+                   {this.state.fireFighters.map(fireFighter =>( 
+                   !fireFighter.title ? (
+                    
+                    <tr key={fireFighter._id}>
+                      
+                       <td>{fireFighter.fire_number}</td>
+                       <td>{fireFighter.first_name} {fireFighter.last_name} {fireFighter.title} </td>
+                       <td>{fireFighter.year_started}</td>
+        
+                    </tr>
+                                        
+                   ) :(null)
+                ))} 
+                </tbody>
+              </Table>
+           </Col>
         </Row>
       </Container>
-    );
+    )
   }
 }
 
-export default Detail;
+export default FrontEndRoster;

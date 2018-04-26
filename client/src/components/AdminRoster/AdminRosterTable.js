@@ -1,7 +1,7 @@
 import React from 'react';
-import "./RosterTable.css";
+import "./AdminRosterTable.css";
 
-    const RosterTable = props => (
+    const AdminRosterTable = props => (
   <tr>
     
         {/* <th scope="row"></th> */}
@@ -21,4 +21,4 @@ import "./RosterTable.css";
         </tr>
     );
 
-    export default RosterTable;
+    export default AdminRosterTable;
