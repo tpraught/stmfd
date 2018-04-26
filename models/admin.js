@@ -38,12 +38,13 @@ const adminSchema = new mongoose.Schema({
         // //Error Message
         // "Password field can not be empty."
         // ]  
-    },
-    passwordConf: {
-        type: String,
-        trim: true,
-        required: true
     }
+// part of input field
+    // passwordConf: {
+    //     type: String,
+    //     trim: true,
+    //     required: true
+    // }
 });
 
 // Authenticate against database
