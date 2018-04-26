@@ -1,51 +1,156 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import { Col, Row, Container } from "../../components/Grid";
-import Jumbotron from "../../components/Jumbotron";
+import { Table } from 'reactstrap';
+import { Container, Row, Col } from 'reactstrap';
 import API from "../../utils/API";
 
-class Detail extends Component {
+class MedicalRoster extends Component { 
+ 
   state = {
-    book: {}
+    fireFighters:[],
+    companyA:[],
+    companyB:[],
+    companyC:[],
+    station2:[]
   };
-  // When this component mounts, grab the book with the _id of this.props.match.params.id
-  // e.g. localhost:3000/books/599dcb67f0f16317844583fc
+
   componentDidMount() {
-    API.getBook(this.props.match.params.id)
-      .then(res => this.setState({ book: res.data }))
-      .catch(err => console.log(err));
+    this.loadRoster()
   }
 
-  render() {
+  // sortRosterbyStation = (firefighters) => {
+
+  //   console.log("Let's sort some fire fighters");
+    
+  //   firefighters.map(fireFighter => {
+    
+  //     if (fireFighter.company === "Company A") {
+  //       let AcompanyRoster = [];
+  //         AcompanyRoster.push(fireFighter);
+  //       this.setState({ companyA: AcompanyRoster});
+  //       console.log(this.state.companyA);
+  //     } else if (fireFighter.company === "Company B"){
+  //         console.log("Company B")
+  //     } else if (fireFighter.company === "Company C"){
+  //       console.log("Company C")
+  //   } else {
+
+  //   }
+  //   })
+
+  // }
+
+  loadRoster = () => {
+    console.log("I'm triggered")
+    API.getFrontEndRoster()
+   .then(res => {
+     this.setState({ fireFighters: res.data});
+    //  this.sortRosterbyStation(this.state.fireFighters);
+    })
+   .catch(err => console.log(err));
+  };
+
+    render() {
+
     return (
       <Container fluid>
         <Row>
-          <Col size="md-12">
-            <Jumbotron>
-              <h1>
-                {this.state.book.title} by {this.state.book.author}
-              </h1>
-            </Jumbotron>
-          </Col>
-        </Row>
+          <Col size="md-9">
+            <h1>SMFD MEDICAL RESPONDER ROSTER</h1>
+            <hr/>
+            <p>* 10:00 p.m. - 5 a.m | Sunday Evenings to Friday Mornings</p>
         <Row>
-          <Col size="md-10 md-offset-1">
-            <article>
-              <h1>Synopsis</h1>
-              <p>
-                {this.state.book.synopsis}
-              </p>
-            </article>
-          </Col>
-        </Row>
-        <Row>
-          <Col size="md-2">
-            <Link to="/">← Back to Authors</Link>
-          </Col>
+
+          <Col sm={{ size: 'auto', offset: 1 }}>
+            <Table>
+              <thead>
+                <tr>
+                  <th>CHIEF</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Steve Hosch</td>
+                </tr>
+              </tbody>
+            </Table>
+            </Col>
+            <Col sm={{ size: 'auto', offset: 1 }}>
+            <Table>
+              <thead>
+                <tr>
+                  <th>ASSISTANT CHIEF</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Gordy Dehmer</td>
+                </tr>
+              </tbody>
+
+            </Table>
+            </Col>
+
+            </Row>
+
+              <Table>  
+                <thead>
+                <tr > 
+                    <td colSpan = "3" >STATION #1 </td>
+                   </tr>
+                    <tr>
+                      <th>COMPANY A
+                        <tr>January | April</tr>
+                        <tr>July | October</tr>
+                      </th>
+                      <th>COMPANY B
+                        <tr>February | May</tr>
+                        <tr>August | November</tr>
+                      </th>
+                      <th>COMPANY C
+                        <tr>March | June</tr>
+                        <tr>September | December</tr>
+                      </th>
+                    </tr>
+                  </thead>
+              
+                <tbody>
+            
+                {this.state.fireFighters.map(fireFighter =>( 
+                   fireFighter.title ? (
+                    
+                    <tr key={fireFighter._id}>
+                      
+                       <td>{fireFighter.fire_number}</td>
+                       <td>{fireFighter.first_name} {fireFighter.last_name} - {fireFighter.title} </td>
+                       <td>{fireFighter.year_started}</td>
+        
+                    </tr>
+                                        
+                   ) :(null)
+                ))} 
+                  <tr > 
+                    <td colSpan = "3" > FIRE FIGHTERS</td>
+                   </tr>
+                   {this.state.fireFighters.map(fireFighter =>( 
+                   !fireFighter.title ? (
+                    
+                    <tr key={fireFighter._id}>
+                      
+                       <td>{fireFighter.fire_number}</td>
+                       <td>{fireFighter.first_name} {fireFighter.last_name} {fireFighter.title} </td>
+                       <td>{fireFighter.year_started}</td>
+        
+                    </tr>
+                                        
+                   ) :(null)
+                ))} 
+                </tbody>
+              </Table>
+           </Col>
         </Row>
       </Container>
-    );
+    )
   }
 }
 
-export default Detail;
+export default MedicalRoster;
