@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import { Table } from 'reactstrap';
 import AdminRosterTable from "../../components/AdminRoster";
 
-import Weather from "../../components/Weather";
-
 import EditModal from "../../components/Modal";
 
 // import Button from "../../components/Button";
@@ -76,8 +74,7 @@ class FireRoster extends Component {
       <Container fluid>
         <Row>
           <Col size="md-9">
-
-          <Weather/>
+         
           <EditModal
             isOpen = {this.state.editing}
             onSave = {(newFireFighter) => {
