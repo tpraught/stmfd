@@ -23,14 +23,14 @@ const App = () => (
         <Route exact path="/roster" component={FrontEndRoster} />
 
         <Route exact path="/medicalroster" component={MedicalRoster} />
-        {/* KUMARI, below is the path for the login */}
-        {/* <Route exact path="admin/login" component={Books} />z
+       
+
    
 
         <Route exact path="admin/login" component={AdminLogin} />
-        {/* <Route exact path="/books/:id" component={Detail} />
+     
 
-        <Route component={NoMatch} /> */}
+        {/* <Route component={NoMatch} />  */}
       </Switch>
     </div>
   </Router>
