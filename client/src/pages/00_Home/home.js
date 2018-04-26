@@ -5,17 +5,11 @@ import Hero from "../../components/Hero";
 // import Wrapper from "../../components/Wrapper";
 import QuickLinks from "../../components/Quick_Links";
 import Footer from "../../components/Footer";
-import Weather from "../../components/Weather";
-
 
 
 const Home =() => (
     <div>
-  
-        <Header> 
-        <Weather/>
-        </Header>
-    
+          <Header/> 
         <Nav />
         <Hero 
         {...Hero}
