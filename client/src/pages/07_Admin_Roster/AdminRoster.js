@@ -2,7 +2,9 @@ import React, { Component } from "react";
 import { Table, Button } from 'reactstrap';
 import { Link } from "react-router-dom";
 import AdminRosterTable from "../../components/AdminRoster";
+
 import AdminHeader from "../../components/AdminHeader";
+
 
 import EditModal from "../../components/Modal";
 
@@ -79,7 +81,9 @@ class FireRoster extends Component {
         <Row>
           <Col size="md-9">
 
+
       
+
           <EditModal
             isOpen = {this.state.editing}
             onSave = {(newFireFighter) => {

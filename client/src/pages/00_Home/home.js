@@ -8,6 +8,7 @@ import Footer from "../../components/Footer";
 import heroImages from "../../HeroImages.json"
 
 
+
 class Home extends Component { 
    
   render() {
@@ -26,4 +27,5 @@ class Home extends Component {
     )
 }
 }
+
 export default Home;
