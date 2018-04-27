@@ -28,10 +28,11 @@ const App = () => (
         <Route exact path="/medicalroster" component={MedicalRoster} />
        
 
+
+       {/* <Route exact path="/admin/login" component={AdminLogin} /> */}
+
    
 
-        {/* <Route exact path="admin/login" component={AdminLogin} /> */}
-     
 
         {/* <Route component={NoMatch} />  */}
       </Switch>

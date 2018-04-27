@@ -155,3 +155,28 @@ footer {
     border-left: 1px solid #7e7e7e;
     padding: 0px 10px;
 }
+
+/* Fire Fighters Roster (also applies to admin table */
+.rosterTable thead {
+    background: #0b1f3f;
+    color: #ffffff;
+}
+
+td[colspan="3"] {
+    text-align: center;
+}
+
+
+/* Admin Fire Roster Page */
+
+.btn-success {
+    margin-right:10px;
+}
+
+.table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #dee2e6;
+    text-align: center;
+}
+
+

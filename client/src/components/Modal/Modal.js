@@ -60,8 +60,8 @@ class EditModal extends React.Component {
 
           </ModalBody>
           <ModalFooter>
-            <Button color="primary" onClick={this.save}>Save</Button>{' '}
-            <Button color="secondary" onClick={this.props.onCancel}>Cancel</Button>
+            <Button color="success" onClick={this.save}>Save</Button>{' '}
+            <Button color="danger" onClick={this.props.onCancel}>Cancel</Button>
           </ModalFooter>
         </Modal>
       </div>
