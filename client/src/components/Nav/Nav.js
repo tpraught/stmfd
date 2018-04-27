@@ -1,19 +1,15 @@
 import React from "react";
 import {
 // Collapse,
-// Navbar,
+Navbar,
 // NavbarToggler,
 // NavbarBrand,
 Nav,
 // NavItem,
-<<<<<<< HEAD
-// NavLink,
-UncontrolledDropdown,
-=======
+
 NavLink,
-// UncontrolledDropdown,
+UncontrolledDropdown,
 Dropdown,
->>>>>>> working on stylig the nav. not there yet, though
 DropdownToggle,
 DropdownMenu,
 DropdownItem } from 'reactstrap';
@@ -24,26 +20,25 @@ export default class Example extends React.Component {
 
     this.toggle = this.toggle.bind(this);
     this.state = {
-      dropdownOpen: false
+      isOpen: false
     };
   }
-
   toggle() {
     this.setState({
-      dropdownOpen: !this.state.dropdownOpen
+      isOpen: !this.state.isOpen
     });
   }
 
   render() {
     return(
       <div>
-        <Nav tabs>
+        <Navbar tabs>
           {/* <NavbarToggler onClick={this.toggle} /> */}
           {/* <Collapse isOpen={this.state.isOpen} navbar> */}
           <div className="innverNav">
             <Nav className="nav float-left" navbar>
               
-              <Dropdown nav className="community" isOpen={this.state.dropdownOpen} toggle={this.toggle}>
+              <UncontrolledDropdown nav>
                 <DropdownToggle nav className="dropdown-item">
                   COMMUNITY
                 </DropdownToggle>
@@ -61,9 +56,9 @@ export default class Example extends React.Component {
                       <NavLink href="#">JOINING THE SMFD</NavLink>
                     </DropdownItem>
                   </DropdownMenu>
-              </Dropdown>
+              </UncontrolledDropdown>
 
-              <Dropdown nav isOpen={this.state.dropdownOpen} toggle={this.toggle}>
+              <UncontrolledDropdown nav>
                 <DropdownToggle nav>
                   FIRE SAFETY
                 </DropdownToggle>
@@ -87,9 +82,9 @@ export default class Example extends React.Component {
                       LINKS & RESOURCES
                     </DropdownItem>
                   </DropdownMenu>
-              </Dropdown>
+              </UncontrolledDropdown>
 
-              <Dropdown nav isOpen={this.state.dropdownOpen} toggle={this.toggle}>
+              <UncontrolledDropdown nav>
                 <DropdownToggle nav>
                   NEWS & EVENTS
                 </DropdownToggle>
@@ -104,11 +99,11 @@ export default class Example extends React.Component {
                       ST. MICHAEL DAZE & KNIGHTS
                     </DropdownItem>
                   </DropdownMenu>
-              </Dropdown>
+              </UncontrolledDropdown>
             </Nav>
 
             <Nav className="nav float-left" navbar>
-              <Dropdown nav isOpen={this.state.dropdownOpen} toggle={this.toggle}>
+              <UncontrolledDropdown nav>
                 <DropdownToggle nav>
                   ABOUT
                 </DropdownToggle>
@@ -126,9 +121,9 @@ export default class Example extends React.Component {
                       RETIRED FIREFIGHTERS
                     </DropdownItem>
                   </DropdownMenu>
-              </Dropdown>
+              </UncontrolledDropdown>
 
-              <Dropdown nav isOpen={this.state.dropdownOpen} toggle={this.toggle}>
+              <UncontrolledDropdown nav>
                 <DropdownToggle nav>
                   FIREFIGHTERS & EMTS
                 </DropdownToggle>
@@ -146,9 +141,9 @@ export default class Example extends React.Component {
                       MEETING & TRAINING SCHEDULE
                     </DropdownItem>
                   </DropdownMenu>
-              </Dropdown>
+              </UncontrolledDropdown>
 
-              <Dropdown nav isOpen={this.state.dropdownOpen} toggle={this.toggle}>
+              <UncontrolledDropdown nav>
                 <DropdownToggle nav>
                   EXPLORERS
                 </DropdownToggle>
@@ -169,11 +164,11 @@ export default class Example extends React.Component {
                       HOW TO JOIN
                     </DropdownItem>
                   </DropdownMenu>
-              </Dropdown>
+              </UncontrolledDropdown>
             </Nav>
           {/* </Collapse> */}
           </div>
-        </Nav>
+        </Navbar>
       </div>
     );
   }
