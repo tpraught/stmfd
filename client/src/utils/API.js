@@ -21,5 +21,10 @@ export default {
   saveRecord: function(recordData) {
     console.log("I'm savings this - ", recordData);
     return axios.post("/api/admin/add", recordData);
+  },
+  editRecord: function(recordData) {
+    console.log("I'm editing this - ", recordData);
+    return axios.put("/api/admin/roster", recordData);
   }
+
 };
