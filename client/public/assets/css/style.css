@@ -99,7 +99,13 @@ button.dropdown-item:hover {
 .jumbotron .img-fluid {
     width: 100%;
 }
-/* Wrapper CSS */
+/* Wrapper CSS facebook/twitter*/
+#wrapper {
+    background: #2f2f2f;
+    padding: 20px;
+    max-width: 1400px !important;
+}
+
 
 /* a and a:hover is also used in Quick Links */
 a {
