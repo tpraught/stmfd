@@ -42,7 +42,7 @@ const Quick_Links = () => (
 						<div className="d-flex flex-column pr-4 pl-4">
 							<h5 className="text-white">FIREFIGHTERS & EMTS</h5>
 							{/* <h6><a className="quick-link" href="/">Meet Your Officers</a></h6> */}
-							<h6><a className="quick-link" href="/Roster">Fire Department Roster</a></h6>
+							<h6><a className="quick-link" href="/Roster">Firefighter Roster</a></h6>
 							<h6><a className="quick-link" href="/MedicalRoster">Medical Responder Roster</a></h6>
 							<h6><a className="quick-link" href="/Schedule">Meeting & Training Schedule</a></h6>
 						</div>
