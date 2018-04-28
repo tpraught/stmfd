@@ -28,7 +28,7 @@ class Home extends Component {
 						<div className="col-10 card border-0">
 							<div className="card-body">
 								<h3>OUR MISSION</h3>
-								<p>The St. Michael Fire Department works closely with the Wright County Sheriff's Office, Allina Ambulance, and the Fire Departments of surrounding communities to respond to your service calls.</p>
+								<p>The St. Michael Fire Department pledges to protect all people, home, and businesses in the city. The SMFD works closely with the Wright County Sheriff's Office, Allina Ambulance, and the Fire Departments of surrounding communities to respond to your service calls quickly.</p>
 							</div>
 							<img className="card-img-bottom" src="assets/images/img_smfdTeam.png" alt="St. Michael Fire Department Team Picture" />
 						</div>

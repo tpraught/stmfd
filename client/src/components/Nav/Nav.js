@@ -130,9 +130,9 @@ export default class Example extends React.Component {
                   FIREFIGHTERS & EMTS
                 </DropdownToggle>
                   <DropdownMenu>
-                    <DropdownItem>
+                    {/* <DropdownItem>
                       <NavLink href="/">MEET YOUR OFFICERS</NavLink>
-                    </DropdownItem>
+                    </DropdownItem> */}
                     <DropdownItem>
                       <NavLink href="/Roster">FIRE DEPARTMENT ROSTER</NavLink>
                     </DropdownItem>

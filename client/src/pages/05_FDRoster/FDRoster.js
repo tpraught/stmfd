@@ -3,10 +3,10 @@ import { Table } from 'reactstrap';
 import Header from "../../components/Header";
 import Nav from "../../components/Nav";
 import Hero from "../../components/Hero";
-// import OfficerRoster from "../../components/OfficerRoster";
+import heroImages from "../../HeroImages.json";
+import Wrapper from "../../components/Wrapper";
 import QuickLinks from "../../components/Quick_Links";
 import Footer from "../../components/Footer";
-import heroImages from "../../HeroImages.json"
 import { Container, Row, Col } from 'reactstrap';
 import API from "../../utils/API";
 
@@ -28,7 +28,6 @@ class FrontEndRoster extends Component {
   componentDidMount() {
     this.loadRoster()
   }
-
   
   loadRoster = () => {
     console.log("I'm triggered")
@@ -37,76 +36,72 @@ class FrontEndRoster extends Component {
    .catch(err => console.log(err));
   };
 
-    render() {
-
+  render() {
     return (
-      	<div>
-      <Header/>
-      <Nav/>
-      <Hero 
+      <div>
+        <Header/>
+        <Nav/>
+        <Hero 
 					id  = {heroImages[5].id}
 					src  = {heroImages[5].image}
 					alt = {heroImages[5].name}
 					/> 
-          <Row>
-          <Col sm="12" md={{ size: 6, offset: 3 }}>
+
+        <Wrapper>
+          <div className="pageTitle">
             <h1>SMFD FIREFIGHTER ROSTER</h1>  
-            <hr/>
-         </Col>
-         </Row>
-      <Container fluid>
-        <Row>
-          <Col sm="12" md={{ size: 5, offset: 3 }}>
-              <Table className= "rosterTable">  
-                <thead  >
-                    <tr>
-                      <th>FIRE #</th>
-                      <th>NAME</th>
-                      <th>MEMBER SINCE</th>
-                     
+          </div>
+          <Container>
+            <Row className="justify-content-center">
+              <Col sm="12" md={{ size: 8 }}>
+                  <Table className= "rosterTable">  
+                    <thead  >
+                        <tr>
+                          <th>FIRE #</th>
+                          <th>NAME</th>
+                          <th>MEMBER SINCE</th>
+                        </tr>
+                    </thead>
+                  
+                    <tbody>
+                      <tr > 
+                        <td colSpan = "3" ><h4>OFFICERS</h4> </td>
+                      </tr>
+
+                      {this.state.fireFighters.map(fireFighter =>( 
+                        fireFighter.title ? (
+                        
+                          <tr key={fireFighter._id}>
+                            <td className="text-center">{fireFighter.fire_number}</td>
+                            <td>{fireFighter.first_name} {fireFighter.last_name} - {fireFighter.title} </td>
+                            <td className="text-center">{fireFighter.year_started}</td>
+                          </tr>
+
+                        ) :(null)
+                      ))} 
+
+                    <tr > 
+                      <td colSpan = "3" ><h4>FIRE FIGHTERS</h4></td>
                     </tr>
-                  </thead>
-              
-                <tbody>
-           
-                  <tr > 
-                    <td colSpan = "3" ><h4>OFFICERS</h4> </td>
-                   </tr>
-             
-                {this.state.fireFighters.map(fireFighter =>( 
-                   fireFighter.title ? (
-                    
-                    <tr key={fireFighter._id}>
-                      
-                       <td>{fireFighter.fire_number}</td>
-                       <td>{fireFighter.first_name} {fireFighter.last_name} - {fireFighter.title} </td>
-                       <td>{fireFighter.year_started}</td>
-        
-                    </tr>
-                                        
-                   ) :(null)
-                ))} 
-                  <tr > 
-                    <td colSpan = "3" ><h4>FIRE FIGHTERS</h4></td>
-                   </tr>
-                   {this.state.fireFighters.map(fireFighter =>( 
-                   !fireFighter.title ? (
-                    
-                    <tr key={fireFighter._id}>
-                      
-                       <td>{fireFighter.fire_number}</td>
-                       <td>{fireFighter.first_name} {fireFighter.last_name} {fireFighter.title} </td>
-                       <td>{fireFighter.year_started}</td>
-        
-                    </tr>
-                                        
-                   ) :(null)
-                ))} 
-                </tbody>
-              </Table>
-           </Col>
-        </Row>
-      </Container>
+
+                    {this.state.fireFighters.map(fireFighter =>( 
+                      !fireFighter.title ? (
+                        
+                        <tr key={fireFighter._id}>
+                          <td className="text-center">{fireFighter.fire_number}</td>
+                          <td>{fireFighter.first_name} {fireFighter.last_name} {fireFighter.title} </td>
+                          <td className="text-center">{fireFighter.year_started}</td>
+                        </tr>
+                                            
+                      ) :(null)
+                    ))} 
+
+                    </tbody>
+                  </Table>
+              </Col>
+            </Row>
+          </Container>
+        </Wrapper>
       <QuickLinks />
 					<Footer />
 			</div>

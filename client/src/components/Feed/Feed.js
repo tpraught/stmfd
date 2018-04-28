@@ -12,7 +12,7 @@ const Feed = () =>(
 			</div>
 	</div>
 	<div className="col-5 m-4">
-			<a class="twitter-timeline" data-width="450" data-height="500" data-theme="light" data-link-color="#2B7BB9" href="https://twitter.com/cityofstmichael?ref_src=twsrc%5Etfw">Tweets by cityofstmichael</a> 
+			<a class="twitter-timeline" data-width="450" data-height="500" data-theme="light" data-link-color="#2B7BB9" data-chrome="nofooter" href="https://twitter.com/cityofstmichael?ref_src=twsrc%5Etfw">Tweets by cityofstmichael</a> 
 			<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 	</div>
 </div>
