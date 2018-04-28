@@ -4,12 +4,11 @@ import {
 Navbar,
 // NavbarToggler,
 // NavbarBrand,
-Nav,
+// Nav,
 // NavItem,
-
 NavLink,
 UncontrolledDropdown,
-Dropdown,
+// Dropdown,
 DropdownToggle,
 DropdownMenu,
 DropdownItem } from 'reactstrap';
@@ -32,14 +31,14 @@ export default class Example extends React.Component {
   render() {
     return(
       <div>
-        <Navbar tabs>
+        <Navbar tabs className="navbar justify-content-center">
           {/* <NavbarToggler onClick={this.toggle} /> */}
           {/* <Collapse isOpen={this.state.isOpen} navbar> */}
-          <div className="innverNav">
-            <Nav className="nav float-left" navbar>
+          <div className="innerNav">
+            <div className="nav float-left">
               
-              <UncontrolledDropdown nav>
-                <DropdownToggle nav className="dropdown-item">
+              <UncontrolledDropdown>
+                <DropdownToggle className="nav-item">
                   COMMUNITY
                 </DropdownToggle>
                   <DropdownMenu>
@@ -58,114 +57,114 @@ export default class Example extends React.Component {
                   </DropdownMenu>
               </UncontrolledDropdown>
 
-              <UncontrolledDropdown nav>
-                <DropdownToggle nav>
+              <UncontrolledDropdown>
+                <DropdownToggle className="nav-item">
                   FIRE SAFETY
                 </DropdownToggle>
-                  <DropdownMenu right>
+                  <DropdownMenu>
                     <DropdownItem>
-                      FIRE SAFETY IN YOUR HOME
+                      <NavLink href="#">FIRE SAFETY IN YOUR HOME</NavLink>
                     </DropdownItem>
                     <DropdownItem>
-                      FIRE SAFETY IN OUR SCHOOLS
+                      <NavLink href="#">FIRE SAFETY IN OUR SCHOOLS</NavLink>
                     </DropdownItem>
                     <DropdownItem>
-                      BURNING PERMITS & RESTRICTIONS
+                      <NavLink href="#">BURNING PERMITS & RESTRICTIONS</NavLink>
                     </DropdownItem>
                     <DropdownItem>
-                      CAMPFIRE SAFETY
+                      <NavLink href="#">CAMPFIRE SAFETY</NavLink>
                     </DropdownItem>
                     <DropdownItem>
-                      CARBON MONOXIDE FAQS
+                      <NavLink href="#">CARBON MONOXIDE FAQS</NavLink>
                     </DropdownItem>
                     <DropdownItem>
-                      LINKS & RESOURCES
+                      <NavLink href="#">LINKS & RESOURCES</NavLink>
                     </DropdownItem>
                   </DropdownMenu>
               </UncontrolledDropdown>
 
-              <UncontrolledDropdown nav>
-                <DropdownToggle nav>
+              <UncontrolledDropdown>
+                <DropdownToggle className="nav-item">
                   NEWS & EVENTS
                 </DropdownToggle>
-                  <DropdownMenu right>
+                  <DropdownMenu>
                     <DropdownItem>
-                      SMFD ON FACEBOOK
+                      <NavLink href="#">SMFD ON FACEBOOK</NavLink>
                     </DropdownItem>
                     <DropdownItem>
-                      EVENTS
+                      <NavLink href="#">EVENTS</NavLink>
                     </DropdownItem>
                     <DropdownItem>
-                      ST. MICHAEL DAZE & KNIGHTS
+                      <NavLink href="#">ST. MICHAEL DAZE & KNIGHTS</NavLink>
                     </DropdownItem>
                   </DropdownMenu>
               </UncontrolledDropdown>
-            </Nav>
+            </div>
 
-            <Nav className="nav float-left" navbar>
-              <UncontrolledDropdown nav>
-                <DropdownToggle nav>
+            <div className="nav float-right">
+              <UncontrolledDropdown>
+                <DropdownToggle className="nav-item">
                   ABOUT
                 </DropdownToggle>
-                  <DropdownMenu right>
+                  <DropdownMenu>
                     <DropdownItem>
-                      ABOUT SMFD
+                      <NavLink href="#">ABOUT SMFD</NavLink>
                     </DropdownItem>
                     <DropdownItem>
-                      HISTORY
+                      <NavLink href="#">HISTORY</NavLink>
                     </DropdownItem>
                     <DropdownItem>
-                      APPARATUS
+                      <NavLink href="#">APPARATUS</NavLink>
                     </DropdownItem>
                     <DropdownItem>
-                      RETIRED FIREFIGHTERS
+                      <NavLink href="#">RETIRED FIREFIGHTERS</NavLink>
                     </DropdownItem>
                   </DropdownMenu>
               </UncontrolledDropdown>
 
-              <UncontrolledDropdown nav>
-                <DropdownToggle nav>
+              <UncontrolledDropdown>
+                <DropdownToggle className="nav-item">
                   FIREFIGHTERS & EMTS
                 </DropdownToggle>
-                  <DropdownMenu right>
+                  <DropdownMenu>
                     <DropdownItem>
-                      MEET YOUR OFFICERS
+                      <NavLink href="#">MEET YOUR OFFICERS</NavLink>
                     </DropdownItem>
                     <DropdownItem>
-                      FIRE DEPARTMENT ROSTER
+                      <NavLink href="#">FIRE DEPARTMENT ROSTER</NavLink>
                     </DropdownItem>
                     <DropdownItem>
-                      MEDICAL RESPONDER ROSTER
+                      <NavLink href="#">MEDICAL RESPONDER ROSTER</NavLink>
                     </DropdownItem>
                     <DropdownItem>
-                      MEETING & TRAINING SCHEDULE
+                      <NavLink href="#">MEETING & TRAINING SCHEDULE</NavLink>
                     </DropdownItem>
                   </DropdownMenu>
               </UncontrolledDropdown>
 
-              <UncontrolledDropdown nav>
-                <DropdownToggle nav>
+              <UncontrolledDropdown>
+                <DropdownToggle className="nav-item">
                   EXPLORERS
                 </DropdownToggle>
-                  <DropdownMenu right>
+                  <DropdownMenu>
                     <DropdownItem>
-                      ABOUT THE EXPLORERS
+                      <NavLink href="#">ABOUT THE EXPLORERS</NavLink>
                     </DropdownItem>
                     <DropdownItem>
-                      EXPLORER ROSTER
+                      <NavLink href="#">EXPLORER ROSTER</NavLink>
                     </DropdownItem>
                     <DropdownItem>
-                      TRAINING SCHEDULE
+                      <NavLink href="#">TRAINING SCHEDULE</NavLink>
                     </DropdownItem>
                     <DropdownItem>
-                      EVENTS
+                      <NavLink href="#">EVENTS</NavLink>
                     </DropdownItem>
                     <DropdownItem>
-                      HOW TO JOIN
+                      <NavLink href="#">HOW TO JOIN</NavLink>
                     </DropdownItem>
                   </DropdownMenu>
               </UncontrolledDropdown>
-            </Nav>
+            </div>
           {/* </Collapse> */}
           </div>
         </Navbar>
