@@ -8,6 +8,7 @@ const rosterController = require("../../controllers/rosterController");//insert 
 // Matches with "/api/roster"
 router.route("/roster")
   .get(rosterController.findAll)
+  .put(rosterController.update)
   
 
   router.route("/add")
@@ -16,7 +17,7 @@ router.route("/roster")
 // Matches with "/api/roster/:id"
 router.route("/roster/:id")
   // .get(rosterController.findById)
-  // .put(rosterController.update)
+  .put(rosterController.update)
   .delete(rosterController.remove);
 
 module.exports = router;
