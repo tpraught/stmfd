@@ -20,7 +20,14 @@ class CarSeat extends Component {
       src  = {heroImages[1].image}
       alt = {heroImages[1].name}
       />
-      <Wrapper /> 
+      <Wrapper>
+        <div className="pageTitle">
+          <h1>CAR SEAT CHECKS</h1>  
+        </div>
+        <div className="pageContent">
+        <p>test -</p>
+        </div>
+    </Wrapper>
       <QuickLinks />
       <Footer />
     </div>
