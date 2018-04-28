@@ -1,1 +1,1 @@
-export { default } from "./Winter_Survival";
+export { default } from "./WinterSurvival";

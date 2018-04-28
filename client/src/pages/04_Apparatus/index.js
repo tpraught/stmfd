@@ -1,2 +1,1 @@
-export { default } from "./Events";
-export { default } from "./Daze_Knights";
+export { default } from "./Apparatus.js";

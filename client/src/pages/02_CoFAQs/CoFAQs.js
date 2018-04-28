@@ -8,25 +8,25 @@ import Footer from "../../components/Footer";
 import heroImages from "../../HeroImages.json";
 
 
-class ExplorerAbout extends Component { 
+class CoFAQs extends Component { 
    
   render() {
     return(
-    <div>
-      <Header />
-      <Nav />
-      <Hero 
-      id  = {heroImages[6].id}
-      src  = {heroImages[6].image}
-      alt = {heroImages[6].name}
-      />
-      <Wrapper /> 
-      <QuickLinks />
-      <Footer />
-    </div>
+		<div>
+			<Header />
+			<Nav />
+			<Hero 
+			id  = {heroImages[2].id}
+			src  = {heroImages[2].image}
+			alt = {heroImages[2].name}
+			/>
+			<Wrapper /> 
+			<QuickLinks />
+			<Footer />
+		</div>
     )
   }
   
 }
 
-export default ExplorerAbout;
+export default CoFAQs;
