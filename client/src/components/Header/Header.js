@@ -29,14 +29,14 @@ class Header extends Component {
 					St. Michael, MN {this.state.temp} &#8457;
 					</div>
 					<div className="col-3 text-right">
-						JOIN SMFD | CONTACT
+						<a href="/JoinSMFD">JOIN SMFD</a> | <a href="/ContactUs">CONTACT</a>
 					</div>
 				</div>
 				<div id="brand" className="position-relative pt-4 pb-5">
-					<h2 className="m-0">WELCOME TO THE </h2>
-					<h1 className="m-0">ST. MICHAEL FIRE DEPARTMENT</h1>
+					<a className="homeLink" href="/"><h2 className="m-0">WELCOME TO THE </h2>
+					<h1 className="m-0">ST. MICHAEL FIRE DEPARTMENT</h1></a>
 					<div className="row justify-content-center">
-						<div id="badge" className="position-absolute"><img src="assets/images/logo_badge.svg" width="200" alt="SMFD Badge" /></div>
+						<div id="badge" className="position-absolute"><a href="/"><img src="assets/images/logo_badge.svg" width="200" alt="SMFD Badge" /></a></div>
 					</div>
 				</div>
 			</header>

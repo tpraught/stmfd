@@ -43,16 +43,19 @@ export default class Example extends React.Component {
                 </DropdownToggle>
                   <DropdownMenu>
                     <DropdownItem>
-                      <NavLink href="#">CAR SEAT CHECKS</NavLink>
+                      <NavLink href="/CarSeatChecks">CAR SEAT CHECKS</NavLink>
                     </DropdownItem>
                     <DropdownItem>
-                      <NavLink href="#">SEVERE WEATHER</NavLink>
+                      <NavLink href="/SevereWeather ">SEVERE WEATHER</NavLink>
                     </DropdownItem>
                     <DropdownItem>
-                      <NavLink href="#">RECREATIONAL FIRES</NavLink>
+                      <NavLink href="/RecFires">RECREATIONAL FIRES</NavLink>
                     </DropdownItem>
                     <DropdownItem>
-                      <NavLink href="#">JOINING THE SMFD</NavLink>
+                      <NavLink href="/Kids">FOR THE KIDS</NavLink>
+                    </DropdownItem>
+                    <DropdownItem>
+                      <NavLink href="/JoinSMFD">JOINING THE SMFD</NavLink>
                     </DropdownItem>
                   </DropdownMenu>
               </UncontrolledDropdown>
@@ -63,22 +66,22 @@ export default class Example extends React.Component {
                 </DropdownToggle>
                   <DropdownMenu>
                     <DropdownItem>
-                      <NavLink href="#">FIRE SAFETY IN YOUR HOME</NavLink>
+                      <NavLink href="/HomeSafety">FIRE SAFETY IN YOUR HOME</NavLink>
                     </DropdownItem>
                     <DropdownItem>
-                      <NavLink href="#">FIRE SAFETY IN OUR SCHOOLS</NavLink>
+                      <NavLink href="/SchoolSafety">FIRE SAFETY IN OUR SCHOOLS</NavLink>
                     </DropdownItem>
                     <DropdownItem>
-                      <NavLink href="#">BURNING PERMITS & RESTRICTIONS</NavLink>
+                      <NavLink href="/Burning">BURNING PERMITS & RESTRICTIONS</NavLink>
                     </DropdownItem>
                     <DropdownItem>
-                      <NavLink href="#">CAMPFIRE SAFETY</NavLink>
+                      <NavLink href="/CampfireSafety">CAMPFIRE SAFETY</NavLink>
                     </DropdownItem>
                     <DropdownItem>
-                      <NavLink href="#">CARBON MONOXIDE FAQS</NavLink>
+                      <NavLink href="/CoFAQs">CARBON MONOXIDE FAQS</NavLink>
                     </DropdownItem>
                     <DropdownItem>
-                      <NavLink href="#">LINKS & RESOURCES</NavLink>
+                      <NavLink href="/LinksResources">LINKS & RESOURCES</NavLink>
                     </DropdownItem>
                   </DropdownMenu>
               </UncontrolledDropdown>
@@ -89,13 +92,13 @@ export default class Example extends React.Component {
                 </DropdownToggle>
                   <DropdownMenu>
                     <DropdownItem>
-                      <NavLink href="#">SMFD ON FACEBOOK</NavLink>
+                      <NavLink href="https://www.facebook.com/stmichaelfire/" target="_blank">SMFD ON FACEBOOK</NavLink>
                     </DropdownItem>
                     <DropdownItem>
-                      <NavLink href="#">EVENTS</NavLink>
+                      <NavLink href="/Events">EVENTS</NavLink>
                     </DropdownItem>
                     <DropdownItem>
-                      <NavLink href="#">ST. MICHAEL DAZE & KNIGHTS</NavLink>
+                      <NavLink href="http://www.stmdazeandknightsfestival.com/" target="_blank">ST. MICHAEL DAZE & KNIGHTS</NavLink>
                     </DropdownItem>
                   </DropdownMenu>
               </UncontrolledDropdown>
@@ -108,17 +111,17 @@ export default class Example extends React.Component {
                 </DropdownToggle>
                   <DropdownMenu>
                     <DropdownItem>
-                      <NavLink href="#">ABOUT SMFD</NavLink>
+                      <NavLink href="/About">ABOUT SMFD</NavLink>
                     </DropdownItem>
                     <DropdownItem>
-                      <NavLink href="#">HISTORY</NavLink>
+                      <NavLink href="/History">HISTORY</NavLink>
                     </DropdownItem>
                     <DropdownItem>
-                      <NavLink href="#">APPARATUS</NavLink>
+                      <NavLink href="/Apparatus">APPARATUS</NavLink>
                     </DropdownItem>
-                    <DropdownItem>
-                      <NavLink href="#">RETIRED FIREFIGHTERS</NavLink>
-                    </DropdownItem>
+                    {/* <DropdownItem>
+                      <NavLink href="/">RETIRED FIREFIGHTERS</NavLink>
+                    </DropdownItem> */}
                   </DropdownMenu>
               </UncontrolledDropdown>
 
@@ -128,16 +131,16 @@ export default class Example extends React.Component {
                 </DropdownToggle>
                   <DropdownMenu>
                     <DropdownItem>
-                      <NavLink href="#">MEET YOUR OFFICERS</NavLink>
+                      <NavLink href="/">MEET YOUR OFFICERS</NavLink>
                     </DropdownItem>
                     <DropdownItem>
-                      <NavLink href="#">FIRE DEPARTMENT ROSTER</NavLink>
+                      <NavLink href="/Roster">FIRE DEPARTMENT ROSTER</NavLink>
                     </DropdownItem>
                     <DropdownItem>
-                      <NavLink href="#">MEDICAL RESPONDER ROSTER</NavLink>
+                      <NavLink href="/MedicalRoster">MEDICAL RESPONDER ROSTER</NavLink>
                     </DropdownItem>
                     <DropdownItem>
-                      <NavLink href="#">MEETING & TRAINING SCHEDULE</NavLink>
+                      <NavLink href="/Schedule">MEETING & TRAINING SCHEDULE</NavLink>
                     </DropdownItem>
                   </DropdownMenu>
               </UncontrolledDropdown>
@@ -148,19 +151,19 @@ export default class Example extends React.Component {
                 </DropdownToggle>
                   <DropdownMenu>
                     <DropdownItem>
-                      <NavLink href="#">ABOUT THE EXPLORERS</NavLink>
+                      <NavLink href="/ExplorerAbout">ABOUT THE EXPLORERS</NavLink>
                     </DropdownItem>
                     <DropdownItem>
-                      <NavLink href="#">EXPLORER ROSTER</NavLink>
+                      <NavLink href="/ExplorerRoster">EXPLORER ROSTER</NavLink>
                     </DropdownItem>
                     <DropdownItem>
-                      <NavLink href="#">TRAINING SCHEDULE</NavLink>
+                      <NavLink href="/ExplorerSchedule">TRAINING SCHEDULE</NavLink>
                     </DropdownItem>
                     <DropdownItem>
-                      <NavLink href="#">EVENTS</NavLink>
+                      <NavLink href="/ExplorerEvents">EVENTS</NavLink>
                     </DropdownItem>
                     <DropdownItem>
-                      <NavLink href="#">HOW TO JOIN</NavLink>
+                      <NavLink href="/JoinExplorers">HOW TO JOIN</NavLink>
                     </DropdownItem>
                   </DropdownMenu>
               </UncontrolledDropdown>
