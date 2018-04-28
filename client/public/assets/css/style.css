@@ -62,27 +62,29 @@ a.homeLink:hover {
     width: 100%;
 }
 button.nav-item {
-    margin: 5px 30px;
-    padding: 0;
     width: auto;
-    background: none;
-    border: none;
-    color: #ffffff;
     font-size:22px;
     font-weight: 100;
+    color: #ffffff;
+    margin: 5px 30px;
+    background: none;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    transition: none;
+}
+
+button.nav-item:focus {
+    box-shadow: none !important;
+    border-bottom: 1px solid #ffffff !important;
 }
 button.nav-item:hover {
-    background: none;
-    font-weight: 400;
     color: #ffffff;
+    background: none !important;
     border-bottom: 1px solid #ffffff;
 }
 button.nav-item a:active {
     color: #ffffff;
-}
-.btn-secondary:hover, .btn-secondary:focus {
-    background: none !important;
-    border: none !important;
 }
 .dropdown-menu {
     top: 11px !important;
@@ -132,7 +134,7 @@ h4 {
 p, ul {
     font-style: normal;
     font-weight: 300;
-    font-size: 18px;
+    font-size: 20px;
     font-family: 'Roboto', sans-serif !important;
     color:#2f2f2f;
 }
@@ -153,24 +155,33 @@ ul {
 
 /* Quick Links */
 #quickLinks {
-    max-width: 1300px !important;
+    max-width: 1340px !important;
 }
 h5 {
     font-style: normal;
-    font-weight: 400;
-    font-size: 20px !important;
+    font-weight: 400 !important;
+    font-size: 22px !important;
     font-family: 'Roboto', sans-serif !important;
 }
 h6 {
     font-style: normal;
     font-weight: 100;
-    font-size: 16px !important;
+    font-size: 18px !important;
     font-family: 'Roboto', sans-serif !important;
 }
 a.quick-link {
-    color: #ffffff;
-    font-weight: 100;
+    color: #ffffff !important;
+    font-weight: 100 !important;
 }
+
+/* Stay Connected */
+.fb-page {
+    border: 1px solid #f1f1f1;
+    border-radius: 5px;
+}
+.fb_iframe_widget iframe {
+    border-radius: 5px;
+ }
 
 /* Footer */
 footer {
@@ -192,6 +203,18 @@ footer {
     padding: 0px 10px;
 }
 
+/* Wrapper Page Content */
+.pageTitle {
+    border-bottom: 1px solid #0b1f3f;
+    width: 100%;
+}
+.pageTitle h1 {
+    font-family: 'Playfair Display', serif !important;
+    font-size:42px;
+    color: #0b1f3f !important;
+    margin-bottom: 15px;
+    padding: 0 30px;
+}
 /* Fire Fighters Roster (also applies to admin table */
 .rosterTable thead {
     background: #0b1f3f;

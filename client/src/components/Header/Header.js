@@ -26,7 +26,7 @@ class Header extends Component {
 			<header className="pb-0">
 				<div id="smallNav" className="row justify-content-between p-2">
 					<div className="col-3">
-					St. Michael, MN {this.state.temp} &#8457;
+					St. Michael, MN {this.state.temp}&#176;
 					</div>
 					<div className="col-3 text-right">
 						<a href="/JoinSMFD">JOIN SMFD</a> | <a href="/ContactUs">CONTACT</a>

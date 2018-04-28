@@ -1,13 +1,12 @@
 import React from "react";
 import "./Wrapper.css";
 
-const Wrapper = () =>(
-
-<div id="wrapper" className="container-fluid mx-auto">
-	<div className = "row mx-auto">
+const Wrapper = props => (
+	<div id="wrapper" className="container">
+		<div className="row">
+			{props.children}
+		</div>
 	</div>
-</div>
 )
 
 export default Wrapper;
-
