@@ -1,8 +1,13 @@
 import React, { Component } from "react";
 import { Table } from 'reactstrap';
+import Header from "../../components/Header";
+import Nav from "../../components/Nav";
+import Hero from "../../components/Hero";
 // import OfficerRoster from "../../components/OfficerRoster";
-// import Button from "../../components/Button";
-import { Col, Row, Container } from "../../components/Grid";
+import QuickLinks from "../../components/Quick_Links";
+import Footer from "../../components/Footer";
+import heroImages from "../../HeroImages.json"
+import { Container, Row, Col } from 'reactstrap';
 import API from "../../utils/API";
 
 class FrontEndRoster extends Component { 
@@ -35,23 +40,39 @@ class FrontEndRoster extends Component {
     render() {
 
     return (
+      	<div>
+      <Header/>
+      <Nav/>
+      <Hero 
+					id  = {heroImages[5].id}
+					src  = {heroImages[5].image}
+					alt = {heroImages[5].name}
+					/> 
+          <Row>
+          <Col sm="12" md={{ size: 6, offset: 3 }}>
+            <h1>SMFD FIREFIGHTER ROSTER</h1>  
+            <hr/>
+         </Col>
+         </Row>
       <Container fluid>
         <Row>
-          <Col size="md-9">
-              <Table>  
-                <thead>
+          <Col sm="12" md={{ size: 5, offset: 3 }}>
+              <Table className= "rosterTable">  
+                <thead  >
                     <tr>
                       <th>FIRE #</th>
                       <th>NAME</th>
                       <th>MEMBER SINCE</th>
-                      {/* <th rowSpan = "3"> OFFICERS </th> */}
+                     
                     </tr>
                   </thead>
               
                 <tbody>
-                <tr > 
-                    <td colSpan = "3" > OFFICERS</td>
+           
+                  <tr > 
+                    <td colSpan = "3" ><h4>OFFICERS</h4> </td>
                    </tr>
+             
                 {this.state.fireFighters.map(fireFighter =>( 
                    fireFighter.title ? (
                     
@@ -66,7 +87,7 @@ class FrontEndRoster extends Component {
                    ) :(null)
                 ))} 
                   <tr > 
-                    <td colSpan = "3" > FIRE FIGHTERS</td>
+                    <td colSpan = "3" ><h4>FIRE FIGHTERS</h4></td>
                    </tr>
                    {this.state.fireFighters.map(fireFighter =>( 
                    !fireFighter.title ? (
@@ -86,6 +107,9 @@ class FrontEndRoster extends Component {
            </Col>
         </Row>
       </Container>
+      <QuickLinks />
+					<Footer />
+			</div>
     )
   }
 }

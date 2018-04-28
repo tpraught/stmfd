@@ -47,29 +47,57 @@ body{
 
 .navbar {
     background: #2f2f2f;
-    font-size:22px;
     width: 100%;
     margin: 0 auto;
 }
 .innerNav {
+    font-family: 'Roboto', sans-serif;
     max-width: 1400px !important;
     width: 100%;
 }
-.dropdown-item {
+button.nav-item {
     margin: 5px 30px;
     padding: 0;
     width: auto;
+    background: none;
+    border: none;
     color: #ffffff;
+    font-size:22px;
     font-weight: 100;
 }
-.dropdown-item:hover {
+button.nav-item:hover {
     background: none;
     font-weight: 400;
     color: #ffffff;
     border-bottom: 1px solid #ffffff;
 }
-.dropdown-item a {
+button.nav-item a:active {
     color: #ffffff;
+}
+.btn-secondary:hover, .btn-secondary:focus {
+    background: none !important;
+    border: none !important;
+}
+.dropdown-menu {
+    top: 11px !important;
+    border-radius: 0 !important;
+    padding: 30px 0 !important;
+}
+a.nav-link {
+    color: #2f2f2f;
+    font-size: 18px;
+}
+a.nav-link:hover {
+    color: #2f2f2f;
+    text-decoration: underline;
+}
+button.dropdown-item:hover {
+    background: none;
+}
+
+/* Hero */
+.jumbotron .img-fluid {
+    width: 100%;
 }
 /* Wrapper CSS */
 
@@ -155,3 +183,28 @@ footer {
     border-left: 1px solid #7e7e7e;
     padding: 0px 10px;
 }
+
+/* Fire Fighters Roster (also applies to admin table */
+.rosterTable thead {
+    background: #0b1f3f;
+    color: #ffffff;
+}
+
+td[colspan="3"] {
+    text-align: center;
+}
+
+
+/* Admin Fire Roster Page */
+
+.btn-success {
+    margin-right:10px;
+}
+
+.table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #dee2e6;
+    text-align: center;
+}
+
+

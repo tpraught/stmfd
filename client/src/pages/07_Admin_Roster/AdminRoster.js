@@ -1,13 +1,15 @@
 import React, { Component } from "react";
-import { Table } from 'reactstrap';
+import { Table, Button } from 'reactstrap';
+import { Link } from "react-router-dom";
 import AdminRosterTable from "../../components/AdminRoster";
 
-import Weather from "../../components/Weather";
+import AdminHeader from "../../components/AdminHeader";
+
 
 import EditModal from "../../components/Modal";
 
 // import Button from "../../components/Button";
-import { Col, Row, Container } from "../../components/Grid";
+import {  Col, Row, Container } from "../../components/Grid";
 
 import API from "../../utils/API";
 
@@ -17,6 +19,7 @@ class FireRoster extends Component {
     fireFighters:[],
     editing: false,
     currentFireFighter: null, 
+    id: "",
     firstName : "",
     lastName: "",
     fireNumber:"",
@@ -33,9 +36,26 @@ class FireRoster extends Component {
   }
 
   saveRecord = (newFireFighter) => {
-    //AI call for save
-    //set this.state.editig = false
+   console.log("I'm a new firefighter - 38", newFireFighter);
+      this.setState({
+        editing: false,
+      })
+   //set this.state.editig = false
     //reload the page  this.loadRoster()
+    API.editRecord({
+      id: newFireFighter.id,
+      first_name: newFireFighter.firstName,
+      last_name: newFireFighter.lastName,
+      fire_number: newFireFighter.fireNumber,
+      year_started: newFireFighter.memberSince,
+      title: newFireFighter.title,
+      rank: newFireFighter.rank,
+      station: newFireFighter.station,
+      company: newFireFighter.company
+    })
+   
+    this.loadRoster();
+    
   }
   
   loadRoster = () => {
@@ -58,6 +78,7 @@ class FireRoster extends Component {
     this.setState({
       editing: true,
       currentFireFighter: fireFighter,
+      id: fireFighter._id,
       firstName:fireFighter.first_name,
       lastName:fireFighter.last_name,
       fireNumber:fireFighter.fire_number,
@@ -73,17 +94,22 @@ class FireRoster extends Component {
     render() {
 
     return (
+     <div> 
+      <AdminHeader/>
       <Container fluid>
         <Row>
           <Col size="md-9">
 
-          <Weather/>
+
+      
+
           <EditModal
             isOpen = {this.state.editing}
             onSave = {(newFireFighter) => {
-              alert(newFireFighter.firstName)
-              // API call here to save the data
+                this.saveRecord(newFireFighter);
+            
             }}
+           id = {this.state.id}
            firstName = {this.state.firstName}
            lastName = {this.state.lastName}
            fireNumber = {this.state.fireNumber}
@@ -97,8 +123,17 @@ class FireRoster extends Component {
                 editing: false
               })
             }} />
+            <Row>
+              <Col size="md-9"> 
+              <Link to="/admin/add"> 
+                <Button outline color="danger">ADD FIREFIGHTER 
+                </Button>
+               </Link>
+               
+               </Col> 
+           </Row>
 
-      <Table>  
+      <Table className = "rosterTable">  
        <thead>
           <tr>
             <th>First Name</th>
@@ -139,6 +174,8 @@ class FireRoster extends Component {
       </Col>
         </Row>
       </Container>
+
+      </div>
     )
   }
 }

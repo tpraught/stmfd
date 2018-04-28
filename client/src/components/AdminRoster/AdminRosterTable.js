@@ -16,7 +16,7 @@ import "./AdminRosterTable.css";
         <td>{props.company}</td>
         <td>
             <button  id={props.id} onClick = {props.onEdit}  type="button" className="btn btn-success ">EDIT</button> 
-            <button id={props.id} onClick = {props.onDelete} type="submit" className="delete btn btn-danger">DELETE</button></td>
+            <button id={props.id} onClick = {props.onDelete} type="submit" className="btn btn-danger">DELETE</button></td>
          
         </tr>
     );

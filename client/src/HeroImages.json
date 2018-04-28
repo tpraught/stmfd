@@ -2,6 +2,41 @@
   {
     "id": 1,
     "image": "../assets/images/hero_homepage.png",
-    "name": "SMFD Homepage Hero Image"
+    "name": "00_Home"
+  },
+  {
+    "id": 2,
+    "image": "../assets/images/header_community.png",
+    "name": "01_Community"
+  },
+  {
+    "id": 3,
+    "image": "../assets/images/header_fireSafety.png",
+    "name": "02_FireSafety"
+  },
+  {
+    "id": 4,
+    "image": "../assets/images/header_newsEvents.png",
+    "name": "03_NewsEvents"
+  },
+  {
+    "id": 5,
+    "image": "../assets/images/header_about.png",
+    "name": "04_About"
+  },
+  {
+    "id": 6,
+    "image": "../assets/images/header_ffEmt.png",
+    "name": "05_FirefightersEMT"
+  },
+  {
+    "id": 7,
+    "image": "../assets/images/header_explorers.png",
+    "name": "06_Explorers"
+  },
+  {
+    "id": 8,
+    "image": "../assets/images/header_contact.png",
+    "name": "08_Contact"
   }
 ]

@@ -36,8 +36,8 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   create: function(req, res) {
-	console.log("in create");
-	console.log("req.body");
+
+
 	console.log(req.body);
     db.Roster
       .create(req.body)
@@ -45,9 +45,23 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   update: function(req, res) {
-	console.log("in update");	  
+  console.log("I'm updating a fire fighter",req.body.id);	  
+  
+  let updatedFireFighter = {
+    first_name: req.body.first_name,
+    last_name: req.body.last_name,
+    fire_number: req.body.fire_number,
+    year_started: req.body.year_started,
+    title: req.body.title,
+    rank: req.body.rank,
+    station: req.body.station,
+    company: req.body.company
+  }
+    console.log(updatedFireFighter);
+
     db.Roster
-      .findOneAndUpdate({ _id: req.params.id }, req.body)
+      .findByIdAndUpdate(req.body.id, updatedFireFighter)
+      .then(console.log("Record updated"))
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
@@ -56,6 +70,7 @@ module.exports = {
 	console.log("About tp remove record");	  
     db.Roster
       .findById({ _id: req.params.id })
+      
       .then(dbModel => dbModel.remove())
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
