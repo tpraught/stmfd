@@ -24,17 +24,9 @@ const App = () => (
         <Route exact path="/admin/add" component={AdminForm} />
         <Route exact path="/admin/roster" component={AdminRoster} />
         <Route exact path="/roster" component={FrontEndRoster} />
-
+        <Route exact path="/admin/login" component={AdminLogin} />
+        {/* <Route component={NoMatch} /> */}
         <Route exact path="/medicalroster" component={MedicalRoster} />
-       
-
-
-       {/* <Route exact path="/admin/login" component={AdminLogin} /> */}
-
-   
-
-
-        {/* <Route component={NoMatch} />  */}
       </Switch>
     </div>
   </Router>
