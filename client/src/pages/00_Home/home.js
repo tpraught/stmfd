@@ -13,19 +13,20 @@ class Home extends Component {
    
   render() {
     return(
-			<div>
-					<Header />
-					<Nav />
-					<Hero 
-					id  = {heroImages[0].id}
-					src  = {heroImages[0].image}
-					alt = {heroImages[0].name}
-					/>   
-					<QuickLinks />
-					<Footer />
-			</div>
+		<div>
+			<Header />
+			<Nav />
+			<Hero 
+			id  = {heroImages[0].id}
+			src  = {heroImages[0].image}
+			alt = {heroImages[0].name}
+			/>   
+			<QuickLinks />
+			<Footer />
+		</div>
     )
-}
+  }
+  
 }
 
 export default Home;
