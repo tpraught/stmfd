@@ -40,8 +40,7 @@ class FireRoster extends Component {
       this.setState({
         editing: false,
       })
-   //set this.state.editig = false
-    //reload the page  this.loadRoster()
+
     API.editRecord({
       id: newFireFighter.id,
       first_name: newFireFighter.firstName,
@@ -100,14 +99,9 @@ class FireRoster extends Component {
         <Row>
           <Col size="md-9">
 
-
-      
-
           <EditModal
             isOpen = {this.state.editing}
-            onSave = {(newFireFighter) => {
-                this.saveRecord(newFireFighter);
-            
+            onSave = {(newFireFighter) => {this.saveRecord(newFireFighter);
             }}
            id = {this.state.id}
            firstName = {this.state.firstName}
@@ -116,7 +110,7 @@ class FireRoster extends Component {
            memberSince = {this.state.memberSince}
            title = {this.state.title}
            rank = {this.state.rank}
-           station = {this.state.station} //drop-down values are not populating the fields
+           station = {this.state.station} 
            company = {this.state.company}
             onCancel = {() => {
               this.setState({
