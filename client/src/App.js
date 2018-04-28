@@ -59,6 +59,11 @@ const App = () => (
         <Route exact path="/Apparatus" component={Apparatus} />
         <Route exact path="/History" component={History} />
         <Route exact path="/roster" component={FrontEndRoster} />
+<<<<<<< HEAD
+=======
+        {/* <Route exact path="/admin/login" component={AdminLogin} /> */}
+        {/* <Route component={NoMatch} /> */}
+>>>>>>> working on the homepage
         <Route exact path="/medicalroster" component={MedicalRoster} />
         <Route exact path="/Schedule" component={Schedule} />
         <Route exact path="/ExplorerAbout" component={ExplorerAbout} />

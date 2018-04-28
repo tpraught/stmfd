@@ -17,7 +17,7 @@ body{
     font-style: normal;
     font-weight: 100;
     font-size: 18px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif !important;
     color:#ffffff;
     border-bottom: 10px solid #2f2f2f;
 }
@@ -30,14 +30,14 @@ body{
 #brand h1 {
     font-style: normal;
     font-size: 60px;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Playfair Display', serif !important;
     -webkit-transform: scaleY(0.8);
 }
 #brand h2 {
     font-style: normal;
     font-weight: 100;
     font-size: 26px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif !important;
 }
 
 #badge {
@@ -109,29 +109,29 @@ button.dropdown-item:hover {
 
 /* a and a:hover is also used in Quick Links */
 a {
-    color: #ffbe00;
-    font-weight: 400;
+    color: #ffbe00 !important;
+    font-weight: 400 !important;
     text-decoration: none;
 }
 a:hover {
     text-decoration: underline;
 }
 h3, h4 {
-    font-family: 'Playfair Display', serif;
-    color: #0b1f3f;
+    font-family: 'Playfair Display', serif !important;
+    color: #0b1f3f !important;
     margin-bottom: 15px;
 }
 h3 {
     font-size: 36px !important;
 }
 h4 {
-    font-size: 24px important;
+    font-size: 24px !important;
 }
 p, ul {
     font-style: normal;
     font-weight: 300;
     font-size: 18px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif !important;
     color:#2f2f2f;
 }
 p.small {
@@ -141,11 +141,11 @@ ul {
     list-style-type: square;
     margin: 5px 0px 5px 50px;
 }
-.bg-light {
+.bg-ltGray {
     background-color: #f1f1f1 !important;
 }
 /* .bg-dark is also used in Quick Links */
-.bg-dark {
+.bg-navy {
     background-color: #0b1f3f !important;
 }
 
@@ -156,14 +156,14 @@ ul {
 h5 {
     font-style: normal;
     font-weight: 400;
-    font-size: 20px;
-    font-family: 'Roboto', sans-serif;
+    font-size: 20px !important;
+    font-family: 'Roboto', sans-serif !important;
 }
 h6 {
     font-style: normal;
     font-weight: 100;
-    font-size: 16px;
-    font-family: 'Roboto', sans-serif;
+    font-size: 16px !important;
+    font-family: 'Roboto', sans-serif !important;
 }
 a.quick-link {
     color: #ffffff;
