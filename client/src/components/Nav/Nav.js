@@ -134,7 +134,7 @@ export default class Example extends React.Component {
                       <NavLink href="/">MEET YOUR OFFICERS</NavLink>
                     </DropdownItem> */}
                     <DropdownItem>
-                      <NavLink href="/Roster">FIRE DEPARTMENT ROSTER</NavLink>
+                      <NavLink href="/Roster">FIREFIGHTER ROSTER</NavLink>
                     </DropdownItem>
                     <DropdownItem>
                       <NavLink href="/MedicalRoster">MEDICAL RESPONDER ROSTER</NavLink>

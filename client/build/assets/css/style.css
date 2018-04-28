@@ -215,25 +215,27 @@ footer {
     margin-bottom: 15px;
     padding: 0 30px;
 }
-
 /* Fire Fighters Roster (also applies to admin table */
 .rosterTable thead {
     background: #0b1f3f;
     color: #ffffff;
 }
-.rosterTable > .table td {
-    border: none !important;
-}
+
 td[colspan="3"] {
     text-align: center;
 }
 
+
 /* Admin Fire Roster Page */
+
 .btn-success {
     margin-right:10px;
 }
+
 .table thead th {
     vertical-align: bottom;
     border-bottom: 2px solid #dee2e6;
     text-align: center;
 }
+
+
