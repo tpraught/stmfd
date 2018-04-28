@@ -2,11 +2,7 @@ import React, { Component } from "react";
 import Header from "../../components/Header";
 import Nav from "../../components/Nav";
 import Hero from "../../components/Hero";
-<<<<<<< HEAD
 import Feed from "../../components/Feed";
-import QuickLinks from "../../components/Quick_Links";
-=======
->>>>>>> working on the homepage
 import Footer from "../../components/Footer";
 import heroImages from "../../HeroImages.json"
 import { Jumbotron } from "reactstrap";
@@ -87,24 +83,11 @@ class Home extends Component {
 					<Jumbotron fluid className="p-0 mb-0">
 						<img className="img-fluid" src="assets/images/header_homepage.png" alt="SMFD Homepage Stay Connected" />
 					</Jumbotron>
-
-			<Feed /> 
 					<div className="container p-0 mt-5 mb-5">
 						<div className="row justify-content-center">
 							<div className="col-12 p-0">
 								<h3 className="text-white text-center">STAY CONNECTED</h3>
-								<div className="row justify-content-center">
-									<div className="col-4 card border-0 m-4">
-										<div className="card-body">
-											St. Michael FB Feed
-										</div>
-									</div>
-									<div className="col-4 card border-0 m-4">
-										<div className="card-body">
-											City of St. Michael Twitter Feed
-										</div>
-									</div>
-								</div>
+								<Feed /> 
 							</div>
 						</div>
 					</div>

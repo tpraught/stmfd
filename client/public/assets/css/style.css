@@ -2,11 +2,10 @@ body{
     font-style: normal;
     font-weight: 100;
     font-size: 18px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif !important;
     color:#2f2f2f;
     margin: 0px auto;
 }
-
 .row {
     margin: 0px !important;
 }
@@ -17,14 +16,13 @@ body{
     font-style: normal;
     font-weight: 100;
     font-size: 18px;
-    font-family: 'Roboto', sans-serif !important;
+    font-family: 'Roboto', sans-serif;
     color:#ffffff;
     border-bottom: 10px solid #2f2f2f;
 }
 #brand {
     background: #0b1f3f;
     border-bottom: 10px solid #b60c00;
-    color:#ffffff;
     text-align: center;    
 }
 #brand h1 {
@@ -32,19 +30,27 @@ body{
     font-size: 60px;
     font-family: 'Playfair Display', serif !important;
     -webkit-transform: scaleY(0.8);
+    color: #ffffff;
 }
 #brand h2 {
     font-style: normal;
     font-weight: 100;
     font-size: 26px;
     font-family: 'Roboto', sans-serif !important;
+    color: #ffbe00;
 }
-
+a.homeLink {
+    color: #ffffff !important;
+}
+a.homeLink:hover {
+    color: #ffffff;
+    text-decoration: none;
+}
 #badge {
     z-index: 1000;
 }
-/* Navigation CSS */
 
+/* Navigation CSS */
 .navbar {
     background: #2f2f2f;
     width: 100%;
@@ -84,11 +90,11 @@ button.nav-item a:active {
     padding: 30px 0 !important;
 }
 a.nav-link {
-    color: #2f2f2f;
+    color: #2f2f2f !important;
     font-size: 18px;
 }
 a.nav-link:hover {
-    color: #2f2f2f;
+    color: #2f2f2f !important;
     text-decoration: underline;
 }
 button.dropdown-item:hover {
@@ -99,13 +105,9 @@ button.dropdown-item:hover {
 .jumbotron .img-fluid {
     width: 100%;
 }
-/* Wrapper CSS facebook/twitter*/
-#wrapper {
-    background: #2f2f2f;
-    padding: 20px;
-    max-width: 1400px !important;
+.jumbotron {
+    width: 100%;
 }
-
 
 /* a and a:hover is also used in Quick Links */
 a {
@@ -122,10 +124,10 @@ h3, h4 {
     margin-bottom: 15px;
 }
 h3 {
-    font-size: 36px !important;
+    font-size: 42px !important;
 }
 h4 {
-    font-size: 24px !important;
+    font-size: 28px !important;
 }
 p, ul {
     font-style: normal;
@@ -183,9 +185,9 @@ footer {
 }
 #footerLinks a {
     font-weight: 300;
-    font-size: 12px;
+    font-size: 14px;
     font-family: 'Roboto', sans-serif;
-    color: #2f2f2f;
+    color: #2f2f2f !important;
     border-left: 1px solid #7e7e7e;
     padding: 0px 10px;
 }
