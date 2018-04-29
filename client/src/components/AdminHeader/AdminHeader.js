@@ -10,12 +10,12 @@ const AdminHeader = () => (
 			<Link to="/"> 
 				GO TO SMFD.ORG 
 			</Link>	
-			|LOGOUT
+			&nbsp;&nbsp;|&nbsp;&nbsp;LOGOUT
 			</div>
 		</div>
 		<div id="brand" className="position-relative pt-4 pb-5">
-			<h1 className="m-0">ST. MICHAEL FIRE DEPARTMENT</h1>
-			<h3>ADMINISTRATION SITE</h3>
+		<a className="homeLink" href="/admin/roster"><h2 className="m-0">ADMINISTRATION SITE</h2>
+			<h1 className="m-0">ST. MICHAEL FIRE DEPARTMENT</h1></a>
 		</div>
 	</header>
 );
