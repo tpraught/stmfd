@@ -19,7 +19,7 @@ const Quick_Links = () => (
 						</div>
 						<div className="d-flex flex-column pr-4 pl-4">
 							<h5 className="text-white">FIRE SAFETY</h5>
-							<h6><a className="quick-link" href="/"HomeSafety>Fire Safety in Your Home</a></h6>
+							<h6><a className="quick-link" href="/HomeSafety">Fire Safety in Your Home</a></h6>
 							<h6><a className="quick-link" href="/SchoolSafety">Fire Safety in Our Schools</a></h6>
 							<h6><a className="quick-link" href="/Burning">Buring Permits & Restrictions</a></h6>
 							<h6><a className="quick-link" href="/CampfireSafety">Campfire Safety</a></h6>

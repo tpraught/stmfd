@@ -224,12 +224,16 @@ footer {
     line-height: 1.75;
 }
 
-/* Fire Fighters Roster (also applies to admin table */
-.rosterTable thead {
-    background: #0b1f3f;
+/* Fire Fighters Roster (also applies to admin table) */
+.adminTable {
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+}
+.adminTable thead {
+    background: #2f2f2f;
     color: #ffffff;
 }
-.rosterTable > .table td {
+.adminTable > .table td {
     border: none !important;
 }
 td[colspan="3"] {
@@ -237,11 +241,39 @@ td[colspan="3"] {
 }
 
 /* Admin Fire Roster Page */
-.btn-success {
+td.adminButtons {
+    text-align: right;
+}
+.addButton {
+    font-size: 20px !important;
+    margin: 0 0 20px 0;
+}
+.redButton {
+    background: #b60c00 !important;
+    color: #ffffff;
+}
+.greenButton {
+    background: #008000 !important;
+    color: #ffffff;
     margin-right:10px;
 }
 .table thead th {
     vertical-align: bottom;
     border-bottom: 2px solid #dee2e6;
-    text-align: center;
+    text-align: left;
+}
+.adminForm .form-control, .adminForm Label {
+    font-size: 20px !important;
+}
+.adminForm .form-control {
+    border: none !important;
+    border-radius: 0 !important;
+    background: #f1f1f1;
+    margin: 0 0 20px 0;
+}
+.adminForm .form-control:focus {
+    border: none !important;
+}
+.modal-dialog {
+    max-width: 750px !important;
 }

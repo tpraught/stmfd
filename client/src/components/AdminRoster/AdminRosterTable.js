@@ -14,9 +14,9 @@ import "./AdminRosterTable.css";
         <td>{props.rank}</td>
         <td>{props.station}</td>
         <td>{props.company}</td>
-        <td>
-            <button  id={props.id} onClick = {props.onEdit}  type="button" className="btn btn-success ">EDIT</button> 
-            <button id={props.id} onClick = {props.onDelete} type="submit" className="btn btn-danger">DELETE</button></td>
+        <td className="adminButtons">
+            <button  id={props.id} onClick = {props.onEdit}  type="button" className="greenButton btn">EDIT</button> 
+            <button id={props.id} onClick = {props.onDelete} type="submit" className="btn redButton"><i className="far fa-trash-alt"></i></button></td>
          
         </tr>
     );
