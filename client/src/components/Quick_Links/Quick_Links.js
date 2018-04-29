@@ -28,9 +28,9 @@ const Quick_Links = () => (
 						</div>
 						<div className="d-flex flex-column pr-4 pl-4">
 							<h5 className="text-white">NEWS & EVENTS</h5>
-							<h6><a className="quick-link" href="https://www.facebook.com/stmichaelfire/" target="_blank">SMFD on Facebook</a></h6>
+							<h6><a className="quick-link" href="https://www.facebook.com/stmichaelfire/" target="_blank" rel="noopener noreferrer">SMFD on Facebook</a></h6>
 							<h6><a className="quick-link" href="/Events">Events</a></h6>
-							<h6><a className="quick-link" href="http://www.stmdazeandknightsfestival.com/" target="_blank">St. Michael Daze & Knights</a></h6>
+							<h6><a className="quick-link" href="http://www.stmdazeandknightsfestival.com/" target="_blank" rel="noopener noreferrer">St. Michael Daze & Knights</a></h6>
 						</div>
 						<div className="d-flex flex-column pr-4 pl-4">
 							<h5 className="text-white">ABOUT</h5>
