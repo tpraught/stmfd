@@ -3,10 +3,7 @@
 
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-// import Books from "./pages/Books";
-// import Detail from "./pages/Detail";
-// import NoMatch from "./pages/NoMatch";
-// import Nav from "./components/Nav";
+
 import Home from "./pages/00_Home";
 
 import CarSeat from "./pages/01_CarSeat";
@@ -25,7 +22,7 @@ import LinksResources from "./pages/02_LinksResources";
 
 import Events from "./pages/03_Events";
 
-import About from "./pages/04_About";
+// import About from "./pages/04_About";
 import History from "./pages/04_History";
 import Apparatus from "./pages/04_Apparatus";
 
@@ -42,7 +39,7 @@ import JoinExplorers from "./pages/06_JoinExplorers";
 import AdminForm from "./pages/07_Admin_Form";
 import AdminRoster from "./pages/07_Admin_Roster";
 
-import ContactUs from "./pages/08_ContactUs";
+// import ContactUs from "./pages/08_ContactUs";
 
 // import AdminLogin from "./pages/07_Admin_Login";
 
@@ -76,7 +73,7 @@ const App = () => (
         <Route exact path="/Events" component={Events} />
 
         {/* About Pages */}
-        <Route exact path="/About" component={About} />
+        {/* <Route exact path="/About" component={About} /> */}
         <Route exact path="/History" component={History} />
         <Route exact path="/Apparatus" component={Apparatus} />
 
@@ -98,7 +95,7 @@ const App = () => (
         {/* <Route exact path="/admin/login" component={AdminLogin} /> */}
 
         {/* Contact Us Page */}
-        <Route exact path="/ContactUs" component={ContactUs} />
+        {/* <Route exact path="/ContactUs" component={ContactUs} /> */}
         
         {/* <Route component={NoMatch} /> */}
 
