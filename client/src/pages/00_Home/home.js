@@ -66,7 +66,7 @@ class Home extends Component {
 										<p>The St. Michael Fire Department wants you to enjoy your backyard recreational bonfire safely. General guidelines for recreational fires within the St. Michael city limits are:</p>
 										<ul className="mb-3">
 											<li>A permit is NOT required</li>
-											<li>Fires must e constantly attended</li>
+											<li>Fires must be constantly attended</li>
 											<li>Be no more than 3 feet in diameter and 3 feet high</li>
 										</ul>									
 										<p>For more information and helpful links, including the current fire danger rating and buring permit information, <a href="">click here &#187;</a></p>
