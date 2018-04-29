@@ -238,4 +238,9 @@ td[colspan="3"] {
     text-align: center;
 }
 
+/* Styling the weather icon */
+
+img.my-awesome-icon {
+    width: 2em;
+}
 
