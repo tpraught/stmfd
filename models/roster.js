@@ -74,6 +74,11 @@ const rosterSchema = new Schema({
       ]  
 	  
   },
+  rank_sort_number:{
+	  type: Number,
+	  min: 0,
+	  max: 60
+  },
   rank:{
 	  type: String,
 	  trim: true,

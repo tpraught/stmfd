@@ -22,7 +22,7 @@ module.exports = {
 
     db.Roster
       .find(req.query)
-      .sort({ year_started: 1 })
+      .sort({ rank_sort_number: 1 })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
 	//  console.log("res is ");
