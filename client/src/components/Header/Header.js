@@ -15,7 +15,6 @@ class Header extends Component {
 		//API call to get temperature and weather icon ID
         axios.get(URL)
         .then(res => {
-			console.log(res.data);
 			let currentTemp = Math.round(res.data.main.temp);
 			let weatherIcon = res.data.weather[0].id;
 				

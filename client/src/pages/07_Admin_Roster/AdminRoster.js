@@ -94,6 +94,7 @@ class FireRoster extends Component {
             <Col size="md-12">
 
               <EditModal
+                currentFireFighter = {this.state.currentFireFighter}
                 isOpen = {this.state.editing}
                 onSave = { (newFireFighter) => { this.saveRecord(newFireFighter); } }
                 id = {this.state.id}
