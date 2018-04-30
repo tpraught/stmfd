@@ -5,7 +5,7 @@ import AdminRosterTable from "../../components/AdminRoster";
 import AdminHeader from "../../components/AdminHeader";
 import EditModal from "../../components/Modal";
 import Footer from "../../components/Footer";
-import {  Col, Row, Container } from "../../components/Grid";
+import { Col, Row } from "../../components/Grid";
 import API from "../../utils/API";
 
 class FireRoster extends Component { 

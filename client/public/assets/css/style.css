@@ -131,7 +131,7 @@ h3 {
 h4 {
     font-size: 28px !important;
 }
-p, ul {
+p, ul, ol {
     font-style: normal;
     font-weight: 300;
     font-size: 20px;
@@ -139,11 +139,19 @@ p, ul {
     color:#2f2f2f;
 }
 p.small {
-    font-size: 14px;
+    font-size: 14px !important;
 }
 ul {
     list-style-type: square;
-    margin: 5px 0px 5px 50px;
+}
+ol {
+    list-style-type: decimal;
+}
+li {
+    margin: 7px 0 7px 50px;
+}
+span.listTitle {
+    font-weight: 400;
 }
 .bg-ltGray {
     background-color: #f1f1f1 !important;
@@ -215,6 +223,13 @@ footer {
     margin-bottom: 15px;
     padding: 0 30px;
 }
+.pageTitle h2 {
+    font-family: 'Playfair Display', serif !important;
+    font-size:30px;
+    color: #0b1f3f !important;
+    margin-bottom: 15px;
+    padding: 0 30px;
+}
 .pageContent {  
     padding: 0 30px;
     margin: 30px 0;
@@ -222,6 +237,20 @@ footer {
 .pageContent p {
     font-size: 24px;
     line-height: 1.75;
+}
+.btnLink {
+    font-size: 20px !important;
+    font-weight: 400 !important;
+    background: none !important;
+    border: none !important;
+    color: #ffbe00 !important;
+    text-decoration: none !important;
+}
+.btnLink:hover {
+    text-decoration: underline !important;
+}
+.btnLink:focus {
+    box-shadow: none !important;
 }
 
 /* Fire Fighters Roster (also applies to admin table) */

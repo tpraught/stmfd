@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
-import { Container, Row, Col } from 'reactstrap';
+import { Row, Col } from 'reactstrap';
 import { Button, Form, FormGroup, Label, Input} from 'reactstrap';
 import AdminHeader from "../../components/AdminHeader";
 import Wrapper from "../../components/Wrapper";
