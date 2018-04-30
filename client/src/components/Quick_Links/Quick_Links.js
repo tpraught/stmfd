@@ -12,7 +12,7 @@ const Quick_Links = () => (
 						<div className="d-flex flex-column pr-4 pl-4">
 							<h5 className="text-white">COMMUNITY</h5>
 							<h6><a className="quick-link" href="/CarSeatChecks">Car Seat Checks</a></h6>
-							<h6><a className="quick-link" href="/SevereWeather">Sever Weather</a></h6>
+							<h6><a className="quick-link" href="/SevereWeather">Severe Weather</a></h6>
 							<h6><a className="quick-link" href="/RecFires">Recreational Fires</a></h6>
 							<h6><a className="quick-link" href="/Kids">For the Kids</a></h6>
 							<h6><a className="quick-link" href="/JoinSMFD">Joining the SMFD</a></h6>

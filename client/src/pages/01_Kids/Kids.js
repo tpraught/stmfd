@@ -26,7 +26,7 @@ class Kids extends Component {
       </div>
       <div className="pageContent media">
         <div className="media-body">
-          <p>On average, families have less than three minutes from the time the first smoke alarm sounds to escape a fire.  The sooner you hear an alarm, the more time you will have to get out.
+          <p>On average, families have less than three minutes from the time the first smoke alarm sounds to escape a fire. The sooner you hear an alarm, the more time you will have to get out.
 </p>
           <h4>10 THINGS TO KEEP YOURSELF SAFE</h4>
           <ul className="mb-3">
@@ -44,11 +44,11 @@ class Kids extends Component {
             <li>Look for fire hazards: Check your fireplaces and electrical cords to make sure they are in good working order.</li>
           </ul> 
         </div>
-        <span className="media-right">
-            <img src="../../../assets/images/01_Kids.jpg" className="float-right" alt="Classroom Visit" height="300"/>
+        <span className="media-right pl-5">
+            <img src="../../../assets/images/01_Kids.jpg" alt="Classroom Visit" height="300"/>
         </span>
       </div>
-      <div>
+      <div className="mb-5">
         <ul class="list-group">
           <li class="list-group-item">
             <a href='http://www.sparky.org'>Learn about fire safety from Sparky</a>
