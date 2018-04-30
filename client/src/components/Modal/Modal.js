@@ -1,6 +1,6 @@
 import React from 'react';
-import { Container, Row, Col } from 'reactstrap';
-import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import { Row, Col } from 'reactstrap';
+import { Modal,ModalBody, ModalFooter } from 'reactstrap';
 import { Button, Form, FormGroup, Label, Input} from 'reactstrap';
 
 class EditModal extends React.Component {
