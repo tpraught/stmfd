@@ -16,7 +16,6 @@ const Footer = () =>(
 
 			</div>
 		</div>
-	</div>
 	<div className="container mb-5">
 		<div id="copyRight" className="row justify-content-center border-0">
 			Copyright &#169; 2018 - St. Michael Fire Department
