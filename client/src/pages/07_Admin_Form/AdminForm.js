@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
+
 import { Row, Col } from 'reactstrap';
+
 import { Button, Form, FormGroup, Label, Input} from 'reactstrap';
 import AdminHeader from "../../components/AdminHeader";
 import Wrapper from "../../components/Wrapper";
@@ -29,7 +31,9 @@ class AdminTable extends Component {
   //Method to submit a new record to the Database
   handleFormSubmit = event => {
     console.log("Saving record is triggered");
-  
+    event.preventDefault();
+    this.props.history.push('/admin/roster');
+
     API.saveRecord({
       first_name: this.state.firstName,
       last_name: this.state.lastName,

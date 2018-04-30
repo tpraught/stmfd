@@ -31,7 +31,7 @@ export default class Example extends React.Component {
   render() {
     return(
       <div>
-        <Navbar tabs className="navbar justify-content-center">
+        <Navbar className="navbar justify-content-center">
           {/* <NavbarToggler onClick={this.toggle} /> */}
           {/* <Collapse isOpen={this.state.isOpen} navbar> */}
           <div className="innerNav">
