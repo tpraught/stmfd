@@ -64,7 +64,7 @@ class EditModal extends React.Component {
                           type="text" 
                           name="firstName"
                           id="firstName"
-                          placeholder ={this.props.firstName}
+                          defaultValue ={this.props.firstName}
                           onChange={this.handleInputChange} />
                       </Col>
                       <Col sm="12" md="6">
@@ -73,7 +73,7 @@ class EditModal extends React.Component {
                           type="text" 
                           name="lastName"
                           id="lastName"
-                          placeholder ={this.props.lastName}
+                          defaultValue ={this.props.lastName}
                           onChange={this.handleInputChange}/>
                       </Col>
                     </Row>
@@ -84,7 +84,7 @@ class EditModal extends React.Component {
                           type="text" 
                           name="fireNumber" 
                           id="fireNumber"
-                          placeholder ={this.props.fireNumber}
+                          defaultValue ={this.props.fireNumber}
                           onChange={this.handleInputChange}/>
                       </Col>
                       <Col sm="12" md="4">
@@ -93,7 +93,7 @@ class EditModal extends React.Component {
                           type="text"
                           name="memberSince"
                           id="memberSince"
-                          placeholder ={this.props.memberSince}
+                          defaultValue ={this.props.memberSince}
                           onChange={this.handleInputChange}/>
                       </Col>
                       <Col sm="12" md="6">
@@ -102,7 +102,7 @@ class EditModal extends React.Component {
                           type="text"
                           name="title"
                           id="title"
-                          placeholder ={this.props.title}
+                          defaultValue ={this.props.title}
                           onChange={this.handleInputChange}/>
                       </Col>
                     </Row>
@@ -113,7 +113,7 @@ class EditModal extends React.Component {
                           type="select" 
                           name="rank"
                           id="rank"
-                          placeholder ={this.props.rank}
+                          defaultValue ={this.props.rank}
                           onChange={this.handleInputChange}>
                               <option>Fire Fighter</option>
                               <option>Officer</option>
@@ -125,7 +125,7 @@ class EditModal extends React.Component {
                           type="select" 
                           name="station" 
                           id="station"
-                          placeholder ={this.props.station}
+                          defaultValue ={this.props.station}
                           onChange={this.handleInputChange}>
                             <option>Station #1</option>
                             <option>Station #2</option>
@@ -137,7 +137,7 @@ class EditModal extends React.Component {
                           type="select"
                           name="company"
                           id="company"
-                          placeholder ={this.props.company}
+                          defaultValue ={this.props.company}
                           onChange={this.handleInputChange}> 
                             <option>Company A</option>
                             <option>Company B</option>

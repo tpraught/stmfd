@@ -61,7 +61,7 @@ class AdminTable extends Component {
                   <Col sm="12">
                     <Row>
                       <Col sm="12" md="6">
-                        <Label for="firstName">FIRST NAME</Label>
+                        <Label for="firstName">FIRST NAME*</Label>
                         <Input 
                           type="text" 
                           name="firstName"
@@ -70,7 +70,7 @@ class AdminTable extends Component {
                           />
                       </Col>
                       <Col sm="12" md="6">
-                        <Label for="lastName">LAST NAME</Label>
+                        <Label for="lastName">LAST NAME*</Label>
                         <Input 
                           type="text"
                           name="lastName" 
@@ -90,7 +90,7 @@ class AdminTable extends Component {
                           />
                       </Col>
                       <Col sm="12" md="4">
-                        <Label for="memberSince">MEMBER SINCE</Label>
+                        <Label for="memberSince">MEMBER SINCE*</Label>
                         <Input 
                           type="text" 
                           name="memberSince"
@@ -101,16 +101,22 @@ class AdminTable extends Component {
                       <Col sm="12" md="6">
                         <Label for="title">TITLE</Label>
                         <Input 
-                          type="text" 
+                          type="select"
                           name="title"
                           id="title"
-                          onChange={this.handleInputChange}
-                          />
+                          onChange={this.handleInputChange}>
+                          <option></option>
+                          <option>Chief</option>
+                          <option>Assistant Chief</option>
+                          <option>District Chief</option>
+                          <option>Captain</option>
+                          <option>Lieutenant</option>
+                        </Input>
                       </Col>
                     </Row>
                     <Row>
                       <Col sm="12" md="4">
-                        <Label for="rank">RANK</Label>
+                        <Label for="rank">RANK*</Label>
                         <Input 
                           type="select"
                           name="rank"
@@ -153,6 +159,11 @@ class AdminTable extends Component {
                   <Col sm="12">
                     <Button className="float-right redButton addButton mr-3" type="submit" onClick={this.handleFormSubmit}>ADD</Button>
                   </Col>
+                </Row>
+                <Row>
+                <Col sm="12">
+                  <p>* designates required fields</p>
+                </Col>
                 </Row>
               </Form>
             </Row>
