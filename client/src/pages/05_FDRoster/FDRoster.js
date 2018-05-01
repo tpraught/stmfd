@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Table } from 'reactstrap';
+import { Container, Row, Col } from 'reactstrap';
 import Header from "../../components/Header";
 import Nav from "../../components/Nav";
 import Hero from "../../components/Hero";
@@ -7,7 +8,6 @@ import heroImages from "../../HeroImages.json";
 import Wrapper from "../../components/Wrapper";
 import QuickLinks from "../../components/Quick_Links";
 import Footer from "../../components/Footer";
-import { Container, Row, Col } from 'reactstrap';
 import API from "../../utils/API";
 
 class FrontEndRoster extends Component { 
@@ -51,21 +51,21 @@ class FrontEndRoster extends Component {
           <div className="pageTitle">
             <h1>SMFD FIREFIGHTER ROSTER</h1>  
           </div>
-          <Container>
+          <Container className="pageContent">
             <Row className="justify-content-center">
-              <Col sm="12" md={{ size: 8 }}>
-                  <Table className= "rosterTable">  
-                    <thead  >
+              <Col sm={{ size: 12 }} md={{ size: 8 }}>
+                  <Table className="rosterTable border-0">  
+                    <thead >
                         <tr>
-                          <th>FIRE #</th>
+                          <th className="text-center">FIRE #</th>
                           <th>NAME</th>
-                          <th>MEMBER SINCE</th>
+                          <th className="text-center">MEMBER SINCE</th>
                         </tr>
                     </thead>
                   
                     <tbody>
                       <tr > 
-                        <td colSpan = "3" ><h4>OFFICERS</h4> </td>
+                        <td colSpan="3"><h4>OFFICERS</h4> </td>
                       </tr>
 
                       {this.state.fireFighters.map(fireFighter =>( 
@@ -102,8 +102,8 @@ class FrontEndRoster extends Component {
             </Row>
           </Container>
         </Wrapper>
-      <QuickLinks />
-					<Footer />
+        <QuickLinks />
+				<Footer />
 			</div>
     )
   }
