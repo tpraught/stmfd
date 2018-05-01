@@ -18,7 +18,8 @@ class AdminTable extends Component {
     title: "",
     rank: "",
     station: "",
-    company: ""
+    company: "",
+   
   }
 
   handleInputChange = event => {
@@ -28,11 +29,31 @@ class AdminTable extends Component {
     });
   };
 
+  determineTitleRank = (title) => {
+    let titleRankValue;
+
+    if (title === "Fire Chief") {
+      titleRankValue = 10;
+    } else if (title === "Assistant Chief") {
+      titleRankValue = 20;
+    }  else if (title === "District Chief") {
+      titleRankValue = 30;
+    } else if (title === "Captain") {
+      titleRankValue = 40;
+    } else if (title === "Lieutenant") {
+      titleRankValue = 50;
+    } else {
+      titleRankValue = 0;
+    }
+     return titleRankValue;
+  }
+
   //Method to submit a new record to the Database
   handleFormSubmit = event => {
     console.log("Saving record is triggered");
     event.preventDefault();
-    this.props.history.push('/admin/roster');
+
+    let rankSort = this.determineTitleRank(this.state.title);
 
     API.saveRecord({
       first_name: this.state.firstName,
@@ -42,8 +63,10 @@ class AdminTable extends Component {
       title: this.state.title,
       rank: this.state.rank,
       station: this.state.station,
-      company: this.state.company
+      company: this.state.company,
+      rank_sort_number: rankSort
     })
+    this.props.history.push('/admin/roster');
   };
 
   render() {
@@ -106,7 +129,7 @@ class AdminTable extends Component {
                           id="title"
                           onChange={this.handleInputChange}>
                           <option></option>
-                          <option>Chief</option>
+                          <option>Fire Chief</option>
                           <option>Assistant Chief</option>
                           <option>District Chief</option>
                           <option>Captain</option>

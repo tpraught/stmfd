@@ -99,11 +99,18 @@ class EditModal extends React.Component {
                       <Col sm="12" md="6">
                         <Label for="title">TITE</Label>
                         <Input 
-                          type="text"
+                          type="select"
                           name="title"
                           id="title"
                           defaultValue ={this.props.title}
-                          onChange={this.handleInputChange}/>
+                          onChange={this.handleInputChange}>
+                          <option></option>
+                          <option>Fire Chief</option>
+                          <option>Assistant Chief</option>
+                          <option>District Chief</option>
+                          <option>Captain</option>
+                          <option>Lieutenant</option>
+                        </Input>
                       </Col>
                     </Row>
                     <Row>
