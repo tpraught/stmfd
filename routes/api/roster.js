@@ -13,6 +13,15 @@ router.route("/roster")
  router.route("/explorerform")
   .post(rosterController.createExplorer);
 
+  router.route("/explorerschedule")
+   .get(rosterController.findAllExplorerEvents)
+  
+   router.route("/explorerschedule/:id")
+  // .get(rosterController.findById)
+  .put(rosterController.update)
+  .delete(rosterController.removeExplorerEvent);
+ 
+
   router.route("/add")
   .post(rosterController.create);
 
@@ -21,5 +30,8 @@ router.route("/roster/:id")
   // .get(rosterController.findById)
   .put(rosterController.update)
   .delete(rosterController.remove);
+
+
+
 
 module.exports = router;

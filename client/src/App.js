@@ -38,6 +38,7 @@ import JoinExplorers from "./pages/06_JoinExplorers";
 
 import AdminForm from "./pages/07_Admin_Form";
 import AdminRoster from "./pages/07_Admin_Roster";
+import AdminExplorerForm from "./pages/07_Admin_Explorer_Form";
 import AdminExplorerSchedule from "./pages/07_Admin_Explorer_Schedule";
 
 // import ContactUs from "./pages/08_ContactUs";
@@ -93,7 +94,8 @@ const App = () => (
         {/* Admin Pages */}
         <Route exact path="/admin/add" component={AdminForm} />
         <Route exact path="/admin/roster" component={AdminRoster} />
-        <Route exact path="/admin/explorerform" component={AdminExplorerSchedule} />
+        <Route exact path="/admin/explorerform" component={AdminExplorerForm} />
+        <Route exact path="/admin/explorerschedule" component={AdminExplorerSchedule} />
         {/* <Route exact path="/admin/login" component={AdminLogin} /> */}
 
         {/* Contact Us Page */}
