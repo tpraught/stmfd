@@ -1,6 +1,13 @@
 import React, { Component } from "react";
 import { Table } from 'reactstrap';
 import { Container, Row, Col } from 'reactstrap';
+import Header from "../../components/Header";
+import Nav from "../../components/Nav";
+import Hero from "../../components/Hero";
+import heroImages from "../../HeroImages.json";
+import Wrapper from "../../components/Wrapper";
+import QuickLinks from "../../components/Quick_Links";
+import Footer from "../../components/Footer";
 import API from "../../utils/API";
 
 class MedicalRoster extends Component { 
@@ -62,7 +69,7 @@ class MedicalRoster extends Component {
       console.log("Station #2 ", this.state.station2)
       console.log("Fire Chief", this.state.fireChief)
       console.log("Assistant Chief", this.state.assistantChief)
-  }
+  };
 
   loadRoster = () => {
     console.log("I'm triggered")
@@ -74,117 +81,138 @@ class MedicalRoster extends Component {
    .catch(err => console.log(err));
   };
 
-    render() {
-
+  render() {
     return (
-      <Container fluid>
-        <Row>
-          <Col size="md-9">
-            <h1>SMFD MEDICAL RESPONDER ROSTER</h1>
-            <hr/>
-            <p>* 10:00 p.m. - 5 a.m | Sunday Evenings to Friday Mornings</p>
-           </Col>
-        </Row>
-       
-        <Row>
-          <Col sm={{ size: 'auto', offset: 1 }}>
-            <Table>
-              <thead>
-                <tr>
-                  <th>CHIEF</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>{this.state.fireChief.first_name} {this.state.fireChief.last_name}</td>
-                </tr>
-              </tbody>
-           	</Table>
-          </Col>
+      <div>
+        <Header/>
+        <Nav/>
+        <Hero 
+          id  = {heroImages[5].id}
+          src  = {heroImages[5].image}
+          alt = {heroImages[5].name}
+          /> 
 
-          <Col sm={{ size: 'auto', offset: 1 }}>
-            <Table>
-              <thead>
-                <tr>
-                  <th>ASSISTANT CHIEF</th>
-                </tr>
-              </thead>
-         
-				      <tbody>
-                <tr>
-                  <td>{this.state.assistantChief.first_name} {this.state.assistantChief.last_name}</td>
-                </tr>
-              </tbody>
-            </Table>
-          </Col>
-        </Row>
+        <Wrapper>
+          <div className="pageTitle">
+            <h1>MEDICAL RESPONDER ROSTER</h1>  
+          </div>
+          <Container className="pageContent mb-5">
+            <p className="small mb-2 text-center">* 10:00 p.m. - 5 a.m | Sunday Evenings to Friday Mornings</p>
+            <p className="small mb-5 text-center">* If on vacation, it's the member's responsibility to find a replacement</p>
 
-				<Row>
-          <Col sm={{ size: 'auto', offset: 1 }}>
-              <Table>  
-                <thead>
-                <tr > 
-                    <td colSpan = "3" >STATION #1 </td>
-                   </tr>
-                    <tr>
-                      <th>COMPANY A
-                        <tr>January | April</tr>
-                        <tr>July | October</tr>
-                      </th>
-                      <th>COMPANY B
-                        <tr>February | May</tr>
-                        <tr>August | November</tr>
-                      </th>
-                      <th>COMPANY C
-                        <tr>March | June</tr>
-                        <tr>September | December</tr>
-                      </th>
-                    </tr>
-                  </thead>
+            <Col sm={{ size: 12 }}>
+              <Row className="justify-content-center">
+                <Col sm={{ size: 6 }} md={{ size: 4 }}>
+                  <Table className="officerTable border-0">
+                    <thead>
+                      <tr>
+                        <th className="text-center">CHIEF</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td className="text-center">{this.state.fireChief.first_name} {this.state.fireChief.last_name}</td>
+                      </tr>
+                    </tbody>
+                  </Table>
+                </Col>
+
+                <Col sm={{ size: 6 }} md={{ size: 4 }}>
+                  <Table className="officerTable">
+                    <thead>
+                      <tr>
+                        <th className="text-center">ASSISTANT CHIEF</th>
+                      </tr>
+                    </thead>
               
-                <tbody>
-               		 {this.state.companyA.map(fireFighter =>( 
-                    <tr key={fireFighter._id}>
-                       <td>{fireFighter.first_name} {fireFighter.last_name}   {fireFighter.title} </td>
-                    </tr>
-             		   ))} 
+                    <tbody>
+                      <tr>
+                        <td className="text-center">{this.state.assistantChief.first_name} {this.state.assistantChief.last_name}</td>
+                      </tr>
+                    </tbody>
+                  </Table>
+                </Col>
+              </Row>
+            </Col>
 
-										{this.state.companyB.map(fireFighter =>( 
-										<tr key={fireFighter._id}>
-												<td>{fireFighter.first_name} {fireFighter.last_name}   {fireFighter.title} </td>
-										</tr>
-           				 ))} 
+            <Col sm={{ size: 12 }}>
+              <Row className="justify-content-center mt-5">
+                <Col sm={{ size: 12 }}>
+                  <Table className="medRosterTable mb-0">  
+                    <thead>
+                      <tr className="station"> 
+                        <td colSpan="3">STATION #1 </td>
+                      </tr>
+                      <tr className="company">
+                        <th><strong>COMPANY A</strong><br />
+                          <span>January | April</span><br />
+                          <span>July | October</span>
+                        </th>
+                        <th><strong>COMPANY B</strong><br />
+                          <span>February | May</span><br />
+                          <span>August | November</span>
+                        </th>
+                        <th><strong>COMPANY C</strong><br />
+                          <span>March | June</span><br />
+                          <span>September | December</span>
+                        </th>
+                      </tr>
+                    </thead>
+                  </Table>
+                </Col>
+              </Row>
+              <Row className="pl-3 pr-3">
+                <Col sm={{ size: 12 }} md={{ size: 4 }} className="medRoster borderL">
+                    {this.state.companyA.map(fireFighter =>(
+                    <Row key={fireFighter._id}>
+                      {fireFighter.first_name} {fireFighter.last_name} <span className="text-muted small">{fireFighter.title}</span>
+                    </Row>
+                    ))}
+                </Col>
+                <Col sm={{ size: 12 }} md={{ size: 4 }} className="medRoster borderM">
+                  {this.state.companyB.map(fireFighter =>( 
+                  <Row key={fireFighter._id}>
+                    {fireFighter.first_name} {fireFighter.last_name} <span className="text-muted small">{fireFighter.title}</span>
+                  </Row>
+                  ))}
+                </Col>
+                <Col sm={{ size: 12 }} md={{ size: 4 }} className="medRoster borderR">
+                  {this.state.companyC.map(fireFighter =>( 
+                  <Row key={fireFighter._id}>
+                    {fireFighter.first_name} {fireFighter.last_name} <span className="text-muted small">{fireFighter.title}</span>
+                  </Row>
+                  ))}
+                </Col>
+              </Row>
+            </Col>
 
-									{this.state.companyC.map(fireFighter =>( 
-										<tr key={fireFighter._id}>
-												<td>{fireFighter.first_name} {fireFighter.last_name}   {fireFighter.title} </td>
-										</tr>
-									))} 
-                </tbody>
-            </Table>
-					</Col>
-				</Row> 	
-
-        <Row>
-          <Col sm={{ size: 'auto', offset: 1 }}>
-            <Table>  
-              <thead>
-                <tr>
-                  <th>Station #2 </th>
-                </tr>
-              </thead>
-             
-						  <tbody>
-								{this.state.station2.map(fireFighter =>( 
-									<tr key={fireFighter._id}>
-										<td>{fireFighter.first_name} {fireFighter.last_name}  {fireFighter.title} </td>
-                  </tr>
-                ))} 
-              </tbody>
-  	         </Table>
-          </Col>
-        </Row>
-    </Container>
+            <Col sm={{ size: 12 }}>
+              <Row className="justify-content-center mt-5">
+                <Col sm={{ size: 12 }} md={{ size: 4 }} className="p-0">
+                  <Table className="medRosterTable mb-0">  
+                    <thead>
+                      <tr className="station"> 
+                        <th>Station #2 </th>
+                      </tr>
+                    </thead>
+                  </Table>
+                </Col>
+              </Row>
+              <Row className="justify-content-center">
+                <Col sm={{ size: 12 }} md={{ size: 4 }} className="medRoster borderR borderL">
+                  {this.state.station2.map(fireFighter =>( 
+                    <Row key={fireFighter._id}>
+                      {fireFighter.first_name} {fireFighter.last_name} <span className="text-muted small">{fireFighter.title}</span>
+                    </Row>
+                  ))} 
+                </Col>
+              </Row>
+            </Col>
+          </Container>
+        </Wrapper>
+        <QuickLinks />
+				<Footer />
+      </div>
     )
   }
 }

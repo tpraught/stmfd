@@ -30,7 +30,7 @@ class CarSeat extends Component {
 
             <p>Check out the state’s  <a href="https://dps.mn.gov/divisions/ots/child-passenger-safety/Pages/default.aspx">Child Passenger Safety Page</a> for restraint steps, free car seat distribution centers, and frequently asked questions.</p>
           </div>
-          <span className="media-right pl-5">
+          <span className="float-right pl-5">
               <img src="../../../assets/images/01_CarSeat.jpg" alt="Car Seat" height="320"/>
           </span>
         </div>

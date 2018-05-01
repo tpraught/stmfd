@@ -29,6 +29,7 @@ body{
     font-style: normal;
     font-size: 60px;
     font-family: 'Playfair Display', serif !important;
+    transform: scaleY(0.8);
     -webkit-transform: scaleY(0.8);
     color: #ffffff;
 }
@@ -122,6 +123,8 @@ a:hover {
 }
 h3, h4 {
     font-family: 'Playfair Display', serif !important;
+    transform: scaleY(0.9);
+    -webkit-transform: scaleY(0.9);
     color: #0b1f3f !important;
     margin-bottom: 15px;
 }
@@ -138,7 +141,7 @@ p, ul, ol {
     font-family: 'Roboto', sans-serif !important;
     color:#2f2f2f;
 }
-p.small {
+p.small, span.small {
     font-size: 14px !important;
 }
 ul {
@@ -218,6 +221,8 @@ footer {
 }
 .pageTitle h1 {
     font-family: 'Playfair Display', serif !important;
+    transform: scaleY(0.9);
+    -webkit-transform: scaleY(0.9);
     font-size:42px;
     color: #0b1f3f !important;
     margin-bottom: 15px;
@@ -225,6 +230,8 @@ footer {
 }
 .pageTitle h2 {
     font-family: 'Playfair Display', serif !important;
+    transform: scaleY(0.9);
+    -webkit-transform: scaleY(0.9);
     font-size:30px;
     color: #0b1f3f !important;
     margin-bottom: 15px;
@@ -254,19 +261,66 @@ footer {
 }
 
 /* Fire Fighters Roster (also applies to admin table) */
-.adminTable {
+.adminTable, .rosterTable, .medRosterTable, .officerTable, .medRoster {
     font-size: 18px;
     font-family: 'Roboto', sans-serif;
 }
-.adminTable thead {
+.adminTable thead, .rosterTable thead, tr.station {
     background: #2f2f2f;
+    border: 1px solid #2f2f2f;
     color: #ffffff;
 }
-.adminTable > .table td {
-    border: none !important;
+.medRosterTable thead {
+    border-left: 1px solid #dde2e6;
+    border-right: 1px solid #dde2e6;
+}
+.medRosterTable thead th, .medRosterTable thead tr {
+    width: 33%;
+    text-align: center !important;
+}
+.medRosterTable thead tr.company {
+    color: #2f2f2f;
+    background: #ffffff;
+}
+.medRosterTable thead tr.company span {
+    font-size: 14px;
+}
+.officerTable thead {
+    background: #0b1f3f;
+    color: #ffffff;
+}
+.officerTable thead th, .officerTable td {
+    border: 1px solid #0b1f3f !important;
+}
+.medRoster {
+    background: #f1f1f1;
+    padding: 15px 0px !important;
+}
+.borderR {
+    border-right: 1px solid #dde2e6;
+    border-bottom: 1px solid #dde2e6;
+}
+.borderM {
+    border-bottom: 1px solid #dde2e6;
+}
+.borderL {
+    border-left: 1px solid #dde2e6;
+    border-bottom: 1px solid #dde2e6;
+}
+.medRoster .row {
+    margin: 5px 0px !important;
+    text-align: center;
+    display: block;
 }
 td[colspan="3"] {
     text-align: center;
+}
+td h4 {
+    font-style: normal;
+    font-weight: 400 !important;
+    font-size: 28px !important;
+    font-family: 'Roboto', sans-serif !important;
+    color: #2f2f2f !important;
 }
 
 /* Admin Fire Roster Page */
@@ -286,11 +340,11 @@ td.adminButtons {
     color: #ffffff;
     margin-right:10px;
 }
-.table thead th {
+/* .table thead th {
     vertical-align: bottom;
     border-bottom: 2px solid #dee2e6;
     text-align: left;
-}
+} */
 .adminForm .form-control, .adminForm Label {
     font-size: 20px !important;
 }
