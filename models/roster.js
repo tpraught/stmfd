@@ -34,7 +34,6 @@ const rosterSchema = new Schema({
    fire_number:{
 	  type: String,
 	  trim: true,
-	  required: "Fire Number is a required field",
 	  validate: [
       // Function takes in the new  value to be saved as an argument
       function(input) {
@@ -97,7 +96,6 @@ const rosterSchema = new Schema({
   station:{
 	  type: String,
 	  trim: true,
-	  required: "Station is a required field",
 	  validate: [
       // Function takes in the new  value to be saved as an argument
       function(input) {
@@ -111,7 +109,6 @@ const rosterSchema = new Schema({
   company:{
 	  type: String,
 	  trim: true,
-	  required: "Company is a required field",
 	  validate: [
       // Function takes in the new  value to be saved as an argument
       function(input) {
