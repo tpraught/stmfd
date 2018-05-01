@@ -105,7 +105,7 @@ class EditModal extends React.Component {
                           defaultValue ={this.props.title}
                           onChange={this.handleInputChange}>
                           <option></option>
-                          <option>Chief</option>
+                          <option>Fire Chief</option>
                           <option>Assistant Chief</option>
                           <option>District Chief</option>
                           <option>Captain</option>
