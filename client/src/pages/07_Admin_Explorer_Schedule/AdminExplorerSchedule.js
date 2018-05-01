@@ -11,14 +11,12 @@ import Footer from "../../components/Footer";
 class AdminExplorerSchedule extends Component {
 
   state = {
-    firstName: "",
-    lastName: "",
-    fireNumber: "",
-    memberSince: "",
-    title: "",
-    rank: "",
-    station: "",
-    company: "",
+    month: "",
+    date: "",
+    weekDay: "",
+    year: "",
+    description: "",
+    time: ""
   }
 
   handleInputChange = event => {
@@ -30,23 +28,19 @@ class AdminExplorerSchedule extends Component {
 
    //Method to submit a new record to the Database
   handleFormSubmit = event => {
-    console.log("Saving record is triggered");
+    console.log("Saving Explorer schedul");
     event.preventDefault();
 
-    let rankSort = this.determineTitleRank(this.state.title);
-
-    API.saveRecord({
-      first_name: this.state.firstName,
-      last_name: this.state.lastName,
-      fire_number: this.state.fireNumber,
-      year_started: this.state.memberSince,
-      title: this.state.title,
-      rank: this.state.rank,
-      station: this.state.station,
-      company: this.state.company,
-      rank_sort_number: rankSort
+   API.saveExplorerEvent({
+      month: this.state.month,
+      date: this.state.date,
+      day_of_week: this.state.weekDay,
+      year: this.state.year,
+      description: this.state.description,
+      time: this.state.time
+     
     })
-    this.props.history.push('/admin/roster');
+    // this.props.history.push('/admin/explorerschedule');
   };
 
   render() {
@@ -176,6 +170,7 @@ class AdminExplorerSchedule extends Component {
                             type="text" 
                             name="time"
                             id="time"
+                            placeholder = "e.g. 2:00 pm"
                             onChange={this.handleInputChange}
                             />
                       </Col>

@@ -25,6 +25,10 @@ export default {
   editRecord: function(recordData) {
     console.log("I'm editing this - ", recordData);
     return axios.put("/api/admin/roster", recordData);
+  },
+  saveExplorerEvent: function(eventData) {
+    console.log("I'm savings to Explorer Schedule - ", eventData);
+    return axios.post("/api/admin/explorerform", eventData);
   }
 
 };

@@ -10,6 +10,8 @@ router.route("/roster")
   .get(rosterController.findAll)
   .put(rosterController.update)
   
+ router.route("/explorerform")
+  .post(rosterController.createExplorer);
 
   router.route("/add")
   .post(rosterController.create);

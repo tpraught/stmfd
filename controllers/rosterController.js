@@ -36,8 +36,6 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   create: function(req, res) {
-
-
 	console.log(req.body);
     db.Roster
       .create(req.body)
@@ -74,5 +72,12 @@ module.exports = {
       .then(dbModel => dbModel.remove())
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
-  }
+  },
+  createExplorer: function(req, res) {
+    console.log(req.body);
+      db.explorerSchedule
+        .create(req.body)
+        .then(console.log("Explorer Event successfully created"))
+        .catch(err => res.status(422).json(err));
+    }
 };
