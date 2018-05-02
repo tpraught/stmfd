@@ -24,6 +24,7 @@ const Quick_Links = () => (
 							<h6><a className="quick-link" href="/Burning">Buring Permits & Restrictions</a></h6>
 							<h6><a className="quick-link" href="/CampfireSafety">Campfire Safety</a></h6>
 							<h6><a className="quick-link" href="/CoFAQs">Carbon Monoxide FAQs</a></h6>
+							<h6><a className="quick-link" href="/WinterSurvival">Winter Survival Kit</a></h6>
 							<h6><a className="quick-link" href="/LinksResources">Links & Resources</a></h6>
 						</div>
 						<div className="d-flex flex-column pr-4 pl-4">

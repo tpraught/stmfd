@@ -81,6 +81,9 @@ export default class Example extends React.Component {
                       <NavLink href="/CoFAQs">CARBON MONOXIDE FAQS</NavLink>
                     </DropdownItem>
                     <DropdownItem>
+                      <NavLink href="/WinterSurvival">WINTER SURVIVAL KIT</NavLink>
+                    </DropdownItem>
+                    <DropdownItem>
                       <NavLink href="/LinksResources">LINKS & RESOURCES</NavLink>
                     </DropdownItem>
                   </DropdownMenu>
