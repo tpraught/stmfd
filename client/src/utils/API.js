@@ -25,6 +25,16 @@ export default {
   editRecord: function(recordData) {
     console.log("I'm editing this - ", recordData);
     return axios.put("/api/admin/roster", recordData);
+  },
+  saveExplorerEvent: function(eventData) {
+    console.log("I'm savings to Explorer Schedule - ", eventData);
+    return axios.post("/api/admin/explorerform", eventData);
+  },
+  getExplorerEvents: function() {
+    return axios.get("/api/admin/explorerschedule");
+  },
+  deleteExplorerEvent: function(id) {
+    console.log("I'll delete an explorer event")
+    return axios.delete("/api/admin/explorerschedule/" + id);
   }
-
 };
