@@ -36,5 +36,8 @@ export default {
   deleteExplorerEvent: function(id) {
     console.log("I'll delete an explorer event")
     return axios.delete("/api/admin/explorerschedule/" + id);
+  },
+  getExplorerFrontEndSchedule: function() {
+    return axios.get("/api/ExplorerSchedule");
   }
 };
