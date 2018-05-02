@@ -10,6 +10,9 @@ router.route("/roster")
   router.route("/medicalroster")
   .get(rosterController.findAllforFrontEnd)
   
+  router.route("/ExplorerSchedule")
+  .get(rosterController.findAllExplorerEventsforFrontEnd)
+
 
 //   router.route("/add")
 //   .post(rosterController.create);
