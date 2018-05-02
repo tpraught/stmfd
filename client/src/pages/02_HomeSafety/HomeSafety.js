@@ -3,10 +3,10 @@ import { Button, Modal, ModalHeader, ModalBody } from 'reactstrap';
 import Header from "../../components/Header";
 import Nav from "../../components/Nav";
 import Hero from "../../components/Hero";
+import heroImages from "../../HeroImages.json";
 import Wrapper from "../../components/Wrapper";
 import QuickLinks from "../../components/Quick_Links";
 import Footer from "../../components/Footer";
-import heroImages from "../../HeroImages.json";
 
 
 class HomeSafety extends Component { 

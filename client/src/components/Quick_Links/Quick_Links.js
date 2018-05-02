@@ -24,6 +24,7 @@ const Quick_Links = () => (
 							<h6><a className="quick-link" href="/Burning">Buring Permits & Restrictions</a></h6>
 							<h6><a className="quick-link" href="/CampfireSafety">Campfire Safety</a></h6>
 							<h6><a className="quick-link" href="/CoFAQs">Carbon Monoxide FAQs</a></h6>
+							<h6><a className="quick-link" href="/WinterSurvival">Winter Survival Kit</a></h6>
 							<h6><a className="quick-link" href="/LinksResources">Links & Resources</a></h6>
 						</div>
 						<div className="d-flex flex-column pr-4 pl-4">
@@ -49,10 +50,10 @@ const Quick_Links = () => (
 						<div className="d-flex flex-column pr-4 pl-4">
 							<h5 className="text-white">EXPLORERS</h5>
 							<h6><a className="quick-link" href="/ExplorerAbout">About the Explorers</a></h6>
-							<h6><a className="quick-link" href="/ExplorerRoster">Explorer Roster</a></h6>
 							<h6><a className="quick-link" href="/ExplorerSchedule">Training Schedule</a></h6>
 							<h6><a className="quick-link" href="/ExplorerEvents">Events</a></h6>
 							<h6><a className="quick-link" href="/JoinExplorers">How to Join</a></h6>
+							<h6><a className="quick-link" href="https://www.facebook.com/StMichael-Fire-Explorers-495984477146310/" target="_blank" rel="noopener noreferrer">Explorer Facebook Page</a></h6>
 						</div>
 					</div>
 				</div>
