@@ -22,7 +22,7 @@ import LinksResources from "./pages/02_LinksResources";
 
 import Events from "./pages/03_Events";
 
-// import About from "./pages/04_About";
+import About from "./pages/04_About";
 import History from "./pages/04_History";
 import Apparatus from "./pages/04_Apparatus";
 
@@ -31,7 +31,6 @@ import MedicalRoster from "./pages/05_MDRoster";
 import Schedule from "./pages/05_Schedule";
 
 import ExplorerAbout from "./pages/06_AboutExplorers";
-import ExplorerRoster from "./pages/06_Roster";
 import ExplorerSchedule from "./pages/06_Schedule";
 import ExplorerEvents from "./pages/06_Events";
 import JoinExplorers from "./pages/06_JoinExplorers";
@@ -75,7 +74,7 @@ const App = () => (
         <Route exact path="/Events" component={Events} />
 
         {/* About Pages */}
-        {/* <Route exact path="/About" component={About} /> */}
+        <Route exact path="/About" component={About} />
         <Route exact path="/History" component={History} />
         <Route exact path="/Apparatus" component={Apparatus} />
 
@@ -86,7 +85,6 @@ const App = () => (
 
         {/* Explorers Pages */}
         <Route exact path="/ExplorerAbout" component={ExplorerAbout} />
-        <Route exact path="/ExplorerRoster" component={ExplorerRoster} />
         <Route exact path="/ExplorerSchedule" component={ExplorerSchedule} />
         <Route exact path="/ExplorerEvents" component={ExplorerEvents} />
         <Route exact path="/JoinExplorers" component={JoinExplorers} />

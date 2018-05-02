@@ -92,13 +92,13 @@ export default class Example extends React.Component {
                 </DropdownToggle>
                   <DropdownMenu>
                     <DropdownItem>
-                      <NavLink href="https://www.facebook.com/stmichaelfire/" target="_blank">SMFD ON FACEBOOK</NavLink>
+                      <NavLink href="https://www.facebook.com/stmichaelfire/" target="_blank" rel="noopener noreferrer">SMFD ON FACEBOOK</NavLink>
                     </DropdownItem>
                     <DropdownItem>
                       <NavLink href="/Events">EVENTS</NavLink>
                     </DropdownItem>
                     <DropdownItem>
-                      <NavLink href="http://www.stmdazeandknightsfestival.com/" target="_blank">ST. MICHAEL DAZE & KNIGHTS</NavLink>
+                      <NavLink href="http://www.stmdazeandknightsfestival.com/" target="_blank" rel="noopener noreferrer">ST. MICHAEL DAZE & KNIGHTS</NavLink>
                     </DropdownItem>
                   </DropdownMenu>
               </UncontrolledDropdown>
@@ -154,9 +154,6 @@ export default class Example extends React.Component {
                       <NavLink href="/ExplorerAbout">ABOUT THE EXPLORERS</NavLink>
                     </DropdownItem>
                     <DropdownItem>
-                      <NavLink href="/ExplorerRoster">EXPLORER ROSTER</NavLink>
-                    </DropdownItem>
-                    <DropdownItem>
                       <NavLink href="/ExplorerSchedule">TRAINING SCHEDULE</NavLink>
                     </DropdownItem>
                     <DropdownItem>
@@ -164,6 +161,9 @@ export default class Example extends React.Component {
                     </DropdownItem>
                     <DropdownItem>
                       <NavLink href="/JoinExplorers">HOW TO JOIN</NavLink>
+                    </DropdownItem>
+                    <DropdownItem>
+                      <NavLink href="https://www.facebook.com/StMichael-Fire-Explorers-495984477146310/" target="_blank" rel="noopener noreferrer">EXPLORER FACEBOOK PAGE</NavLink>
                     </DropdownItem>
                   </DropdownMenu>
               </UncontrolledDropdown>
