@@ -360,3 +360,16 @@ td.adminButtons {
 .modal-dialog {
     max-width: 750px !important;
 }
+/*Apparatus Carousel */
+.carousel-caption h3 {
+    font-size: 36px !important;
+    background-color: #0b1f3f;
+    color: #ffffff !important;
+    padding: 15px 0 !important;
+    width: 850px;
+
+}
+.carousel-item img {
+    padding-bottom: 25px;
+    margin-bottom: 0px;
+}
