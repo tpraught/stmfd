@@ -13,10 +13,14 @@ class AdminEventsForm extends Component {
   state = {
     month: "",
     date: "",
-    weekDay: "",
     year: "",
     description: "",
-    time: ""
+    time: "",
+    officerStartTime: "",
+    meetingStartTime: "",
+    trainingStartTime:"",
+    drillCode:"",
+    lunchCommittee:""
   }
 
   handleInputChange = event => {
@@ -28,19 +32,23 @@ class AdminEventsForm extends Component {
 
    //Method to submit a new record to the Database
   handleFormSubmit = event => {
-    console.log("Saving Explorer schedule");
+    console.log("Saving FD schedule");
     event.preventDefault();
 
-   API.saveExplorerEvent({
+   API.saveTrainingEvent({
       month: this.state.month,
       date: this.state.date,
-      day_of_week: this.state.weekDay,
       year: this.state.year,
       description: this.state.description,
-      time: this.state.time
+      time: this.state.time,
+      officer_start_time: this.state.officerStartTime,
+      meeting_start_time: this.state.meetingStartTime,
+      training_start_time:this.state.trainingStartTime,
+      drill_code:this.state.drillCode,
+      lunch_committee:this.state.lunchCommittee
      
     })
-    this.props.history.push('/admin/explorerschedule');
+    // this.props.history.push('/admin/explorerschedule');
   };
 
   render() {

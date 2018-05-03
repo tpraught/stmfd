@@ -110,5 +110,14 @@ module.exports = {
             .catch(err => res.status(422).json(err));
         //  console.log("res is ");
         //  console.log(res);
-        } 
+        },
+        createTrainingEvents: function(req, res) {
+          console.log("controller 115", req.body);
+            db.departmentSchedule
+              .create(req.body)
+              .then(console.log("Training Event successfully created"))
+              .catch(err => res.status(422).json(err));
+          }
+
+
 };

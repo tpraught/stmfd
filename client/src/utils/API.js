@@ -39,5 +39,10 @@ export default {
   },
   getExplorerFrontEndSchedule: function() {
     return axios.get("/api/ExplorerSchedule");
-  }
+  },
+  saveTrainingEvent: function(eventData) {
+    console.log("I'm saving a training event", eventData);
+    return axios.post("/api/admin/trainingform", eventData);
+  },
+
 };

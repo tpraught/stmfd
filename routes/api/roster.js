@@ -13,6 +13,9 @@ router.route("/roster")
  router.route("/explorerform")
   .post(rosterController.createExplorer);
 
+  router.route("/trainingform")
+  .post(rosterController.createTrainingEvents);
+
   router.route("/explorerschedule")
    .get(rosterController.findAllExplorerEvents)
   
