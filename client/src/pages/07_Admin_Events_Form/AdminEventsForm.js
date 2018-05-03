@@ -49,7 +49,7 @@ class AdminEventsForm extends Component {
         <AdminHeader/>
         <Wrapper>
           <div className="pageTitle">
-            <h1> Fire Department Meeting and Traininig Schedule </h1>  
+            <h1> Fire Department Meeting and Training Schedule </h1>  
           </div>
           <Col className="mt-5 mb-5">
             <Row className="justify-content-center">
@@ -57,7 +57,7 @@ class AdminEventsForm extends Component {
                 <FormGroup>
                   <Col sm="12">
                     <Row>
-                      <Col sm="12" md="6">
+                      <Col sm="12" md="4">
                         <Label for="month">MONTH*</Label>
                         <Input 
                          type="select" 
@@ -81,7 +81,7 @@ class AdminEventsForm extends Component {
                         </Input>
                       </Col>
                       
-                      <Col sm="12" md="6">
+                      <Col sm="12" md="4">
                       <Label for="date">DATE*</Label>
                         <Input 
                          type="select" 
@@ -123,8 +123,7 @@ class AdminEventsForm extends Component {
                           <option>31</option>
                         </Input>
                       </Col>
-                    </Row>
-                    <Row>
+                   
                       <Col sm="12" md="4">
                         <Label for="year">YEAR*</Label>
                         <Input 
@@ -146,7 +145,10 @@ class AdminEventsForm extends Component {
                           <option>2028</option>
                         </Input>
                       </Col>
-                      <Col sm="12" md="4">
+                      </Row>
+
+                        <Row>
+                      <Col sm="12" md="3">
                         <Label for="time">TIME</Label>
                           <Input 
                             type="text" 
@@ -156,9 +158,9 @@ class AdminEventsForm extends Component {
                             onChange={this.handleInputChange}
                             />
                       </Col>
-                    </Row>
-                    <Row>
-                        <Col sm="12" md="4">
+                  
+                  
+                        <Col sm="12" md="3">
                             <Label for="officerStartTime">OFFICER START TIME</Label>
                               <Input 
                                 type="text" 
@@ -168,7 +170,7 @@ class AdminEventsForm extends Component {
                                 onChange={this.handleInputChange}
                                 />
                           </Col>
-                          <Col sm="12" md="4">
+                          <Col sm="12" md="3">
                             <Label for="meetingStartTime">MEETING START TIME</Label>
                               <Input 
                                 type="text" 
@@ -178,7 +180,7 @@ class AdminEventsForm extends Component {
                                 onChange={this.handleInputChange}
                                 />
                       </Col>
-                      <Col sm="12" md="4">
+                      <Col sm="12" md="3">
                             <Label for="trainingStartTime">TRAINING START TIME</Label>
                               <Input 
                                 type="text" 
@@ -188,7 +190,7 @@ class AdminEventsForm extends Component {
                                 onChange={this.handleInputChange}
                                 />
                       </Col>
-                      <Col sm="12" md="4">
+                      <Col sm="12" md="6">
                       <Label for="drillCode">DRILL CODE*</Label>
                         <Input 
                           type="select"
@@ -204,7 +206,7 @@ class AdminEventsForm extends Component {
                           <option>O</option>
                         </Input>
                         </Col>
-                        <Col sm="12" md="4">
+                        <Col sm="12" md="6">
                             <Label for="lunchCommittee">LUNCH COMMITTEE</Label>
                               <Input 
                                 type="text" 
