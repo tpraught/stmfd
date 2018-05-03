@@ -55,7 +55,7 @@ class FrontEndRoster extends Component {
             <Row className="justify-content-center">
               <Col sm={{ size: 12 }} md={{ size: 8 }}>
                   <Table className="rosterTable border-0">  
-                    <thead >
+                    <thead>
                         <tr>
                           <th className="text-center">FIRE #</th>
                           <th>NAME</th>
@@ -64,7 +64,7 @@ class FrontEndRoster extends Component {
                     </thead>
                   
                     <tbody>
-                      <tr > 
+                      <tr> 
                         <td colSpan="3"><h4>OFFICERS</h4> </td>
                       </tr>
 
@@ -80,8 +80,8 @@ class FrontEndRoster extends Component {
                         ) :(null)
                       ))} 
 
-                    <tr > 
-                      <td colSpan = "3" ><h4>FIRE FIGHTERS</h4></td>
+                    <tr> 
+                      <td colSpan="3"><h4>FIRE FIGHTERS</h4></td>
                     </tr>
 
                     {this.state.fireFighters.map(fireFighter =>( 
