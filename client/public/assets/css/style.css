@@ -261,14 +261,15 @@ footer {
 }
 
 /* Fire Fighters Roster (also applies to admin table) */
-.adminTable, .rosterTable, .medRosterTable, .officerTable, .medRoster {
+.adminTable, .rosterTable, .medRosterTable, .officerTable, .medRoster, .eventSchedule {
     font-size: 18px;
     font-family: 'Roboto', sans-serif;
 }
-.adminTable thead, .rosterTable thead, tr.station {
+.adminTable thead, .rosterTable thead, .eventSchedule tr.month, tr.station {
     background: #2f2f2f;
     border: 1px solid #2f2f2f;
     color: #ffffff;
+    font-weight: 400;
 }
 .medRosterTable thead {
     border-left: 1px solid #dde2e6;
