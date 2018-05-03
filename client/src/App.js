@@ -39,6 +39,7 @@ import AdminForm from "./pages/07_Admin_Form";
 import AdminRoster from "./pages/07_Admin_Roster";
 import AdminExplorerForm from "./pages/07_Admin_Explorer_Form";
 import AdminExplorerSchedule from "./pages/07_Admin_Explorer_Schedule";
+import AdminEventsForm from "./pages/07_Admin_Events_Form";
 
 // import ContactUs from "./pages/08_ContactUs";
 
@@ -94,6 +95,7 @@ const App = () => (
         <Route exact path="/admin/roster" component={AdminRoster} />
         <Route exact path="/admin/explorerform" component={AdminExplorerForm} />
         <Route exact path="/admin/explorerschedule" component={AdminExplorerSchedule} />
+        <Route exact path="/admin/trainingform" component={AdminEventsForm} />
         {/* <Route exact path="/admin/login" component={AdminLogin} /> */}
 
         {/* Contact Us Page */}
