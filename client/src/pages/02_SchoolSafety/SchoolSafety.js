@@ -27,7 +27,7 @@ class SchoolSafety extends Component {
         <div className="pageContent media">
         	<div className="media-body">
 						<p>The St. Michael Fire Department visits the schools in the city of St. Michael the first Friday in October to kick off Fire Prevention Week. The firefighters will do a timed fire drill to ensure all staff and students know the “drill”&mdash;what to do and where to go if the situation arises that they need to exit the building.</p>
-						<p>The fire department also visits to daycares at times to show the kids one of the department’s trucks and what the fire gear looks like. The firefighter(s) also talk to the kids about fire safety and prevention, and answer any of their questions.</p>
+						<p>The fire department also makes visits to daycares at times to show the kids one of the department’s trucks and what the fire gear looks like. The firefighter(s) also talk to the kids about fire safety and prevention, and answer any of their questions.</p>
 					</div>
           <span className="media-right pl-5">
               <img src="../../../assets/images/02_SchoolSafety.jpg" alt="Classroom Group Photo" height="320"/>

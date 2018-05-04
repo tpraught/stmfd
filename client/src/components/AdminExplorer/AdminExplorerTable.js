@@ -11,7 +11,6 @@ import React from 'react';
         <td>{props.description}</td>
         <td>{props.time}</td>
        <td className="adminButtons">
-            <button  id={props.id} onClick = {props.onEdit}  type="button" className="greenButton btn">EDIT</button> 
             <button id={props.id} onClick = {props.onDelete} type="submit" className="btn redButton"><i className="far fa-trash-alt"></i></button></td>
         </tr>
     );

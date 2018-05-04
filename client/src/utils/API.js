@@ -39,5 +39,17 @@ export default {
   },
   getExplorerFrontEndSchedule: function() {
     return axios.get("/api/ExplorerSchedule");
-  }
+  },
+  saveTrainingEvent: function(eventData) {
+    console.log("I'm saving a training event", eventData);
+    return axios.post("/api/admin/trainingform", eventData);
+  },
+  getEventsSchedule: function() {
+    return axios.get("/api/admin/trainingschedule");
+  },
+  deleteTrainingEvent: function(id) {
+    console.log("I'll delete a training event", id)
+    return axios.delete("/api/admin/trainingschedule/" + id);
+  },
+
 };

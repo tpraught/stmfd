@@ -110,5 +110,34 @@ module.exports = {
             .catch(err => res.status(422).json(err));
         //  console.log("res is ");
         //  console.log(res);
-        } 
+        },
+        createTrainingEvents: function(req, res) {
+          console.log("controller 115", req.body);
+            db.departmentSchedule
+              .create(req.body)
+              .then(console.log("Training Event successfully created"))
+              .catch(err => res.status(422).json(err));
+          },
+          findAllScheduleEvents: function(req, res) {
+            console.log("Getting scheduled events");
+             db.departmentSchedule
+                .find(req.query)
+                .sort({ month: 1 })
+                .then(dbModel => res.json(dbModel))
+                .catch(err => res.status(422).json(err));
+            //  console.log("res is ");
+            //  console.log(res);
+            },
+
+            removeTrainingEvent: function(req, res) {
+              console.log(req.params.id);	  
+              console.log("About to remove explorer record");	  
+                db.departmentSchedule
+                  .findById({ _id: req.params.id })
+                  
+                  .then(dbModel => dbModel.remove())
+                  .then(dbModel => res.json(dbModel))
+                  .catch(err => res.status(422).json(err));
+              }
+      
 };

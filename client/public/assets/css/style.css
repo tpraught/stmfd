@@ -114,7 +114,7 @@ button.dropdown-item:hover {
 
 /* a and a:hover is also used in Quick Links */
 a {
-    color: #ffbe00 !important;
+    color: #b60c00 !important;
     font-weight: 400 !important;
     text-decoration: none;
 }
@@ -230,8 +230,8 @@ footer {
 }
 .pageTitle h2 {
     font-family: 'Playfair Display', serif !important;
-    transform: scaleY(0.9);
-    -webkit-transform: scaleY(0.9);
+    /* transform: scaleY(0.9);
+    -webkit-transform: scaleY(0.9); */
     font-size:30px;
     color: #0b1f3f !important;
     margin-bottom: 15px;
@@ -250,7 +250,7 @@ footer {
     font-weight: 400 !important;
     background: none !important;
     border: none !important;
-    color: #ffbe00 !important;
+    color: #b60c00 !important;
     text-decoration: none !important;
 }
 .btnLink:hover {
@@ -261,14 +261,15 @@ footer {
 }
 
 /* Fire Fighters Roster (also applies to admin table) */
-.adminTable, .rosterTable, .medRosterTable, .officerTable, .medRoster {
+.adminTable, .rosterTable, .medRosterTable, .officerTable, .medRoster, .eventSchedule {
     font-size: 18px;
     font-family: 'Roboto', sans-serif;
 }
-.adminTable thead, .rosterTable thead, tr.station {
+.adminTable thead, .rosterTable thead, .eventSchedule tr.month, tr.station {
     background: #2f2f2f;
     border: 1px solid #2f2f2f;
     color: #ffffff;
+    font-weight: 400;
 }
 .medRosterTable thead {
     border-left: 1px solid #dde2e6;

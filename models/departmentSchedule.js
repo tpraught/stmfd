@@ -135,7 +135,7 @@ const departmentScheduleSchema = new Schema({
 
 });
 
-const departmentschedule = mongoose.model("departmentSchedule", departmentScheduleSchema);
+const departmentSchedule = mongoose.model("departmentSchedule", departmentScheduleSchema);
 
-module.exports = departmentschedule;
+module.exports = departmentSchedule;
 

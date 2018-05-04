@@ -18,25 +18,15 @@ app.use(express.static("client/build"));
 // Add routes, both API and view
 app.use(routes);
 
-// Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/firedepartment");
-var db = mongoose.connection;
-
-// Handle mongo error
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function () {
-  // we're connected!
-});
-
-// Use sessions for tracking logins
-app.use(session({
-    secret: 'web rescue',
-    resave: true,
-    saveUninitialized: false,
-    store: new MongoStore({
-        mongooseConnection:db
-    })
-}));
+var MONGODB_URI =process.env.MONGODB_URI || "mongodb://localhost/firedepartment"
+  mongoose.Promise = global.Promise;
+  mongoose.connect(MONGODB_URI,function(error){
+     if(error){
+         console.log(error)
+     } else {
+         console.log("Successfully connected to DB");
+     }
+  });
 
 // Catch 404 and forward to error handler
 app.use(function (req, res, next) {

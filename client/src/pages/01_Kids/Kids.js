@@ -24,6 +24,7 @@ class Kids extends Component {
       <div className="pageTitle">
           <h1>FOR THE KIDS</h1>  
       </div>
+
         <div className="pageContent">
           <span className="float-right pl-5">
             <img src="../../../assets/images/01_Kids.jpg" alt="Talking with classroom" width="344" /></span>

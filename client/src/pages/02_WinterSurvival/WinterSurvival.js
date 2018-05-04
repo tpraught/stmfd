@@ -29,7 +29,7 @@ class CampfireSafety extends Component {
               <img src="../../../assets/images/02_WinterSurvival.jpg" alt="Checklist" width="344" />
           </span>
 					<p>Developed by the North Dakota State University Extension Service, the Winter Survival Kit app can be critical if you find yourself stuck or stranded in severe winter weather conditions. This free app will help you find your current location, call 9-1-1, notify your family and friends, and calculate how long you can run your engine to keep warm and safe from carbon monoxide poisoning.</p>
-          <p>The app <isindex/> available for free on <a href="http://market.android.com/details?id=md.apps.Blizzard" target="_blank" rel="noopener noreferrer">Google Play</a> and <a href="http://market.android.com/details?id=md.apps.Blizzard" target="_blank" rel="noopener noreferrer">iTunes App Store</a>. For more information, visit <a href="http://www.ag.ndsu.edu/extension/apps/winter-survival-kit" target="_blank" rel="noopener noreferrer">Winter Survival Kit</a>.</p>
+          <p>The app <isindex/> available for free on <a href="http://market.android.com/details?id=md.apps.Blizzard" target="_blank" rel="noopener noreferrer">Google Play</a> and <a href="http://itunes.apple.com/us/app/winter-survival-kit/id482127435" target="_blank" rel="noopener noreferrer">iTunes App Store</a>. For more information, visit <a href="http://www.ag.ndsu.edu/extension/apps/winter-survival-kit" target="_blank" rel="noopener noreferrer">Winter Survival Kit</a>.</p>
         </div>
       </Wrapper> 
       <QuickLinks />
