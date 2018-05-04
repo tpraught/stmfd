@@ -26,7 +26,7 @@ class ExplorerAbout extends Component {
         </div>
         <div className="pageContent">
           <span className="float-right pl-5">
-              <img src="../../../assets/images/01_CarSeat.jpg" alt="Car Seat" width="344" />
+              <img src="../../../assets/images/06_ExplorerAbout.jpg" alt="Explorer About" width="344" />
           </span>
 					<p>The Explorer Post 3172, organzied in 2002, is overseen and operated by the St. Michael Fire Department. The Explorer program is a job-shadowing program through the Boy Scouts of America and Learning for Life for youth ages 14 to 21 who wish to learn more about fire and medical services.</p>
           <p>The purpose of Fire Exploring is to provide experiences that help young people mature, and prepare them to become responsible and caring adults. The program helps develop, train, and prepare interested youths for a career in full-time, volunteer, or paid-on-call fire fighting and emergency medical services.</p>

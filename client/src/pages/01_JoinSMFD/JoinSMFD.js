@@ -26,7 +26,7 @@ class JoinSMFD extends Component {
         </div>
         <div className="pageContent">
           <span className="float-right pl-5">
-              <img src="../../../assets/images/01_CarSeat.jpg" alt="Car Seat" width="344" />
+              <img src="../../../assets/images/01_JoinSMFD.jpg" alt="Lockers" width="600" />
           </span>
 					<p>The St. Michael Fire Department is currently seeking applicants for our reserve firefighter division. Duties would include fire, hazmat, rescue, medical, and other emergencies. Daytime responders are highly desired, but all applications are welcome.</p>
           <p>Individuals interested in becoming a Reserve Firefighter, please complete the <a href="../../../assets/docs/04_FirefighterApplication.pdf" target="_blank" rel="noopener noreferrer">Reserve Firefighter Application</a> and submit it to:</p>

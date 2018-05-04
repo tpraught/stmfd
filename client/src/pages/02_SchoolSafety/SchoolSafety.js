@@ -30,7 +30,7 @@ class SchoolSafety extends Component {
 						<p>The fire department also makes visits to daycares at times to show the kids one of the department’s trucks and what the fire gear looks like. The firefighter(s) also talk to the kids about fire safety and prevention, and answer any of their questions.</p>
 					</div>
           <span className="media-right pl-5">
-              <img src="../../../assets/images/01_CarSeat.jpg" alt="Car Seat" height="320"/>
+              <img src="../../../assets/images/02_SchoolSafety.jpg" alt="Classroom Group Photo" height="320"/>
           </span>
 				</div>
 			</Wrapper> 

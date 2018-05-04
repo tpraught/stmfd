@@ -41,7 +41,7 @@ class HomeSafety extends Component {
         </div>
         <div className="pageContent">
           <span className="float-right pl-5">
-              <img src="../../../assets/images/01_CarSeat.jpg" alt="Car Seat" width="344" />
+              <img src="../../../assets/images/02_HomeSafety.jpg" alt="House on Fire" width="344" />
           </span>
 					<p>The St. Michael Fire Department wants to help you keep your home a safe and healthy haven. Below you will find tips and resources for you and your family. As a starting point, check out this <a href="https://www.usfa.fema.gov/downloads/pdf/home_safety_checklist.pdf" target="_blank" rel="noopener noreferrer">Home Safety Checklist</a> from the U.S. Fire Administration (FEMA).</p>
 					<p>Fire Safety Tips</p>
@@ -80,7 +80,7 @@ class HomeSafety extends Component {
 				</div>
 				<div className="pageContent media">
           <span className="media-left pr-5">
-              <img src="../../../assets/images/01_CarSeat.jpg" alt="Car Seat" width="344" />
+              <img src="../../../assets/images/02_HomeSafety2.jpg" alt="House Fire" width="344" />
 					</span>
 					<ul>
 						<li><a href="http://www.minneapolismn.gov/fire/education/fire_fire_safetybrochures" target="_blank" rel="noopener noreferrer">Minneapolis Fire Department's Fire Safety Brochures</a></li>

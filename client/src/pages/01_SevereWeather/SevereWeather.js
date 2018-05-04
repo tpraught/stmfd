@@ -28,12 +28,12 @@ class SevereWeather extends Component {
             <div className="media-body">
               <p>Severe weather can happen anytime and has the potential to cause significant damage. In Minnesota the most common types are tornadoes, high winds, hail, lightning and large amounts of precipitation.</p>
               <p>There are a three steps you can take to keep your family safe: </p>
-              <ol type="1">
+              <ol className="ml-0">
                 <li><a href="https://www.ready.gov/make-a-plan" target="_blank" rel="noopener noreferrer">Make a Plan</a></li>
                 <li><a href="http://www.youtube.com/watch?v=cLOTtopDl5w" target="_blank" rel="noopener noreferrer">Build an Emergency Kit</a></li>
                 <li><a href="http://www.nws.noaa.gov/nwr/" target="_blank" rel="noopener noreferrer">Stay Informed</a></li>
               </ol>  
-              <p>For additional information, visit <a href="https://dps.mn.gov/divisions/hsem/weather-awareness-preparedness/Pages/severe-weather.aspx" target="_blank" rel="noopener noreferrer">Minnesota Department of Safety's page</a> or <a href="https://www.ready.gov" target="_blank" rel="noopener noreferrer"> Ready.gov</a></p>         
+              <p>For additional information, visit <a href="https://dps.mn.gov/divisions/hsem/weather-awareness-preparedness/Pages/severe-weather.aspx" target="_blank" rel="noopener noreferrer">Minnesota Department of Safety's page</a> or <a href="https://www.ready.gov" target="_blank" rel="noopener noreferrer"> Ready.gov</a>.</p>         
             </div>
           <span className="media-right pl-5">
               <img src="../../../assets/images/01_SevereWeather.jpg" alt="Thunderstorm" height="300"/>
