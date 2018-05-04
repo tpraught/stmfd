@@ -60,12 +60,13 @@ class AdminEventsSchedule extends Component {
                         <th>DATE</th>
                         <th>MONTH</th>
                        <th>YEAR</th>
+                       <th>DESCRIPTION</th>
                        <th>MEETING START TIME</th>
                        <th>OFFICER START TIME</th>
                         <th>TRAINING START TIME</th>
                         <th>DRILL CODE</th>
                         <th>LUNCH COMMITTEE</th>
-                        <th>DESCRIPTION</th>
+                       
                        
                         <th></th>
                       </tr>
