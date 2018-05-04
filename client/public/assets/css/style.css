@@ -114,7 +114,7 @@ button.dropdown-item:hover {
 
 /* a and a:hover is also used in Quick Links */
 a {
-    color: #ffbe00 !important;
+    color: #b60c00 !important;
     font-weight: 400 !important;
     text-decoration: none;
 }
@@ -230,8 +230,8 @@ footer {
 }
 .pageTitle h2 {
     font-family: 'Playfair Display', serif !important;
-    transform: scaleY(0.9);
-    -webkit-transform: scaleY(0.9);
+    /* transform: scaleY(0.9);
+    -webkit-transform: scaleY(0.9); */
     font-size:30px;
     color: #0b1f3f !important;
     margin-bottom: 15px;
@@ -250,7 +250,7 @@ footer {
     font-weight: 400 !important;
     background: none !important;
     border: none !important;
-    color: #ffbe00 !important;
+    color: #b60c00 !important;
     text-decoration: none !important;
 }
 .btnLink:hover {
