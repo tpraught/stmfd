@@ -117,7 +117,17 @@ module.exports = {
               .create(req.body)
               .then(console.log("Training Event successfully created"))
               .catch(err => res.status(422).json(err));
-          }
+          },
+          findAllScheduleEvents: function(req, res) {
+            console.log("Getting scheduled events");
+             db.departmentSchedule
+                .find(req.query)
+                .sort({ month: 1 })
+                .then(dbModel => res.json(dbModel))
+                .catch(err => res.status(422).json(err));
+            //  console.log("res is ");
+            //  console.log(res);
+            },
 
 
 };

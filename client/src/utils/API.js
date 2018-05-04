@@ -44,5 +44,8 @@ export default {
     console.log("I'm saving a training event", eventData);
     return axios.post("/api/admin/trainingform", eventData);
   },
+  getEventsSchedule: function() {
+    return axios.get("/api/admin/schedule");
+  },
 
 };

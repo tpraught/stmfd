@@ -13,40 +13,13 @@ import API from "../../utils/API";
 class AdminExplorerSchedule extends Component { 
  
   state = {
-    events:[],
-    editing: false,
-    currenEvent: null, 
-    id: "",
-    date : "",
-    weekDay: "",
-    description:"",
-    time: "",
+    events:[]
   };
 
   componentDidMount() {
     this.loadEvents()
   }
 
-  saveRecord = (newFireFighter) => {
-  //  console.log("I'm a new firefighter - 38", newFireFighter);
-      this.setState({
-        editing: false,
-      })
-
-    API.editRecord({
-      id: newFireFighter.id,
-      first_name: newFireFighter.firstName,
-      last_name: newFireFighter.lastName,
-      fire_number: newFireFighter.fireNumber,
-      year_started: newFireFighter.memberSince,
-      title: newFireFighter.title,
-      rank: newFireFighter.rank,
-      station: newFireFighter.station,
-      company: newFireFighter.company
-    })
-   
-    this.loadEvents();
-  }
   
   loadEvents = () => {
     console.log("I'm triggered")
@@ -62,24 +35,7 @@ class AdminExplorerSchedule extends Component {
       .catch(err => console.log(err));
   };
 
-  editRecord = (fireFighter) => {
-    console.log(fireFighter);
-    
-    this.setState({
-      editing: true,
-      currentFireFighter: fireFighter,
-      id: fireFighter._id,
-      firstName:fireFighter.first_name,
-      lastName:fireFighter.last_name,
-      fireNumber:fireFighter.fire_number,
-      memberSince:fireFighter.year_started,
-      title:fireFighter.title,
-      rank:fireFighter.rank,
-      station:fireFighter.station,
-      company:fireFighter.company
-    })
-  }
-   
+ 
  
   render() {
 
@@ -136,7 +92,6 @@ class AdminExplorerSchedule extends Component {
                       weekDay = {events.day_of_week}  
                       description = {events.description}  
                       time={events.time}   
-                     onEdit={() => this.editRecord(events)}
                       onDelete={() => this.deleteRecord(events._id)}
                       >
                       </AdminExplorerTable>  

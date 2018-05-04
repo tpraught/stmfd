@@ -18,6 +18,10 @@ router.route("/roster")
 
   router.route("/explorerschedule")
    .get(rosterController.findAllExplorerEvents)
+ 
+   router.route("/schedule")
+   .get(rosterController.findAllScheduleEvents)
+
   
    router.route("/explorerschedule/:id")
   // .get(rosterController.findById)

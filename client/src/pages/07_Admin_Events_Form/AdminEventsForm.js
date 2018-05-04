@@ -15,8 +15,7 @@ class AdminEventsForm extends Component {
     date: "",
     year: "",
     description: "",
-    time: "",
-    officerStartTime: "",
+     officerStartTime: "",
     meetingStartTime: "",
     trainingStartTime:"",
     drillCode:"",
@@ -40,7 +39,6 @@ class AdminEventsForm extends Component {
       date: this.state.date,
       year: this.state.year,
       description: this.state.description,
-      time: this.state.time,
       officer_start_time: this.state.officerStartTime,
       meeting_start_time: this.state.meetingStartTime,
       training_start_time:this.state.trainingStartTime,
@@ -48,7 +46,7 @@ class AdminEventsForm extends Component {
       lunch_committee:this.state.lunchCommittee
      
     })
-    // this.props.history.push('/admin/explorerschedule');
+    this.props.history.push('/admin/trainingschedule');
   };
 
   render() {
@@ -156,19 +154,9 @@ class AdminEventsForm extends Component {
                       </Row>
 
                         <Row>
-                      <Col sm="12" md="3">
-                        <Label for="time">TIME</Label>
-                          <Input 
-                            type="text" 
-                            name="time"
-                            id="time"
-                            placeholder = "7 pm – 9 pm"
-                            onChange={this.handleInputChange}
-                            />
-                      </Col>
+                                    
                   
-                  
-                        <Col sm="12" md="3">
+                        <Col sm="12" md="">
                             <Label for="officerStartTime">OFFICER START TIME</Label>
                               <Input 
                                 type="text" 
@@ -178,7 +166,7 @@ class AdminEventsForm extends Component {
                                 onChange={this.handleInputChange}
                                 />
                           </Col>
-                          <Col sm="12" md="3">
+                          <Col sm="12" md="4">
                             <Label for="meetingStartTime">MEETING START TIME</Label>
                               <Input 
                                 type="text" 
@@ -188,7 +176,7 @@ class AdminEventsForm extends Component {
                                 onChange={this.handleInputChange}
                                 />
                       </Col>
-                      <Col sm="12" md="3">
+                      <Col sm="12" md="4">
                             <Label for="trainingStartTime">TRAINING START TIME</Label>
                               <Input 
                                 type="text" 
