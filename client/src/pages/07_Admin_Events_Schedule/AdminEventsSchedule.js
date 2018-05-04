@@ -34,7 +34,7 @@ class AdminEventsSchedule extends Component {
 
   deleteRecord = id => {
     console.log("I'm clicked to delete explorer event",id);
-    API.deleteExplorerEvent(id)
+    API.deleteTrainingEvent(id)
       .then(res => this.loadEvents())
       .catch(err => console.log(err));
   };

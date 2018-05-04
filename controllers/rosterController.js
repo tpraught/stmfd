@@ -129,5 +129,15 @@ module.exports = {
             //  console.log(res);
             },
 
-
+            removeTrainingEvent: function(req, res) {
+              console.log(req.params.id);	  
+              console.log("About to remove explorer record");	  
+                db.departmentSchedule
+                  .findById({ _id: req.params.id })
+                  
+                  .then(dbModel => dbModel.remove())
+                  .then(dbModel => res.json(dbModel))
+                  .catch(err => res.status(422).json(err));
+              }
+      
 };
