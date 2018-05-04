@@ -51,5 +51,7 @@ export default {
     console.log("I'll delete a training event", id)
     return axios.delete("/api/admin/trainingschedule/" + id);
   },
-
+  getFrontEndSchedule: function() {
+    return axios.get("/api/Schedule");
+  }
 };
