@@ -69,7 +69,7 @@ class Home extends Component {
 											<li>Fires must be constantly attended</li>
 											<li>Be no more than 3 feet in diameter and 3 feet high</li>
 										</ul>									
-										<p>For more information and helpful links, including the current fire danger rating and buring permit information, <a href="">click here &#187;</a></p>
+										<p>For more information and helpful links, including the current fire danger rating and buring permit information, <a href="/RecFires">click here &#187;</a></p>
 										<p className="small">*Open burning, not involving a recreational fire, is not allowed within the city limites without a permit.</p>
 									</div>
 								</div>
