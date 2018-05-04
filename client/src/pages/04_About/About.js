@@ -26,7 +26,7 @@ class About extends Component {
         </div>
         <div className="pageContent">
           <span className="float-right pl-5">
-              <img src="../../../assets/images/01_CarSeat.jpg" alt="Car Seat" width="344" />
+              <img src="../../../assets/images/04_About.jpg" alt="About" width="344" />
           </span>
 					<p>The St. Michael Fire Department is a paid-on-call fire department. They pledge to protect all people, homes, and businesses with in the city of St. Michael. The fire department responds quickly and with highly trained personnel to fire and medical emergencies. The city maintains two fire stations, and works cooperatively with adjacent communities, as needed, to provide the highest quality and most timely response possible.</p>
         </div>

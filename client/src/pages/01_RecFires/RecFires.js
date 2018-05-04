@@ -24,8 +24,10 @@ class RecFires extends Component {
         <div className="pageTitle">
           <h1>RECREATIONAL FIRES</h1>  
         </div>
-        <div className="pageContent media">
-            <div className="media-body">
+        <div className="pageContent">
+          <span className="float-right pl-5">
+              <img src="../../../assets/images/01_RecFires.jpg" alt="Recreational Fire" height="300"/>
+          </span>
               <ul>
                 <li>ONLY natural cut wood no longer than 24 inches in length may be burned.</li>
                 <li>The following shall NOT be burned: leaves, brush, pine needles, processed lumber, varnished or painted materials, pallets, sawdust, wiring, furniture, carpeting or grass.</li>
@@ -38,10 +40,6 @@ class RecFires extends Component {
                 <li>Be observant to wind direction and smoke travel into neighboring homes. Extinguish fire if smoke is traveling into a neighboring home.</li>                    
               </ul>     
             </div>
-          <span className="media-right pl-5">
-              <img src="../../../assets/images/01_RecFires.jpg" alt="Recreational Fire" height="300"/>
-          </span>
-        </div>
       </Wrapper>
       <QuickLinks />
       <Footer />

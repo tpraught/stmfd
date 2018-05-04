@@ -24,8 +24,10 @@ class CoFAQs extends Component {
         <div className="pageTitle">
           <h1>CARBON MONOXIDE FAQS</h1>  
         </div>
-        <div className="pageContent media">
-          <div className="media-body">
+        <div className="pageContent">
+          <span className="float-right pl-5">
+			    <img src="../../../assets/images/02_CoFAQs.jpg" alt="Carbon Monoxide Detector" height="300"/>
+			</span>
             <ol className="ml-0">
 							<li className="mb-3"><span className="listTitle">What is Carbon Monoxide?</span><br />
 							A colorless, odorless toxic gas that is flammable and can kill you</li>
@@ -69,7 +71,6 @@ class CoFAQs extends Component {
 							<p className="small font-italic">Source: Center for Disease Control and Prevention [<a href="https://www.cdc.gov/co/faqs.htm" target="_blank"  rel="noopener noreferrer">https://www.cdc.gov/co/faqs.htm</a>]</p>
 						</div>
           </div>
-        </div>
       </Wrapper>
 			<QuickLinks />
 			<Footer />

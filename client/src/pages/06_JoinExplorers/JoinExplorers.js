@@ -26,7 +26,7 @@ class JoinExplorers extends Component {
         </div>
         <div className="pageContent">
           <span className="float-right pl-5">
-              <img src="../../../assets/images/01_CarSeat.jpg" alt="Car Seat" width="344" />
+              <img src="../../../assets/images/06_JoinExplorers.jpg" alt="Join Explorers" width="344" />
           </span>
 					<p>If you are interested in becoming a member of the Explorer program at the St. Michael Fire Department, please fill out the <a href="../../../assets/docs/06_ExplorerApplication.pdf" target="_blank" rel="noopener noreferrer">Explorer Application</a> and submit it to:</p>
           <p>St. Michael Fire Department Explorer Post 3172<br />216 Main Street S, P.O. Box 85<br />St. Michael, MN 55376</p>

@@ -20,7 +20,18 @@ class Burning extends Component {
 			src  = {heroImages[2].image}
 			alt = {heroImages[2].name}
 			/>
-			<Wrapper /> 
+			<Wrapper>
+				<div className="pageTitle">
+		          	<h1>BURNING PERMITS & RESTRICTIONS</h1>  
+			    </div>
+			    <div className="pageContent">
+			        <span className="float-right pl-5">
+			            <img src="../../../assets/images/02_Burning.jpg" alt="Fire" height="400"/>
+			        </span>
+			        <p>There are strict guidelines for burning permits. Wright County requires a permit and has burning restrictions. To find out more information and how to obtain a permit, please visit the <a href="https://www.dnr.state.mn.us/forestry/fire/questions.html" target="_blank" rel="noopener noreferrer">Department of Natural Resources</a>.
+			        </p>  
+		        </div>
+	      	</Wrapper>
 			<QuickLinks />
 			<Footer />
 		</div>
