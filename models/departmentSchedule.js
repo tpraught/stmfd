@@ -64,7 +64,7 @@ const departmentScheduleSchema = new Schema({
     officer_start_time:{
 	  type: String,
 	  trim: true,
-	  required: true,
+	  required: false,
 	  validate: [
       // Function takes in the new  value to be saved as an argument
       function(input) {
