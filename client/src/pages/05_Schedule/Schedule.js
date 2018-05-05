@@ -121,6 +121,7 @@ class Schedule extends Component {
             />
       )
   }
+
   render() {
     return(
     <div>
@@ -132,6 +133,9 @@ class Schedule extends Component {
       alt = {heroImages[5].name}
       />
       <Container className="pageContent">
+      <div className="pageTitle">
+            <h1> {this.state.year} MEETING AND TRAINING SCHEDULE</h1>  
+          </div>
             <Row className="justify-content-center">
               <Col sm={{ size: 12 }}>
                 <Table className="eventSchedule border-0">  

@@ -7,7 +7,7 @@ const EventsTable = props => (
 		<td>{props.officerStartTime}</td>
 		<td>{props.meetingStartTime}</td>
 		<td>{props.trainingStartTime}</td>
-		<td>{props.drillCode}</td>
+		<td className="text-center">{props.drillCode}</td>
 		<td>{props.lunchCommittee}</td>
   </tr>
     );

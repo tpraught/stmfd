@@ -8,6 +8,7 @@ import heroImages from "../../HeroImages.json";
 import Wrapper from "../../components/Wrapper";
 import QuickLinks from "../../components/Quick_Links";
 import Footer from "../../components/Footer";
+import ExplorerEventsTable from "../../components/ExplorerEvents";
 import API from "../../utils/API";
 
 
@@ -98,8 +99,6 @@ class ExplorerSchedule extends Component {
       // console.log("Station #2 ", this.state.station2)
       // console.log("Fire Chief", this.state.fireChief)
       // console.log("Assistant Chief", this.state.assistantChief)
-
-
   }
 
   componentDidMount() {
@@ -117,6 +116,21 @@ class ExplorerSchedule extends Component {
    .catch(err => console.log(err));
   };
 
+  displayEvents = trainingEvent => {
+    return(
+       <ExplorerEventsTable
+          key={trainingEvent._id}
+          day_of_week = {trainingEvent.day_of_week}
+          month = {trainingEvent.month}
+          date = {trainingEvent.date}
+          description = {trainingEvent.description}
+          time = {trainingEvent.time}
+      />
+                      
+    )
+}
+
+
   render() {
     return (
       <div>
@@ -129,7 +143,7 @@ class ExplorerSchedule extends Component {
 					/> 
 
         <Wrapper>
-          <div className="pageTitle">
+        <div className="pageTitle">
             <h1>EXPLORER POST 3172 TRAINING SCHEDULE</h1>  
           </div>
           <Container className="pageContent">
@@ -137,9 +151,11 @@ class ExplorerSchedule extends Component {
               <Col sm={{ size: 12 }}>
                 <Table className="eventSchedule border-0">  
                   <thead>
+                    <tr>
                       <td className="text-center border-0">DATE</td>
                       <td className="text-center border-0">DESCRIPTION</td>
                       <td className="text-center border-0">TIME</td>
+                      </tr>
                   </thead>
                 
                   <tbody>
@@ -147,132 +163,98 @@ class ExplorerSchedule extends Component {
                       <td colSpan="3">JANUARY {this.state.year}</td>
                     </tr>
                     {this.state.January.map(event =>
-                      <tr key={event._id}>
-                        <td>{event.day_of_week} {event.month}, {event.date}</td>
-                        <td>{event.description} </td>
-                        <td>{event.time}</td>
-                      </tr>
+                      this.displayEvents(event)
+
+                      
+                    
                     )} 
 
                     <tr className="month"> 
                       <td colSpan="3">FEBRUARY {this.state.year}</td>
                     </tr>
                     {this.state.February.map(event =>
-                      <tr key={event._id}>
-                        <td className="text-center">{event.day_of_week} {event.month}, {event.date}</td>
-                        <td>{event.description} </td>
-                        <td className="text-center">{event.time}</td>
-                      </tr>
+                      this.displayEvents(event)
+
                     )}     
 
                     <tr className="month"> 
                       <td colSpan="3">MARCH {this.state.year}</td>
                     </tr>
                     {this.state.March.map(event =>
-                      <tr key={event._id}>
-                        <td className="text-center">{event.day_of_week} {event.month}, {event.date}</td>
-                        <td>{event.description} </td>
-                        <td className="text-center">{event.time}</td>
-                      </tr>
+                      this.displayEvents(event)
+
                     )} 
 
                     <tr className="month"> 
                       <td colSpan="3">APRIL {this.state.year}</td>
                     </tr>
                     {this.state.April.map(event =>
-                      <tr key={event._id}>
-                        <td className="text-center">{event.day_of_week} {event.month}, {event.date}</td>
-                        <td>{event.description} </td>
-                        <td className="text-center">{event.time}</td>
-                      </tr>
+                      this.displayEvents(event)
+
                     )} 
 
                     <tr className="month"> 
                       <td colSpan="3">MAY {this.state.year}</td>
                     </tr>
                     {this.state.May.map(event =>
-                      <tr key={event._id}>
-                        <td className="text-center">{event.day_of_week} {event.month}, {event.date}</td>
-                        <td>{event.description} </td>
-                        <td className="text-center">{event.time}</td>
-                      </tr>
+                      this.displayEvents(event)
+
                     )} 
 
                     <tr className="month"> 
                       <td colSpan="3">JUNE {this.state.year}</td>
                     </tr>
                     {this.state.June.map(event =>
-                      <tr key={event._id}>
-                        <td className="text-center">{event.day_of_week} {event.month}, {event.date}</td>
-                        <td>{event.description} </td>
-                        <td className="text-center">{event.time}</td>
-                      </tr>
+                      this.displayEvents(event)
+
                     )} 
 
                     <tr className="month"> 
                       <td colSpan="3">JULY {this.state.year}</td>
                     </tr>
                     {this.state.July.map(event =>
-                      <tr key={event._id}>
-                        <td className="text-center">{event.day_of_week} {event.month}, {event.date}</td>
-                        <td>{event.description} </td>
-                        <td className="text-center">{event.time}</td>
-                      </tr>
+                      this.displayEvents(event)
+
                     )} 
 
                     <tr className="month"> 
                       <td colSpan="3">AUGUST {this.state.year}</td>
                     </tr>
                     {this.state.August.map(event =>
-                      <tr key={event._id}>
-                        <td className="text-center">{event.day_of_week} {event.month}, {event.date}</td>
-                        <td>{event.description} </td>
-                        <td className="text-center">{event.time}</td>
-                      </tr>
+                      this.displayEvents(event)
+
                     )} 
 
                     <tr className="month"> 
                       <td colSpan="3">SEPTEMBER {this.state.year}</td>
                     </tr>
                     {this.state.September.map(event =>
-                      <tr key={event._id}>
-                        <td className="text-center">{event.day_of_week} {event.month}, {event.date}</td>
-                        <td>{event.description} </td>
-                        <td className="text-center">{event.time}</td>
-                      </tr>
+                      this.displayEvents(event)
+
                     )} 
 
                     <tr className="month"> 
                       <td colSpan="3">OCTOBER {this.state.year}</td>
                     </tr>
                     {this.state.October.map(event =>
-                      <tr key={event._id}>
-                        <td className="text-center">{event.day_of_week} {event.month}, {event.date}</td>
-                        <td>{event.description} </td>
-                        <td className="text-center">{event.time}</td>
-                      </tr>
+                      this.displayEvents(event)
+
                     )} 
 
                     <tr className="month"> 
                       <td colSpan="3">NOVEMBER {this.state.year}</td>
                     </tr>
                     {this.state.November.map(event =>
-                      <tr key={event._id}>
-                        <td className="text-center">{event.day_of_week} {event.month}, {event.date}</td>
-                        <td>{event.description} </td>
-                        <td className="text-center">{event.time}</td>
-                      </tr>
+                      this.displayEvents(event)
+
                     )} 
 
                     <tr className="month"> 
                       <td colSpan="3">DECEMBER {this.state.year}</td>
                     </tr>
                     {this.state.December.map(event =>
-                      <tr key={event._id}>
-                        <td className="text-center">{event.day_of_week} {event.month}, {event.date}</td>
-                        <td>{event.description} </td>
-                        <td className="text-center">{event.time}</td>
-                      </tr>
+                      this.displayEvents(event)
+
                     )} 
 
                   </tbody>
