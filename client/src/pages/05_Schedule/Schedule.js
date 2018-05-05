@@ -7,6 +7,7 @@ import Hero from "../../components/Hero";
 import heroImages from "../../HeroImages.json";
 import QuickLinks from "../../components/Quick_Links";
 import Footer from "../../components/Footer";
+import EventsTable from "../../components/Events";
 import API from "../../utils/API";
 
 
@@ -113,6 +114,9 @@ class Schedule extends Component {
    .catch(err => console.log(err));
   };
    
+  displayEvents = trainingEvent => {
+
+  }
   render() {
     return(
     <div>
@@ -145,15 +149,16 @@ class Schedule extends Component {
                         </td>
                     </tr>
                     {this.state.January.map(event =>
-                      <tr key={event._id}>
-                        <td>{event.date}</td>
-                        <td>{event.description} </td>
-                        <td>{event.officer_start_time}</td>
-                        <td>{event.meeting_start_time}</td>
-                        <td>{event.training_start_time}</td>
-                        <td>{event.drill_code}</td>
-                        <td>{event.lunch_committee}</td>
-                      </tr>
+                        <EventsTable
+                          key={event._id}
+                          date = {event.date}
+                          description = {event.description}
+                          officerStartTime = {event.officer_start_time}
+                          meetingStartTime = {event.meeting_start_time}
+                          trainingStartTime = {event.training_start_time}
+                          drillCode = {event.drill_code}
+                          lunchCommittee = {event.lunch_committee}
+                        />
                     )} 
 
                     <tr className="month"> 
@@ -161,15 +166,16 @@ class Schedule extends Component {
                         </td>
                     </tr>
                     {this.state.February.map(event =>
-                      <tr key={event._id}>
-                        <td>{event.date}</td>
-                        <td>{event.description} </td>
-                        <td>{event.officer_start_time}</td>
-                        <td>{event.meeting_start_time}</td>
-                        <td>{event.training_start_time}</td>
-                        <td>{event.drill_code}</td>
-                        <td>{event.lunch_committee}</td>
-                      </tr>
+                        <EventsTable
+                          key={event._id}
+                          date = {event.date}
+                          description = {event.description}
+                          officerStartTime = {event.officer_start_time}
+                          meetingStartTime = {event.meeting_start_time}
+                          trainingStartTime = {event.training_start_time}
+                          drillCode = {event.drill_code}
+                          lunchCommittee = {event.lunch_committee}
+                        />
                     )} 
 
                     <tr className="month"> 
@@ -177,30 +183,32 @@ class Schedule extends Component {
                         </td>
                     </tr>
                     {this.state.March.map(event =>
-                      <tr key={event._id}>
-                        <td>{event.date}</td>
-                        <td>{event.description} </td>
-                        <td>{event.officer_start_time}</td>
-                        <td>{event.meeting_start_time}</td>
-                        <td>{event.training_start_time}</td>
-                        <td>{event.drill_code}</td>
-                        <td>{event.lunch_committee}</td>
-                      </tr>
+                      <EventsTable
+                          key={event._id}
+                          date = {event.date}
+                          description = {event.description}
+                          officerStartTime = {event.officer_start_time}
+                          meetingStartTime = {event.meeting_start_time}
+                          trainingStartTime = {event.training_start_time}
+                          drillCode = {event.drill_code}
+                          lunchCommittee = {event.lunch_committee}
+                        />
                     )} 
                     <tr className="month"> 
                       <td colSpan="12" className="text-center">APRIL {this.state.year}
                         </td>
                     </tr>
                     {this.state.April.map(event =>
-                      <tr key={event._id}>
-                        <td>{event.date}</td>
-                        <td>{event.description} </td>
-                        <td>{event.officer_start_time}</td>
-                        <td>{event.meeting_start_time}</td>
-                        <td>{event.training_start_time}</td>
-                        <td>{event.drill_code}</td>
-                        <td>{event.lunch_committee}</td>
-                      </tr>
+                      <EventsTable
+                          key={event._id}
+                          date = {event.date}
+                          description = {event.description}
+                          officerStartTime = {event.officer_start_time}
+                          meetingStartTime = {event.meeting_start_time}
+                          trainingStartTime = {event.training_start_time}
+                          drillCode = {event.drill_code}
+                          lunchCommittee = {event.lunch_committee}
+                        />
                     )} 
 
                     <tr className="month"> 
@@ -208,15 +216,16 @@ class Schedule extends Component {
                         </td>
                     </tr>
                     {this.state.May.map(event =>
-                      <tr key={event._id}>
-                        <td>{event.date}</td>
-                        <td>{event.description} </td>
-                        <td>{event.officer_start_time}</td>
-                        <td>{event.meeting_start_time}</td>
-                        <td>{event.training_start_time}</td>
-                        <td>{event.drill_code}</td>
-                        <td>{event.lunch_committee}</td>
-                      </tr>
+                      <EventsTable
+                          key={event._id}
+                          date = {event.date}
+                          description = {event.description}
+                          officerStartTime = {event.officer_start_time}
+                          meetingStartTime = {event.meeting_start_time}
+                          trainingStartTime = {event.training_start_time}
+                          drillCode = {event.drill_code}
+                          lunchCommittee = {event.lunch_committee}
+                        />
                     )} 
 
                     <tr className="month"> 
@@ -224,15 +233,16 @@ class Schedule extends Component {
                         </td>
                     </tr>
                     {this.state.June.map(event =>
-                      <tr key={event._id}>
-                        <td>{event.date}</td>
-                        <td>{event.description} </td>
-                        <td>{event.officer_start_time}</td>
-                        <td>{event.meeting_start_time}</td>
-                        <td>{event.training_start_time}</td>
-                        <td>{event.drill_code}</td>
-                        <td>{event.lunch_committee}</td>
-                      </tr>
+                      <EventsTable
+                          key={event._id}
+                          date = {event.date}
+                          description = {event.description}
+                          officerStartTime = {event.officer_start_time}
+                          meetingStartTime = {event.meeting_start_time}
+                          trainingStartTime = {event.training_start_time}
+                          drillCode = {event.drill_code}
+                          lunchCommittee = {event.lunch_committee}
+                        />
                     )} 
 
                     <tr className="month"> 
@@ -240,15 +250,16 @@ class Schedule extends Component {
                         </td>
                     </tr>
                     {this.state.July.map(event =>
-                      <tr key={event._id}>
-                        <td>{event.date}</td>
-                        <td>{event.description} </td>
-                        <td>{event.officer_start_time}</td>
-                        <td>{event.meeting_start_time}</td>
-                        <td>{event.training_start_time}</td>
-                        <td>{event.drill_code}</td>
-                        <td>{event.lunch_committee}</td>
-                      </tr>
+                      <EventsTable
+                          key={event._id}
+                          date = {event.date}
+                          description = {event.description}
+                          officerStartTime = {event.officer_start_time}
+                          meetingStartTime = {event.meeting_start_time}
+                          trainingStartTime = {event.training_start_time}
+                          drillCode = {event.drill_code}
+                          lunchCommittee = {event.lunch_committee}
+                        />
                     )} 
 
                     <tr className="month"> 
@@ -256,15 +267,16 @@ class Schedule extends Component {
                         </td>
                     </tr>
                     {this.state.August.map(event =>
-                      <tr key={event._id}>
-                        <td>{event.date}</td>
-                        <td>{event.description} </td>
-                        <td>{event.officer_start_time}</td>
-                        <td>{event.meeting_start_time}</td>
-                        <td>{event.training_start_time}</td>
-                        <td>{event.drill_code}</td>
-                        <td>{event.lunch_committee}</td>
-                      </tr>
+                      <EventsTable
+                          key={event._id}
+                          date = {event.date}
+                          description = {event.description}
+                          officerStartTime = {event.officer_start_time}
+                          meetingStartTime = {event.meeting_start_time}
+                          trainingStartTime = {event.training_start_time}
+                          drillCode = {event.drill_code}
+                          lunchCommittee = {event.lunch_committee}
+                        />
                     )} 
 
                     <tr className="month"> 
@@ -272,15 +284,16 @@ class Schedule extends Component {
                         </td>
                     </tr>
                     {this.state.September.map(event =>
-                      <tr key={event._id}>
-                        <td>{event.date}</td>
-                        <td>{event.description} </td>
-                        <td>{event.officer_start_time}</td>
-                        <td>{event.meeting_start_time}</td>
-                        <td>{event.training_start_time}</td>
-                        <td>{event.drill_code}</td>
-                        <td>{event.lunch_committee}</td>
-                      </tr>
+                      <EventsTable
+                          key={event._id}
+                          date = {event.date}
+                          description = {event.description}
+                          officerStartTime = {event.officer_start_time}
+                          meetingStartTime = {event.meeting_start_time}
+                          trainingStartTime = {event.training_start_time}
+                          drillCode = {event.drill_code}
+                          lunchCommittee = {event.lunch_committee}
+                        />
                     )} 
 
                     <tr className="month"> 
@@ -288,15 +301,16 @@ class Schedule extends Component {
                         </td>
                     </tr>
                     {this.state.October.map(event =>
-                      <tr key={event._id}>
-                        <td>{event.date}</td>
-                        <td>{event.description} </td>
-                        <td>{event.officer_start_time}</td>
-                        <td>{event.meeting_start_time}</td>
-                        <td>{event.training_start_time}</td>
-                        <td>{event.drill_code}</td>
-                        <td>{event.lunch_committee}</td>
-                      </tr>
+                      <EventsTable
+                          key={event._id}
+                          date = {event.date}
+                          description = {event.description}
+                          officerStartTime = {event.officer_start_time}
+                          meetingStartTime = {event.meeting_start_time}
+                          trainingStartTime = {event.training_start_time}
+                          drillCode = {event.drill_code}
+                          lunchCommittee = {event.lunch_committee}
+                        />
                     )} 
 
                     <tr className="month"> 
@@ -304,15 +318,16 @@ class Schedule extends Component {
                         </td>
                     </tr>
                     {this.state.November.map(event =>
-                      <tr key={event._id}>
-                        <td>{event.date}</td>
-                        <td>{event.description} </td>
-                        <td>{event.officer_start_time}</td>
-                        <td>{event.meeting_start_time}</td>
-                        <td>{event.training_start_time}</td>
-                        <td>{event.drill_code}</td>
-                        <td>{event.lunch_committee}</td>
-                      </tr>
+                      <EventsTable
+                          key={event._id}
+                          date = {event.date}
+                          description = {event.description}
+                          officerStartTime = {event.officer_start_time}
+                          meetingStartTime = {event.meeting_start_time}
+                          trainingStartTime = {event.training_start_time}
+                          drillCode = {event.drill_code}
+                          lunchCommittee = {event.lunch_committee}
+                        />
                     )} 
 
                     <tr className="month"> 
@@ -320,15 +335,16 @@ class Schedule extends Component {
                         </td>
                     </tr>
                     {this.state.December.map(event =>
-                      <tr key={event._id}>
-                        <td>{event.date}</td>
-                        <td>{event.description} </td>
-                        <td>{event.officer_start_time}</td>
-                        <td>{event.meeting_start_time}</td>
-                        <td>{event.training_start_time}</td>
-                        <td>{event.drill_code}</td>
-                        <td>{event.lunch_committee}</td>
-                      </tr>
+                      <EventsTable
+                          key={event._id}
+                          date = {event.date}
+                          description = {event.description}
+                          officerStartTime = {event.officer_start_time}
+                          meetingStartTime = {event.meeting_start_time}
+                          trainingStartTime = {event.training_start_time}
+                          drillCode = {event.drill_code}
+                          lunchCommittee = {event.lunch_committee}
+                        />
                     )} 
 
                   </tbody>
