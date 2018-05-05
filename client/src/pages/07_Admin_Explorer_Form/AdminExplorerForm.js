@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
-
+import FormErrors from "../../components/Errors";
 import { Row, Col } from 'reactstrap';
-
 import { Button, Form, FormGroup, Label, Input} from 'reactstrap';
 import AdminHeader from "../../components/AdminHeader";
 import Wrapper from "../../components/Wrapper";
@@ -16,15 +15,70 @@ class AdminExplorerForm extends Component {
     weekDay: "",
     year: "",
     description: "",
-    time: ""
+    time: "",
+    formErrors:{month:"", weekDay:"", date:"", year:"", description:""},
+    monthValid:false,
+    dateValid:false,
+    weekDayValid:false,
+    yearValid:false,
+    descriptionValid:false,
+    formValid:false
   }
 
+  validateField (fieldName, value) {
+    console.log(fieldName,value);
+    let fieldValidationErrors = this.state.formErrors;
+    let monthValid = this.state.monthValid;
+    let weekDayValid = this.state.weekDayValid;
+    let dateValid = this.state.dateValid;
+    let yearValid = this.state.yearValid;
+    let descriptionValid = this.state.descriptionValid;
+
+      switch (fieldName) {
+        case "month":
+          monthValid = value.length >= 2;
+          fieldValidationErrors.month = monthValid ? '': ' Please select a month';
+          break;
+          case "weekDay":
+          weekDayValid = value.length >= 1;
+          fieldValidationErrors.date= weekDayValid ? '': ' Please select a week day';
+          break;
+          case "date":
+          dateValid = value.length >= 1;
+          fieldValidationErrors.date= dateValid ? '': ' Please select a date';
+          break;
+          case "year":
+          yearValid = value.length === 4;
+          fieldValidationErrors.year = yearValid ? '': ' Please select a year';
+          break;
+          case "description":
+          descriptionValid = value.length >= 5;
+          fieldValidationErrors.description = descriptionValid ? '': ' Please enter a description';
+          break;
+          default:
+          break;
+      }
+
+      this.setState(
+        { formErrors:fieldValidationErrors,
+          monthValid:monthValid,
+          dateValid:dateValid,
+          weekDayValid:weekDayValid,
+          yearValid:yearValid,
+          descriptionValid:descriptionValid,
+        }, this.validateForm);
+  }
+
+  validateForm = () => {
+    this.setState({
+      formValid:this.state.monthValid && this.state.dateValid && this.state.yearValid && this.state.descriptionValid && this.state.weekDayValid
+    })
+  }
   handleInputChange = event => {
     const { name, value } = event.target;
-    this.setState({
-      [name]: value
-    });
+    this.setState({ [name]: value}, () => {this.validateField(name,value)});
   };
+
 
    //Method to submit a new record to the Database
   handleFormSubmit = event => {
@@ -191,7 +245,7 @@ class AdminExplorerForm extends Component {
                 </FormGroup>
                 <Row>
                   <Col sm="12">
-                    <Button className="float-right redButton addButton mr-3" type="submit" onClick={this.handleFormSubmit}>ADD</Button>
+                    <Button className="float-right redButton addButton mr-3" type="submit" disabled = {!this.state.formValid} onClick={this.handleFormSubmit}>ADD</Button>
                   </Col>
                 </Row>
                 <Row>
@@ -202,6 +256,9 @@ class AdminExplorerForm extends Component {
               </Form>
             </Row>
           </Col>
+             <Row>
+                   <FormErrors formErrors={this.state.formErrors} />
+                </Row>
         </Wrapper>
         <Footer/>
       </div>
