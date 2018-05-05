@@ -1,9 +1,8 @@
 import React, { Component } from "react";
-import { Row, Col, Card, CardBody } from 'reactstrap';
+import { Row, Col, Card } from 'reactstrap';
 import { Form, FormGroup, Label, Input, Button } from 'reactstrap';
 import AdminHeader from "../../components/AdminHeader";
 import Wrapper from "../../components/Wrapper";
-import Footer from "../../components/Footer";
 
 
 class AdminLogin extends Component {

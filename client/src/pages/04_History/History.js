@@ -6,7 +6,6 @@ import {
   CardImg, 
   CardText, 
   CardBody, 
-  Button 
 } from 'reactstrap';
 import Header from "../../components/Header";
 import Nav from "../../components/Nav";
