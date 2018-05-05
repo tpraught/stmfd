@@ -89,6 +89,20 @@ const explorerScheduleSchema = new Schema({
       ]  
 	  
   },
+     sort_date_time:{
+	  type: String,
+	  trim: true,
+	  required: false,
+	  validate: [
+      // Function takes in the new  value to be saved as an argument
+      function(input) {
+        // If this returns true, proceed. If not, return the error message below
+        return input.length >= 0;
+      },
+      //Error Message
+      "sort_date_time field can not be empty."
+      ]   
+  },
 
 });
 
