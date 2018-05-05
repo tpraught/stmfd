@@ -237,12 +237,12 @@ class AdminTable extends Component {
                   <p>* designates required fields</p>
                 </Col>
                 </Row>
-                <Row>
-                   <FormErrors formErrors={this.state.formErrors} />
-                </Row>
               </Form>
             </Row>
           </Col>
+          <Row>
+                   <FormErrors formErrors={this.state.formErrors} />
+           </Row>
         </Wrapper>
         <Footer/>
       </div>
