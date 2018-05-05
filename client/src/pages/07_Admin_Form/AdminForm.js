@@ -27,7 +27,6 @@ class AdminTable extends Component {
    
   }
   validateField (fieldName, value) {
-    // console.log("I'm triggered");
     let fieldValidationErrors = this.state.formErrors;
     let firstNameValid = this.state.firstNameValid;
     let lastNameValid = this.state.lastNameValid;
@@ -44,15 +43,15 @@ class AdminTable extends Component {
           fieldValidationErrors.lastName = lastNameValid ? '': ' Please enter a last name';
           break;
           case "memberSince":
-          memberSinceValid = value.length == 4;
+          memberSinceValid = value.length === 4;
           fieldValidationErrors.memberSince = memberSinceValid ? '': ' Please enter the membership year';
           break;
-          // case "rankValid":
-          // rankValid = value.length >= 2;
-          // fieldValidationErrors.rankValid = rankValid ? '': ' Please select a rank';
-          // break;
+          case "rank":
+          rankValid = value.length >= 7;
+          fieldValidationErrors.rank = rankValid ? '': ' Please select a rank';
+          break;
           default:
-           break;
+          break;
       }
 
       this.setState(
@@ -60,16 +59,14 @@ class AdminTable extends Component {
           firstNameValid:firstNameValid,
           lastNameValid:lastNameValid,
           memberSinceValid:memberSinceValid,
-          // rankValid:rankValid
+          rankValid:rankValid
         }, this.validateForm);
-
-        console.log(this.state.firstNameValid, this.state.lastNameValid, this.state.memberSinceValid, this.state.rankValid)
   }
 
   validateForm = () => {
     this.setState({
       formValid:this.state.firstNameValid && this.state.lastNameValid && this.state.memberSinceValid
-      //  && this.state.rankValid
+       && this.state.rankValid
     })
   }
 
