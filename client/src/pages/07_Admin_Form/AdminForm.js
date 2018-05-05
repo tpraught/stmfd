@@ -4,6 +4,7 @@ import { Row, Col } from 'reactstrap';
 import { Button, Form, FormGroup, Label, Input} from 'reactstrap';
 import AdminHeader from "../../components/AdminHeader";
 import Wrapper from "../../components/Wrapper";
+import FormErrors from "../../components/Errors";
 import Footer from "../../components/Footer";
 
 class AdminTable extends Component {
@@ -17,14 +18,61 @@ class AdminTable extends Component {
     rank: "",
     station: "",
     company: "",
+    formErrors:{firstName:"", lastName:"", memberSince:"", rank:""},
+    firstNameValid:false,
+    lastNameValid:false,
+    memberSinceValid:false,
+    rankValid:false,
+    formValid:false
    
+  }
+  validateField (fieldName, value) {
+    let fieldValidationErrors = this.state.formErrors;
+    let firstNameValid = this.state.firstNameValid;
+    let lastNameValid = this.state.lastNameValid;
+    let memberSinceValid = this.state.memberSinceValid;
+    let rankValid = this.state.rankValid;
+
+      switch (fieldName) {
+        case "firstName":
+          firstNameValid = value.length >= 2;
+          fieldValidationErrors.firstName = firstNameValid ? '': ' Please enter a first name';
+          break;
+          case "lastName":
+          lastNameValid = value.length >= 2;
+          fieldValidationErrors.lastName = lastNameValid ? '': ' Please enter a last name';
+          break;
+          case "memberSince":
+          memberSinceValid = value.length === 4;
+          fieldValidationErrors.memberSince = memberSinceValid ? '': ' Please enter the membership year';
+          break;
+          case "rank":
+          rankValid = value.length >= 7;
+          fieldValidationErrors.rank = rankValid ? '': ' Please select a rank';
+          break;
+          default:
+          break;
+      }
+
+      this.setState(
+        { formErrors:fieldValidationErrors,
+          firstNameValid:firstNameValid,
+          lastNameValid:lastNameValid,
+          memberSinceValid:memberSinceValid,
+          rankValid:rankValid
+        }, this.validateForm);
+  }
+
+  validateForm = () => {
+    this.setState({
+      formValid:this.state.firstNameValid && this.state.lastNameValid && this.state.memberSinceValid
+       && this.state.rankValid
+    })
   }
 
   handleInputChange = event => {
     const { name, value } = event.target;
-    this.setState({
-      [name]: value
-    });
+    this.setState({ [name]: value}, () => {this.validateField(name,value)});
   };
 
   determineTitleRank = (title) => {
@@ -72,10 +120,13 @@ class AdminTable extends Component {
       <div>
         <AdminHeader/>
         <Wrapper>
+      
           <div className="pageTitle">
             <h1>ADD FIREFIGHTER</h1>  
           </div>
-          <Col className="mt-5 mb-5">
+          
+         
+                   <Col className="mt-5 mb-5">
             <Row className="justify-content-center">
               <Form className="adminForm">
                 <FormGroup>
@@ -178,13 +229,16 @@ class AdminTable extends Component {
                 </FormGroup>
                 <Row>
                   <Col sm="12">
-                    <Button className="float-right redButton addButton mr-3" type="submit" onClick={this.handleFormSubmit}>ADD</Button>
+                    <Button className="float-right redButton addButton mr-3" type="submit" disabled = {!this.state.formValid} onClick={this.handleFormSubmit}>ADD</Button>
                   </Col>
                 </Row>
                 <Row>
                 <Col sm="12">
                   <p>* designates required fields</p>
                 </Col>
+                </Row>
+                <Row>
+                   <FormErrors formErrors={this.state.formErrors} />
                 </Row>
               </Form>
             </Row>
