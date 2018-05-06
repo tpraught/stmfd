@@ -32,7 +32,6 @@ class ExplorerSchedule extends Component {
   };
 
   sortExplorerEventsbyMonth = (events) => {
-    console.log("Let's sort some events ", events);
     let January = [];
     let February = [];
     let March = [];
@@ -46,7 +45,6 @@ class ExplorerSchedule extends Component {
     let November = [];
     let December = [];
     let scheduleYear = events[0].year;
-    console.log(scheduleYear);
 
     events.forEach(event=> {
         if (event.month === "January") {
@@ -91,8 +89,6 @@ class ExplorerSchedule extends Component {
        November:November,
        December:December
       });
-
-      console.log("year ", this.state.year)
   }
 
   componentDidMount() {
@@ -100,7 +96,6 @@ class ExplorerSchedule extends Component {
   }
   
   loadExplorerEvents = () => {
-    console.log("Loading Explorer Events")
     API.getExplorerFrontEndSchedule()
    .then(res => {
       this.setState({ events: res.data});
@@ -156,11 +151,7 @@ class ExplorerSchedule extends Component {
                       <td colSpan="4">JANUARY {this.state.year}</td>
                     </tr>
                     {this.state.January.map(event =>
-                      <tr key={event._id}>
-                        <td>{event.day_of_week} {event.month}, {event.date}</td>
-                        <td>{event.description} </td>
-                        <td className="text-center">{event.time}</td>
-                      </tr>
+                      this.displayEvents(event)
                     )} 
 
                     <tr className="month text-center"> 

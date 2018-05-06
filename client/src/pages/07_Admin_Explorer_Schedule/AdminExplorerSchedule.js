@@ -22,7 +22,6 @@ class AdminExplorerSchedule extends Component {
 
   
   loadEvents = () => {
-    console.log("I'm triggered")
     API.getExplorerEvents()
    .then(res => this.setState({ events: res.data}))
    .catch(err => console.log(err));

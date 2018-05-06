@@ -59,6 +59,21 @@ const explorerScheduleSchema = new Schema({
       ]  
 	  
   },
+  event_type:{
+	  type: String,
+	  trim: true,
+	  required: true,
+	  validate: [
+      // Function takes in the new  value to be saved as an argument
+      function(input) {
+        // If this returns true, proceed. If not, return the error message below
+        return input.length >= 0;
+      },
+      //Error Message
+      "Event type field can not be empty."
+      ]  
+	  
+  },
     description:{
 	  type: String,
 	  trim: true,

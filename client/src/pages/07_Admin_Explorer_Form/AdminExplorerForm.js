@@ -28,7 +28,6 @@ class AdminExplorerForm extends Component {
   }
 
   validateField (fieldName, value) {
-    console.log(fieldName,value);
     let fieldValidationErrors = this.state.formErrors;
     let monthValid = this.state.monthValid;
     let weekDayValid = this.state.weekDayValid;
@@ -228,17 +227,14 @@ class AdminExplorerForm extends Component {
                         </Input>
                       </Col>
                       <Col sm="12" md="4">
-                        <Label for="time">TIME</Label>
-                        <Input 
-                          type="select"
-                          name="eventType"
-                          id="eventType"
-                          onChange={this.handleInputChange}>
-                          <option></option>
-                          <option>Regular Meeting</option>
-                          <option>Department Meeting</option>
-                          <option>Optional Community Events</option>
-                        </Input>
+                      <Label for="time">TIME</Label>
+                          <Input 
+                            type="text" 
+                            name="time"
+                            id="time"
+                            placeholder = "7 pm – 9 pm"
+                            onChange={this.handleInputChange}
+                            />
                       </Col>
                       </Row>
                       <Row>

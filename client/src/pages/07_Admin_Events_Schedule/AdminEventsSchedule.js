@@ -22,7 +22,6 @@ class AdminEventsSchedule extends Component {
 
    
   loadEvents = () => {
-    console.log("I'm loading the scehdule")
     API.getEventsSchedule()
    .then(res => 
     {
