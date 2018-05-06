@@ -84,7 +84,7 @@ module.exports = {
       console.log("Getting explorer events");
        db.explorerSchedule
           .find(req.query)
-          .sort({ month: 1 })
+          .sort({ sort_date_time: 1 })
           .then(dbModel => res.json(dbModel))
           .catch(err => res.status(422).json(err));
       //  console.log("res is ");
@@ -105,7 +105,7 @@ module.exports = {
         console.log("Getting explorer events for front end");
          db.explorerSchedule
             .find(req.query)
-            .sort({ month: 1 })
+            .sort({ sort_date_time: 1 })
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
         //  console.log("res is ");
@@ -122,7 +122,7 @@ module.exports = {
       console.log("Getting scheduled events");
         db.departmentSchedule
           .find(req.query)
-          .sort({ month: 1 })
+          .sort({ sort_date_time: 1 })
           .then(dbModel => res.json(dbModel))
           .catch(err => res.status(422).json(err));
       //  console.log("res is ");
@@ -143,7 +143,7 @@ module.exports = {
         console.log("Getting events for front end");
           db.departmentSchedule
             .find(req.query)
-            .sort({ month: 1 })
+            .sort({ sort_date_time: 1 })
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
       }
