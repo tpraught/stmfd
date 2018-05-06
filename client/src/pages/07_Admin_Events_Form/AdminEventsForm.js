@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
-
 import { Row, Col } from 'reactstrap';
-
 import { Button, Form, FormGroup, Label, Input} from 'reactstrap';
+import FormErrors from "../../components/Errors";
 import AdminHeader from "../../components/AdminHeader";
 import Wrapper from "../../components/Wrapper";
 import Footer from "../../components/Footer";
@@ -15,18 +14,72 @@ class AdminEventsForm extends Component {
     date: "",
     year: "",
     description: "",
-     officerStartTime: "",
+    officerStartTime: "",
     meetingStartTime: "",
     trainingStartTime:"",
     drillCode:"",
-    lunchCommittee:""
+    lunchCommittee:"",
+    formErrors:{month:"", date:"", year:"", description:"", drillCode:""},
+    monthValid:false,
+    dateValid:false,
+    yearValid:false,
+    descriptionValid:false,
+    drillCodeValid:false,
+    formValid:false
   }
 
+  validateField (fieldName, value) {
+    console.log(fieldName,value);
+    let fieldValidationErrors = this.state.formErrors;
+    let monthValid = this.state.monthValid;
+    let dateValid = this.state.dateValid;
+    let yearValid = this.state.yearValid;
+    let descriptionValid = this.state.descriptionValid;
+    let drillCodeValid = this.state.drillCodeValid;
+
+      switch (fieldName) {
+        case "month":
+          monthValid = value.length >= 2;
+          fieldValidationErrors.month = monthValid ? '': ' Please select a month';
+          break;
+          case "date":
+          dateValid = value.length >= 1;
+          fieldValidationErrors.date= dateValid ? '': ' Please select a date';
+          break;
+          case "year":
+          yearValid = value.length === 4;
+          fieldValidationErrors.year = yearValid ? '': ' Please select a year';
+          break;
+          case "description":
+          descriptionValid = value.length >= 5;
+          fieldValidationErrors.description = descriptionValid ? '': ' Please enter a description';
+          break;
+          case "drillCode":
+          drillCodeValid = value.length === 1;
+          fieldValidationErrors.drillCode = drillCodeValid ? '': ' Please select a drill code';
+          break;
+          default:
+          break;
+      }
+
+      this.setState(
+        { formErrors:fieldValidationErrors,
+          monthValid:monthValid,
+          dateValid:dateValid,
+          yearValid:yearValid,
+          descriptionValid:descriptionValid,
+          drillCodeValid:drillCodeValid,
+        }, this.validateForm);
+  }
+
+  validateForm = () => {
+    this.setState({
+      formValid:this.state.monthValid && this.state.dateValid && this.state.yearValid && this.state.descriptionValid && this.state.drillCodeValid
+    })
+  }
   handleInputChange = event => {
     const { name, value } = event.target;
-    this.setState({
-      [name]: value
-    });
+    this.setState({ [name]: value}, () => {this.validateField(name,value)});
   };
 
    //Method to submit a new record to the Database
@@ -228,7 +281,7 @@ class AdminEventsForm extends Component {
                 </FormGroup>
                 <Row>
                   <Col sm="12">
-                    <Button className="float-right redButton addButton mr-3" type="submit" onClick={this.handleFormSubmit}>ADD</Button>
+                    <Button className="float-right redButton addButton mr-3" type="submit" disabled = {!this.state.formValid}  onClick={this.handleFormSubmit}>ADD</Button>
                   </Col>
                 </Row>
                 <Row>
@@ -237,8 +290,11 @@ class AdminEventsForm extends Component {
                 </Col>
                 </Row>
               </Form>
-            </Row>
+             </Row>
           </Col>
+          <Row>
+                   <FormErrors formErrors={this.state.formErrors} />
+                </Row>
         </Wrapper>
         <Footer/>
       </div>
