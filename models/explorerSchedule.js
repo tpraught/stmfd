@@ -70,7 +70,7 @@ const explorerScheduleSchema = new Schema({
         return input.length >= 0;
       },
       //Error Message
-      "Event type field can not be empty."
+      "event_type field can not be empty."
       ]  
 	  
   },

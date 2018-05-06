@@ -78,6 +78,8 @@ class AdminTable extends Component {
   determineTitleRank = (title) => {
     let titleRankValue;
 
+    
+
     if (title === "Fire Chief") {
       titleRankValue = 10;
     } else if (title === "Assistant Chief") {
@@ -98,7 +100,7 @@ class AdminTable extends Component {
   handleFormSubmit = event => {
     console.log("Saving record is triggered");
     event.preventDefault();
-
+     console.log(this.state.company); 
     let rankSort = this.determineTitleRank(this.state.title);
 
     API.saveRecord({

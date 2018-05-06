@@ -1,42 +1,72 @@
-# Create React Express App
+## St. Michael Fire Department Web Site
 
-## About This Boilerplate
+## Project Motivation
+It was important to us as a team to use our skills to give back to the community. We partnered with the St. Michael Fire Department to modernize their website. The new web site will be user-friendly and contain pertinent, up-to-date information that can be utilized by the firefighters and the community as a whole. 
 
-This setup allows for a Node/Express/React app which can be easily deployed to Heroku.
+## Project Requirements
+*  Update and modernize the design and UI.
+* Create an Administrator Portal where an authenticated user can easily update, add and delete items on the fire fighter roster and schedules
+* Render fire fighter roster and all schedules dynamically on the Admin Portal and public-facing pages
 
-The front-end React app will auto-reload as it's updated via webpack dev server, and the backend Express app will auto-reload independently with nodemon.
+## Link to Deployed Site
+[St. Michael Fire Department](https://smfd.herokuapp.com/)
+ 
+## Screenshots
+**Old** website Home Page
+![old_site](https://user-images.githubusercontent.com/31745567/39676446-7760a418-5130-11e8-899c-3f65b6ca0c08.png)
 
-## Starting the app locally
+**New** website Home Page
+![new_site](https://user-images.githubusercontent.com/31745567/39676455-c6c3cac6-5130-11e8-90eb-5f80e6018809.png)
 
-Start by installing front and backend dependencies. While in this directory, run the following commands:
 
-```
-yarn install
-cd client
-yarn install
-cd ..
-``
 
-After both installations complete, run the following command in your terminal:
+## Techology 
 
-```
-yarn start
-```
+<b>Built with</b>
+- MERN stack
+    - [Mongo DB]()
+    - [Express](https://yarnpkg.com/en/package/express)
+    - [React](https://reactjs.org/)
+        - [Create React App](https://github.com/facebook/create-react-app)
+    - [Node](https://nodejs.org/en/)
+- Front End
+    - [ReactStrap](https://reactstrap.github.io/)
+    - [Google Fonts](https://fonts.google.com/)
+    - [Axios](https://yarnpkg.com/en/package/axios)
+    - [react-router-dom](https://yarnpkg.com/en/package/react-router-dom)
+- Back End
+    - [Mongoose](https://yarnpkg.com/en/package/mongoose)  
+    - [Axios](https://yarnpkg.com/en/package/axios)
+    - [Body-parser](https://yarnpkg.com/en/package/body-parser) 
+- Integreated APIs
+    - [Open Weather](https://openweathermap.org/)
+    - [St. Michael Fire Department's Facebook Feed](https://www.facebook.com/stmichaelfire/)    
+    - [City of St. Michael Twitter Feed](https://twitter.com/cityofstmichael?ref_src=twsrc%5Etfw&ref_url=http%3A%2F%2Flocalhost%3A3000%2F)    
 
-That's it, your app should be running on <http://localhost:3000>. The Express server should intercept any AJAX requests from the client.
+## Authors 
+### **Team Web Rescue**
 
-## Deployment (Heroku)
+Jeffrey Du Bois
+* [GitHub](https://github.com/jeffadubois)
+* [LinkedIn](https://www.linkedin.com/in/jeff-dubois-14a44272)
 
-After confirming that you have an up to date git repository and a Heroku app created, complete the following:
+Julia Lidstrom
+* [GitHub](https://github.com/JuliaLid)
+* [LinkedIn](https://www.linkedin.com/in/julialidstrom/)
 
-1. Build the React app for production by running the following command:
+Kumari Van Brunt
+* [GitHub](https://github.com/kumarivb)
+* [LinkedIn](https://www.linkedin.com/in/kumarivb)
 
-```
-yarn build
-```
+Shannon Hart
+* [GitHub](https://github.com/SilverTree18)
+* [LinkedIn](https://www.linkedin.com/in/shannonehart)
 
-2. Add and commit all changes to git
+Tonye Praught
+* [GitHub](https://github.com/tpraught)
+* [LinkedIn](https://www.linkedin.com/in/tonyepraught)
 
-3. Push to Heroku
 
-If all previous steps were followed correctly, your application should be deployed to Heroku!
+## Copyright
+
+ © 2018 Team Web Rescue
