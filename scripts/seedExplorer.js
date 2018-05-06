@@ -11,26 +11,53 @@ mongoose.connect( process.env.MONGODB_URI || "mongodb://localhost/firedepartment
 
 const explorer = [
    {
+	  month: "May",
+	   date: "19",
+     day_of_week: "Tuesday",
+	   	 year: "2018",
+    description: "Mask fitting and protocols",	
+		   time: "04:55pm - 06:00pm ",
+    sort_date_time: "20180519T1655",
+   },
+
+   {
 	  month: "March",
 	   date: "30",
      day_of_week: "Monday",
+	   year: "2017",
     description: "First Responder Training",	
 		   time: "9:00am",
+ sort_date_time: "20170330T0900",
    },
+   {
+	  month: "June",
+	   date: "27",
+     day_of_week: "Tuesday",
+	   	 year: "2018",
+    description: "Safety gloves protocols",	
+		   time: "11:30am - 10:30am ",
+    sort_date_time: "20180627T1130",
+  },
    {
 	  month: "April",
 	   date: "6",
      day_of_week: "Monday",
+	     year: "2018",
     description: "HeatStroke Prevention",	
 		   time: "10:00am",
+    sort_date_time: "20180406T1000",
+		   
   },
-   {
-	  month: "May",
-	   date: "19",
+  {
+	  month: "June",
+	   date: "27",
      day_of_week: "Tuesday",
-    description: "Mask fitting and protocols",	
-		   time: "04:55pm",
+	   	 year: "2018",
+    description: "Safety gloves protocols",	
+		   time: "09am - 10:30am ",
+    sort_date_time: "20180627T0900",
   },
+  
   ];
 
 //remove all records from Roster, then insert the 'seed' records from above
