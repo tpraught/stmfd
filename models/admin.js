@@ -4,14 +4,16 @@ const Schema = mongoose.Schema;
 const passportLocalMongoose = require('passport-local-mongoose');
 
 const User = new Schema({
-    username: String,
+    email: String,
     firstName: String,
-    lastName: String
+    lastName: String,
+    passwordReset: { type: String, select: false },
+    username: String
 });
 
 User.plugin(passportLocalMongoose);
 
-module.exports = mongoose.model('User, User');
+module.exports = mongoose.model('User', User);
 
 // const adminSchema = new mongoose.Schema({
 //     email:{

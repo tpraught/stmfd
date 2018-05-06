@@ -21,7 +21,7 @@ app.use(routes);
 
 // ----------------------------- admin ----------------------------------------------
 // Configure Passport
-const User = require('./models/user');
+const User = require('./models/admin');
 passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
