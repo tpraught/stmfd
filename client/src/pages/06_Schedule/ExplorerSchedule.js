@@ -93,11 +93,6 @@ class ExplorerSchedule extends Component {
       });
 
       console.log("year ", this.state.year)
-      console.log("March", this.state.March)
-      // console.log("Company C ", this.state.companyC)
-      // console.log("Station #2 ", this.state.station2)
-      // console.log("Fire Chief", this.state.fireChief)
-      // console.log("Assistant Chief", this.state.assistantChief)
   }
 
   componentDidMount() {
@@ -122,6 +117,7 @@ class ExplorerSchedule extends Component {
           month = {trainingEvent.month}
           date = {trainingEvent.date}
           description = {trainingEvent.description}
+          eventType = {trainingEvent.event_type}
           time = {trainingEvent.time}
       />               
     )
@@ -150,13 +146,14 @@ class ExplorerSchedule extends Component {
                     <tr>
                       <td className="text-center border-0">DATE</td>
                       <td className="text-center border-0">DESCRIPTION</td>
+                      <td className="text-center border-0">EVENT TYPE</td>
                       <td className="text-center border-0">TIME</td>
                       </tr>
                   </thead>
                 
                   <tbody>
-                    <tr className="month"> 
-                      <td colSpan="3">JANUARY {this.state.year}</td>
+                    <tr className="month text-center"> 
+                      <td colSpan="4">JANUARY {this.state.year}</td>
                     </tr>
                     {this.state.January.map(event =>
                       <tr key={event._id}>
@@ -166,88 +163,88 @@ class ExplorerSchedule extends Component {
                       </tr>
                     )} 
 
-                    <tr className="month"> 
-                      <td colSpan="3">FEBRUARY {this.state.year}</td>
+                    <tr className="month text-center"> 
+                      <td colSpan="4">FEBRUARY {this.state.year}</td>
                     </tr>
                     {this.state.February.map(event =>
                       this.displayEvents(event)
 
                     )}     
 
-                    <tr className="month"> 
-                      <td colSpan="3">MARCH {this.state.year}</td>
+                    <tr className="month text-center"> 
+                      <td colSpan="4">MARCH {this.state.year}</td>
                     </tr>
                     {this.state.March.map(event =>
                       this.displayEvents(event)
 
                     )} 
 
-                    <tr className="month"> 
-                      <td colSpan="3">APRIL {this.state.year}</td>
+                    <tr className="month text-center"> 
+                      <td colSpan="4">APRIL {this.state.year}</td>
                     </tr>
                     {this.state.April.map(event =>
                       this.displayEvents(event)
 
                     )} 
 
-                    <tr className="month"> 
-                      <td colSpan="3">MAY {this.state.year}</td>
+                    <tr className="month text-center"> 
+                      <td colSpan="4">MAY {this.state.year}</td>
                     </tr>
                     {this.state.May.map(event =>
                       this.displayEvents(event)
 
                     )} 
 
-                    <tr className="month"> 
-                      <td colSpan="3">JUNE {this.state.year}</td>
+                    <tr className="month text-center"> 
+                      <td colSpan="4">JUNE {this.state.year}</td>
                     </tr>
                     {this.state.June.map(event =>
                       this.displayEvents(event)
 
                     )} 
 
-                    <tr className="month"> 
-                      <td colSpan="3">JULY {this.state.year}</td>
+                    <tr className="month text-center"> 
+                      <td colSpan="4">JULY {this.state.year}</td>
                     </tr>
                     {this.state.July.map(event =>
                       this.displayEvents(event)
 
                     )} 
 
-                    <tr className="month"> 
-                      <td colSpan="3">AUGUST {this.state.year}</td>
+                    <tr className="month text-center"> 
+                      <td colSpan="4">AUGUST {this.state.year}</td>
                     </tr>
                     {this.state.August.map(event =>
                       this.displayEvents(event)
 
                     )} 
 
-                    <tr className="month"> 
-                      <td colSpan="3">SEPTEMBER {this.state.year}</td>
+                    <tr className="month text-center"> 
+                      <td colSpan="4">SEPTEMBER {this.state.year}</td>
                     </tr>
                     {this.state.September.map(event =>
                       this.displayEvents(event)
 
                     )} 
 
-                    <tr className="month"> 
-                      <td colSpan="3">OCTOBER {this.state.year}</td>
+                    <tr className="month text-center"> 
+                      <td colSpan="4">OCTOBER {this.state.year}</td>
                     </tr>
                     {this.state.October.map(event =>
                       this.displayEvents(event)
 
                     )} 
 
-                    <tr className="month"> 
-                      <td colSpan="3">NOVEMBER {this.state.year}</td>
+                    <tr className="month text-center"> 
+                      <td colSpan="4">NOVEMBER {this.state.year}</td>
                     </tr>
                     {this.state.November.map(event =>
                       this.displayEvents(event)
 
                     )} 
 
-                    <tr className="month"> 
-                      <td colSpan="3">DECEMBER {this.state.year}</td>
+                    <tr className="month text-center"> 
+                      <td colSpan="4">DECEMBER {this.state.year}</td>
                     </tr>
                     {this.state.December.map(event =>
                       this.displayEvents(event)
