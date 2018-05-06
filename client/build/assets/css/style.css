@@ -10,111 +10,9 @@ body{
     margin: 0px !important;
 }
 
-/* Header CSS */
-#smallNav {
-    background: #b60c00;
-    font-style: normal;
-    font-weight: 100;
-    font-size: 18px;
-    font-family: 'Roboto', sans-serif;
-    color:#ffffff;
-    border-bottom: 10px solid #2f2f2f;
-}
-#brand {
-    background: #0b1f3f;
-    border-bottom: 10px solid #b60c00;
-    text-align: center;    
-}
-#brand h1 {
-    font-style: normal;
-    font-size: 60px;
-    font-family: 'Playfair Display', serif !important;
-    transform: scaleY(0.8);
-    -webkit-transform: scaleY(0.8);
-    color: #ffffff;
-}
-#brand h2 {
-    font-style: normal;
-    font-weight: 100;
-    font-size: 26px;
-    font-family: 'Roboto', sans-serif !important;
-    color: #ffbe00;
-}
-a.homeLink {
-    color: #ffffff !important;
-}
-a.homeLink:hover {
-    color: #ffffff;
-    text-decoration: none;
-}
-#badge {
-    z-index: 1000;
-}
-
-/* Navigation CSS */
-.navbar {
-    background: #2f2f2f;
-    width: 100%;
-    margin: 0 auto;
-}
-.innerNav {
-    font-family: 'Roboto', sans-serif;
-    max-width: 1400px !important;
-    width: 100%;
-}
-button.nav-item {
-    width: auto;
-    font-size:22px;
-    font-weight: 100;
-    color: #ffffff;
-    margin: 5px 30px;
-    background: none;
-    padding: 0;
-    border: none;
-    border-radius: 0;
-    transition: none;
-}
-
-button.nav-item:focus {
-    box-shadow: none !important;
-    border-bottom: 1px solid #ffffff !important;
-}
-button.nav-item:hover {
-    color: #ffffff;
-    background: none !important;
-    border-bottom: 1px solid #ffffff;
-}
-button.nav-item a:active {
-    color: #ffffff;
-}
-.dropdown-menu {
-    top: 11px !important;
-    border-radius: 0 !important;
-    padding: 30px 0 !important;
-}
-a.nav-link {
-    color: #2f2f2f !important;
-    font-size: 18px;
-}
-a.nav-link:hover {
-    color: #2f2f2f !important;
-    text-decoration: underline;
-}
-button.dropdown-item:hover {
-    background: none;
-}
-
-/* Hero */
-.jumbotron .img-fluid {
-    width: 100%;
-}
-.jumbotron {
-    width: 100%;
-}
-
 /* a and a:hover is also used in Quick Links */
 a {
-    color: #ffbe00 !important;
+    color: #b60c00 !important;
     font-weight: 400 !important;
     text-decoration: none;
 }
@@ -162,6 +60,110 @@ span.listTitle {
 /* .bg-dark is also used in Quick Links */
 .bg-navy {
     background-color: #0b1f3f !important;
+}
+
+/* Header CSS */
+#smallNav {
+    background: #b60c00;
+    font-style: normal;
+    font-weight: 100;
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+    color:#ffffff;
+    border-bottom: 10px solid #2f2f2f;
+}
+#brand {
+    background: #0b1f3f;
+    border-bottom: 10px solid #b60c00;
+    text-align: center;    
+}
+#brand h1 {
+    font-style: normal;
+    font-size: 60px;
+    font-family: 'Playfair Display', serif !important;
+    transform: scaleY(0.8);
+    -webkit-transform: scaleY(0.8);
+    color: #ffffff;
+}
+#brand h2 {
+    font-style: normal;
+    font-weight: 100;
+    font-size: 26px;
+    font-family: 'Roboto', sans-serif !important;
+    color: #ffbe00;
+}
+a.homeLink {
+    color: #ffffff !important;
+    font-weight: 100 !important;
+}
+a.homeLink:hover {
+    color: #ffffff;
+    text-decoration: none;
+}
+#badge {
+    z-index: 1000;
+}
+
+/* Navigation CSS */
+.navbar {
+    background: #2f2f2f;
+    width: 100%;
+    margin: 0 auto;
+}
+.innerNav {
+    font-family: 'Roboto', sans-serif;
+    max-width: 1400px !important;
+    width: 100%;
+}
+button.nav-item {
+    width: auto;
+    font-size:22px;
+    font-weight: 100;
+    color: #ffffff;
+    margin: 5px 30px;
+    background: none;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    transition: none;
+}
+
+button.nav-item:focus {
+    box-shadow: none !important;
+    border-bottom: 1px solid #ffffff !important;
+}
+button.nav-item:hover {
+    color: #ffffff;
+    background: none !important;
+    border-bottom: 1px solid #ffffff;
+}
+button.nav-item a:active {
+    color: #ffffff;
+    font-weight: 100;
+}
+.dropdown-menu {
+    top: 11px !important;
+    border-radius: 0 !important;
+    padding: 30px 0 !important;
+}
+a.nav-link {
+    color: #2f2f2f !important;
+    font-size: 18px;
+}
+a.nav-link:hover {
+    color: #2f2f2f !important;
+    text-decoration: underline;
+}
+button.dropdown-item:hover {
+    background: none;
+}
+
+/* Hero */
+.jumbotron .img-fluid {
+    width: 100%;
+}
+.jumbotron {
+    width: 100%;
 }
 
 /* Quick Links */
@@ -230,8 +232,8 @@ footer {
 }
 .pageTitle h2 {
     font-family: 'Playfair Display', serif !important;
-    transform: scaleY(0.9);
-    -webkit-transform: scaleY(0.9);
+    /* transform: scaleY(0.9);
+    -webkit-transform: scaleY(0.9); */
     font-size:30px;
     color: #0b1f3f !important;
     margin-bottom: 15px;
@@ -250,7 +252,7 @@ footer {
     font-weight: 400 !important;
     background: none !important;
     border: none !important;
-    color: #ffbe00 !important;
+    color: #b60c00 !important;
     text-decoration: none !important;
 }
 .btnLink:hover {
@@ -261,7 +263,7 @@ footer {
 }
 
 /* Fire Fighters Roster (also applies to admin table) */
-.adminTable, .rosterTable, .medRosterTable, .officerTable, .medRoster {
+.adminTable, .rosterTable, .medRosterTable, .officerTable, .medRoster, .eventSchedule {
     font-size: 18px;
     font-family: 'Roboto', sans-serif;
 }
@@ -269,6 +271,7 @@ footer {
     background: #2f2f2f;
     border: 1px solid #2f2f2f;
     color: #ffffff;
+    font-weight: 400;
 }
 .medRosterTable thead {
     border-left: 1px solid #dde2e6;
@@ -311,6 +314,15 @@ footer {
     margin: 5px 0px !important;
     text-align: center;
     display: block;
+}
+.eventSchedule tr.month {
+    border-top: 3px solid #0b1f3f !important;
+    border-bottom: 3px solid #0b1f3f !important;
+    background: #f1f1f1;
+}
+.table thead th, .table th, .table td {
+    border-top: none !important;
+    border-bottom: none !important;
 }
 td[colspan="3"] {
     text-align: center;
@@ -359,4 +371,17 @@ td.adminButtons {
 }
 .modal-dialog {
     max-width: 750px !important;
+}
+/*Apparatus Carousel */
+.carousel-caption h3 {
+    font-size: 36px !important;
+    background-color: #0b1f3f;
+    color: #ffffff !important;
+    padding: 15px 0 !important;
+    width: 850px;
+
+}
+.carousel-item img {
+    padding-bottom: 25px;
+    margin-bottom: 0px;
 }
