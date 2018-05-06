@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Table } from 'reactstrap';
 import { Container, Row, Col } from 'reactstrap';
+import ExplorerEventsTable from "../../components/ExplorerEvents";
 import Header from "../../components/Header";
 import Nav from "../../components/Nav";
 import Hero from "../../components/Hero";
@@ -8,7 +9,6 @@ import heroImages from "../../HeroImages.json";
 import Wrapper from "../../components/Wrapper";
 import QuickLinks from "../../components/Quick_Links";
 import Footer from "../../components/Footer";
-import ExplorerEventsTable from "../../components/ExplorerEvents";
 import API from "../../utils/API";
 
 
@@ -90,7 +90,6 @@ class ExplorerSchedule extends Component {
        October:October,
        November:November,
        December:December
-       
       });
 
       console.log("year ", this.state.year)
@@ -112,7 +111,6 @@ class ExplorerSchedule extends Component {
       this.setState({ events: res.data});
       this.sortExplorerEventsbyMonth(this.state.events);
     })
-
    .catch(err => console.log(err));
   };
 
@@ -125,11 +123,9 @@ class ExplorerSchedule extends Component {
           date = {trainingEvent.date}
           description = {trainingEvent.description}
           time = {trainingEvent.time}
-      />
-                      
+      />               
     )
-}
-
+  }
 
   render() {
     return (
@@ -163,18 +159,11 @@ class ExplorerSchedule extends Component {
                       <td colSpan="3">JANUARY {this.state.year}</td>
                     </tr>
                     {this.state.January.map(event =>
-<<<<<<< HEAD
-                      this.displayEvents(event)
-
-                      
-                    
-=======
                       <tr key={event._id}>
                         <td>{event.day_of_week} {event.month}, {event.date}</td>
                         <td>{event.description} </td>
                         <td className="text-center">{event.time}</td>
                       </tr>
->>>>>>> working on overall updates, added contact page
                     )} 
 
                     <tr className="month"> 
