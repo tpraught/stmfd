@@ -23,7 +23,7 @@ class AdminExplorerForm extends Component {
     weekDayValid:false,
     yearValid:false,
     descriptionValid:false,
-    eventType:false,
+    eventTypeValid:false,
     formValid:false
   }
 
