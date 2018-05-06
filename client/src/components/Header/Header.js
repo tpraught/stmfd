@@ -33,7 +33,8 @@ class Header extends Component {
 					St. Michael, MN <i className= {"owf owf-" + this.state.weatherIconId}></i> {this.state.temp}&#176;
 					</div>
 					<div className="col-3 text-right">
-						<a href="/JoinSMFD">JOIN SMFD</a> | <a href="/ContactUs">CONTACT</a>
+						<a className="homeLink" href="/JoinSMFD">JOIN SMFD</a> | <a className="
+						homeLink" href="/ContactUs">CONTACT</a>
 					</div>
 				</div>
 				<div id="brand" className="position-relative pt-4 pb-5">

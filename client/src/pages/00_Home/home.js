@@ -3,6 +3,7 @@ import Header from "../../components/Header";
 import Nav from "../../components/Nav";
 import Hero from "../../components/Hero";
 import Feed from "../../components/Feed";
+import QuickLinks from "../../components/Quick_Links";
 import Footer from "../../components/Footer";
 import heroImages from "../../HeroImages.json"
 import { Jumbotron } from "reactstrap";
@@ -94,7 +95,8 @@ class Home extends Component {
 				</div>
 			</div>
 			{/* end of page content */}
-
+			<div className="border-top border-light"></div>
+			<QuickLinks />
 			<Footer />
 		</div>
     )

@@ -42,7 +42,7 @@ import AdminExplorerSchedule from "./pages/07_Admin_Explorer_Schedule";
 import AdminEventsForm from "./pages/07_Admin_Events_Form";
 import AdminEventsSchedule from "./pages/07_Admin_Events_Schedule";
 
-// import ContactUs from "./pages/08_ContactUs";
+import ContactUs from "./pages/08_ContactUs";
 
 import AdminLogin from "./pages/07_Admin_Login";
 
@@ -96,16 +96,11 @@ const App = () => (
         <Route exact path="/admin/roster" component={AdminRoster} />
         <Route exact path="/admin/explorerform" component={AdminExplorerForm} />
         <Route exact path="/admin/explorerschedule" component={AdminExplorerSchedule} />
-
         <Route exact path="/admin/trainingform" component={AdminEventsForm} />
         <Route exact path="/admin/trainingschedule" component={AdminEventsSchedule} />
-    
-
         <Route exact path="/admin/login" component={AdminLogin} />
 
-
-        {/* Contact Us Page */}
-        {/* <Route exact path="/ContactUs" component={ContactUs} /> */}
+        <Route exact path="/ContactUs" component={ContactUs} />
         
         {/* <Route component={NoMatch} /> */}
 
