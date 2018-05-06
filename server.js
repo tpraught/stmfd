@@ -28,6 +28,9 @@ var MONGODB_URI =process.env.MONGODB_URI || "mongodb://localhost/firedepartment"
      }
   });
 
+// connect mongoose
+mongoose.connect('mongodb://localhost/userlist');
+
 // Catch 404 and forward to error handler
 app.use(function (req, res, next) {
     var err = new Error('File Not Found');
