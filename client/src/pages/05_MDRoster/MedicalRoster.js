@@ -28,8 +28,6 @@ class MedicalRoster extends Component {
   }
 
   sortRosterbyStation = (fireFighters) => {
-
-    console.log("Let's sort some fire fighters");
     let companyARoster = [];
     let companyBRoster = [];
     let companyCRoster = [];
@@ -43,11 +41,11 @@ class MedicalRoster extends Component {
         chief = fireFighter;
       } else if (fireFighter.title === "Assistant Chief") {
         assistantChief = fireFighter; 
-      } else if (fireFighter.company === "Company 'A'") {
+      } else if (fireFighter.company === "Company A") {
           companyARoster.push(fireFighter);
-      } else if (fireFighter.company === "Company 'B'"){
+      } else if (fireFighter.company === "Company B"){
           companyBRoster.push(fireFighter);
-      } else if (fireFighter.company === "Company 'C'"){
+      } else if (fireFighter.company === "Company C"){
         companyCRoster.push(fireFighter);
      } else {
       station2.push(fireFighter);

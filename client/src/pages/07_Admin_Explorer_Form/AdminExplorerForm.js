@@ -16,22 +16,24 @@ class AdminExplorerForm extends Component {
     year: "",
     description: "",
     time: "",
-    formErrors:{month:"", weekDay:"", date:"", year:"", description:""},
+    eventType:"",
+    formErrors:{month:"", weekDay:"", date:"", year:"", description:"", eventType:""},
     monthValid:false,
     dateValid:false,
     weekDayValid:false,
     yearValid:false,
     descriptionValid:false,
+    eventTypeValid:false,
     formValid:false
   }
 
   validateField (fieldName, value) {
-    console.log(fieldName,value);
     let fieldValidationErrors = this.state.formErrors;
     let monthValid = this.state.monthValid;
     let weekDayValid = this.state.weekDayValid;
     let dateValid = this.state.dateValid;
     let yearValid = this.state.yearValid;
+    let eventTypeValid = this.state.deventTypeValid;
     let descriptionValid = this.state.descriptionValid;
 
       switch (fieldName) {
@@ -51,6 +53,10 @@ class AdminExplorerForm extends Component {
           yearValid = value.length === 4;
           fieldValidationErrors.year = yearValid ? '': ' Please select a year';
           break;
+          case "eventType":
+          eventTypeValid = value.length >= 5;
+          fieldValidationErrors.eventType = eventTypeValid ? '': ' Please select an event type';
+          break;
           case "description":
           descriptionValid = value.length >= 5;
           fieldValidationErrors.description = descriptionValid ? '': ' Please enter a description';
@@ -65,13 +71,14 @@ class AdminExplorerForm extends Component {
           dateValid:dateValid,
           weekDayValid:weekDayValid,
           yearValid:yearValid,
+          eventTypeValid:eventTypeValid,
           descriptionValid:descriptionValid,
         }, this.validateForm);
   }
 
   validateForm = () => {
     this.setState({
-      formValid:this.state.monthValid && this.state.dateValid && this.state.yearValid && this.state.descriptionValid && this.state.weekDayValid
+      formValid:this.state.monthValid && this.state.dateValid && this.state.yearValid && this.state.descriptionValid && this.state.weekDayValid && this.state.eventType
     })
   }
   handleInputChange = event => {
@@ -90,6 +97,7 @@ class AdminExplorerForm extends Component {
       date: this.state.date,
       day_of_week: this.state.weekDay,
       year: this.state.year,
+      event_type: this.state.eventType,
       description: this.state.description,
       time: this.state.time
      
@@ -219,7 +227,7 @@ class AdminExplorerForm extends Component {
                         </Input>
                       </Col>
                       <Col sm="12" md="4">
-                        <Label for="time">TIME</Label>
+                      <Label for="time">TIME</Label>
                           <Input 
                             type="text" 
                             name="time"
@@ -228,8 +236,22 @@ class AdminExplorerForm extends Component {
                             onChange={this.handleInputChange}
                             />
                       </Col>
-                  
                       </Row>
+                      <Row>
+                      <Col sm="12" md="12">
+                        <Label for="description">EVENT TYPE*</Label>
+                        <Input 
+                          type="select"
+                          name="eventType"
+                          id="eventType"
+                          onChange={this.handleInputChange}>
+                          <option></option>
+                          <option>Regular Meeting</option>
+                          <option>Department Meeting</option>
+                          <option>Optional Community Event</option>
+                         </Input> 
+                      </Col>
+                    </Row>
                       <Row>
                       <Col sm="12" md="12">
                         <Label for="description">DESCRIPTION*</Label>

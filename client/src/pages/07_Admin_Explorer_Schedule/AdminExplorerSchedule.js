@@ -22,7 +22,6 @@ class AdminExplorerSchedule extends Component {
 
   
   loadEvents = () => {
-    console.log("I'm triggered")
     API.getExplorerEvents()
    .then(res => this.setState({ events: res.data}))
    .catch(err => console.log(err));
@@ -76,6 +75,7 @@ class AdminExplorerSchedule extends Component {
                         <th>MONTH</th>
                         <th>WEEK DAY</th>
                         <th>DESCRIPTION</th>
+                        <th>EVENT TYPE</th>
                         <th>TIME</th>
                         <th></th>
                       </tr>
@@ -90,6 +90,7 @@ class AdminExplorerSchedule extends Component {
                       date= {events.date}
                       month= {events.month}
                       weekDay = {events.day_of_week}  
+                      eventType = {events.event_type}  
                       description = {events.description}  
                       time={events.time}   
                       onDelete={() => this.deleteRecord(events._id)}
