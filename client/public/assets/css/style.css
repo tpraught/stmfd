@@ -265,7 +265,7 @@ footer {
     font-size: 18px;
     font-family: 'Roboto', sans-serif;
 }
-.adminTable thead, .rosterTable thead, .eventSchedule tr.month, tr.station {
+.adminTable thead, .rosterTable thead, tr.station {
     background: #2f2f2f;
     border: 1px solid #2f2f2f;
     color: #ffffff;
@@ -312,6 +312,15 @@ footer {
     margin: 5px 0px !important;
     text-align: center;
     display: block;
+}
+.eventSchedule tr.month {
+    border-top: 3px solid #0b1f3f !important;
+    border-bottom: 3px solid #0b1f3f !important;
+    background: #f1f1f1;
+}
+.table thead th, .table th, .table td {
+    border-top: none !important;
+    border-bottom: none !important;
 }
 td[colspan="3"] {
     text-align: center;

@@ -163,10 +163,18 @@ class ExplorerSchedule extends Component {
                       <td colSpan="3">JANUARY {this.state.year}</td>
                     </tr>
                     {this.state.January.map(event =>
+<<<<<<< HEAD
                       this.displayEvents(event)
 
                       
                     
+=======
+                      <tr key={event._id}>
+                        <td>{event.day_of_week} {event.month}, {event.date}</td>
+                        <td>{event.description} </td>
+                        <td className="text-center">{event.time}</td>
+                      </tr>
+>>>>>>> working on overall updates, added contact page
                     )} 
 
                     <tr className="month"> 

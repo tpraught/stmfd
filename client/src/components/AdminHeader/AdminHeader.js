@@ -8,37 +8,22 @@ const AdminHeader = () => (
 		<div id="smallNav" className="row justify-content-between p-2">
 		
 		<div className="col-8 text-leftt">
-			<Link to="/admin/add"> 
-				ADD FIRE FIGHTER
-			</Link>	
-			&nbsp;&nbsp;|&nbsp;&nbsp;
-			<Link to="/admin/trainingform"> 
-				ADD TRAINING
-			</Link>	
-			&nbsp;&nbsp;|&nbsp;&nbsp;
-			<Link to="/admin/explorerform"> 
-				ADD EXPLORER TRAINING
-			</Link>	
-
-			&nbsp;&nbsp;|&nbsp;&nbsp;
-			<Link to="/admin/roster"> 
+			<Link className="homeLink" to="/admin/roster"> 
 				FD ROSTER
 			</Link>	
-
 			&nbsp;&nbsp;|&nbsp;&nbsp;
-			<Link to="/admin/explorerschedule"> 
+			<Link className="homeLink" to="/admin/trainingschedule"> 
+				FD SCHEDULE
+			</Link>		
+			&nbsp;&nbsp;|&nbsp;&nbsp;
+			<Link className="homeLink" to="/admin/explorerschedule"> 
 				EXPLORER SCHEDULE
-			</Link>	
-
-			&nbsp;&nbsp;|&nbsp;&nbsp;
-			<Link to="/admin/trainingschedule"> 
-				TRAINING SCHEDULE
-			</Link>				
+			</Link>			
 
 			</div>
 
 			<div className="col-4 text-right">
-			<Link to="/"> 
+			<Link className="homeLink" to="/"> 
 				GO TO SMFD.ORG 
 			</Link>	
 			&nbsp;&nbsp;|&nbsp;&nbsp;LOGOUT

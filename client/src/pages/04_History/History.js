@@ -42,7 +42,7 @@ class History extends Component {
           <div className="border border-secondary pt-3 pr-3 pl-3 pb-2 text-center">
             <p>For more history on the St. Michael Fire Department, and the city as a whole, check out <a href="http://www.saintmichaelbook.com/"  target="_blank" rel="noopener noreferrer">Faith, Family & Farming</a> by Bob Zahler.</p>
           </div>
-          <Row className="mb-5">
+          <Row>
             <Col sm="12" md="6" className="mt-5">
               <Card>
                 <CardImg top width="100%" src="../../../assets/images/04_History/04_firefighters1953.png" alt="Card image cap" />
