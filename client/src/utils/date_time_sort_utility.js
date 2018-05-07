@@ -33,7 +33,7 @@
 //function getFormattedMonthNum - given a month name as input, return the string representation for that month.
 //For example given an input of "March" it will return "03", given input of "October" it will return "10".
 //If the month name passed in is not recognized, then it returns "01" for the month of january.
-  getFormattedMonthNum = (month) => {
+   export const   getFormattedMonthNum = (month) => {
      // console.log("month is " + month);
 	 // console.log("monthValues is " + JSON.stringify(monthValues));
 	  let result = "";
@@ -86,7 +86,7 @@
   //return a string that prepends the input string with a '0' character.
   // For example if  "2" is passed in, then return "02".  The function is used for zero padding 
    //single digits used to represent a month or date.  
-  formatToTwoDigit = (instr) => {
+   export const   formatToTwoDigit = (instr) => {
 	  let result = instr;
 	  if (instr.length === 1){
 		  result = "0" + instr;
@@ -103,7 +103,7 @@
   //returns that military like representation of the start time (e.g. if input of "11:30am - 2:30pm",
   //then return "T1130".
   //If the time is an empty string  then the function returns a hard coded "T1200MISSING"
-  getFormattedTime = (time) => {
+   export const   getFormattedTime = (time) => {
 	  let result="";
 	  var formatted_hour="";
 	  var formatted_min="";	  
@@ -126,7 +126,7 @@
 	  var lowerTime = timeFirstPart.toLowerCase();
 	  var containsPM = lowerTime.includes("p");
 	  var containsAM = lowerTime.includes("a");
-	  numericTime = lowerTime.replace(/[a-zA-Z ]/g,'');
+	  var numericTime = lowerTime.replace(/[a-zA-Z ]/g,'');
 	  //console.log("numeric time is " + numericTime);
 	  var splitResult = numericTime.split(":");
 	  //console.log("For time = " + time + " the number of parts is " + splitResult.length);
@@ -153,7 +153,7 @@
 				  else if ((hour == "12") && (containsPM)){
 				      formatted_hour = hour;
 				  }
-			      a_min = splitResult[0].substring(2);
+			      var a_min = splitResult[0].substring(2);
 			      formatted_min = formatToTwoDigit(a_min);
 			  }
 		  }
@@ -206,7 +206,7 @@
   // in a YYYYMMDDTHHMM format.
   //For example if the call parameters are getScheduleSortDate("2003", "January", "30", "9am"), then the 
   //string returned is "20030130T0900"
-  getScheduleSortDate = (year, month, date, time) => {
+    export const getScheduleSortDate = (year, month, date, time) => {
 	  var result = year + getFormattedMonthNum(month) +  formatToTwoDigit(date) + getFormattedTime(time);
 	  return result;
   }
@@ -285,7 +285,7 @@ if (runtests == true){
   console.log("translated date range - 2000 January 30 1:00pm - 11:59pm to " + atime);
 }
 
-module.exports = getScheduleSortDate;
+//module.exports = getScheduleSortDate;
  
  
  
