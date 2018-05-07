@@ -108,7 +108,7 @@
 	  var formatted_hour="";
 	  var formatted_min="";	  
 	  
-	  if (time.trim().length == 0){
+	  if (time.trim().length === 0){
 		  //console.log("No time was passed in");
 		  return("T1200MISSING");
 	  }
@@ -133,10 +133,10 @@
 	  //console.log("the split array is " + splitResult);
 	  var len = splitResult.length;
 	  if (len === 1){
-		  if (splitResult[0].length == 4){
+		  if (splitResult[0].length === 4){
 			  var hour = splitResult[0].substring(0,2);
 			  //console.log("the hour is " + hour);
-		      if (containsPM && (!(hour == "12"))){
+		      if (containsPM && (!(hour === "12"))){
 				  
 			       var intNum = Number(hour);
 			       var add12 = intNum + 12;
@@ -147,10 +147,10 @@
 		      }
 			  else{
 				  formatted_hour = hour;
-				  if ((hour == "12") && (containsAM)){
+				  if ((hour === "12") && (containsAM)){
 				      formatted_hour = "00";
 				  }
-				  else if ((hour == "12") && (containsPM)){
+				  else if ((hour === "12") && (containsPM)){
 				      formatted_hour = hour;
 				  }
 			      var a_min = splitResult[0].substring(2);
@@ -159,7 +159,7 @@
 		  }
 		  else {
 		      var hour = formatToTwoDigit(splitResult[0]);
-		      if (containsPM && (!(hour == "12"))){
+		      if (containsPM && (!(hour === "12"))){
 			      var intNum = Number(hour);
 			      var add12 = intNum + 12;
 			      var strHour = add12.toString();
@@ -169,10 +169,10 @@
 		      }
 		      else {
 		          formatted_hour = hour;
-				  if ((hour == "12") && (containsAM)){
+				  if ((hour === "12") && (containsAM)){
 				      formatted_hour = "00";
 				  }
-				  else if ((hour == "12") && (containsPM)){
+				  else if ((hour === "12") && (containsPM)){
 				      formatted_hour = hour;
 				  }
 				  formatted_min = "00";
@@ -183,7 +183,7 @@
 	  }
 	  else if (len > 1) {
 		  var hour = formatToTwoDigit(splitResult[0]);
-		  if (containsPM && (!(hour == "12"))){
+		  if (containsPM && (!(hour === "12"))){
 			  var intNum = Number(hour);
 			  var add12 = intNum + 12;
 			  var strHour = add12.toString();
@@ -213,7 +213,7 @@
 
  //set runtests var  to true to run the tests
 var runtests = false;	  
-if (runtests == true){ 
+if (runtests === true){ 
   
   let atime = getFormattedTime("0510");
   console.log("translated time for 0510 is " + atime);

@@ -107,8 +107,8 @@ const departmentScheduleSchema = new Schema({
    drill_code:{
 	  type: String,
 	  trim: true,
-	  required: false,
-	  validate: [
+    required: false,
+    validate: [
       // Function takes in the new  value to be saved as an argument
       function(input) {
         // If this returns true, proceed. If not, return the error message below
@@ -117,6 +117,20 @@ const departmentScheduleSchema = new Schema({
       //Error Message
       "drill_code field can not be empty."
       ]   
+  },
+    standard:{
+      type: String,
+      trim: true,
+      required: false,
+      validate: [
+        // Function takes in the new  value to be saved as an argument
+        function(input) {
+          // If this returns true, proceed. If not, return the error message below
+          return input.length >= 0;
+        },
+        //Error Message
+        "standard field can not be empty."
+        ]   
   },
     lunch_committee:{
 	  type: String,

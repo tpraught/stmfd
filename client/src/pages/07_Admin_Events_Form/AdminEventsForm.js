@@ -20,24 +20,21 @@ class AdminEventsForm extends Component {
     trainingStartTime:"",
     drillCode:"",
     lunchCommittee:"",
-    formErrors:{month:"", date:"", year:"", description:"", drillCode:""},
+    formErrors:{month:"", date:"", year:"", description:""},
     monthValid:false,
     dateValid:false,
     yearValid:false,
     descriptionValid:false,
-    drillCodeValid:false,
     formValid:false
   }
 
   validateField (fieldName, value) {
-    console.log(fieldName,value);
     let fieldValidationErrors = this.state.formErrors;
     let monthValid = this.state.monthValid;
     let dateValid = this.state.dateValid;
     let yearValid = this.state.yearValid;
     let descriptionValid = this.state.descriptionValid;
-    let drillCodeValid = this.state.drillCodeValid;
-
+   
       switch (fieldName) {
         case "month":
           monthValid = value.length >= 2;
@@ -52,12 +49,8 @@ class AdminEventsForm extends Component {
           fieldValidationErrors.year = yearValid ? '': ' Please select a year';
           break;
           case "description":
-          descriptionValid = value.length >= 5;
+          descriptionValid = value.length >= 3;
           fieldValidationErrors.description = descriptionValid ? '': ' Please enter a description';
-          break;
-          case "drillCode":
-          drillCodeValid = value.length === 1;
-          fieldValidationErrors.drillCode = drillCodeValid ? '': ' Please select a drill code';
           break;
           default:
           break;
@@ -69,13 +62,12 @@ class AdminEventsForm extends Component {
           dateValid:dateValid,
           yearValid:yearValid,
           descriptionValid:descriptionValid,
-          drillCodeValid:drillCodeValid,
         }, this.validateForm);
   }
 
   validateForm = () => {
     this.setState({
-      formValid:this.state.monthValid && this.state.dateValid && this.state.yearValid && this.state.descriptionValid && this.state.drillCodeValid
+      formValid:this.state.monthValid && this.state.dateValid && this.state.yearValid && this.state.descriptionValid
     })
   }
   handleInputChange = event => {
@@ -99,8 +91,9 @@ class AdminEventsForm extends Component {
       meeting_start_time: this.state.meetingStartTime,
       training_start_time:this.state.trainingStartTime,
       drill_code:this.state.drillCode,
+      standard:this.state.standard,
       lunch_committee:this.state.lunchCommittee,
-	  sort_date_time: sortDateString,
+	    sort_date_time: sortDateString,
      
     })
     this.props.history.push('/admin/trainingschedule');
@@ -250,23 +243,25 @@ class AdminEventsForm extends Component {
                                 onChange={this.handleInputChange}
                                 />
                       </Col>
-                      <Col sm="12" md="6">
-                      <Label for="drillCode">DRILL CODE*</Label>
+                      <Col sm="12" md="4">
+                      <Label for="drillCode">DRILL CODE</Label>
                         <Input 
-                          type="select"
+                        type="text" 
                           name="drillCode"
                           id="drillCode"
-                          onChange={this.handleInputChange}>
-                          <option></option>
-                          <option>M</option>
-                          <option>F</option>
-                          <option>E</option>
-                          <option>R</option>
-                          <option>H</option>
-                          <option>O</option>
-                        </Input>
+                          onChange={this.handleInputChange}
+                         />
                         </Col>
-                        <Col sm="12" md="6">
+                        <Col sm="12" md="4">
+                      <Label for="standard">STANDARD</Label>
+                        <Input 
+                        type="text" 
+                          name="standard"
+                          id="standard"
+                          onChange={this.handleInputChange}
+                         />
+                        </Col>
+                        <Col sm="12" md="4">
                             <Label for="lunchCommittee">LUNCH COMMITTEE</Label>
                               <Input 
                                 type="text" 
