@@ -60,6 +60,7 @@ class AdminEventsSchedule extends Component {
                         <th className="text-center">OFC START</th>
                         <th className="text-center">TRNG START</th>
                         <th className="text-center">DRILL CODE</th>
+                        <th className="text-center">STANDARD</th>
                         <th className="text-center">LUNCH COMMITTEE</th>                  
                         <th></th>
                       </tr>
@@ -79,6 +80,7 @@ class AdminEventsSchedule extends Component {
                      trainingStartTime = {event.training_start_time}
                       drillCode = {event.drill_code}
                       lunchCommittee = {event.lunch_committee}
+                     standard = {event.standard}  
                       description = {event.description}  
                       onDelete={() => this.deleteRecord(event._id)}
                       >
