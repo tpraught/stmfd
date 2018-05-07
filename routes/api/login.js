@@ -29,6 +29,12 @@ router.post('/login', async (req, res) => {
     }); 
 });
 
+// GET /logout
+router.get('/logout', (req, res) => {
+    req.logout();
+    return res.send(JSON.stringify(req.user));
+});
+
 // POST to /register
 router.post('/register', async (req, res) => {
     // make sure email doesn't exist
