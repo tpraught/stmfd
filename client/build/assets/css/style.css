@@ -1,7 +1,7 @@
 body{
     font-style: normal;
     font-weight: 100;
-    font-size: 18px;
+    font-size: 16px;
     font-family: 'Roboto', sans-serif !important;
     color:#2f2f2f;
     margin: 0px auto;
@@ -27,15 +27,15 @@ h3, h4 {
     margin-bottom: 15px;
 }
 h3 {
-    font-size: 42px !important;
+    font-size: 38px !important;
 }
 h4 {
-    font-size: 28px !important;
+    font-size: 24px !important;
 }
 p, ul, ol {
     font-style: normal;
     font-weight: 300;
-    font-size: 20px;
+    font-size: 18px;
     font-family: 'Roboto', sans-serif !important;
     color:#2f2f2f;
 }
@@ -67,19 +67,19 @@ span.listTitle {
     background: #b60c00;
     font-style: normal;
     font-weight: 100;
-    font-size: 18px;
+    font-size: 16px !important;
     font-family: 'Roboto', sans-serif;
     color:#ffffff;
-    border-bottom: 10px solid #2f2f2f;
+    border-bottom: 7px solid #2f2f2f;
 }
 #brand {
     background: #0b1f3f;
-    border-bottom: 10px solid #b60c00;
+    border-bottom: 7px solid #b60c00;
     text-align: center;    
 }
 #brand h1 {
     font-style: normal;
-    font-size: 60px;
+    font-size: 56px;
     font-family: 'Playfair Display', serif !important;
     transform: scaleY(0.8);
     -webkit-transform: scaleY(0.8);
@@ -88,7 +88,7 @@ span.listTitle {
 #brand h2 {
     font-style: normal;
     font-weight: 100;
-    font-size: 26px;
+    font-size: 24px;
     font-family: 'Roboto', sans-serif !important;
     color: #ffbe00;
 }
@@ -112,12 +112,12 @@ a.homeLink:hover {
 }
 .innerNav {
     font-family: 'Roboto', sans-serif;
-    max-width: 1400px !important;
+    max-width: 1300px !important;
     width: 100%;
 }
 button.nav-item {
     width: auto;
-    font-size:22px;
+    font-size:20px;
     font-weight: 100;
     color: #ffffff;
     margin: 5px 30px;
@@ -142,7 +142,7 @@ button.nav-item a:active {
     font-weight: 100;
 }
 .dropdown-menu {
-    top: 11px !important;
+    top: 9px !important;
     border-radius: 0 !important;
     padding: 30px 0 !important;
 }
@@ -173,13 +173,13 @@ button.dropdown-item:hover {
 h5 {
     font-style: normal;
     font-weight: 400 !important;
-    font-size: 22px !important;
+    font-size: 20px !important;
     font-family: 'Roboto', sans-serif !important;
 }
 h6 {
     font-style: normal;
     font-weight: 100;
-    font-size: 18px !important;
+    font-size: 16px !important;
     font-family: 'Roboto', sans-serif !important;
 }
 a.quick-link {
@@ -225,7 +225,7 @@ footer {
     font-family: 'Playfair Display', serif !important;
     transform: scaleY(0.9);
     -webkit-transform: scaleY(0.9);
-    font-size:42px;
+    font-size:38px;
     color: #0b1f3f !important;
     margin-bottom: 15px;
     padding: 0 30px;
@@ -234,7 +234,7 @@ footer {
     font-family: 'Playfair Display', serif !important;
     /* transform: scaleY(0.9);
     -webkit-transform: scaleY(0.9); */
-    font-size:30px;
+    font-size:28px;
     color: #0b1f3f !important;
     margin-bottom: 15px;
     padding: 0 30px;
@@ -244,11 +244,11 @@ footer {
     margin: 30px 0;
 }
 .pageContent p {
-    font-size: 24px;
+    font-size: 20px;
     line-height: 1.75;
 }
 .btnLink {
-    font-size: 20px !important;
+    font-size: 16px !important;
     font-weight: 400 !important;
     background: none !important;
     border: none !important;
@@ -263,7 +263,12 @@ footer {
 }
 
 /* Fire Fighters Roster (also applies to admin table) */
-.adminTable, .rosterTable, .medRosterTable, .officerTable, .medRoster, .eventSchedule {
+.table thead th, .table th, .table td {
+    border-top: none !important;
+    border-bottom: none !important;
+    vertical-align: middle !important;
+}
+.adminTable, .rosterTable, .medRosterTable, .officerTable, .medRosterTitle, .eventSchedule {
     font-size: 18px;
     font-family: 'Roboto', sans-serif;
 }
@@ -274,18 +279,19 @@ footer {
     font-weight: 400;
 }
 .medRosterTable thead {
-    border-left: 1px solid #dde2e6;
-    border-right: 1px solid #dde2e6;
+    border-left: 1px solid #2f2f2f;
+    border-right: 1px solid #2f2f2f;
 }
 .medRosterTable thead th, .medRosterTable thead tr {
     width: 33%;
     text-align: center !important;
 }
-.medRosterTable thead tr.company {
+.medRosterTitle .company {
+    text-align: center;
     color: #2f2f2f;
     background: #ffffff;
 }
-.medRosterTable thead tr.company span {
+.medRosterTitle .company span {
     font-size: 14px;
 }
 .officerTable thead {
@@ -300,29 +306,42 @@ footer {
     padding: 15px 0px !important;
 }
 .borderR {
-    border-right: 1px solid #dde2e6;
-    border-bottom: 1px solid #dde2e6;
+    border-right: 1px solid #2f2f2f;
+    border-bottom: 1px solid #2f2f2f;
 }
 .borderM {
-    border-bottom: 1px solid #dde2e6;
+    border-bottom: 1px solid #2f2f2f;
 }
 .borderL {
-    border-left: 1px solid #dde2e6;
-    border-bottom: 1px solid #dde2e6;
+    border-left: 1px solid #2f2f2f;
+    border-bottom: 1px solid #2f2f2f;
 }
 .medRoster .row {
     margin: 5px 0px !important;
     text-align: center;
     display: block;
 }
+.eventSchedule {
+    margin-bottom: 0px !important;
+}
+.eventSchedule thead {
+    font-size: 14px;
+}
 .eventSchedule tr.month {
     border-top: 3px solid #0b1f3f !important;
-    border-bottom: 3px solid #0b1f3f !important;
+    border-bottom: 1px solid #0b1f3f !important;
+    font-family: 'Playfair Display', serif !important;
+    font-size: 24px;
+    color: #b60c00;
     background: #f1f1f1;
 }
-.table thead th, .table th, .table td {
-    border-top: none !important;
-    border-bottom: none !important;
+.error p {
+    color: #b60c00;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 16px;
+    border: 1px dashed #b60c00;
+    padding: 20px;
 }
 td[colspan="3"] {
     text-align: center;
@@ -330,7 +349,7 @@ td[colspan="3"] {
 td h4 {
     font-style: normal;
     font-weight: 400 !important;
-    font-size: 28px !important;
+    font-size: 24px !important;
     font-family: 'Roboto', sans-serif !important;
     color: #2f2f2f !important;
 }
@@ -340,7 +359,7 @@ td.adminButtons {
     text-align: right;
 }
 .addButton {
-    font-size: 20px !important;
+    font-size: 18px !important;
     margin: 0 0 20px 0;
 }
 .redButton {
@@ -358,7 +377,7 @@ td.adminButtons {
     text-align: left;
 } */
 .adminForm .form-control, .adminForm Label {
-    font-size: 20px !important;
+    font-size: 18px !important;
 }
 .adminForm .form-control {
     border: none !important;
@@ -374,7 +393,7 @@ td.adminButtons {
 }
 /*Apparatus Carousel */
 .carousel-caption h3 {
-    font-size: 36px !important;
+    font-size: 34px !important;
     background-color: #0b1f3f;
     color: #ffffff !important;
     padding: 15px 0 !important;
