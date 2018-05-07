@@ -4,9 +4,7 @@ import { Link } from "react-router-dom";
 import AdminEventsTable from "../../components/AdminEvents";
 import AdminHeader from "../../components/AdminHeader";
 import Footer from "../../components/Footer";
-
 import { Col, Row } from "../../components/Grid";
-
 import API from "../../utils/API";
 
 class AdminEventsSchedule extends Component { 
@@ -50,23 +48,19 @@ class AdminEventsSchedule extends Component {
             <Col size="md-12">
                 
                 <Link to="/admin/trainingform"> 
-                  <Button className="float-right redButton addButton Bborder-0">ADD A TRAINING EVENT</Button>
+                  <Button className="float-right redButton addButton Bborder-0">ADD MEETING/TRAINING</Button>
                 </Link>
 
                 <Table className = "adminTable">  
                   <thead>
                       <tr>
                         <th>DATE</th>
-                        <th>MONTH</th>
-                       <th>YEAR</th>
-                       <th>DESCRIPTION</th>
-                       <th>MEETING START TIME</th>
-                       <th>OFFICER START TIME</th>
-                        <th>TRAINING START TIME</th>
-                        <th>DRILL CODE</th>
-                        <th>LUNCH COMMITTEE</th>
-                       
-                       
+                        <th>DESCRIPTION</th>
+                        <th className="text-center">MTG START</th>
+                        <th className="text-center">OFC START</th>
+                        <th className="text-center">TRNG START</th>
+                        <th className="text-center">DRILL CODE</th>
+                        <th className="text-center">LUNCH COMMITTEE</th>                  
                         <th></th>
                       </tr>
                   </thead>

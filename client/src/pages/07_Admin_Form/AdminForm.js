@@ -123,12 +123,17 @@ class AdminTable extends Component {
         <AdminHeader/>
         <Wrapper>
       
-          <div className="pageTitle">
+          <div className="pageTitle mb-5">
             <h1>ADD FIREFIGHTER</h1>  
           </div>
-          
-         
-                   <Col className="mt-5 mb-5">
+          <Col sm="12">
+            <Row className="clearfix text-center justify-content-center">
+              <Col sm="12" md="8" className="error">
+                <FormErrors formErrors={this.state.formErrors} />
+              </Col>
+            </Row>
+          </Col>
+          <Col>
             <Row className="justify-content-center">
               <Form className="adminForm">
                 <FormGroup>
@@ -230,21 +235,16 @@ class AdminTable extends Component {
                   </Col>
                 </FormGroup>
                 <Row>
-                  <Col sm="12">
+                  <Col sm="12" md="6" className="float-left">
+                    <p className="pl-3">* Required fields</p>
+                  </Col>
+                  <Col sm="12" md="6">
                     <Button className="float-right redButton addButton mr-3" type="submit" disabled = {!this.state.formValid} onClick={this.handleFormSubmit}>ADD</Button>
                   </Col>
-                </Row>
-                <Row>
-                <Col sm="12">
-                  <p>* designates required fields</p>
-                </Col>
                 </Row>
               </Form>
             </Row>
           </Col>
-          <Row>
-                   <FormErrors formErrors={this.state.formErrors} />
-           </Row>
         </Wrapper>
         <Footer/>
       </div>

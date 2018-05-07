@@ -4,15 +4,13 @@ import React from 'react';
   <tr>
     
         {/* <th scope="row"></th> */}
-        <td>{props.date}</td>
-       <td>{props.month}</td>
-        <td>{props.year}</td>
-        <td>{props.description}</td>
-        <td>{props.meetingStartTime}</td>
-        <td>{props.officerStartTime}</td>
-        <td>{props.trainingStartTime}</td>
-        <td>{props.drillCode}</td>
-        <td>{props.lunchCommittee}</td>
+        <td width="15%">{props.month} {props.date}, {props.year}</td>
+        <td width="40%">{props.description}</td>
+        <td width="7%" className="text-center">{props.meetingStartTime}</td>
+        <td width="7%" className="text-center">{props.officerStartTime}</td>
+        <td width="7%" className="text-center">{props.trainingStartTime}</td>
+        <td width="5%" className="text-center">{props.drillCode}</td>
+        <td width="19%" className="text-center">{props.lunchCommittee}</td>
    
        
        <td className="adminButtons">

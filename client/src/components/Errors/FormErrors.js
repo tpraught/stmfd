@@ -13,6 +13,7 @@ const FormErrors = ({formErrors}) =>
         return '';
       }
     })}
+    <br className="clr" />
   </div>);
 
 export default FormErrors;

@@ -114,10 +114,17 @@ class AdminExplorerForm extends Component {
       <div>
         <AdminHeader/>
         <Wrapper>
-          <div className="pageTitle">
-            <h1> Explorer Training Schedule </h1>  
+          <div className="pageTitle mb-5">
+            <h1>ADD EXPLORER TRAINING</h1>  
           </div>
-          <Col className="mt-5 mb-5">
+          <Col sm="12">
+            <Row className="clearfix text-center justify-content-center">
+              <Col sm="12" md="6" className="error">
+                <FormErrors formErrors={this.state.formErrors} />
+              </Col>
+            </Row>
+          </Col>
+          <Col>
             <Row className="justify-content-center">
               <Form className="adminForm">
                 <FormGroup>
@@ -236,7 +243,7 @@ class AdminExplorerForm extends Component {
                             type="text" 
                             name="time"
                             id="time"
-                            placeholder = "7 pm – 9 pm"
+                            placeholder = "7:00 – 9:00 pm"
                             onChange={this.handleInputChange}
                             />
                       </Col>
@@ -270,21 +277,16 @@ class AdminExplorerForm extends Component {
                   </Col>
                 </FormGroup>
                 <Row>
-                  <Col sm="12">
+                  <Col sm="12" md="6" className="float-left">
+                    <p className="pl-3">* Required fields</p>
+                  </Col>
+                  <Col sm="12" md="6">
                     <Button className="float-right redButton addButton mr-3" type="submit" disabled = {!this.state.formValid} onClick={this.handleFormSubmit}>ADD</Button>
                   </Col>
-                </Row>
-                <Row>
-                <Col sm="12">
-                  <p>* designates required fields</p>
-                </Col>
                 </Row>
               </Form>
             </Row>
           </Col>
-             <Row>
-                   <FormErrors formErrors={this.state.formErrors} />
-                </Row>
         </Wrapper>
         <Footer/>
       </div>
