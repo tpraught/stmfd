@@ -31,7 +31,7 @@ export default class AdminLogin extends Component {
     }
 
     // handle submit once all data is valid
-    compileFormData() {
+    handleValidSubmit() {
         const { loginFunction } = this.props;
         const formData = this.state;
         loginFunction(formData);
