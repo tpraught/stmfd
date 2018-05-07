@@ -1,9 +1,7 @@
 import React from 'react';
-import 'whatwg-fetch';
-
-import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { incrementProgress, decrementProgress } from '../../actions/progress';
+import { Redirect } from 'react-router-dom';
+import { logUserIn } from '../../actions/authentication';
 
 import AdminLogin from './AdminLogin';
 
@@ -43,4 +41,4 @@ function mapStateToProps(state) {
     };
 }
 
-ecport default connect(mapStateToProps)(LoginContainer);
+export default connect(mapStateToProps)(LoginContainer);
