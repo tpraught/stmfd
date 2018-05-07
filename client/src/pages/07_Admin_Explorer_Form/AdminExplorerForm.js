@@ -6,6 +6,7 @@ import { Button, Form, FormGroup, Label, Input} from 'reactstrap';
 import AdminHeader from "../../components/AdminHeader";
 import Wrapper from "../../components/Wrapper";
 import Footer from "../../components/Footer";
+import {getScheduleSortDate} from '../../utils/date_time_sort_utility.js';
 
 class AdminExplorerForm extends Component {
 
@@ -91,6 +92,8 @@ class AdminExplorerForm extends Component {
   handleFormSubmit = event => {
     console.log("Saving Explorer schedule");
     event.preventDefault();
+	
+	var sortDateString = getScheduleSortDate(this.state.year, this.state.month, this.state.date, this.state.time);
 
    API.saveExplorerEvent({
       month: this.state.month,
@@ -99,7 +102,8 @@ class AdminExplorerForm extends Component {
       year: this.state.year,
       event_type: this.state.eventType,
       description: this.state.description,
-      time: this.state.time
+      time: this.state.time,
+	  sort_date_time: sortDateString,
      
     })
     this.props.history.push('/admin/explorerschedule');

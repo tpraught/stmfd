@@ -6,6 +6,7 @@ import FormErrors from "../../components/Errors";
 import AdminHeader from "../../components/AdminHeader";
 import Wrapper from "../../components/Wrapper";
 import Footer from "../../components/Footer";
+import {getScheduleSortDate} from '../../utils/date_time_sort_utility.js';
 
 class AdminEventsForm extends Component {
 
@@ -86,7 +87,9 @@ class AdminEventsForm extends Component {
   handleFormSubmit = event => {
     console.log("Saving FD schedule");
     event.preventDefault();
-
+	
+	var sortDateString = getScheduleSortDate(this.state.year, this.state.month, this.state.date, this.state.officerStartTime);
+	
    API.saveTrainingEvent({
       month: this.state.month,
       date: this.state.date,
@@ -96,7 +99,8 @@ class AdminEventsForm extends Component {
       meeting_start_time: this.state.meetingStartTime,
       training_start_time:this.state.trainingStartTime,
       drill_code:this.state.drillCode,
-      lunch_committee:this.state.lunchCommittee
+      lunch_committee:this.state.lunchCommittee,
+	  sort_date_time: sortDateString,
      
     })
     this.props.history.push('/admin/trainingschedule');
