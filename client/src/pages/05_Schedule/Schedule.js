@@ -136,21 +136,22 @@ class Schedule extends Component {
       <div className="pageTitle">
             <h1> {this.state.year} MEETING AND TRAINING SCHEDULE</h1>  
           </div>
-            <Row className="justify-content-center">
+            <Row className="justify-content-center mt-5">
               <Col sm={{ size: 12 }}>
                 <Table className="eventSchedule border-0">  
                   <thead>
                     <tr>
-                      <td className="text-center border-0">DATE</td>
-                      <td className="text-center border-0">DESCRIPTION</td>
-                      <td className="text-center border-0">OFC START</td>
-                      <td className="text-center border-0">MTG START</td>
-                      <td className="text-center border-0">TRNG START</td>
-                      <td className="text-center border-0">DRILL CODE</td>
-                      <td className="text-center border-0">LUNCH COMMITTEE</td>
+                      <td width="5%" className="text-center border-0">DATE</td>
+                      <td width="35%" className="text-left border-0">DESCRIPTION</td>
+                      <td width="5%" className="text-center border-0">OFC START</td>
+                      <td width="5%" className="text-center border-0">MTG START</td>
+                      <td width="5%" className="text-center border-0">TRNG START</td>
+                      <td width="5%" className="text-center border-0">DRILL CODE</td>
+                      <td width="20%" className="text-center border-0">LUNCH COMMITTEE</td>
                       </tr>
                   </thead>
-                
+                </Table>
+                <Table className="eventSchedule border-0">  
                   <tbody>
                     <tr className="month"> 
                       <td colSpan="12" className="text-center">JANUARY {this.state.year}
@@ -159,7 +160,10 @@ class Schedule extends Component {
                     {this.state.January.map(event =>
                         this.displayEvents(event)
                     )} 
-
+                  </tbody>
+                </Table>
+                <Table className="eventSchedule border-0">  
+                  <tbody>
                     <tr className="month"> 
                       <td colSpan="12" className="text-center">FEBRUARY {this.state.year}
                         </td>
@@ -167,7 +171,10 @@ class Schedule extends Component {
                     {this.state.February.map(event =>
                       this.displayEvents(event)
                     )} 
-
+                  </tbody>
+                </Table>
+                <Table className="eventSchedule border-0">  
+                  <tbody>
                     <tr className="month"> 
                       <td colSpan="12" className="text-center">MARCH {this.state.year}
                         </td>
@@ -175,6 +182,10 @@ class Schedule extends Component {
                     {this.state.March.map(event =>
                       this.displayEvents(event)
                     )} 
+                  </tbody>
+                </Table>
+                <Table className="eventSchedule border-0">  
+                  <tbody>
                     <tr className="month"> 
                       <td colSpan="12" className="text-center">APRIL {this.state.year}
                         </td>
@@ -182,7 +193,10 @@ class Schedule extends Component {
                     {this.state.April.map(event =>
                       this.displayEvents(event)
                     )} 
-
+                  </tbody>
+                </Table>
+                <Table className="eventSchedule border-0">  
+                  <tbody>
                     <tr className="month"> 
                       <td colSpan="12" className="text-center">MAY {this.state.year}
                         </td>
@@ -190,7 +204,10 @@ class Schedule extends Component {
                     {this.state.May.map(event =>
                       this.displayEvents(event)
                     )} 
-
+                  </tbody>
+                </Table>
+                <Table className="eventSchedule border-0">  
+                  <tbody>
                     <tr className="month"> 
                       <td colSpan="12" className="text-center">JUNE {this.state.year}
                         </td>
@@ -198,7 +215,10 @@ class Schedule extends Component {
                     {this.state.June.map(event =>
                       this.displayEvents(event)
                     )} 
-
+                  </tbody>
+                </Table>
+                <Table className="eventSchedule border-0">  
+                  <tbody>
                     <tr className="month"> 
                       <td colSpan="12" className="text-center">JULY {this.state.year}
                         </td>
@@ -206,7 +226,10 @@ class Schedule extends Component {
                     {this.state.July.map(event =>
                       this.displayEvents(event)
                     )} 
-
+                  </tbody>
+                </Table>
+                <Table className="eventSchedule border-0">  
+                  <tbody>
                     <tr className="month"> 
                       <td colSpan="12" className="text-center">AUGUST {this.state.year}
                         </td>
@@ -214,7 +237,10 @@ class Schedule extends Component {
                     {this.state.August.map(event =>
                       this.displayEvents(event)
                     )} 
-
+                  </tbody>
+                </Table>
+                <Table className="eventSchedule border-0">  
+                  <tbody>
                     <tr className="month"> 
                       <td colSpan="12" className="text-center">SEPTEMBER {this.state.year}
                         </td>
@@ -222,7 +248,10 @@ class Schedule extends Component {
                     {this.state.September.map(event =>
                       this.displayEvents(event)
                     )} 
-
+                  </tbody>
+                </Table>
+                <Table className="eventSchedule border-0">  
+                  <tbody>
                     <tr className="month"> 
                       <td colSpan="12" className="text-center">OCTOBER {this.state.year}
                         </td>
@@ -230,7 +259,10 @@ class Schedule extends Component {
                     {this.state.October.map(event =>
                       this.displayEvents(event)
                     )} 
-
+                  </tbody>
+                </Table>
+                <Table className="eventSchedule border-0">  
+                  <tbody>
                     <tr className="month"> 
                       <td colSpan="12" className="text-center">NOVEMBER {this.state.year}
                         </td>
@@ -238,7 +270,10 @@ class Schedule extends Component {
                     {this.state.November.map(event =>
                       this.displayEvents(event)
                     )} 
-
+                  </tbody>
+                </Table>
+                <Table className="eventSchedule border-0">  
+                  <tbody>
                     <tr className="month"> 
                       <td colSpan="12" className="text-center">DECEMBER {this.state.year}
                         </td>
@@ -246,7 +281,6 @@ class Schedule extends Component {
                     {this.state.December.map(event =>
                       this.displayEvents(event)
                     )} 
-
                   </tbody>
                 </Table>
               </Col>

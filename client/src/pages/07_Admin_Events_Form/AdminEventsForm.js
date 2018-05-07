@@ -111,10 +111,17 @@ class AdminEventsForm extends Component {
       <div>
         <AdminHeader/>
         <Wrapper>
-          <div className="pageTitle">
-            <h1> Fire Department Meeting and Training Schedule </h1>  
+          <div className="pageTitle mb-5">
+            <h1>ADD FD MEETING/TRAINING</h1>  
           </div>
-          <Col className="mt-5 mb-5">
+          <Col sm="12">
+            <Row className="clearfix text-center justify-content-center">
+              <Col sm="12" md="8" className="error">
+                <FormErrors formErrors={this.state.formErrors} />
+              </Col>
+            </Row>
+          </Col>
+          <Col>
             <Row className="justify-content-center">
               <Form className="adminForm">
                 <FormGroup>
@@ -213,13 +220,13 @@ class AdminEventsForm extends Component {
                         <Row>
                                     
                   
-                        <Col sm="12" md="">
+                        <Col sm="12" md="4">
                             <Label for="officerStartTime">OFFICER START TIME</Label>
                               <Input 
                                 type="text" 
                                 name="officerStartTime"
                                 id="officerStartTime"
-                                placeholder = "e.g. 8:00 am"
+                                placeholder = "e.g. 18:00"
                                 onChange={this.handleInputChange}
                                 />
                           </Col>
@@ -229,7 +236,7 @@ class AdminEventsForm extends Component {
                                 type="text" 
                                 name="meetingStartTime"
                                 id="meetingStartTime"
-                                placeholder = "e.g. 9:00 am"
+                                placeholder = "e.g. 19:00"
                                 onChange={this.handleInputChange}
                                 />
                       </Col>
@@ -239,7 +246,7 @@ class AdminEventsForm extends Component {
                                 type="text" 
                                 name="trainingStartTime"
                                 id="trainingStartTime"
-                                placeholder = "e.g. 7:00 am"
+                                placeholder = "e.g. 17:00"
                                 onChange={this.handleInputChange}
                                 />
                       </Col>
@@ -284,21 +291,16 @@ class AdminEventsForm extends Component {
                   </Col>
                 </FormGroup>
                 <Row>
-                  <Col sm="12">
+                  <Col sm="12" md="6" className="float-left">
+                    <p className="pl-3">* Required fields</p>
+                  </Col>
+                  <Col sm="12" md="6">
                     <Button className="float-right redButton addButton mr-3" type="submit" disabled = {!this.state.formValid}  onClick={this.handleFormSubmit}>ADD</Button>
                   </Col>
-                </Row>
-                <Row>
-                <Col sm="12">
-                  <p>* designates required fields</p>
-                </Col>
                 </Row>
               </Form>
              </Row>
           </Col>
-          <Row>
-                   <FormErrors formErrors={this.state.formErrors} />
-                </Row>
         </Wrapper>
         <Footer/>
       </div>

@@ -139,10 +139,10 @@ class ExplorerSchedule extends Component {
                 <Table className="eventSchedule border-0">  
                   <thead>
                     <tr>
-                      <td className="text-center border-0">DATE</td>
-                      <td className="text-center border-0">DESCRIPTION</td>
-                      <td className="text-center border-0">EVENT TYPE</td>
-                      <td className="text-center border-0">TIME</td>
+                      <td width="20%" className="text-center border-0">DATE</td>
+                      <td width="40%" className="text-left border-0">DESCRIPTION</td>
+                      <td width="15%" className="text-center border-0">EVENT TYPE</td>
+                      <td width="25%" className="text-center border-0">TIME</td>
                       </tr>
                   </thead>
                 

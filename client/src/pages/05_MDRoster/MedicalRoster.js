@@ -141,22 +141,31 @@ class MedicalRoster extends Component {
                       <tr className="station"> 
                         <td colSpan="3">STATION #1 </td>
                       </tr>
-                      <tr className="company">
-                        <th><strong>COMPANY A</strong><br />
-                          <span>January | April</span><br />
-                          <span>July | October</span>
-                        </th>
-                        <th><strong>COMPANY B</strong><br />
-                          <span>February | May</span><br />
-                          <span>August | November</span>
-                        </th>
-                        <th><strong>COMPANY C</strong><br />
-                          <span>March | June</span><br />
-                          <span>September | December</span>
-                        </th>
-                      </tr>
                     </thead>
                   </Table>
+                </Col>
+              </Row>
+              <Row className="pl-3 pr-3">
+                <Col sm={{ size: 12 }} md={{ size: 4 }} className="medRosterTitle borderL p-3">
+                  <div className="company">
+                    <strong>COMPANY A</strong><br />
+                    <span>January | April</span><br />
+                    <span>July | October</span>
+                  </div>
+                </Col>
+                <Col sm={{ size: 12 }} md={{ size: 4 }} className="medRosterTitle borderM p-3">
+                  <div className="company">
+                    <strong>COMPANY B</strong><br />
+                    <span>February | May</span><br />
+                    <span>August | November</span>
+                  </div>
+                </Col>
+                <Col sm={{ size: 12 }} md={{ size: 4 }} className="medRosterTitle borderR p-3">
+                  <div className="company">
+                    <strong>COMPANY C</strong><br />
+                    <span>March | June</span><br />
+                    <span>September | December</span>
+                  </div>
                 </Col>
               </Row>
               <Row className="pl-3 pr-3">
