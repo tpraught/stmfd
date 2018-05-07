@@ -20,8 +20,10 @@ app.use(express.static("client/build"));
 app.use(routes);
 
 // ----------------------------- admin ----------------------------------------------
-// Configure Passport
 const User = require('./models/admin');
+const login = require('./routes/api/login');
+const users = require('./routes/api/users');
+// Configure Passport
 passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
@@ -47,6 +49,8 @@ app.use(require('express-session')({
     saveUninitialized: false
 }));
 
+app.use('/api/login', login);
+app.use('/api/users', users);
 app.use(passport.initialize());
 app.use(passport.session());
 // ----------------------------- ----- ----------------------------------------------
