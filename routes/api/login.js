@@ -1,8 +1,12 @@
 const express = require('express');
 const passport = require('passport');
 const User = require('../../models/admin.js');
+const mongoose = require('mongoose');
 
 const router = express.Router();
+
+// mongoose promise
+mongoose.Promise = global.Promise;
 
 // GET route for reading data
 router.get('/', function (req, res, next) {
