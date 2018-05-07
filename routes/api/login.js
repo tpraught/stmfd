@@ -1,7 +1,15 @@
 const express = require('express');
+const appConfig = require('../../config.js');
+const createDOMPurify = require('dompurify');
+const crypto = require('crypto');
+const { JSDOM } = require('jsdom');
+const mailgun = require('mailgun-js')({
+  apiKey: appConfig.mailgun.apiKey,
+  domain: appConfig.mailgun.domain,
+});
 const passport = require('passport');
-const User = require('../../models/admin.js');
 const mongoose = require('mongoose');
+const User = require('../../models/admin.js');
 
 const router = express.Router();
 
@@ -11,6 +19,14 @@ mongoose.Promise = global.Promise;
 // GET route for reading data
 router.get('/', function (req, res, next) {
     return res.sendFile(path.join(__dirname + '../../client/src/pages/07_Admin_Login'));
+});
+
+// GET to /checksession
+router.get('/checksession', (req, res) => {
+    if (req.user) {
+        return res.send(JSON.stringify(req.user));
+    }
+    return res.send(JSON.stringify({}));
 });
 
 // POST to /login
@@ -84,6 +100,86 @@ router.post('/register', async (req, res) => {
     return res.send(JSON.stringify({ error: 'There was an error registering the user' }));
 });
 
+// POST save password
+router.post('/savepassword', async (req, res) => {
+    let result;
+    try {
+        // look up user in the DB based on reset hash
+        const query = User.findOne({ passwordReset: req.body.hash });
+        const foundUser = await query.exec();
+  
+        // If the user exists save their new password
+        if (foundUser) {
+            // user passport's built-in password set method
+            foundUser.setPassword(req.body.password, (err) => {
+                if (err) {
+                    result = res.send(JSON.stringify({ error: 'Password could not be saved. Please try again' }));
+                } else {
+                    // once the password's set, save the user object
+                    foundUser.save((error) => {
+                        if (error) {
+                            result = res.send(JSON.stringify({ error: 'Password could not be saved. Please try again' }));
+                        } else {
+                        // Send a success message
+                        result = res.send(JSON.stringify({ success: true }));
+                        }
+                    });
+                }
+            });
+        } else {
+            result = res.send(JSON.stringify({ error: 'Reset hash not found in database.' }));
+        }
+    } catch (err) {
+        result = res.send(JSON.stringify({ error: 'There was an error connecting to the database.' }));
+    }
+    return result;
+  });
+
+// POST to saveresethash
+router.post('/saveresethash', async (req, res) => {
+    let result;
+    try {
+        // check and make sure the email exists
+        const query = User.findOne({ email: req.body.email });
+        const foundUser = await query.exec();
+    
+        // If the user exists, save their password hash
+        const timeInMs = Date.now();
+        const hashString = `${req.body.email}${timeInMs}`;
+        const secret = appConfig.crypto.secret;
+        const hash = crypto.createHmac('sha256', secret)
+                            .update(hashString)
+                            .digest('hex');
+        foundUser.passwordReset = hash;
+    
+        foundUser.save((err) => {
+            if (err) { result = res.send(JSON.stringify({ error: 'Something went wrong while attempting to reset your password. Please Try again' })); }
+    
+            // Put together the email
+            const emailData = {
+                from: `CloseBrace <postmaster@${appConfig.mailgun.domain}>`,
+                to: foundUser.email,
+                subject: 'Reset Your Password',
+                text: `A password reset has been requested. If you made this request, please click the following link: https://${foundUser.passwordReset} ... if you didn't make this request, feel free to ignore it!`,
+                html: `<p>A password reset has been requested. If you made this request, please click the following link: <a href="https://${foundUser.passwordReset}&quot; target="_blank">https://${foundUser.passwordReset}</a>.</p><p>If you didn't make this request, feel free to ignore it!</p>`,
+            };
+    
+            // Send it
+            mailgun.messages().send(emailData, (error, body) => {
+                if (error || !body) {
+                    result = res.send(JSON.stringify({ error: 'Something went wrong while attempting to send the email. Please try again.' }));
+                } else {
+                    result = res.send(JSON.stringify({ success: true }));
+                }
+            });
+        });
+    } catch (err) {
+        // if the user doesn't exist, error out
+        result = res.send(JSON.stringify({ error: 'Something went wrong while attempting to reset your password. Please Try again' }));
+    }
+    return result;
+});
+  
 // //POST route for updating data
 // router.post('/', function (req, res, next) {
 //     // confirm that user typed same password twice

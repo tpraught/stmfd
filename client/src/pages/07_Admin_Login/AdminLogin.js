@@ -31,7 +31,7 @@ export default class AdminLogin extends Component {
     }
 
     // handle submit once all data is valid
-    handleValidSubmit() {
+    compileFormData() {
         const { loginFunction } = this.props;
         const formData = this.state;
         loginFunction(formData);
@@ -79,7 +79,7 @@ export default class AdminLogin extends Component {
                                                     Email        
                                                 </Label>
                                                 <AvInput
-                                                    type="text"
+                                                    type="email"
                                                     id="email"
                                                     name="email"
                                                     onChange={this.handleEmailChange}
@@ -94,7 +94,7 @@ export default class AdminLogin extends Component {
                                                     Password
                                                 </Label>
                                                 <AvInput
-                                                    type="text"
+                                                    type="password"
                                                     id="password"
                                                     name="password"
                                                     onChange={this.handlePasswordChange}
@@ -105,9 +105,11 @@ export default class AdminLogin extends Component {
                                                 <AvFeedback>A password is required to log in</AvFeedback>
                                                 {/* <span><Link to="/account/reset-password">Forgot your password?</Link></span> */}
                                             </AvGroup>   
-                                            <Button className="mt-3 redButton addButton float-right"
+                                            <Button 
+                                                className="mt-3 redButton addButton float-right"
                                                 /* disabled={!this.validateForm()} */
                                                 id="submit"
+                                                onClick={this.compileFormData}
                                             >
                                                 Login
                                             </Button>

@@ -99,6 +99,12 @@ const App = () => (
         <Route exact path="/admin/trainingform" component={AdminEventsForm} />
         <Route exact path="/admin/trainingschedule" component={AdminEventsSchedule} />
         <Route exact path="/admin/login" component={AdminLogin} />
+        <Route path="/account/change-password/:hash" component={ChangePasswordPage} />
+        <Route exact path="/account/register" component={RegisterPage} />
+        <Route exact path="/account/registration-success" component={RegistrationSuccessPage} />
+        <Route exact path="/account/reset-password" component={ResetPasswordPage} />
+        <Route path="/account/profile/:id" component={ProfilePage} />
+        <Route path="/list/:username" component={ListPage} />
 
         <Route exact path="/ContactUs" component={ContactUs} />
         

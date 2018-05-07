@@ -21,7 +21,7 @@ app.use(routes);
 
 // ----------------------------- admin ----------------------------------------------
 const User = require('./models/admin');
-const login = require('./routes/api/login');
+const authentication = require('./routes/api/login');
 const users = require('./routes/api/users');
 // Configure Passport
 passport.use(new LocalStrategy(User.authenticate()));
@@ -49,7 +49,7 @@ app.use(require('express-session')({
     saveUninitialized: false
 }));
 
-app.use('/api/login', login);
+app.use('/api/login', authentication);
 app.use('/api/users', users);
 app.use(passport.initialize());
 app.use(passport.session());
