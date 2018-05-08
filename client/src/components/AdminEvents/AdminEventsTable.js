@@ -9,9 +9,9 @@ import React from 'react';
         <td width="7%" className="text-center">{props.meetingStartTime}</td>
         <td width="7%" className="text-center">{props.officerStartTime}</td>
         <td width="7%" className="text-center">{props.trainingStartTime}</td>
-        <td width="5%" className="text-center">{props.drillCode}</td>
+        <td width="4%" className="text-center">{props.drillCode}</td>
         <td width="5%" className="text-center">{props.standard}</td>
-        <td width="19%" className="text-center">{props.lunchCommittee}</td>
+        <td width="15%" className="text-center">{props.lunchCommittee}</td>
    
        
        <td className="adminButtons">

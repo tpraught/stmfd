@@ -143,11 +143,12 @@ class Schedule extends Component {
                     <tr>
                       <td width="5%" className="text-center border-0">DATE</td>
                       <td width="35%" className="text-left border-0">DESCRIPTION</td>
-                      <td width="5%" className="text-center border-0">OFC START</td>
-                      <td width="5%" className="text-center border-0">MTG START</td>
-                      <td width="5%" className="text-center border-0">TRNG START</td>
-                      <td width="5%" className="text-center border-0">DRILL CODE</td>
-                      <td width="20%" className="text-center border-0">LUNCH COMMITTEE</td>
+                      <td width="7%" className="text-center border-0">OFC START</td>
+                      <td width="7%" className="text-center border-0">MTG START</td>
+                      <td width="7%" className="text-center border-0">TRNG START</td>
+                      <td width="7%" className="text-center border-0">DRILL CODE</td>
+                      <td width="14%" className="text-center border-0">STANDARD</td>
+                      <td width="18%" className="text-center border-0">LUNCH COMMITTEE</td>
                       </tr>
                   </thead>
                 </Table>
