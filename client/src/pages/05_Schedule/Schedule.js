@@ -117,6 +117,7 @@ class Schedule extends Component {
               meetingStartTime = {trainingEvent.meeting_start_time}
               trainingStartTime = {trainingEvent.training_start_time}
               drillCode = {trainingEvent.drill_code}
+              standard = {trainingEvent.standard}
               lunchCommittee = {trainingEvent.lunch_committee}
             />
       )
