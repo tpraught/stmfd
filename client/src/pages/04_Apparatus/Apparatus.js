@@ -20,38 +20,43 @@ import heroImages from "../../HeroImages.json";
 const items = [
   {
     src: "../../../assets/images/04_Apparatus/04_suzy.jpg",
-    altText: '1929 Chevrolet',
-    caption: '1929 Chevrolet Side Mount Pump'
+    altText: '"Suzy" - 1929 Chevrolet Side Mount Pump Engine',
+    caption: '"Suzy" - 1929 Chevrolet Side Mount Pump Engine'
   },
   {
     src: "../../../assets/images/04_Apparatus/04_engine1.jpg",
-    altText: '1999 Braun Custom',
-    caption: '1999 Braun Custom'
+    altText: 'Engine 1 - 2002 Pierce Quantum Tank',
+    caption: 'Engine 1 - 2002 Pierce Quantum Tank'
   },
   {
     src: "../../../assets/images/04_Apparatus/04_engine3.jpg",
-    altText: '1996 Pierce Saber Custom Chassis',
-    caption: '1996 Pierce Saber Custom Chassis'
+    altText: 'Engine 3 - 1995 Pierce Sabre',
+    caption: 'Engine 3 - 1995 Pierce Sabre'
   },
   {
     src: "../../../assets/images/04_Apparatus/04_utility11.jpg",
-    altText: '2002 Pierce Quantum Custom Chassis',
-    caption: '2002 Pierce Quantum Custom Chassis'
+    altText: 'Utility 11 - 2013 Freightline, Custom Fire',
+    caption: 'Utility 11 - 2013 Freightline, Custom Fire'
   },
   {
     src: "../../../assets/images/04_Apparatus/04_grass11.jpg",
-    altText: '1999 Chevrolet 3/4-Ton Forestener 500 Gal. Skid',
-    caption: '1999 Chevrolet 3/4-Ton Forestener 500 Gal. Skid'
+    altText: 'Grass 11 - 2015 Ford with Polaris 6x6',
+    caption: 'Grass 11 - 2015 Ford with Polaris 6x6'
   },
   {
     src: "../../../assets/images/04_Apparatus/04_t8.jpg",
-    altText: '2002 Central States 2,000 Gal. Tanker',
-    caption: '2002 Central States 2,000 Gal. Tanker'
+    altText: 'Tender 8 - 2001 Ford, 2,000 Gallon Tanker',
+    caption: 'Tender 8 - 2001 Ford, 2,000 Gallon Tanker'
   },
   {
     src: "../../../assets/images/04_Apparatus/04_ambulance.jpg",
-    altText: '1991 Utilimaster Custom',
-    caption: '1991 Utilimaster Custom'
+    altText: 'Rescue 5 - 1995 Ford, North Central Ambulance',
+    caption: 'Rescue 5 - 1995 Ford, North Central Ambulance'
+  },
+  {
+    src: "../../../assets/images/04_Apparatus/04_ambulance2.jpg",
+    altText: 'Rescue 9 - 1998 Ford, North Central Ambulance',
+    caption: 'Rescue 9 - 1998 Ford, North Central Ambulance'
   }
 ];
 
