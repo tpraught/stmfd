@@ -4,7 +4,9 @@ import {
   CarouselItem,
   CarouselControl,
   CarouselIndicators,
-  CarouselCaption
+  CarouselCaption,
+  Col,
+  Row
 } from 'reactstrap';
 import Header from "../../components/Header";
 import Nav from "../../components/Nav";
@@ -17,39 +19,44 @@ import heroImages from "../../HeroImages.json";
 
 const items = [
   {
-    src: "../../../assets/images/04_1929Chevrolet.jpg",
-    altText: '1929Chevrolet',
-    caption: '1929 Chevrolet Side Mount Pump'
+    src: "../../../assets/images/04_Apparatus/04_suzy.jpg",
+    altText: '"Suzy" - 1929 Chevrolet Side Mount Pump Engine',
+    caption: '"Suzy" - 1929 Chevrolet Side Mount Pump Engine'
   },
   {
-    src: "../../../assets/images/04_Ambulance1999.jpg",
-    altText: '1999 Braun Custom',
-    caption: '1999 Braun Custom'
+    src: "../../../assets/images/04_Apparatus/04_engine1.jpg",
+    altText: 'Engine 1 - 2002 Pierce Quantum Tank',
+    caption: 'Engine 1 - 2002 Pierce Quantum Tank'
   },
   {
-    src: "../../../assets/images/04_Engine.jpg",
-    altText: '1996 Pierce Saber Custom Chassis',
-    caption: '1996 Pierce Saber Custom Chassis'
+    src: "../../../assets/images/04_Apparatus/04_engine3.jpg",
+    altText: 'Engine 3 - 1995 Pierce Sabre',
+    caption: 'Engine 3 - 1995 Pierce Sabre'
   },
   {
-    src: "../../../assets/images/04_Engine12002.jpg",
-    altText: '2002 Pierce Quantum Custom Chassis',
-    caption: '2002 Pierce Quantum Custom Chassis'
+    src: "../../../assets/images/04_Apparatus/04_utility11.jpg",
+    altText: 'Utility 11 - 2013 Freightline, Custom Fire',
+    caption: 'Utility 11 - 2013 Freightline, Custom Fire'
   },
   {
-    src: "../../../assets/images/04_GrassRig.jpg",
-    altText: '1999 Chevrolet 3/4-Ton Forestener 500 Gal. Skid',
-    caption: '1999 Chevrolet 3/4-Ton Forestener 500 Gal. Skid'
+    src: "../../../assets/images/04_Apparatus/04_grass11.jpg",
+    altText: 'Grass 11 - 2015 Ford with Polaris 6x6',
+    caption: 'Grass 11 - 2015 Ford with Polaris 6x6'
   },
   {
-    src: "../../../assets/images/04_RescueVan.jpg",
-    altText: '1991 Utilimaster Custom',
-    caption: '1991 Utilimaster Custom'
+    src: "../../../assets/images/04_Apparatus/04_t8.jpg",
+    altText: 'Tender 8 - 2001 Ford, 2,000 Gallon Tanker',
+    caption: 'Tender 8 - 2001 Ford, 2,000 Gallon Tanker'
   },
   {
-    src: "../../../assets/images/04_Tanker2002.jpg",
-    altText: '2002 Central States 2,000 Gal. Tanker',
-    caption: '2002 Central States 2,000 Gal. Tanker'
+    src: "../../../assets/images/04_Apparatus/04_ambulance.jpg",
+    altText: 'Rescue 5 - 1995 Ford, North Central Ambulance',
+    caption: 'Rescue 5 - 1995 Ford, North Central Ambulance'
+  },
+  {
+    src: "../../../assets/images/04_Apparatus/04_ambulance2.jpg",
+    altText: 'Rescue 9 - 1998 Ford, North Central Ambulance',
+    caption: 'Rescue 9 - 1998 Ford, North Central Ambulance'
   }
 ];
 
@@ -100,7 +107,7 @@ class Apparatus extends Component {
           onExited={this.onExited}
           key={item.src}
         >
-          <img src={item.src} alt={item.altText} width="1200"/>
+          <img src={item.src} alt={item.altText} className="img-fluid" />
           <CarouselCaption captionHeader={item.caption} />
         </CarouselItem>
       );
@@ -111,28 +118,31 @@ class Apparatus extends Component {
       <Header />
       <Nav />
       <Hero 
-      id  = {heroImages[4].id}
-      src  = {heroImages[4].image}
-      alt = {heroImages[4].name}
+        id  = {heroImages[4].id}
+        src  = {heroImages[4].image}
+        alt = {heroImages[4].name}
       />
       <Wrapper>
-      <Carousel
-        activeIndex={activeIndex}
-        next={this.next}
-        previous={this.previous}
-      >
-        <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
-        {slides}
-        <CarouselControl direction="prev" directionText="Previous" onClickHandler={this.previous} />
-        <CarouselControl direction="next" directionText="Next" onClickHandler={this.next} />
-      </Carousel>
+        <Row className="justify-content-center">
+          <Col>
+            <Carousel
+              activeIndex={activeIndex}
+              next={this.next}
+              previous={this.previous}
+            >
+              <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
+                {slides}
+              <CarouselControl direction="prev" directionText="Previous" onClickHandler={this.previous} />
+              <CarouselControl direction="next" directionText="Next" onClickHandler={this.next} />
+            </Carousel>
+          </Col>
+        </Row>
       </Wrapper> 
       <QuickLinks />
       <Footer />
     </div>
     )
   }
-  
 }
 
 export default Apparatus;

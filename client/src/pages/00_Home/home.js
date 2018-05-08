@@ -6,7 +6,7 @@ import Feed from "../../components/Feed";
 import QuickLinks from "../../components/Quick_Links";
 import Footer from "../../components/Footer";
 import heroImages from "../../HeroImages.json"
-import { Jumbotron } from "reactstrap";
+import { Jumbotron, Col, Row } from "reactstrap";
 
 class Home extends Component { 
    
@@ -31,27 +31,28 @@ class Home extends Component {
 								<h3>OUR MISSION</h3>
 								<p>The St. Michael Fire Department pledges to protect all people, home, and businesses in the city. The SMFD works closely with the Wright County Sheriff's Office, Allina Ambulance, and the Fire Departments of surrounding communities to respond to your service calls quickly.</p>
 							</div>
-							<img className="card-img-bottom" src="assets/images/img_smfdTeam.png" alt="St. Michael Fire Department Team " />
+							<img className="card-img-bottom" src="assets/images/00_smfdTeam.png" alt="St. Michael Fire Department Team " />
 						</div>
 					</div>
 				</div>
 
 				{/* Word from the Chief */}
-				<div className="container mt-5 mb-5">
-					<div className="row justify-content-center">
-						<div className="col-12">
-							<div className="row">
-								<div className="col-2 float-left">
-									<img src="assets/images/img_chief.png" alt="St. Michael Fire Department Team" />
-								</div>
-								<div className="col-10 float-right">
+				<Col className="mt-5 mb-5">
+					<Row className="justify-content-center">
+						<Col sm="12" md="10">
+							<Row>
+								<Col sm="12" md="3" className="float-left">
+									<img src="assets/images/00_chief.jpg" alt="Chief of St. Michael Fire Department" className="img-fluid" />
+								</Col>
+								<Col sm="12" md="9" className="float-right">
 									<h4>A WORD FROM YOUR CHEIF</h4>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim adminim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt </p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+									<p>I have had the honor of serving as Chief of the St. Michael Fire Department since 2007. The volunteer firefighters on SMFD are a dedicated, highly-skilled force and are there to make sure the City of St. Michael is protected to the best of our ability. As we help keep our city safe, you can help, too! When having a <a href="/RecFires">bonfire in your backyard</a>, have a way to extinguish the fire on hand in case your fire becomes uncontrolable. Every year take time to perform a <a href="/HomeSafety">home safety check</a> and make sure you have fresh batteries in your smoke and <a href="CoFAQs">Carbon Monoxide</a> alarms. If you ever have any questions or concerns, please <a href="/ContactUs">contact us</a> at any time. Let's work together to keep our city a safe and enjoyable place to live!</p>
+									<p className="font-italic">- Chief Steve Hosch</p>
+								</Col>
+							</Row>
+						</Col>
+					</Row>
+				</Col>
 
 				{/* Fire Safety */}
 				<div className="row bg-ltGray">
@@ -60,7 +61,7 @@ class Home extends Component {
 							<div className="col-12 p-0">
 								<div className="row">
 									<div className="col-3 float-left mt-5 mb-5">
-										<img src="assets/images/img_fire.png" alt="Fire Graphic" />
+										<img src="assets/images/00_fire.png" alt="Fire Graphic" />
 									</div>
 									<div className="col-9 float-right mt-auto mb-auto pr-0 pl-5">
 										<h3>FIRE SAFETY</h3>
