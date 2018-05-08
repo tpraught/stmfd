@@ -259,7 +259,7 @@ class AdminExplorerForm extends Component {
                           <option></option>
                           <option>Regular Meeting</option>
                           <option>Department Meeting</option>
-                          <option>Optional Community Event</option>
+                          <option>Community Event</option>
                          </Input> 
                       </Col>
                     </Row>
