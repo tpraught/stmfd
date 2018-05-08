@@ -53,5 +53,9 @@ export default {
   },
   getFrontEndSchedule: function() {
     return axios.get("/api/Schedule");
+  },
+  saveUser: function(eventData) {
+    console.log("I'm saving a user", eventData);
+    return axios.post("/api/account/register", eventData);
   }
 };
