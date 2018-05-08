@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { Component } from "react";
+import API from "../../utils/API";
 import { AvForm, AvGroup, AvInput, AvFeedback } from 'availity-reactstrap-validation';
 import { Button, Label } from 'reactstrap';
+// import AdminHeader from "../../components/AdminHeader";
+// import Wrapper from "../../components/Wrapper";
+// import FormErrors from "../../components/Errors";
+// import Footer from "../../components/Footer";
 
-export default class ProfilePage extends Component {
+export default class Register extends Component {
     constructor(props) {
         super(props);
 
@@ -26,10 +31,17 @@ export default class ProfilePage extends Component {
     }
 
     // handle submit
-    handleValidSubmit() {
-        const { registerFunction } = this.props;
-        const formData = this.state;
-        registerFunction(formData);
+    handleValidSubmit = event => {
+        event.preventDefault();
+
+        API.saveUser({
+            email: this.state.email,
+            firstName: this.state.firstName,
+            lastName: this.state.lastName,
+            password: this.state.password,
+            username: this.state.username
+        });
+        // this.props.history.push('/account/register');
     }
 
     render() {
@@ -37,7 +49,7 @@ export default class ProfilePage extends Component {
             <div className="">
                 <div className="">
                     <p>Create account</p>
-                    <AvForm onValidSubmit={this.handleValidSubmit}>
+                    <AvForm>
                         <AvGroup>
                             <Label for="email">Email</Label>
                             <AvInput 
@@ -107,10 +119,23 @@ export default class ProfilePage extends Component {
                             <AvFeedback>Last name is required</AvFeedback>
                         </AvGroup>
 
-                        <Button>Register</Button>
+                        <Button type="submit" onClick={this.handleValidSubmit}>Register</Button>
                     </AvForm>
                 </div>
             </div>
         );
     }
 }
+
+
+
+// router.route("/addUser")
+// .post(rosterController.create);
+
+// create: function(req, res) {
+// 	console.log(req.body);
+//     db.Roster
+//       .create(req.body)
+//       .then(console.log("Record successfully created"))
+//       .catch(err => res.status(422).json(err));
+//   }
