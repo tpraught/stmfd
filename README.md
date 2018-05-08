@@ -1,10 +1,10 @@
-## St. Michael Fire Department Web Site
+# St. Michael Fire Department Web Site
 
 ## Project Motivation
 It was important to us as a team to use our skills to give back to the community. We partnered with the St. Michael Fire Department to modernize their website. The new web site will be user-friendly and contain pertinent, up-to-date information that can be utilized by the firefighters and the community as a whole. 
 
 ## Project Requirements
-*  Update and modernize the design and UI.
+*  Update and modernize the design and UI of St. Michael Fire Department web site.
 * Create an Administrator Portal where an authenticated user can easily update, add and delete items on the fire fighter roster and schedules
 * Render fire fighter roster and all schedules dynamically on the Admin Portal and public-facing pages
 
@@ -46,26 +46,13 @@ It was important to us as a team to use our skills to give back to the community
 ## Authors 
 ### **Team Web Rescue**
 
-Jeffrey Du Bois
-* [GitHub](https://github.com/jeffadubois)
-* [LinkedIn](https://www.linkedin.com/in/jeff-dubois-14a44272)
-
-Julia Lidstrom
-* [GitHub](https://github.com/JuliaLid)
-* [LinkedIn](https://www.linkedin.com/in/julialidstrom/)
-
-Kumari Van Brunt
-* [GitHub](https://github.com/kumarivb)
-* [LinkedIn](https://www.linkedin.com/in/kumarivb)
-
-Shannon Hart
-* [GitHub](https://github.com/SilverTree18)
-* [LinkedIn](https://www.linkedin.com/in/shannonehart)
-
-Tonye Praught
-* [GitHub](https://github.com/tpraught)
-* [LinkedIn](https://www.linkedin.com/in/tonyepraught)
-
+|Jeffrey Du Bois | Julia Lidstrom |Kumari Van Brunt |  Shannon Hart  | Tonye Praught
+| :---           |     :---       |  :---           | :----          |:-----
+| [GitHub](https://github.com/jeffadubois) | [GitHub](https://github.com/JuliaLid) | [GitHub](https://github.com/kumarivb)|  [GitHub](https://github.com/SilverTree18) |[GitHub](https://github.com/tpraught)
+[LinkedIn](https://www.linkedin.com/in/jeff-dubois-14a44272)  |  [LinkedIn](https://www.linkedin.com/in/julialidstrom/) | [LinkedIn](https://www.linkedin.com/in/kumarivb) | [LinkedIn](https://www.linkedin.com/in/shannonehart) |[LinkedIn](https://www.linkedin.com/in/tonyepraught)
+|Back-End Developer | Full-Stack Developer | Back-End Developer | Front-End Developer | Front-End Developer
+|DB Models | Admin Portal forms |Admin Portal authentication |Build out front-end pages | Overall UX design and custom styling
+|Utility function to create for a custom sorting of the DB data for front-end rendering | Dynamic rendering of the roster and events on Admin Portal and front-end | Using hashes to mask pasword | Facebook and Twitter feed integrations |Build out front-end pages
 
 ## Copyright
 
