@@ -392,13 +392,16 @@ td.adminButtons {
     max-width: 750px !important;
 }
 /*Apparatus Carousel */
+.carousel-caption {
+    right: 0% !important;
+    left :0% !important;
+    background-color: #0b1f3f;
+}
 .carousel-caption h3 {
     font-size: 34px !important;
-    background-color: #0b1f3f;
     color: #ffffff !important;
     padding: 15px 0 !important;
-    width: 850px;
-
+    width: 100%;
 }
 .carousel-item img {
     padding-bottom: 25px;
