@@ -45,11 +45,8 @@ import AdminEventsSchedule from "./pages/07_Admin_Events_Schedule";
 import ContactUs from "./pages/08_ContactUs";
 
 import AdminLogin from "./pages/07_Admin_Login";
-import ChangePass from "./components/Account/ChangePass";
 import Register from "./components/Account/Register";
 import RegisterSuccess from "./components/Account/RegisterSuccess";
-import ResetPass from "./components/Account/ResetPass";
-import Profile from "./components/Account/Profile";
 
 const App = () => (
   <Router>
@@ -103,11 +100,8 @@ const App = () => (
         <Route exact path="/admin/trainingform" component={AdminEventsForm} />
         <Route exact path="/admin/trainingschedule" component={AdminEventsSchedule} />
         <Route exact path="/admin/login" component={AdminLogin} />
-        <Route path="/Account/ChangePass/:hash" component={ChangePass} />
         <Route exact path="/Account/Register" component={Register} />
         <Route exact path="/Account/RegisterSuccess" component={RegisterSuccess} />
-        <Route exact path="/Account/ResetPass" component={ResetPass} />
-        <Route path="/Account/Profile/:id" component={Profile} />
         
         <Route exact path="/ContactUs" component={ContactUs} />
         
