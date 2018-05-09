@@ -1,6 +1,6 @@
 module.exports = {
   Roster: require("./roster"),
-  Admin: require("./admin"),
+  Admin: require("./user"),
   explorerSchedule: require("./explorerSchedule"),
   departmentSchedule: require("./departmentSchedule")
 };
