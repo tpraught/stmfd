@@ -20,7 +20,7 @@ app.use(express.static("client/build"));
 app.use(routes);
 
 // ----------------------------- admin ----------------------------------------------
-const User = require('./models/admin');
+const User = require('./models/user');
 const authentication = require('./routes/api/login');
 const users = require('./routes/api/users');
 // Configure Passport

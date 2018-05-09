@@ -37,7 +37,10 @@ router.route("/roster")
    
    router.route("/explorerschedule/:id")
    .delete(rosterController.removeExplorerEvent); 
- 
+
+//    Admin user
+    router.route("/register")
+    .post(rosterController.createUser);
   
 
  

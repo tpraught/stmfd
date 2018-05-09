@@ -146,6 +146,12 @@ module.exports = {
             .sort({ sort_date_time: 1 })
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
-      }
-      
+      },
+      createUser: function(req, res) {
+        console.log(req.body);
+        db.User
+          .create(req.body)
+          .then(console.log("Record successfully created"))
+          .catch(err => res.status(422).json(err));
+      },      
 };
