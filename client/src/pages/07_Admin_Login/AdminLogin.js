@@ -1,41 +1,74 @@
 import React, { Component } from "react";
-import { AvForm, AvGroup, AvInput, AvFeedback } from 'availity-reactstrap-validation';
 import { Label, Button, Row, Col, Card } from 'reactstrap';
+import { Form, FormGroup, Input, FormFeedback } from 'reactstrap';
+import axios from 'axios';
 import AdminHeader from "../../components/AdminHeader";
 import Wrapper from "../../components/Wrapper";
 
-export default class AdminLogin extends Component {
-    constructor(props) {
-        super(props);
-
-        // bound functions
-        this.handleEmailChange = this.handleEmailChange.bind(this);
-        this.handlePasswordChange = this.handlePasswordChange.bind(this);
-        this.handleValidSubmit = this.handleValidSubmit.bind(this);
-
-        // component state
+class AdminLogin extends Component{
+    constructor() {
+        super();
         this.state = {
-            email: '',
+            username: '',
             password: '',
+            message: ''
         };
     }
 
-    // update state as value changes
-    handleEmailChange(e) {
-        this.setState({ email: e.target.value });
+    onChange = (e) => {
+        const state = this.state
+        state[e.target.name] = e.target.value;
+        this.setState(state);
     }
 
-    // update state as value changes
-    handlePasswordChange(e) {
-        this.setState({ password: e.target.value });
-    }
+    onSubmit = (e) => {
+        e.preventDefault();
+        const { username, password } = this.state;
 
-    // handle submit once all data is valid
-    handleValidSubmit() {
-        const { loginFunction } = this.props;
-        const formData = this.state;
-        loginFunction(formData);
+        axios.post('/api/auth/login', { username, password })
+        .then((result) => {
+            localStorage.setItem('jwtToken', result.data.token);
+            this.setState({ message: '' });
+            this.props.history.push('/')
+        })
+        .catch((error) => {
+            if(error.response.status === 401) {
+                this.setState({ message: 'login failed'});
+            }
+        });
     }
+// export default class AdminLogin extends Component {
+//     constructor(props) {
+//         super(props);
+
+//         // bound functions
+//         this.handleEmailChange = this.handleEmailChange.bind(this);
+//         this.handlePasswordChange = this.handlePasswordChange.bind(this);
+//         this.handleValidSubmit = this.handleValidSubmit.bind(this);
+
+//         // component state
+//         this.state = {
+//             email: '',
+//             password: '',
+//         };
+//     }
+
+//     // update state as value changes
+//     handleEmailChange(e) {
+//         this.setState({ email: e.target.value });
+//     }
+
+//     // update state as value changes
+//     handlePasswordChange(e) {
+//         this.setState({ password: e.target.value });
+//     }
+
+//     // handle submit once all data is valid
+//     handleValidSubmit() {
+//         const { loginFunction } = this.props;
+//         const formData = this.state;
+//         loginFunction(formData);
+//     }
 
 // class AdminLogin extends Component {
 //     constructor(props) {
@@ -61,6 +94,7 @@ export default class AdminLogin extends Component {
     // }
 
     render() {
+        const { username, password, message } = this.state;
         return (
             <div>
                 <AdminHeader/>
@@ -73,47 +107,52 @@ export default class AdminLogin extends Component {
                                         <h1>LOGIN</h1>  
                                     </div>
                                     <div className="Login mt-5">
-                                        <AvForm onValidSubmit={this.handleValidSubmit} className="adminForm">
-                                            <AvGroup>
+                                        <Form onSubmit={this.onSubmit} className="adminForm">
+                                            {message !== '' &&
+                                                <div className="alert" role="alert">
+                                                    { message }
+                                                </div>
+                                            }
+                                            <FormGroup>
                                                 <Label for="email">
                                                     Email        
                                                 </Label>
-                                                <AvInput
+                                                <Input
                                                     type="email"
                                                     id="email"
-                                                    name="email"
-                                                    onChange={this.handleEmailChange}
-                                                    onKeyPress={this.handleKeyPress}
+                                                    name="username"
+                                                    className="form-control"
+                                                    onChange={this.onChange}
                                                     required
-                                                    value={this.state.email}
+                                                    value={username}
                                                 />
-                                                <AvFeedback>A valid email is required to log in</AvFeedback>
-                                            </AvGroup>  
-                                            <AvGroup>
+                                                <FormFeedback>A valid email is required to log in</FormFeedback>
+                                            </FormGroup>  
+                                            <FormGroup>
                                                 <Label>
                                                     Password
                                                 </Label>
-                                                <AvInput
+                                                <Input
                                                     type="password"
                                                     id="password"
                                                     name="password"
-                                                    onChange={this.handlePasswordChange}
-                                                    onKeyPress={this.handleKeyPress}
+                                                    className="form-control"
+                                                    onChange={this.onChange}
                                                     required
-                                                    value={this.state.password}                    
+                                                    value={password}                    
                                                 />
-                                                <AvFeedback>A password is required to log in</AvFeedback>
+                                                <FormFeedback>A password is required to log in</FormFeedback>
                                                 {/* <span><Link to="/account/reset-password">Forgot your password?</Link></span> */}
-                                            </AvGroup>   
+                                            </FormGroup>   
                                             <Button 
                                                 className="mt-3 redButton addButton float-right"
                                                 /* disabled={!this.validateForm()} */
                                                 id="submit"
-                                                onClick={this.compileFormData}
+                                                type="submit"
                                             >
                                                 Login
                                             </Button>
-                                        </AvForm>
+                                        </Form>
                                     </div>
                                 </Card>
                             </Col>
@@ -124,3 +163,5 @@ export default class AdminLogin extends Component {
         );
     }
 }
+
+export default AdminLogin;
