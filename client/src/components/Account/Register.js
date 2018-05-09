@@ -41,7 +41,7 @@ export default class Register extends Component {
             password: this.state.password,
             username: this.state.username
         });
-        this.props.history.push('/account/register');
+        // this.props.history.push('/account/register');
     }
 
     render() {
@@ -57,9 +57,10 @@ export default class Register extends Component {
                                 name="email"
                                 onChange={this.handleInputChange}
                                 onKeyPress={this.handleKeyPress}
-                                required
+                                require="true"
                                 type="email"
                                 value={this.state.email}
+                                autoComplete="email"
                             />
                             <AvFeedback>Valid email required.</AvFeedback>
                         </AvGroup>
@@ -70,9 +71,10 @@ export default class Register extends Component {
                                 id="password"
                                 minLength="8"
                                 name="password"
-                                require
+                                require="true"
                                 type="password"
                                 value={this.state.password}
+                                autoComplete="off"
                             />
                             <AvFeedback>Password must be at least 8 characters</AvFeedback>
                         </AvGroup>
@@ -84,9 +86,10 @@ export default class Register extends Component {
                                 name="username"
                                 onChange={this.handleInputChange}
                                 onKeyPress={this.handleKeyPress}
-                                required
+                                require="true"
                                 type="text"
                                 value={this.state.username}
+                                autoComplete="off"
                             />
                             <AvFeedback>Username is required</AvFeedback>
                         </AvGroup>
@@ -98,9 +101,10 @@ export default class Register extends Component {
                                 name="firstName"
                                 onChange={this.handleInputChange}
                                 onKeyPress={this.handleKeyPress}
-                                required
+                                require="true"
                                 type="text"
                                 value={this.state.firstName}
+                                autoComplete="first-name"
                             />
                             <AvFeedback>First name is required</AvFeedback>
                         </AvGroup>
@@ -112,9 +116,10 @@ export default class Register extends Component {
                                 name="lastName"
                                 onChange={this.handleInputChange}
                                 onKeyPress={this.handleKeyPress}
-                                required
+                                require="true"
                                 type="text"
                                 value={this.state.lastName}
+                                autoComplete="last-name"
                             />
                             <AvFeedback>Last name is required</AvFeedback>
                         </AvGroup>
@@ -126,16 +131,3 @@ export default class Register extends Component {
         );
     }
 }
-
-
-
-// router.route("/addUser")
-// .post(rosterController.create);
-
-// create: function(req, res) {
-// 	console.log(req.body);
-//     db.Roster
-//       .create(req.body)
-//       .then(console.log("Record successfully created"))
-//       .catch(err => res.status(422).json(err));
-//   }
