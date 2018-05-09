@@ -29,7 +29,7 @@ class Home extends Component {
 						<div className="col-10 card border-0">
 							<div className="card-body">
 								<h3>OUR MISSION</h3>
-								<p>The St. Michael Fire Department pledges to protect all people, home, and businesses in the city. The SMFD works closely with the Wright County Sheriff's Office, Allina Ambulance, and the Fire Departments of surrounding communities to respond to your service calls quickly.</p>
+								<p>The St. Michael Fire Department pledges to protect all people, home, and businesses in the city. The SMFD works closely with the Wright County Sheriff's Office, Allina Ambulance, and the fire departments of surrounding communities to respond to your service calls quickly.</p>
 							</div>
 							<img className="card-img-bottom" src="assets/images/00_smfdTeam.png" alt="St. Michael Fire Department Team " />
 						</div>
@@ -67,7 +67,7 @@ class Home extends Component {
 										<h3>FIRE SAFETY</h3>
 										<p>The St. Michael Fire Department wants you to enjoy your backyard recreational bonfire safely. General guidelines for recreational fires within the St. Michael city limits are:</p>
 										<ul className="mb-3">
-											<li>A permit is NOT required</li>
+											<li>A permit is NOT required*</li>
 											<li>Fires must be constantly attended</li>
 											<li>Be no more than 3 feet in diameter and 3 feet high</li>
 										</ul>									

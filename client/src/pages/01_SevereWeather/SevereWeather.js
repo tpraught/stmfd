@@ -33,7 +33,7 @@ class SevereWeather extends Component {
                 <li><a href="http://www.youtube.com/watch?v=cLOTtopDl5w" target="_blank" rel="noopener noreferrer">Build an Emergency Kit</a></li>
                 <li><a href="http://www.nws.noaa.gov/nwr/" target="_blank" rel="noopener noreferrer">Stay Informed</a></li>
               </ol>  
-              <p>For additional information, visit <a href="https://dps.mn.gov/divisions/hsem/weather-awareness-preparedness/Pages/severe-weather.aspx" target="_blank" rel="noopener noreferrer">Minnesota Department of Safety's page</a> or <a href="https://www.ready.gov" target="_blank" rel="noopener noreferrer"> Ready.gov</a>.</p>         
+              <p>For additional information, visit the <a href="https://dps.mn.gov/divisions/hsem/weather-awareness-preparedness/Pages/severe-weather.aspx" target="_blank" rel="noopener noreferrer">Minnesota Department of Safety's page</a> or <a href="https://www.ready.gov" target="_blank" rel="noopener noreferrer"> Ready.gov</a>.</p>         
             </div>
           <span className="media-right pl-5">
               <img src="../../../assets/images/01_SevereWeather.jpg" alt="Thunderstorm" height="300"/>
