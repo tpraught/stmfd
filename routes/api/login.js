@@ -2,7 +2,8 @@ const express = require('express');
 const appConfig = require('../../config.js');
 const createDOMPurify = require('dompurify');
 const crypto = require('crypto');
-const { JSDOM } = require('jsdom');
+const jsdom = require("jsdom");
+const { JSDOM } = jsdom;
 // const mailgun = require('mailgun-js')({
 //   apiKey: appConfig.mailgun.apiKey,
 //   domain: appConfig.mailgun.domain,
