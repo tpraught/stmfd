@@ -5,11 +5,10 @@ import AdminRosterTable from "../../components/AdminRoster";
 import AdminHeader from "../../components/AdminHeader";
 import EditModal from "../../components/Modal";
 import Footer from "../../components/Footer";
-
 import { Col, Row } from "../../components/Grid";
-
 import API from "../../utils/API";
 
+//Firefighter roster to dynamically render the list on the admin Portal
 class FireRoster extends Component { 
  
   state = {
@@ -25,7 +24,6 @@ class FireRoster extends Component {
     rank:"",
     station:"",
     company:""
-  
   };
 
   componentDidMount() {
@@ -33,8 +31,7 @@ class FireRoster extends Component {
   }
 
   saveRecord = (newFireFighter) => {
-  //  console.log("I'm a new firefighter - 38", newFireFighter);
-      this.setState({
+       this.setState({
         editing: false,
       })
 
@@ -54,22 +51,18 @@ class FireRoster extends Component {
   }
   
   loadRoster = () => {
-    console.log("I'm triggered")
     API.getRoster()
    .then(res => this.setState({ fireFighters: res.data}))
    .catch(err => console.log(err));
   };
 
   deleteRecord = id => {
-    console.log("I'm clicked to delete",id);
     API.deleteRecord(id)
       .then(res => this.loadRoster())
       .catch(err => console.log(err));
   };
 
   editRecord = (fireFighter) => {
-    console.log(fireFighter);
-    
     this.setState({
       editing: true,
       currentFireFighter: fireFighter,
@@ -84,7 +77,6 @@ class FireRoster extends Component {
       company:fireFighter.company
     })
   }
-   
  
   render() {
 

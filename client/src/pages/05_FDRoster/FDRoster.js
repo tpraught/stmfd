@@ -10,6 +10,7 @@ import QuickLinks from "../../components/Quick_Links";
 import Footer from "../../components/Footer";
 import API from "../../utils/API";
 
+//Stateful component to manage the firefighter roster on the fronr-end page
 class FrontEndRoster extends Component { 
  
   state = {
@@ -30,7 +31,6 @@ class FrontEndRoster extends Component {
   }
   
   loadRoster = () => {
-    console.log("I'm triggered")
     API.getFrontEndRoster()
    .then(res => this.setState({ fireFighters: res.data}))
    .catch(err => console.log(err));
@@ -40,7 +40,9 @@ class FrontEndRoster extends Component {
     return (
       <div>
         <Header/>
+
         <Nav/>
+        
         <Hero 
 					id  = {heroImages[5].id}
 					src  = {heroImages[5].image}
@@ -48,12 +50,12 @@ class FrontEndRoster extends Component {
 					/> 
 
         <Wrapper>
-          <div className="pageTitle">
-            <h1>SMFD FIREFIGHTER ROSTER</h1>  
-          </div>
-          <Container className="pageContent">
-            <Row className="justify-content-center">
-              <Col sm={{ size: 12 }} md={{ size: 8 }}>
+            <div className="pageTitle">
+              <h1>SMFD FIREFIGHTER ROSTER</h1>  
+            </div>
+            <Container className="pageContent">
+              <Row className="justify-content-center">
+                <Col sm={{ size: 12 }} md={{ size: 8 }}>
                   <Table className="rosterTable border-0">  
                     <thead>
                         <tr>
@@ -98,13 +100,15 @@ class FrontEndRoster extends Component {
 
                     </tbody>
                   </Table>
-              </Col>
-            </Row>
-          </Container>
+                </Col>
+              </Row>
+            </Container>
         </Wrapper>
+
         <QuickLinks />
+
 				<Footer />
-			</div>
+		</div>
     )
   }
 }

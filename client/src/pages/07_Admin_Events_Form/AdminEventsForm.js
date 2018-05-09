@@ -8,6 +8,7 @@ import Wrapper from "../../components/Wrapper";
 import Footer from "../../components/Footer";
 import {getScheduleSortDate} from '../../utils/date_time_sort_utility.js';
 
+//Admin form to add training and community events to a calendar
 class AdminEventsForm extends Component {
 
   state = {
@@ -77,7 +78,6 @@ class AdminEventsForm extends Component {
 
    //Method to submit a new record to the Database
   handleFormSubmit = event => {
-    console.log("Saving FD schedule");
     event.preventDefault();
 	
 	var sortDateString = getScheduleSortDate(this.state.year, this.state.month, this.state.date, this.state.officerStartTime);
