@@ -41,7 +41,7 @@ export default class Register extends Component {
             password: this.state.password,
             username: this.state.username
         });
-        // this.props.history.push('/account/register');
+        this.props.history.push('/account/register');
     }
 
     render() {
