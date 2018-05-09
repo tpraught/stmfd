@@ -407,3 +407,8 @@ td.adminButtons {
     padding-bottom: 25px;
     margin-bottom: 0px;
 }
+.carousel-control-next, .carousel-control-prev {
+    width: 5% !important;
+    opacity: 0.7 !important;
+    cursor: pointer;
+}

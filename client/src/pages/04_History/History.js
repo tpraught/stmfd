@@ -30,7 +30,7 @@ class History extends Component {
       />
       <Wrapper>
         <div className="pageTitle">
-          <h1>SMFD History</h1>  
+          <h1>SMFD HISTORY</h1>  
         </div>
         <div className="pageContent">
           <span className="float-right pl-5">

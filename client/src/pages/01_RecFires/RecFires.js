@@ -34,10 +34,10 @@ class RecFires extends Component {
                 <li>No burning of materials in a barrel (also known as“barrel burning”) is allowed.</li>
                 <li>Fires must be in a pit no wider than 36 inches in diameter and it is recommended that it have brick or concrete block on the outside of the ring. A specially made above-ground stand, also known as a portable outdoor fireplace, may be used.</li>
                 <li>The fire shall be attended at all times and extinguished completely when left unattended.</li>
-                <li>Maintain a minimum of 25 feet between the fire and any combustible surface or material, including but not limited to houses, fencing, trailers and vehicles.</li>
-                <li>A compatibly-sized means of extinguishment must be available at all times, e.g.,a garden hose connected to the house that reaches the edge of the fire.</li>
+                <li>Maintain a minimum of 25 feet between the fire and any combustible surface or material, including but not limited to, houses, fencing, trailers, and vehicles.</li>
+                <li>A compatibly-sized means of extinguishment must be available at all times, e.g., a garden hose connected to the house that reaches the edge of the fire.</li>
                 <li>Use extreme caution when weather conditions result in lack of rain for more than a week and/or high temperatures resulting in dry conditions.</li>
-                <li>Be observant to wind direction and smoke travel into neighboring homes. Extinguish fire if smoke is traveling into a neighboring home.</li>                    
+                <li>Be observant of wind direction and smoke travel into neighboring homes. Extinguish fire if smoke is traveling into a neighboring home.</li>                    
               </ul>     
             </div>
       </Wrapper>
