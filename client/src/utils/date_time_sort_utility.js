@@ -132,15 +132,21 @@
 	  //console.log("For time = " + time + " the number of parts is " + splitResult.length);
 	  //console.log("the split array is " + splitResult);
 	  var len = splitResult.length;
+	  var hour = "";
+	  var intNum = 0;
+      var add12 = 0;
+      var strHour = "";
+      var a_min = "";
+ 	  
 	  if (len === 1){
 		  if (splitResult[0].length === 4){
-			  var hour = splitResult[0].substring(0,2);
+			  hour = splitResult[0].substring(0,2);
 			  //console.log("the hour is " + hour);
 		      if (containsPM && (!(hour === "12"))){
 				  
-			       var intNum = Number(hour);
-			       var add12 = intNum + 12;
-			       var strHour = add12.toString();
+			       intNum = Number(hour);
+			       add12 = intNum + 12;
+			       strHour = add12.toString();
 			       formatted_hour = strHour;
 				   formatted_min = "00";
 				   
@@ -153,16 +159,16 @@
 				  else if ((hour === "12") && (containsPM)){
 				      formatted_hour = hour;
 				  }
-			      var a_min = splitResult[0].substring(2);
+			      a_min = splitResult[0].substring(2);
 			      formatted_min = formatToTwoDigit(a_min);
 			  }
 		  }
 		  else {
-		      var hour = formatToTwoDigit(splitResult[0]);
+		      hour = formatToTwoDigit(splitResult[0]);
 		      if (containsPM && (!(hour === "12"))){
-			      var intNum = Number(hour);
-			      var add12 = intNum + 12;
-			      var strHour = add12.toString();
+			      intNum = Number(hour);
+			      add12 = intNum + 12;
+			      strHour = add12.toString();
 			      formatted_hour = strHour;
 				  formatted_min = "00";
 				  
@@ -182,11 +188,11 @@
 		  
 	  }
 	  else if (len > 1) {
-		  var hour = formatToTwoDigit(splitResult[0]);
+		  hour = formatToTwoDigit(splitResult[0]);
 		  if (containsPM && (!(hour === "12"))){
-			  var intNum = Number(hour);
-			  var add12 = intNum + 12;
-			  var strHour = add12.toString();
+			  intNum = Number(hour);
+			  add12 = intNum + 12;
+			  strHour = add12.toString();
 			  formatted_hour = strHour;
 		  }
 		  else {
