@@ -1,5 +1,5 @@
 import React from 'react';
-
+//Table to dynamically render a schedule of Explorer events on the Admin Portal
 const AdminExplorerTable = props => (
 
   <tr>

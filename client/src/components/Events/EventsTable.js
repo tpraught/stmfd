@@ -1,5 +1,6 @@
 import React from 'react';
 
+//Table to dynamically render a schedule of events on front-end pages
 const EventsTable = props => (
 	<tr key = {props.id}>
 		<td width="5%" className="text-center">{props.date}</td>
@@ -11,6 +12,6 @@ const EventsTable = props => (
 		<td width="14%" className="text-center">{props.standard}</td>
 		<td width="18%" className="text-center">{props.lunchCommittee}</td>
   </tr>
-    );
+);
 
- export default EventsTable;
+export default EventsTable;

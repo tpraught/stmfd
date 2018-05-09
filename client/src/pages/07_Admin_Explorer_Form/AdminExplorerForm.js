@@ -8,6 +8,7 @@ import Wrapper from "../../components/Wrapper";
 import Footer from "../../components/Footer";
 import {getScheduleSortDate} from '../../utils/date_time_sort_utility.js';
 
+//Stateful component to dynamically render a schedule of  Explorer events on front-end pages
 class AdminExplorerForm extends Component {
 
   state = {
