@@ -30,8 +30,12 @@ passport.deserializeUser(User.deserializeUser());
 // ----------------------------- ----- ----------------------------------------------
 
 var MONGODB_URI =process.env.MONGODB_URI || "mongodb://localhost/firedepartment"
+  // bluebird   
+  mongoose.Promise = require('bluebird');  
   mongoose.Promise = global.Promise;
+
   mongoose.connect(MONGODB_URI,function(error){
+     promiseLibrary: require('bluebird')
      if(error){
          console.log(error)
      } else {
@@ -41,18 +45,18 @@ var MONGODB_URI =process.env.MONGODB_URI || "mongodb://localhost/firedepartment"
 
 // ----------------------------- admin ----------------------------------------------
 // connect mongoose
-mongoose.connect('mongodb://localhost/userlist');
+// mongoose.connect('mongodb://localhost/userlist');
 
-app.use(require('express-session')({
-    secret: 'stop the fire',
-    resave: false,
-    saveUninitialized: false
-}));
+// app.use(require('express-session')({
+//     secret: 'stop the fire',
+//     resave: false,
+//     saveUninitialized: false
+// }));
 
-app.use('/api/login', authentication);
-app.use('/api/users', users);
-app.use(passport.initialize());
-app.use(passport.session());
+// app.use('/api/login', authentication);
+// app.use('/api/users', users);
+// app.use(passport.initialize());
+// app.use(passport.session());
 // ----------------------------- ----- ----------------------------------------------
 
 // Catch 404 and forward to error handler
