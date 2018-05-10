@@ -26,7 +26,10 @@ const AdminHeader = () => (
 			<Link className="homeLink" to="/"> 
 				GO TO SMFD.ORG 
 			</Link>	
-			&nbsp;&nbsp;|&nbsp;&nbsp;LOGOUT
+			&nbsp;&nbsp;|&nbsp;&nbsp;
+			<Link className="homeLink" to="/admin/login">
+			LOGOUT
+			</Link>
 			</div>
 		</div>
 		<div id="brand" className="position-relative pt-4 pb-5">
