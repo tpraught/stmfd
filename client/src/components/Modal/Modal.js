@@ -3,7 +3,6 @@ import { Row, Col } from 'reactstrap';
 import { Modal,ModalBody, ModalFooter } from 'reactstrap';
 import { Button, Form, FormGroup, Label, Input} from 'reactstrap';
 
-//Modal to edit a Firefighter record in the DB
 class EditModal extends React.Component {
   state = {
     id: "",
@@ -36,8 +35,9 @@ class EditModal extends React.Component {
       rank: this.state.rank,
       station: this.state.station,
       company: this.state.company
+
     }
-   
+    console.log ("I'm editing");
     // get the data from the form
     this.props.onSave(newFireFighter)
   }

@@ -16,5 +16,13 @@ router.route("/roster")
   router.route("/Schedule")
   .get(rosterController.findAllEventsforFrontEnd)
 
+//   router.route("/add")
+//   .post(rosterController.create);
+
+// // Matches with "/api/roster/:id"
+// router.route("/roster/:id")
+//   // .get(rosterController.findById)
+//   // .put(rosterController.update)
+//   .delete(rosterController.remove);
 
 module.exports = router;

@@ -1,7 +1,7 @@
 //BackEnd APIs routes
 
 const router = require("express").Router();
-const rosterController = require("../../controllers/rosterController");
+const rosterController = require("../../controllers/rosterController");//insert controller
 
 // Roster HTTP Calls
 router.route("/roster")
@@ -41,5 +41,14 @@ router.route("/roster")
 //    Admin user
     router.route("/register")
     .post(rosterController.createUser);
+  
+
+ 
+ 
+
+  
+
+
+
 
 module.exports = router;
