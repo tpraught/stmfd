@@ -22,21 +22,20 @@ class AdminLogin extends Component{
     }
 
     onSubmit = (e) => {
-				e.preventDefault();
-				this.props.history.push('/admin/roster');
-        // const { username, password } = this.state;
+        e.preventDefault();
+        const { username, password } = this.state;
 
-        // axios.post('/api/auth/login', { username, password })
-        // .then((result) => {
-        //     localStorage.setItem('jwtToken', result.data.token);
-        //     this.setState({ message: '' });
-        //     this.props.history.push('/')
-        // })
-        // .catch((error) => {
-        //     if(error.response.status === 401) {
-        //         this.setState({ message: 'login failed'});
-        //     }
-        // });
+        axios.post('/api/auth/login', { username, password })
+        .then((result) => {
+            localStorage.setItem('jwtToken', result.data.token);
+            this.setState({ message: '' });
+            this.props.history.push('/')
+        })
+        .catch((error) => {
+            if(error.response.status === 401) {
+                this.setState({ message: 'login failed'});
+            }
+        });
     }
 // export default class AdminLogin extends Component {
 //     constructor(props) {
