@@ -10,7 +10,6 @@ import QuickLinks from "../../components/Quick_Links";
 import Footer from "../../components/Footer";
 import API from "../../utils/API";
 
-//Table to dynamically render a Medical Roster on front-end pages
 class MedicalRoster extends Component { 
  
   state = {
@@ -38,19 +37,19 @@ class MedicalRoster extends Component {
 
     fireFighters.forEach(fireFighter => {
     
-        if (fireFighter.title === "Fire Chief"){
-          chief = fireFighter;
-        } else if (fireFighter.title === "Assistant Chief") {
-          assistantChief = fireFighter; 
-        } else if (fireFighter.company === "Company A") {
-            companyARoster.push(fireFighter);
-        } else if (fireFighter.company === "Company B"){
-            companyBRoster.push(fireFighter);
-        } else if (fireFighter.company === "Company C"){
-          companyCRoster.push(fireFighter);
-      } else {
-        station2.push(fireFighter);
-      }
+      if (fireFighter.title === "Fire Chief"){
+        chief = fireFighter;
+      } else if (fireFighter.title === "Assistant Chief") {
+        assistantChief = fireFighter; 
+      } else if (fireFighter.company === "Company A") {
+          companyARoster.push(fireFighter);
+      } else if (fireFighter.company === "Company B"){
+          companyBRoster.push(fireFighter);
+      } else if (fireFighter.company === "Company C"){
+        companyCRoster.push(fireFighter);
+     } else {
+      station2.push(fireFighter);
+    }
     })
    
     this.setState({
@@ -60,10 +59,18 @@ class MedicalRoster extends Component {
        station2:station2,
        fireChief:chief,
        assistantChief:assistantChief
-    });
+      });
+
+      console.log("Company A ", this.state.companyA)
+      console.log("Company B ", this.state.companyB)
+      console.log("Company C ", this.state.companyC)
+      console.log("Station #2 ", this.state.station2)
+      console.log("Fire Chief", this.state.fireChief)
+      console.log("Assistant Chief", this.state.assistantChief)
   };
 
   loadRoster = () => {
+    console.log("I'm triggered")
     API.getFrontEndRoster()
    .then(res => {
      this.setState({ fireFighters: res.data});

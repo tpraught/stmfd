@@ -6,26 +6,37 @@ const db = require("../models");
 // Defining methods for the rosterController
 module.exports = {
   findAll: function(req, res) {
+	console.log("Getting fire fighters");
+	//console.log("req is ");
+	//console.log(req);
     db.Roster
       .find(req.query)
       .sort({ last_name: 1 })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
+	//  console.log("res is ");
+	//  console.log(res);
   },
   findAllforFrontEnd: function(req, res) {
+	console.log("Front End Roster");
+
     db.Roster
       .find(req.query)
       .sort({ rank_sort_number: 1 })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
+	//  console.log("res is ");
+	//  console.log(res);
   },
   findById: function(req, res) {
+	console.log("in findById");
     db.Roster
       .findById(req.params.id)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
   create: function(req, res) {
+	console.log(req.body);
     db.Roster
       .create(req.body)
       .then(console.log("Record successfully created"))
@@ -53,72 +64,94 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   remove: function(req, res) {
+	console.log(req.params.id);	  
+	console.log("About tp remove record");	  
     db.Roster
       .findById({ _id: req.params.id })
+      
       .then(dbModel => dbModel.remove())
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
   createExplorer: function(req, res) {
+    console.log(req.body);
       db.explorerSchedule
         .create(req.body)
         .then(console.log("Explorer Event successfully created"))
         .catch(err => res.status(422).json(err));
     },
     findAllExplorerEvents: function(req, res) {
-      db.explorerSchedule
-        .find(req.query)
-        .sort({ sort_date_time: 1 })
-        .then(dbModel => res.json(dbModel))
-        .catch(err => res.status(422).json(err));
-    },
-    removeExplorerEvent: function(req, res) {
-        db.explorerSchedule
-          .findById({ _id: req.params.id })
-          
-          .then(dbModel => dbModel.remove())
+      console.log("Getting explorer events");
+       db.explorerSchedule
+          .find(req.query)
+          .sort({ sort_date_time: 1 })
           .then(dbModel => res.json(dbModel))
           .catch(err => res.status(422).json(err));
+      //  console.log("res is ");
+      //  console.log(res);
+      },
+      removeExplorerEvent: function(req, res) {
+        console.log(req.params.id);	  
+        console.log("About to remove explorer record");	  
+          db.explorerSchedule
+            .findById({ _id: req.params.id })
+            
+            .then(dbModel => dbModel.remove())
+            .then(dbModel => res.json(dbModel))
+            .catch(err => res.status(422).json(err));
+        },
+
+      findAllExplorerEventsforFrontEnd:function(req, res) {
+        console.log("Getting explorer events for front end");
+         db.explorerSchedule
+            .find(req.query)
+            .sort({ sort_date_time: 1 })
+            .then(dbModel => res.json(dbModel))
+            .catch(err => res.status(422).json(err));
+        //  console.log("res is ");
+        //  console.log(res);
+        },
+      createTrainingEvents: function(req, res) {
+        console.log("controller 115", req.body);
+          db.departmentSchedule
+            .create(req.body)
+            .then(console.log("Training Event successfully created"))
+            .catch(err => res.status(422).json(err));
+        },
+    findAllScheduleEvents: function(req, res) {
+      console.log("Getting scheduled events");
+        db.departmentSchedule
+          .find(req.query)
+          .sort({ sort_date_time: 1 })
+          .then(dbModel => res.json(dbModel))
+          .catch(err => res.status(422).json(err));
+      //  console.log("res is ");
+      //  console.log(res);
       },
 
-    findAllExplorerEventsforFrontEnd:function(req, res) {
-        db.explorerSchedule
-          .find(req.query)
-          .sort({ sort_date_time: 1 })
-          .then(dbModel => res.json(dbModel))
-          .catch(err => res.status(422).json(err));
-    },
-    createTrainingEvents: function(req, res) {
-        db.departmentSchedule
+      removeTrainingEvent: function(req, res) {
+        console.log(req.params.id);	  
+        console.log("About to remove explorer record");	  
+          db.departmentSchedule
+            .findById({ _id: req.params.id })
+            
+            .then(dbModel => dbModel.remove())
+            .then(dbModel => res.json(dbModel))
+            .catch(err => res.status(422).json(err));
+      },
+      findAllEventsforFrontEnd:function(req, res) {
+        console.log("Getting events for front end");
+          db.departmentSchedule
+            .find(req.query)
+            .sort({ sort_date_time: 1 })
+            .then(dbModel => res.json(dbModel))
+            .catch(err => res.status(422).json(err));
+      },
+      createUser: function(req, res) {
+        console.log(req.body);
+        db.User
           .create(req.body)
-          .then(console.log("Training Event successfully created"))
+          .then(console.log("Record successfully created"))
           .catch(err => res.status(422).json(err));
-    },
-    findAllScheduleEvents: function(req, res) {
-      db.departmentSchedule
-        .find(req.query)
-        .sort({ sort_date_time: 1 })
-        .then(dbModel => res.json(dbModel))
-        .catch(err => res.status(422).json(err));
-    },
-    removeTrainingEvent: function(req, res) {
-        db.departmentSchedule
-          .findById({ _id: req.params.id })
-          .then(dbModel => dbModel.remove())
-          .then(dbModel => res.json(dbModel))
-          .catch(err => res.status(422).json(err));
-    },
-    findAllEventsforFrontEnd:function(req, res) {
-        db.departmentSchedule
-          .find(req.query)
-          .sort({ sort_date_time: 1 })
-          .then(dbModel => res.json(dbModel))
-          .catch(err => res.status(422).json(err));
-    },
-    createUser: function(req, res) {
-      db.User
-        .create(req.body)
-        .then(console.log("Record successfully created"))
-        .catch(err => res.status(422).json(err));
-    }  
+      },      
 };

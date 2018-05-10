@@ -1,0 +1,41 @@
+#smallNav {
+    background: #b60c00;
+    font-style: normal;
+    font-weight: 100;
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+    color:#ffffff;
+    border-bottom: 10px solid #2f2f2f;
+}
+#brand {
+    background: #0b1f3f;
+    border-bottom: 10px solid #b60c00;
+    color:#ffffff;
+    text-align: center;    
+}
+#brand h1 {
+    font-style: normal;
+    font-size: 60px;
+    font-family: 'Playfair Display', serif;
+ 
+}
+#brand h2 {
+    font-style: normal;
+    font-weight: 100;
+    font-size: 26px;
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    padding-bottom: 30px;
+}
+
+header a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+header a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}

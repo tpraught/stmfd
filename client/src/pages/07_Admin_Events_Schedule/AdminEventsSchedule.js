@@ -7,31 +7,36 @@ import Footer from "../../components/Footer";
 import { Col, Row } from "../../components/Grid";
 import API from "../../utils/API";
 
-//Stateful component to dynamically render a schedule of events on Admin Portal
 class AdminEventsSchedule extends Component { 
  
   state = {
     events:[]
+    
   };
 
   componentDidMount() {
     this.loadEvents()
-  };
+  }
+
    
   loadEvents = () => {
     API.getEventsSchedule()
    .then(res => 
     {
       this.setState({ events: res.data});
+      console.log(res.data);
     })
    .catch(err => console.log(err));
   };
 
   deleteRecord = id => {
+    console.log("I'm clicked to delete explorer event",id);
     API.deleteTrainingEvent(id)
       .then(res => this.loadEvents())
       .catch(err => console.log(err));
   };
+
+     
  
   render() {
 
@@ -72,10 +77,10 @@ class AdminEventsSchedule extends Component {
                       year= {event.year}
                       officerStartTime = {event.officer_start_time}
                       meetingStartTime ={event.meeting_start_time}
-                      trainingStartTime = {event.training_start_time}
+                     trainingStartTime = {event.training_start_time}
                       drillCode = {event.drill_code}
                       lunchCommittee = {event.lunch_committee}
-                      standard = {event.standard}  
+                     standard = {event.standard}  
                       description = {event.description}  
                       onDelete={() => this.deleteRecord(event._id)}
                       >

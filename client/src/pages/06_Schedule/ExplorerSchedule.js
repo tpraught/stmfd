@@ -11,7 +11,7 @@ import QuickLinks from "../../components/Quick_Links";
 import Footer from "../../components/Footer";
 import API from "../../utils/API";
 
-//Stateful component to dynamically render a schedule of  Explorer events on front-end pages
+
 class ExplorerSchedule extends Component { 
    
   state = {

@@ -7,7 +7,6 @@ import Wrapper from "../../components/Wrapper";
 import FormErrors from "../../components/Errors";
 import Footer from "../../components/Footer";
 
-//Admin form to add a new firefighter to the roster
 class AdminTable extends Component {
 
   state = {
@@ -25,8 +24,8 @@ class AdminTable extends Component {
     memberSinceValid:false,
     rankValid:false,
     formValid:false
+   
   }
-  
   validateField (fieldName, value) {
     let fieldValidationErrors = this.state.formErrors;
     let firstNameValid = this.state.firstNameValid;
@@ -79,6 +78,8 @@ class AdminTable extends Component {
   determineTitleRank = (title) => {
     let titleRankValue;
 
+    
+
     if (title === "Fire Chief") {
       titleRankValue = 10;
     } else if (title === "Assistant Chief") {
@@ -97,7 +98,9 @@ class AdminTable extends Component {
 
   //Method to submit a new record to the Database
   handleFormSubmit = event => {
+    console.log("Saving record is triggered");
     event.preventDefault();
+     console.log(this.state.company); 
     let rankSort = this.determineTitleRank(this.state.title);
 
     API.saveRecord({
