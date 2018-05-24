@@ -1,16 +1,11 @@
 import React, { Component } from "react";
-import { Label, Button, Row, Col, Card } from 'reactstrap';
-import { Form, FormGroup, Input, FormFeedback } from 'reactstrap';
-
+import { Label, Button, Row, Col } from 'reactstrap';
+import { Form, FormGroup, Input } from 'reactstrap';
+// import FormErrors from "../../components/Errors";
 import AdminHeader from "../../components/AdminHeader";
 import Wrapper from "../../components/Wrapper";
 import API from "../../utils/API";
-import Dialog, {
-  DialogActions,
-  DialogContent,
-  DialogTitle,
-} from 'material-ui/Dialog';
-// import { Typography, } from 'material-ui';
+
 
 
 class AdminRegister extends Component {
@@ -21,16 +16,11 @@ class AdminRegister extends Component {
         password: "",
         passwordconfirm: "",
         fullname:"",
-        error: '',
-        open: false
-       
+        error: ''
     }
 
 
-  // open login modal
-  errDialogOpen = () => { this.setState({ open: true }); };
-  // close login modal
-  errDialogClose = () => { this.setState({ open: false }); };
+
 
     onSubmit = (event) => {
 			event.preventDefault();
@@ -94,10 +84,12 @@ class AdminRegister extends Component {
 							<div className="pageTitle mb-5">
 								<h1>REGISTER</h1>  
 							</div>
+
 							<Col sm="12">
 								<Row className="clearfix text-center justify-content-center">
 									<Col sm="12" md="8" className="error">
-										<FormErrors formErrors={this.state.error} />
+										{/* <FormErrors formErrors={this.state.error} /> */}
+										<p>{this.state.error}</p>
 									</Col>
 								</Row>
         		  </Col>
@@ -106,10 +98,10 @@ class AdminRegister extends Component {
 								<Row className="justify-content-center">
 								<Form className="adminForm">
 									 <FormGroup>
-											<Col sm="12">
+											<Col sm="12" >
 													<Row>
-														<Col sm="12" md="6">
-														   <Label for="fullname">Full Name*</Label>
+													<Col sm="12" md="6">			
+															<Label for="fullname">Full Name*</Label>
 	                                  <Input 
 	                                    type="text" 
 	                                    name="fullname"
@@ -118,8 +110,7 @@ class AdminRegister extends Component {
 	                                    onChange={this.handleInputChange}
 	                                    />
 														</Col>	
-													</Row>
-													<Row>						
+																	
 														<Col sm="12" md="6">			
 															<Label for="username">Username*</Label>
 																<Input 
@@ -131,8 +122,9 @@ class AdminRegister extends Component {
 																	/>
 														</Col>
 													</Row>
+
 													<Row>				
-														<Col sm="12" md="6">			
+														<Col sm="12" md="12">			
 															<Label for="email">	Email* </Label>
 															<Input
 																	type="email"
@@ -143,6 +135,7 @@ class AdminRegister extends Component {
 															/>
 														</Col>
 													</Row>	
+
 													<Row>				
 														<Col sm="12" md="6">	
 															<Label for="password"> Password* </Label>
@@ -154,8 +147,7 @@ class AdminRegister extends Component {
 																	onChange={this.handleInputChange}
 															/>
 														</Col>
-													</Row>
-													<Row>				
+															
 														<Col sm="12" md="6">				
 															<Label for="passwordconfirm">	Confirm Password*</Label>
 																<Input
@@ -174,7 +166,7 @@ class AdminRegister extends Component {
                  			   <p className="pl-3">* Required fields</p>
                 		  </Col>
                 		  <Col sm="12" md="6">
-													<Button className="mt-3 redButton addButton float-right"  disabled={!this.validateForm()} id="submit" type="submit" 	onClick={this.onSubmit}>Register</Button>
+													<Button className="mt-3 redButton addButton float-right" id="submit" type="submit" 	onClick={this.onSubmit}>Register</Button>
 											</Col>
                 		</Row>
               </Form>
