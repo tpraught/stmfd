@@ -91,7 +91,6 @@ class AdminRegister extends Component {
   	  <div>
     	  <AdminHeader/>
           <Wrapper>
-						<div className="pageTitle mb-5">
 							<div className="pageTitle mb-5">
 								<h1>REGISTER</h1>  
 							</div>
@@ -105,108 +104,84 @@ class AdminRegister extends Component {
 							
 							<Col>
 								<Row className="justify-content-center">
-										<Col sm="12" md="6">
-										
-														<div className="pageTitle">
-																<h1>Register</h1>  
-														</div>
-														<div className="Login mt-5">
-															
-																<Form className="adminForm">
-																 <FormGroup>		  
-																	
-													       <Label for="fullname">Full Name*</Label>
-		                                  <Input 
-		                                    type="text" 
-		                                    name="fullname"
-		                                    id="fullname"
-		                                    required value={this.state.fullname}
-		                                    onChange={this.handleInputChange}
-		                                    />
-																				</FormGroup>
-																	<FormGroup>
-																	<Label for="username">User Name*</Label>
-																	<Input 
-																		type="text" 
-																		name="username"
-																		id="username"
-																		required value={this.state.username}
+								<Form className="adminForm">
+									 <FormGroup>
+											<Col sm="12">
+													<Row>
+														<Col sm="12" md="6">
+														   <Label for="fullname">Full Name*</Label>
+	                                  <Input 
+	                                    type="text" 
+	                                    name="fullname"
+	                                    id="fullname"
+	                                    required value={this.state.fullname}
+	                                    onChange={this.handleInputChange}
+	                                    />
+														</Col>	
+													</Row>
+													<Row>						
+														<Col sm="12" md="6">			
+															<Label for="username">Username*</Label>
+																<Input 
+																	type="text" 
+																	name="username"
+																	id="username"
+																	required value={this.state.username}
+																	onChange={this.handleInputChange}
+																	/>
+														</Col>
+													</Row>
+													<Row>				
+														<Col sm="12" md="6">			
+															<Label for="email">	Email* </Label>
+															<Input
+																	type="email"
+																	id="email"
+																	name="email"
+																	onChange={this.handleInputChange}
+																	required value={this.state.email}
+															/>
+														</Col>
+													</Row>	
+													<Row>				
+														<Col sm="12" md="6">	
+															<Label for="password"> Password* </Label>
+															<Input
+																	type="password"
+																	id="password"
+																	name="password"
+																	required value={this.state.password}
+																	onChange={this.handleInputChange}
+															/>
+														</Col>
+													</Row>
+													<Row>				
+														<Col sm="12" md="6">				
+															<Label for="passwordconfirm">	Confirm Password*</Label>
+																<Input
+																		type="password"
+																		id="passwordconfirm"
+																		name="passwordconfirm"
+																		required value={this.state.passwordconfirm}
 																		onChange={this.handleInputChange}
-																		/>
-																		</FormGroup>
-																		<FormGroup>
-																				<Label for="email">
-																						Email*        
-																				</Label>
-																				<Input
-																						type="email"
-																						id="email"
-																						name="email"
-																						className="form-control"
-																						onChange={this.handleInputChange}
-																						required value={this.state.email}
-																				/>
-																		</FormGroup>  
-																		<FormGroup>
-																				<Label for="password">
-																						Password*
-																				</Label>
-																				<Input
-																						type="password"
-																						id="password"
-																						name="password"
-																			
-																						required value={this.state.password}
-																						onChange={this.handleInputChange}
-																				/>
-																		</FormGroup>   
-																		<FormGroup>
-																				<Label for="passwordconfirm">
-																						Confirm Password*
-																				</Label>
-																				<Input
-																						type="password"
-																						id="passwordconfirm"
-																						name="passwordconfirm"
-																					
-																						required value={this.state.passwordconfirm}
-																						onChange={this.handleInputChange}
-																				/>
-																		</FormGroup>   
-																		<Button 
-																				className="mt-3 redButton addButton float-right"
-																				/* disabled={!this.validateForm()} */
-																				id="submit"
-																				type="submit"
-																				onClick={this.onSubmit}
-																		>
-																				Register
-																		</Button>
-																</Form>
-														</div>
-										
-										</Col>
-								</Row>
-                 </Col>
-								</div>
+															/>
+															</Col>
+													</Row>	
+											</Col>		
+										</FormGroup>	 
+										<Row>
+                		  <Col sm="12" md="6" className="float-left">
+                 			   <p className="pl-3">* Required fields</p>
+                		  </Col>
+                		  <Col sm="12" md="6">
+													<Button className="mt-3 redButton addButton float-right"  disabled={!this.validateForm()} id="submit" type="submit" 	onClick={this.onSubmit}>Register</Button>
+											</Col>
+                		</Row>
+              </Form>
+            </Row>
+          </Col>
             </Wrapper>
-
-						{/* <Dialog
-								open={this.state.open}
-								onClose={this.errDialogClose}
-								aria-labelledby="alert-dialog-title"
-								aria-describedby="alert-dialog-description"
-							>
-								<DialogTitle id="alert-dialog-title">Error</DialogTitle>
-								<DialogContent>
-									<h1>{this.state.error}</h1>
-								</DialogContent>
-								<DialogActions>
-									<Button onClick={this.errDialogClose} color="primary">
-										OK
-									</Button>
-									</DialogActions>
-      		  </Dialog> */}
+					
         </div>
         );
     }
