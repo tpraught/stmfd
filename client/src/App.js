@@ -45,7 +45,7 @@ import AdminEventsSchedule from "./pages/07_Admin_Events_Schedule";
 import ContactUs from "./pages/08_ContactUs";
 
 import AdminLogin from "./pages/07_Admin_Login";
-import Register from "./components/Account/Register";
+import AdminRegister from "./pages/07_Admin_Register";
 import RegisterSuccess from "./components/Account/RegisterSuccess";
 
 const App = () => (
@@ -100,7 +100,7 @@ const App = () => (
         <Route exact path="/admin/trainingform" component={AdminEventsForm} />
         <Route exact path="/admin/trainingschedule" component={AdminEventsSchedule} />
         <Route exact path="/admin/login" component={AdminLogin} />
-        <Route exact path="/Account/Register" component={Register} />
+        <Route exact path="/admin/users/register" component={AdminRegister} />
         <Route exact path="/Account/RegisterSuccess" component={RegisterSuccess} />
         
         <Route exact path="/ContactUs" component={ContactUs} />

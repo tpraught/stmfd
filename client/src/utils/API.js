@@ -54,8 +54,8 @@ export default {
   getFrontEndSchedule: function() {
     return axios.get("/api/Schedule");
   },
-  saveUser: function(eventData) {
-    console.log("I'm saving a user", eventData);
-    return axios.post("/api/account/register", eventData);
+  registerUser: function(data) {
+    console.log("Register user", data);
+    return axios.post("/api/admin/users/register", data);
   }
 };

@@ -4,6 +4,7 @@
   "private": true,
   "proxy": "http://localhost:3001/",
   "dependencies": {
+    "@material-ui/core": "^1.0.0",
     "availity-reactstrap-validation": "^2.0.2",
     "axios": "^0.16.2",
     "bcrypt-nodejs": "^0.0.3",
@@ -12,6 +13,7 @@
     "hapi": "^17.4.0",
     "hapi-mongoose-bluebird": "^1.0.5",
     "jsonwebtoken": "^8.2.1",
+    "material-ui": "^0.20.1",
     "mongoose": "^5.0.17",
     "morgan": "^1.9.0",
     "passport": "^0.4.0",

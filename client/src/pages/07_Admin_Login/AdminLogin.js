@@ -23,20 +23,20 @@ class AdminLogin extends Component{
 
     onSubmit = (e) => {
 				e.preventDefault();
-				this.props.history.push('/admin/roster');
-        // const { username, password } = this.state;
+				// this.props.history.push('/admin/ros?ter');
+        const { username, password } = this.state;
 
-        // axios.post('/api/auth/login', { username, password })
-        // .then((result) => {
-        //     localStorage.setItem('jwtToken', result.data.token);
-        //     this.setState({ message: '' });
-        //     this.props.history.push('/')
-        // })
-        // .catch((error) => {
-        //     if(error.response.status === 401) {
-        //         this.setState({ message: 'login failed'});
-        //     }
-        // });
+        axios.post('/api/auth/login', { username, password })
+        .then((result) => {
+            localStorage.setItem('jwtToken', result.data.token);
+            this.setState({ message: '' });
+            this.props.history.push('/')
+        })
+        .catch((error) => {
+            if(error.response.status === 401) {
+                this.setState({ message: 'login failed'});
+            }
+        });
     }
 // export default class AdminLogin extends Component {
 //     constructor(props) {
@@ -80,19 +80,19 @@ class AdminLogin extends Component{
 //         };
 //     }
   
-    // validateForm() {
-    //     return this.state.email.length > 0 && this.state.password.length > 0;
-    // }
+    validateForm() {
+        return this.state.email.length > 0 && this.state.password.length > 0;
+    }
   
-    // handleChange = event => {
-    //     this.setState({
-    //         [event.target.id]: event.target.value
-    //     });
-    // }
+    handleChange = event => {
+        this.setState({
+            [event.target.id]: event.target.value
+        });
+    }
   
-    // handleSubmit = event => {
-    //     event.preventDefault();
-    // }
+    handleSubmit = event => {
+        event.preventDefault();
+    }
 
     render() {
         const { username, password, message } = this.state;

@@ -3,11 +3,12 @@
 const router = require("express").Router();
 const rosterRoutes = require("./roster");
 const htmlRoutes = require("./htmlRoutes");
+const userRoutes = require ("./users")
 
-// Book routes - WHAT DOES THIS DO?????
 //=====================================
 router.use("/admin", rosterRoutes);
 router.use("/", htmlRoutes);
+router.use("/admin/users", userRoutes);
 //========================================
 
 module.exports = router;
