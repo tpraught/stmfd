@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Label, Button, Row, Col } from 'reactstrap';
 import { Form, FormGroup, Input } from 'reactstrap';
 // import FormErrors from "../../components/Errors";
-import AdminHeader from "../../components/AdminHeader";
+import DefaultAdminHeader from "../../components/DefaultAdminHeader";
 import Wrapper from "../../components/Wrapper";
 import API from "../../utils/API";
 
@@ -14,29 +14,30 @@ class AdminRegister extends Component {
         username: "",
         email: "",
         password: "",
-        passwordconfirm: "",
+        passwordConfirm: "",
         fullname:"",
         error: ''
     }
 
 
-
-
-    onSubmit = (event) => {
+		onSubmit = (event) => {
 			event.preventDefault();
-        console.log('state: ', this.state);
+				console.log('state: ', this.state);
+				
+					
+
         if (this.state.password !== this.state.passwordConfirm) {
           this.setState({ error: 'Password and Password Confirmation do not match' });
 					// launch error dialog
 					console.log(this.state.error);
-          this.errDialogOpen();
-          // return console.error(this.state.error);
+        
+          return console.error(this.state.error);
         } else if (this.state.password.length < 6) {
           this.setState({ error: 'Password must be at least 6 characters long' });
 					// launch error dialog
 					console.log(this.state.error);
-          this.errDialogOpen();
-          // return console.error(this.state.error);
+
+          return console.error(this.state.error);
         } else if (
           this.state.username.length < 1 ||
           this.state.email.length < 1 ||
@@ -45,8 +46,8 @@ class AdminRegister extends Component {
 					this.setState({ error: 'One or more missing required fields' });
 					console.log(this.state.error);
           // launch error dialog
-          this.errDialogOpen();
-          // return console.error(this.state.error);
+        
+          return console.error(this.state.error);
         }
         const data = {
           username: this.state.username,
@@ -68,18 +69,22 @@ class AdminRegister extends Component {
               passwordConfirm: '',
               fullname: ''
              
-            }, ((typeof this.props.onLogin === 'function') && this.props.onLogin(newUser)));
+						}
+						// , ((typeof this.props.onLogin === 'function') && this.props.onLogin(newUser))
+					);
           })
-          .catch(err => console.log('error on registration', err));
+					.catch(err => console.log('error on registration', err));
+					// this.props.history.push('/admin/users/login');
       }
-    handleInputChange = event => this.setState({ [event.target.name]: event.target.value });
+		handleInputChange = event => 
+			this.setState({ [event.target.name]: event.target.value });
 
        
 
   render() {
     return (
   	  <div>
-    	  <AdminHeader/>
+    	  <DefaultAdminHeader/>
           <Wrapper>
 							<div className="pageTitle mb-5">
 								<h1>REGISTER</h1>  
@@ -87,7 +92,7 @@ class AdminRegister extends Component {
 
 							<Col sm="12">
 								<Row className="clearfix text-center justify-content-center">
-									<Col sm="12" md="8" className="error">
+									<Col sm="12" md="8" >
 										{/* <FormErrors formErrors={this.state.error} /> */}
 										<p>{this.state.error}</p>
 									</Col>
@@ -152,9 +157,9 @@ class AdminRegister extends Component {
 															<Label for="passwordconfirm">	Confirm Password*</Label>
 																<Input
 																		type="password"
-																		id="passwordconfirm"
-																		name="passwordconfirm"
-																		required value={this.state.passwordconfirm}
+																		id="passwordConfirm"
+																		name="passwordConfirm"
+																		required value={this.state.passwordConfirm}
 																		onChange={this.handleInputChange}
 															/>
 															</Col>

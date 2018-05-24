@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Label, Button, Row, Col, Card } from 'reactstrap';
 import { Form, FormGroup, Input, FormFeedback } from 'reactstrap';
 import axios from 'axios';
-import AdminHeader from "../../components/AdminHeader";
+import DefaultAdminHeader from "../../components/DefaultAdminHeader";
 import Wrapper from "../../components/Wrapper";
 
 class AdminLogin extends Component{
@@ -98,7 +98,7 @@ class AdminLogin extends Component{
         const { username, password, message } = this.state;
         return (
             <div>
-                <AdminHeader/>
+                <DefaultAdminHeader/>
                 <Wrapper>
                     <Col className="mt-5">
                         <Row className="justify-content-center">

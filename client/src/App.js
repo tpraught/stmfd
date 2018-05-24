@@ -99,7 +99,7 @@ const App = () => (
         <Route exact path="/admin/explorerschedule" component={AdminExplorerSchedule} />
         <Route exact path="/admin/trainingform" component={AdminEventsForm} />
         <Route exact path="/admin/trainingschedule" component={AdminEventsSchedule} />
-        <Route exact path="/admin/login" component={AdminLogin} />
+        <Route exact path="/admin/users/login" component={AdminLogin} />
         <Route exact path="/admin/users/register" component={AdminRegister} />
         <Route exact path="/Account/RegisterSuccess" component={RegisterSuccess} />
         
