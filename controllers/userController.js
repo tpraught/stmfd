@@ -43,9 +43,8 @@ const userController = {
       passport.authenticate('local')(req, res, () => {
       // res.redirect('/');
         User.findById(req.user._id)
-          .populate({ path: 'expRef', options: { sort: { expDate: -1 } } })
-          .populate('needsRef')
-          .populate('chapterRef')
+          // .populate({ path: 'expRef', options: { sort: { expDate: -1 } } })
+        
           .then(result => res.json({ user: result }));
       });
     },

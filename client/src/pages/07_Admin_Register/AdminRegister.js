@@ -74,7 +74,7 @@ class AdminRegister extends Component {
 					);
           })
 					.catch(err => console.log('error on registration', err));
-					// this.props.history.push('/admin/users/login');
+					this.props.history.push('/admin/users/login');
       }
 		handleInputChange = event => 
 			this.setState({ [event.target.name]: event.target.value });

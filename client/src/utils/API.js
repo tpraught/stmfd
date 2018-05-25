@@ -57,5 +57,15 @@ export default {
   registerUser: function(data) {
     console.log("Register user", data);
     return axios.post("/api/admin/users/register", data);
+  },
+  getCurrentUser: function(){
+    return axios.get ("api/admin/users/getCurrentUser")
+  },
+  loginUser: function(data){
+    console.log("Logging in...")
+    return axios.post("api/admin/users/login",data)
+  },
+  logoutUser: function(){
+    return axios.get("api/admin/users/logout")
   }
 };

@@ -6,13 +6,17 @@ router.route("/register")
  .post(userController.doRegister);
 
 // api route for login action
-router.post('/login', userController.doLogin);
+router.route("/login")
+.post(userController.doLogin);
 
 // api route for logout action
-router.get('/logout', userController.logout);
+router.route("/logout")
+.get(userController.logout);
+
 
 // api rout to get current user
-router.get('/getCurrentUser', userController.getCurrentUser);
+router.route("/getCurrentUser")
+ .get(userController.getCurrentUser);
 
 // api rout to update current user
 router.put('/:id', userController.updateUser);
