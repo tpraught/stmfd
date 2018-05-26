@@ -62,7 +62,7 @@ export default {
     return axios.get ("api/admin/users/getCurrentUser")
   },
   loginUser: function(data){
-    console.log("Logging in...")
+    console.log("Logging in...", data)
     return axios.post("api/admin/users/login",data)
   },
   logoutUser: function(){

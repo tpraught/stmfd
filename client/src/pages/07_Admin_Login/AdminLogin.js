@@ -16,8 +16,8 @@ class AdminLogin extends Component{
 	componentDidMount() {
 		API.getCurrentUser()
 		.then((response) => {
-      // const currentUser = response.data.user;
-      // this.props.onLogin(currentUser);
+      const currentUser = response.data.user;
+      this.props.onLogin(currentUser);
     });
   }
 

@@ -40,8 +40,11 @@ const userController = {
     },
     // Post login
     doLogin(req, res) {
+      console.log(req.user.username);
+      console.log(req.user.user._id);
       passport.authenticate('local')(req, res, () => {
       // res.redirect('/');
+     
         User.findById(req.user._id)
           // .populate({ path: 'expRef', options: { sort: { expDate: -1 } } })
         

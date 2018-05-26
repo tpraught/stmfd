@@ -48,7 +48,25 @@ import AdminLogin from "./pages/07_Admin_Login";
 import AdminRegister from "./pages/07_Admin_Register";
 import RegisterSuccess from "./components/Account/RegisterSuccess";
 
-const App = () => (
+class App extends Component {
+
+  state = {
+    currentUser: '',
+  };
+
+  
+  // pass to TopNav component
+  handleLogin = (currentUser) => {
+    // console.log('in App.handleLogin, user is ', currentUser);
+    this.setState({ currentUser });
+    if (!currentUser) {
+      window.history.pushState({}, '', '/admin/users/login');
+      // this.props.history.push('/admin/roster');
+    }
+  }
+
+  render() {
+    return (
   <Router>
     <div>
       {/* <Nav /> */}
@@ -92,24 +110,49 @@ const App = () => (
         <Route exact path="/ExplorerEvents" component={ExplorerEvents} />
         <Route exact path="/JoinExplorers" component={JoinExplorers} />
 
-        {/* Admin Pages */}
-        <Route exact path="/admin/add" component={AdminForm} />
-        <Route exact path="/admin/roster" component={AdminRoster} />
-        <Route exact path="/admin/explorerform" component={AdminExplorerForm} />
-        <Route exact path="/admin/explorerschedule" component={AdminExplorerSchedule} />
-        <Route exact path="/admin/trainingform" component={AdminEventsForm} />
-        <Route exact path="/admin/trainingschedule" component={AdminEventsSchedule} />
-        <Route exact path="/admin/users/login" component={AdminLogin} />
-        <Route exact path="/admin/users/register" component={AdminRegister} />
-        <Route exact path="/Account/RegisterSuccess" component={RegisterSuccess} />
-        
+        {/*Contact Us */}
         <Route exact path="/ContactUs" component={ContactUs} />
+
+        {/* Admin Pages */}
+        <Route exact path="/admin/users/register" component={AdminRegister} />
+
+          {/* <AdminLogin
+          onLogin={this.handleLogin}
+          currentUser={this.state.currentUser}
+           /> */}
+           {this.state.currentUser && 
+              this.state.currentUser.username ?
+              <div>
+
+                <Route exact path="/admin/add" component={AdminForm} />
+                <Route exact path="/admin/roster" component={AdminRoster} />
+                <Route exact path="/admin/explorerform" component={AdminExplorerForm} />
+                <Route exact path="/admin/explorerschedule" component={AdminExplorerSchedule} />
+                <Route exact path="/admin/trainingform" component={AdminEventsForm} />
+                <Route exact path="/admin/trainingschedule" component={AdminEventsSchedule} />
+
+
+              </div>
+            :
+           <div>
+           <Route path="/admin/users/login" render={() => <AdminLogin onLogin={this.handleLogin} currentUser={this.state.currentUser} {...this.state} />} />
+             </div>   
+       
+           }
+
+     
+      
+        {/* <Route exact path="/Account/RegisterSuccess" component={RegisterSuccess} /> */}
+        
+     
         
         {/* <Route component={NoMatch} /> */}
 
       </Switch>
     </div>
   </Router>
-);
+    );
+  }
+};
 
 export default App;
