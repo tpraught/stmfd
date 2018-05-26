@@ -51,7 +51,7 @@ var MONGODB_URI =process.env.MONGODB_URI || "mongodb://localhost/firedepartment"
 // connect mongoose
 // mongoose.connect('mongodb://localhost/userlist');
 
-app.use(require('express-session')({
+app.use(session({
     secret: 'stop the fire',
     maxAge: new Date(Date.now() + 36000000),
     store: new MongoStore({ mongooseConnection: mongoose.connection }),

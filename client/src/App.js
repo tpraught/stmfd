@@ -1,7 +1,7 @@
 //Main logic that assembles all components  
 //=====================TO BE UPDATED
 
-import React from "react";
+import React, {Component} from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import Home from "./pages/00_Home";

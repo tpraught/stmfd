@@ -16,7 +16,7 @@ const DefaultAdminHeader = () => (
 			</div>
 		</div>
 		<div id="brand" className="position-relative pt-4 pb-5">
-		<p className="homeLink" href="/admin/roster"><h2 className="m-0">ADMINISTRATION SITE</h2> </p>
+		<div className="homeLink" href="/admin/roster"><h2 className="m-0">ADMINISTRATION SITE</h2> </div>
 			<h1 className="m-0">ST. MICHAEL FIRE DEPARTMENT</h1>
 		</div>
 	</header>

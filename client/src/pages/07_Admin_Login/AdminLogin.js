@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Label, Button, Row, Col, Card } from 'reactstrap';
-import { Form, FormGroup, Input, FormFeedback } from 'reactstrap';
+import { Form, FormGroup, Input } from 'reactstrap';
 import API from "../../utils/API";
 import DefaultAdminHeader from "../../components/DefaultAdminHeader";
 import Wrapper from "../../components/Wrapper";
@@ -16,12 +16,13 @@ class AdminLogin extends Component{
 	componentDidMount() {
 		API.getCurrentUser()
 		.then((response) => {
-      const currentUser = response.data.user;
-      this.props.onLogin(currentUser);
+      // const currentUser = response.data.user;
+      // this.props.onLogin(currentUser);
     });
   }
 
-    onSubmit = (e) => {
+    submitForm = (e) => {
+			console.log("line 24 : will submit")
 				e.preventDefault();
 				// this.props.history.push('/admin/ros?ter');
 				if (this.state.password.length < 1 && this.state.username.length < 1) {
@@ -50,8 +51,8 @@ class AdminLogin extends Component{
 		
 		logoff = (event) => {
 			event.preventDefault();
-			API.logoutUser().
-			then(this.props.onLogin('null'));
+			API.logoutUser()
+			.then(this.props.onLogin('null'));
 		}
 
 		handleInputChange = event => this.setState({ [event.target.name]: event.target.value })
@@ -104,7 +105,7 @@ class AdminLogin extends Component{
  
 
     render() {
-        const { username, password, message } = this.state;
+      const { classes } = this.props;
         return (
             <div>
                 <DefaultAdminHeader/>
@@ -113,30 +114,39 @@ class AdminLogin extends Component{
 									<Row className="justify-content-center">
 											<Col sm="12" md="6">
 													<Card className="p-4">
+													{this.props.currentUser && this.props.currentUser.username ?
+												<div className="pageTitle">
+													<Button 
+															className="mt-3 redButton addButton float-right"
+															/* disabled={!this.validateForm()} */
+															id="submit"
+															type="submit"
+															onClick = {this.logoff}
+														>
+														Login
+														</Button> 
+													</div> :
+
+													<div>	
 															<div className="pageTitle">
 																	<h1>LOGIN</h1>  
 															</div>
 															<div className="Login mt-5">
-																	<Form onSubmit={this.onSubmit} className="adminForm">
-																			{message !== '' &&
-																					<div className="alert" role="alert">
-																							{ message }
-																					</div>
-																			}
+																	<Form >
+																		
 																			<FormGroup>
-																					<Label for="email">
-																							Email        
+																					<Label for="username">
+																							Username      
 																					</Label>
 																					<Input
-																							type="email"
-																							id="email"
+																							type="text"
+																							id="username"
 																							name="username"
-																							className="form-control"
-																							onChange={this.onChange}
-																							required
-																							value={username}
+																							onChange={this.handleInputChange}
+																							value={this.state.username}
+																					
 																					/>
-																					<FormFeedback>A valid email is required to log in</FormFeedback>
+																				
 																			</FormGroup>  
 																			<FormGroup>
 																					<Label>
@@ -146,24 +156,26 @@ class AdminLogin extends Component{
 																							type="password"
 																							id="password"
 																							name="password"
-																							className="form-control"
-																							onChange={this.onChange}
-																							required
-																							value={password}                    
+																							value={this.state.password}
+																							onChange={this.handleInputChange}
+																						
+																						                   
 																					/>
-																					<FormFeedback>A password is required to log in</FormFeedback>
-																					{/* <span><Link to="/account/reset-password">Forgot your password?</Link></span> */}
+																				
 																			</FormGroup>   
 																			<Button 
 																					className="mt-3 redButton addButton float-right"
 																					/* disabled={!this.validateForm()} */
 																					id="submit"
 																					type="submit"
+																					onClick = {this.submitForm}
 																			>
 																					Login
 																			</Button>
 																	</Form>
 															</div>
+														</div>
+													}
 													</Card>
 											</Col>
                         </Row>
