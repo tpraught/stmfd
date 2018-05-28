@@ -3,6 +3,7 @@
 
 import React, {Component} from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+// import PropTypes from 'prop-types';
 
 import Home from "./pages/00_Home";
 
@@ -65,9 +66,10 @@ class App extends Component {
       window.history.pushState({}, '', '/admin/users/login');
       // this.props.history.push('/admin/roster');
     } else {
-      // window.history.pushState({}, '', '/admin/roster');
-      this.props.history.push('/admin/roster');
       console.log("line 70", this.state.currentUser)
+      window.history.pushState({}, '', '/admin/roster');
+      // this.props.history.push('/admin/roster');
+    
     }
   }
 
@@ -77,7 +79,7 @@ class App extends Component {
     <div>
       {/* <Nav /> */}
       <Switch>
-
+        
         {/* Hompage */}
         <Route exact path="/" component={Home} />
 
@@ -121,21 +123,18 @@ class App extends Component {
 
         {/* Admin Pages */}
         <Route exact path="/admin/users/register" component={AdminRegister} />
-
-          {/* <AdminLogin
-          onLogin={this.handleLogin}
-          currentUser={this.state.currentUser}
-           /> */}
+        </Switch>
+      
            {this.state.currentUser ?
               <div>
-
+          <Switch>
                 <Route exact path="/admin/add" component={AdminForm} />
                 <Route exact path="/admin/roster" component={AdminRoster} />
                 <Route exact path="/admin/explorerform" component={AdminExplorerForm} />
                 <Route exact path="/admin/explorerschedule" component={AdminExplorerSchedule} />
                 <Route exact path="/admin/trainingform" component={AdminEventsForm} />
                 <Route exact path="/admin/trainingschedule" component={AdminEventsSchedule} />
-
+                </Switch>
 
               </div>
             :
@@ -153,11 +152,13 @@ class App extends Component {
         
         {/* <Route component={NoMatch} /> */}
 
-      </Switch>
+   
     </div>
   </Router>
     );
   }
 };
+
+
 
 export default App;
