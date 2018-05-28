@@ -46,7 +46,7 @@ import ContactUs from "./pages/08_ContactUs";
 
 import AdminLogin from "./pages/07_Admin_Login";
 import AdminRegister from "./pages/07_Admin_Register";
-import RegisterSuccess from "./components/Account/RegisterSuccess";
+// import RegisterSuccess from "./components/Account/RegisterSuccess";
 
 class App extends Component {
 
@@ -57,11 +57,17 @@ class App extends Component {
   
   // pass to TopNav component
   handleLogin = (currentUser) => {
-    // console.log('in App.handleLogin, user is ', currentUser);
+    console.log('in App.handleLogin, user is ', currentUser);
     this.setState({ currentUser });
+    console.log("line 62 in App", this.state.currentUser);
     if (!currentUser) {
+      console.log("line 63 in App", this.state.currentUser);
       window.history.pushState({}, '', '/admin/users/login');
       // this.props.history.push('/admin/roster');
+    } else {
+      // window.history.pushState({}, '', '/admin/roster');
+      this.props.history.push('/admin/roster');
+      console.log("line 70", this.state.currentUser)
     }
   }
 
@@ -120,8 +126,7 @@ class App extends Component {
           onLogin={this.handleLogin}
           currentUser={this.state.currentUser}
            /> */}
-           {this.state.currentUser && 
-              this.state.currentUser.username ?
+           {this.state.currentUser ?
               <div>
 
                 <Route exact path="/admin/add" component={AdminForm} />

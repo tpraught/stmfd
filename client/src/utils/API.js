@@ -59,13 +59,13 @@ export default {
     return axios.post("/api/admin/users/register", data);
   },
   getCurrentUser: function(){
-    return axios.get ("api/admin/users/getCurrentUser")
+    return axios.get ("/api/admin/users/getCurrentUser")
   },
   loginUser: function(data){
     console.log("Logging in...", data)
-    return axios.post("api/admin/users/login",data)
+    return axios.post("/api/admin/users/login",data)
   },
   logoutUser: function(){
-    return axios.get("api/admin/users/logout")
+    return axios.get("/api/admin/users/logout")
   }
 };

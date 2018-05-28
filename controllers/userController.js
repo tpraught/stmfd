@@ -39,16 +39,19 @@ const userController = {
       });
     },
     // Post login
-    doLogin(req, res) {
-      console.log(req.user.username);
-      console.log(req.user.user._id);
+    doLogin   (req, res) {
+      console.log("line 43", req);
+      // console.log(req.user.user._id);
       passport.authenticate('local')(req, res, () => {
       // res.redirect('/');
-     
-        User.findById(req.user._id)
+        console.log(req);
+        User.findOne({username:req.body.username})
+        // User.findById(req.user._id)
           // .populate({ path: 'expRef', options: { sort: { expDate: -1 } } })
         
-          .then(result => res.json({ user: result }));
+          .then(result => {
+            console.log("userController line 53", result);
+            res.json({ user: result })});
       });
     },
     // logout
@@ -57,11 +60,17 @@ const userController = {
       res.json({ user: null });
     },
     getCurrentUser(req, res) {
+      console.log("usreController 63",req.isAuthenticated);
       if (req.isAuthenticated && req.isAuthenticated()) {
       // if (req.user && req.user._id) {
+        console.log("user controller 65", req.user);
+        
         return res.json({ user: req.user });
+      } else {
+        console.log("User not authenticated")
+        return res.json({ user: null });
       }
-      return res.json({ user: null });
+    
     },
     updateUser(req, res) {
       if (req.isAuthenticated && req.isAuthenticated()) {

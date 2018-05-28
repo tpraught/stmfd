@@ -16,7 +16,9 @@ class AdminLogin extends Component{
 	componentDidMount() {
 		API.getCurrentUser()
 		.then((response) => {
-      const currentUser = response.data.user;
+			console.log("line 19", response.data.user);
+			const currentUser = response.data.user;
+			console.log("line 20", currentUser);
       this.props.onLogin(currentUser);
     });
   }
@@ -26,7 +28,7 @@ class AdminLogin extends Component{
 				e.preventDefault();
 				// this.props.history.push('/admin/ros?ter');
 				if (this.state.password.length < 1 && this.state.username.length < 1) {
-					throw new Error('Bad login info. This is a crappy error message');
+					throw new Error('Bad login info.');
 				}
 				// create object containing username/password from the components state
 				const data = {
@@ -37,12 +39,14 @@ class AdminLogin extends Component{
 				API.loginUser(data)
 					.then((response) => {
 						// get user from response
-						console.log("line 39 :",response.data);
-						const { user } = response.data;
+						const  user = response.data;
+						// console.log(user);
 						// reset username and password fields
 						this.setState({ username: '', password: '' });
 						// pass user information to App.js
+					
 						this.props.onLogin(user);
+						// this.props.history.push('/admin/roster');
 						// close dialogue
 					
 					})
@@ -105,7 +109,7 @@ class AdminLogin extends Component{
  
 
     render() {
-      const { classes } = this.props;
+    //   const { classes } = this.props;
         return (
             <div>
                 <DefaultAdminHeader/>
