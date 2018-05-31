@@ -2,7 +2,8 @@
 //=====================TO BE UPDATED
 
 import React, {Component} from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Redirect
+ } from "react-router-dom";
 // import PropTypes from 'prop-types';
 
 import Home from "./pages/00_Home";
@@ -49,31 +50,53 @@ import AdminLogin from "./pages/07_Admin_Login";
 import AdminRegister from "./pages/07_Admin_Register";
 // import RegisterSuccess from "./components/Account/RegisterSuccess";
 
+function AuthenticatedRoute({component:Component, isLoggedIn, ...rest}) {
+  console.log("Authenticated function is being triggered");
+
+  console.log("isLoggedin:",  isLoggedIn);
+  return (
+    <Route  {...rest}  render = {(props) => isLoggedIn === true
+      ? <Component { ... props} { ...rest } />
+      : <Redirect to= '/admin/users/login' />} /> 
+  )
+}
+
 class App extends Component {
 
   state = {
     currentUser: '',
+    isLoggedIn:false
   };
 
   
   // pass to TopNav component
   handleLogin = (currentUser) => {
     console.log('in App.handleLogin, user is ', currentUser);
-    this.setState({ currentUser });
-    console.log("line 62 in App", this.state.currentUser);
+    // this.setState({
+    //   currentUser:currentUser,
+    //   isLoggedIn:true });
+  
+
     if (!currentUser) {
-      console.log("line 63 in App", this.state.currentUser);
-      window.history.pushState({}, '', '/admin/users/login');
+      // console.log("line 63 in App", this.state.currentUser);
+      this.setState({
+          currentUser:null,
+          isLoggedIn:false });
+      // window.history.pushState({}, '', '/admin/users/login');
       // this.props.history.push('/admin/roster');
     } else {
-      console.log("line 70", this.state.currentUser)
-      window.history.pushState({}, '', '/admin/roster');
+      this.setState({
+        currentUser:currentUser,
+        isLoggedIn:true });
+      console.log("Login successful", this.state.currentUser, this.state.isLoggedIn)
+      // window.history.pushState({}, '', '/admin/roster');
       // this.props.history.push('/admin/roster');
     
     }
   }
 
   render() {
+    // const isLoggedIn = this.state.isLoggedIn;
     return (
   <Router>
     <div>
@@ -123,28 +146,28 @@ class App extends Component {
 
         {/* Admin Pages */}
         <Route exact path="/admin/users/register" component={AdminRegister} />
-        </Switch>
+       
+        <Route path="/admin/users/login" render={() => <AdminLogin onLogin={this.handleLogin} currentUser={this.state.currentUser} {...this.state} />} />
+
+        <AuthenticatedRoute  exact path="/admin/add"  isLoggedIn={this.state.isLoggedIn}  component={AdminForm} />
+        <AuthenticatedRoute  exact path="/admin/roster"  isLoggedIn ={this.state.isLoggedIn}  component={AdminRoster} />
+       
+            
       
-           {this.state.currentUser ?
-              <div>
-          <Switch>
-                <Route exact path="/admin/add" component={AdminForm} />
+            
+                {/* <Route exact path="/admin/add" component={AdminForm} />
                 <Route exact path="/admin/roster" component={AdminRoster} />
                 <Route exact path="/admin/explorerform" component={AdminExplorerForm} />
                 <Route exact path="/admin/explorerschedule" component={AdminExplorerSchedule} />
                 <Route exact path="/admin/trainingform" component={AdminEventsForm} />
                 <Route exact path="/admin/trainingschedule" component={AdminEventsSchedule} />
-                </Switch>
+               */}
 
-              </div>
-            :
-           <div>
-           <Route path="/admin/users/login" render={() => <AdminLogin onLogin={this.handleLogin} currentUser={this.state.currentUser} {...this.state} />} />
-             </div>   
-       
-           }
+            
+          
 
-     
+          
+        
       
         {/* <Route exact path="/Account/RegisterSuccess" component={RegisterSuccess} /> */}
         
@@ -152,12 +175,13 @@ class App extends Component {
         
         {/* <Route component={NoMatch} /> */}
 
-   
+    </Switch>
     </div>
   </Router>
     );
   }
 };
+
 
 
 

@@ -2,7 +2,9 @@ import React, { Component } from "react";
 import { Label, Button, Row, Col, Card } from 'reactstrap';
 import { Form, FormGroup, Input } from 'reactstrap';
 import API from "../../utils/API";
-import DefaultAdminHeader from "../../components/DefaultAdminHeader";
+// import DefaultAdminHeader from "../../components/DefaultAdminHeader";
+import AdminHeader from "../../components/AdminHeader";
+import { Redirect } from 'react-router-dom'
 import Wrapper from "../../components/Wrapper";
 
 class AdminLogin extends Component{
@@ -16,9 +18,9 @@ class AdminLogin extends Component{
 	componentDidMount() {
 		API.getCurrentUser()
 		.then((response) => {
-			console.log("line 19", response.data.user);
+			// console.log("line 19", response.data.user);
 			const currentUser = response.data.user;
-			console.log("line 20", currentUser);
+			// console.log("line 20", currentUser);
       this.props.onLogin(currentUser);
     });
   }
@@ -44,8 +46,10 @@ class AdminLogin extends Component{
 						// reset username and password fields
 						this.setState({ username: '', password: '' });
 						// pass user information to App.js
-					
-						this.props.onLogin(user);
+           
+            this.props.onLogin(user);
+            
+              <Redirect to={{ pathname: '/admin/roster'}} />
 						// this.props.history.push('/admin/roster');
 						// close dialogue
 					
@@ -112,76 +116,65 @@ class AdminLogin extends Component{
     //   const { classes } = this.props;
         return (
             <div>
-                <DefaultAdminHeader/>
-                <Wrapper>
-							<Col className="mt-5">
-									<Row className="justify-content-center">
-											<Col sm="12" md="6">
-													<Card className="p-4">
-													{this.props.currentUser && this.props.currentUser.username ?
-												<div className="pageTitle">
-													<Button 
-															className="mt-3 redButton addButton float-right"
-															/* disabled={!this.validateForm()} */
-															id="submit"
-															type="submit"
-															onClick = {this.logoff}
-														>
-														Login
-														</Button> 
-													</div> :
+                <AdminHeader/>
+      <Wrapper>
+    <Col className="mt-5">
+        <Row className="justify-content-center">
+            <Col sm="12" md="6">
+                <Card className="p-4">
+            
 
-													<div>	
-															<div className="pageTitle">
-																	<h1>LOGIN</h1>  
-															</div>
-															<div className="Login mt-5">
-																	<Form >
-																		
-																			<FormGroup>
-																					<Label for="username">
-																							Username      
-																					</Label>
-																					<Input
-																							type="text"
-																							id="username"
-																							name="username"
-																							onChange={this.handleInputChange}
-																							value={this.state.username}
-																					
-																					/>
-																				
-																			</FormGroup>  
-																			<FormGroup>
-																					<Label>
-																							Password
-																					</Label>
-																					<Input
-																							type="password"
-																							id="password"
-																							name="password"
-																							value={this.state.password}
-																							onChange={this.handleInputChange}
-																						
-																						                   
-																					/>
-																				
-																			</FormGroup>   
-																			<Button 
-																					className="mt-3 redButton addButton float-right"
-																					/* disabled={!this.validateForm()} */
-																					id="submit"
-																					type="submit"
-																					onClick = {this.submitForm}
-																			>
-																					Login
-																			</Button>
-																	</Form>
-															</div>
-														</div>
-													}
-													</Card>
-											</Col>
+                <div>	
+                    <div className="pageTitle">
+                        <h1>LOGIN</h1>  
+                    </div>
+                    <div className="Login mt-5">
+                        <Form >
+                          
+                            <FormGroup>
+                                <Label for="username">
+                                    Username      
+                                </Label>
+                                <Input
+                                    type="text"
+                                    id="username"
+                                    name="username"
+                                    onChange={this.handleInputChange}
+                                    value={this.state.username}
+                                
+                                />
+                              
+                            </FormGroup>  
+                            <FormGroup>
+                                <Label>
+                                    Password
+                                </Label>
+                                <Input
+                                    type="password"
+                                    id="password"
+                                    name="password"
+                                    value={this.state.password}
+                                    onChange={this.handleInputChange}
+                                  
+                                                      
+                                />
+                              
+                            </FormGroup>   
+                            <Button 
+                                className="mt-3 redButton addButton float-right"
+                                /* disabled={!this.validateForm()} */
+                                id="submit"
+                                type="submit"
+                                onClick = {this.submitForm}
+                            >
+                                Login
+                            </Button>
+                        </Form>
+                    </div>
+                  </div>
+                
+                </Card>
+            </Col>
                         </Row>
                     </Col>
                 </Wrapper>
