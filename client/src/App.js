@@ -151,24 +151,13 @@ class App extends Component {
 
         <AuthenticatedRoute  exact path="/admin/add"  isLoggedIn={this.state.isLoggedIn}  component={AdminForm} />
         <AuthenticatedRoute  exact path="/admin/roster"  isLoggedIn ={this.state.isLoggedIn}  component={AdminRoster} />
-       
-            
-      
-            
-                {/* <Route exact path="/admin/add" component={AdminForm} />
-                <Route exact path="/admin/roster" component={AdminRoster} />
-                <Route exact path="/admin/explorerform" component={AdminExplorerForm} />
-                <Route exact path="/admin/explorerschedule" component={AdminExplorerSchedule} />
-                <Route exact path="/admin/trainingform" component={AdminEventsForm} />
-                <Route exact path="/admin/trainingschedule" component={AdminEventsSchedule} />
-               */}
-
-            
-          
-
-          
         
-      
+        <AuthenticatedRoute exact path="/admin/explorerschedule"    isLoggedIn ={this.state.isLoggedIn}  component={AdminExplorerSchedule} />
+        <AuthenticatedRoute exact path="/admin/trainingform"     isLoggedIn ={this.state.isLoggedIn} component={AdminEventsForm} />
+        <AuthenticatedRoute exact path="/admin/trainingschedule" isLoggedIn ={this.state.isLoggedIn} component={AdminEventsSchedule} />
+        <AuthenticatedRoute  exact path="/admin/explorerform"  isLoggedIn ={this.state.isLoggedIn} component={AdminExplorerForm} />
+       
+                    
         {/* <Route exact path="/Account/RegisterSuccess" component={RegisterSuccess} /> */}
         
      

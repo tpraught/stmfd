@@ -4,7 +4,7 @@ import { Form, FormGroup, Input } from 'reactstrap';
 import API from "../../utils/API";
 // import DefaultAdminHeader from "../../components/DefaultAdminHeader";
 import AdminHeader from "../../components/AdminHeader";
-import { Redirect } from 'react-router-dom'
+// import { Redirect } from 'react-router-dom'
 import Wrapper from "../../components/Wrapper";
 
 class AdminLogin extends Component{
@@ -49,7 +49,7 @@ class AdminLogin extends Component{
            
             this.props.onLogin(user);
             
-              <Redirect to={{ pathname: '/admin/roster'}} />
+            
 						// this.props.history.push('/admin/roster');
 						// close dialogue
 					

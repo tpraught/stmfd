@@ -40,8 +40,7 @@ const userController = {
     },
     // Post login
     doLogin   (req, res) {
-      console.log("line 43", req);
-      // console.log(req.user.user._id);
+    
       passport.authenticate('local')(req, res, () => {
       // res.redirect('/');
         console.log(req);
