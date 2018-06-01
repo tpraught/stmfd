@@ -65,7 +65,8 @@ class App extends Component {
 
   state = {
     currentUser: '',
-    isLoggedIn:false
+    isLoggedIn:false,
+    redirect:false
   };
 
   
@@ -87,16 +88,31 @@ class App extends Component {
     } else {
       this.setState({
         currentUser:currentUser,
-        isLoggedIn:true });
+        isLoggedIn:true,
+        redirect:true });
       console.log("Login successful", this.state.currentUser, this.state.isLoggedIn)
       // window.history.pushState({}, '', '/admin/roster');
       // this.props.history.push('/admin/roster');
-    
+    //  this.redirectOnLogin();
     }
+    
   }
 
+  redirectOnLogin() {
+    console.log("Render");
+     
+    return (
+        
+        <Redirect to= '/admin/roster' /> 
+           
+    )
+  }
+
+
   render() {
-    // const isLoggedIn = this.state.isLoggedIn;
+   
+     
+   
     return (
   <Router>
     <div>
@@ -147,7 +163,7 @@ class App extends Component {
         {/* Admin Pages */}
         <Route exact path="/admin/users/register" component={AdminRegister} />
        
-        <Route path="/admin/users/login" render={() => <AdminLogin onLogin={this.handleLogin} currentUser={this.state.currentUser} {...this.state} />} />
+        <Route path="/admin/users/login" render={() => <AdminLogin  onLogin={this.handleLogin} currentUser={this.state.currentUser} {...this.state} />} />
 
         <AuthenticatedRoute  exact path="/admin/add"  isLoggedIn={this.state.isLoggedIn}  component={AdminForm} />
         <AuthenticatedRoute  exact path="/admin/roster"  isLoggedIn ={this.state.isLoggedIn}  component={AdminRoster} />
