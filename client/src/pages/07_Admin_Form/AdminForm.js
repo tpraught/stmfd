@@ -118,6 +118,7 @@ class AdminTable extends Component {
   };
 
   render() {
+    
     return (
       <div>
         <AdminHeader/>

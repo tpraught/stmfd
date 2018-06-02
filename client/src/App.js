@@ -56,7 +56,7 @@ function AuthenticatedRoute({component:Component, isLoggedIn, ...rest}) {
   console.log("isLoggedin:",  isLoggedIn);
   return (
     <Route  {...rest}  render = {(props) => isLoggedIn === true
-      ? <Component { ... props} { ...rest } />
+      ? <Component { ... props} isLoggedIn = {isLoggedIn} { ...rest } />
       : <Redirect to= '/admin/users/login' />} /> 
   )
 }
@@ -165,7 +165,8 @@ class App extends Component {
        
         <Route path="/admin/users/login" render={() => <AdminLogin  onLogin={this.handleLogin} currentUser={this.state.currentUser} {...this.state} />} />
 
-        <AuthenticatedRoute  exact path="/admin/add"  isLoggedIn={this.state.isLoggedIn}  component={AdminForm} />
+        {/* <AuthenticatedRoute  exact path="/admin/add"  isLoggedIn={this.state.isLoggedIn}  component={AdminForm } /> */}
+        <AuthenticatedRoute  exact path="/admin/add"  isLoggedIn={this.state.isLoggedIn}  component={AdminForm } />
         <AuthenticatedRoute  exact path="/admin/roster"  isLoggedIn ={this.state.isLoggedIn}  component={AdminRoster} />
         
         <AuthenticatedRoute exact path="/admin/explorerschedule"    isLoggedIn ={this.state.isLoggedIn}  component={AdminExplorerSchedule} />

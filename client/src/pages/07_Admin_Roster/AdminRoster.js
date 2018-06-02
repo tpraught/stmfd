@@ -87,10 +87,12 @@ class FireRoster extends Component {
    
  
   render() {
+    const isLoggedIn = this.props.isLoggedIn;
+    console.log("Passed logged in prop in Admin Roster",isLoggedIn);
 
     return (
       <div> 
-        <AdminHeader/>
+        <AdminHeader isLoggedIn = {isLoggedIn}/>
         <div className="col-md-8 offset-md-2 mb-5">
           <Row>
             <Col size="md-12">
