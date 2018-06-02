@@ -4,8 +4,9 @@ import { Form, FormGroup, Input } from 'reactstrap';
 import API from "../../utils/API";
 // import DefaultAdminHeader from "../../components/DefaultAdminHeader";
 import AdminHeader from "../../components/AdminHeader";
-// import { Redirect } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 import Wrapper from "../../components/Wrapper";
+import PropTypes from 'prop-types';
 
 class AdminLogin extends Component{
 	
@@ -15,6 +16,12 @@ class AdminLogin extends Component{
 			message: ''
 	};
 
+    static propTypes = {
+        match: PropTypes.object.isRequired,
+        location: PropTypes.object.isRequired,
+        history: PropTypes.object.isRequired
+      }
+    
 	componentDidMount() {
 		API.getCurrentUser()
 		.then((response) => {
@@ -50,7 +57,7 @@ class AdminLogin extends Component{
             this.props.onLogin(user);
             
             
-						// this.props.history.push('/admin/roster');
+						this.props.history.push('/admin/roster');
 						// close dialogue
 					
 					})
@@ -114,6 +121,7 @@ class AdminLogin extends Component{
 
     render() {
     //   const { classes } = this.props;
+    const { match, location, history } = this.props
         return (
             <div>
                 <AdminHeader/>
@@ -183,4 +191,4 @@ class AdminLogin extends Component{
     }
 }
 
-export default AdminLogin;
+export default withRouter(AdminLogin);
