@@ -28,7 +28,6 @@ class AdminLogin extends Component{
   }
 
   submitForm = (e) => {
-    console.log("line 24 : will submit")
       e.preventDefault();
    
       if (this.state.password.length < 1 && this.state.username.length < 1) {
@@ -57,7 +56,7 @@ class AdminLogin extends Component{
 		handleInputChange = event => this.setState({ [event.target.name]: event.target.value })
 
     render() {
-      const { history } = this.props
+      // const { history } = this.props
         return (
           <div>
             <AdminHeader/>
