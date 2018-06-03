@@ -55,7 +55,7 @@ const userController = {
       res.json({ user: null });
     },
     getCurrentUser(req, res) {
-      console.log("usreController 63",req.isAuthenticated);
+    
       if (req.isAuthenticated && req.isAuthenticated()) {
       // if (req.user && req.user._id) {
         console.log("user controller 65", req.user);
