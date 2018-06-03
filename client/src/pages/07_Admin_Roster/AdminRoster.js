@@ -54,7 +54,6 @@ class FireRoster extends Component {
   }
   
   loadRoster = () => {
-    console.log("I'm triggered")
     API.getRoster()
    .then(res => this.setState({ fireFighters: res.data}))
    .catch(err => console.log(err));
@@ -88,8 +87,7 @@ class FireRoster extends Component {
  
   render() {
     const isLoggedIn = this.props.isLoggedIn;
-    console.log("Passed logged in prop in Admin Roster",isLoggedIn);
-
+ 
     return (
       <div> 
         <AdminHeader isLoggedIn = {isLoggedIn} history = {this.props.history}/>

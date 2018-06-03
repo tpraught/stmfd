@@ -17,75 +17,50 @@ class AdminHeader extends Component {
 	static propTypes = {
          history: PropTypes.object.isRequired
       }
-    logout(event) {
-        event.preventDefault()
-        console.log('logging out')
-       
-        console.log("line20", this.props.history)
-		API.logoutUser()
-		.then(response => {
-          console.log("Response back from controller on logout", response.data)
-        //   if (response.status === 200) {
-        //     this.props.updateUser({
-        //       isLoggedIn: false,
-        //       currentUser: null
-        //     })
-		//   }
-		this.props.history.push('/admin/users/login');
-        }).catch(error => {
-            console.log('Logout error', error)
-		})
-		// this.props.history.push('/admin/users/login');
-      }
-
-    render() {
+   
+  render() {
 		const isLoggedIn = this.props.isLoggedIn;
 		const {history } = this.props
         
-        return (
-            <div>
+			return (
+				<div>
+					<header>
+						<div id="smallNav" className="row justify-content-between p-2">
+							<div className="col-8 text-leftt">
+								<Link className="homeLink" to="/admin/roster"> 
+									FD ROSTER
+								</Link>	
+								&nbsp;&nbsp;|&nbsp;&nbsp;
+								<Link className="homeLink" to="/admin/trainingschedule"> 
+									FD SCHEDULE
+								</Link>		
+								&nbsp;&nbsp;|&nbsp;&nbsp;
+								<Link className="homeLink" to="/admin/explorerschedule"> 
+									EXPLORER SCHEDULE
+								</Link>			
+								&nbsp;&nbsp;|&nbsp;&nbsp;
+								<Link className="homeLink" to="/"> 
+									GO TO SMFD.ORG 
+								</Link>		
+							</div>
 
-						<header>
-					<div id="smallNav" className="row justify-content-between p-2">
-					
-					<div className="col-8 text-leftt">
-						<Link className="homeLink" to="/admin/roster"> 
-							FD ROSTER
-						</Link>	
-						&nbsp;&nbsp;|&nbsp;&nbsp;
-						<Link className="homeLink" to="/admin/trainingschedule"> 
-							FD SCHEDULE
-						</Link>		
-						&nbsp;&nbsp;|&nbsp;&nbsp;
-						<Link className="homeLink" to="/admin/explorerschedule"> 
-							EXPLORER SCHEDULE
-						</Link>			
-						&nbsp;&nbsp;|&nbsp;&nbsp;
-						<Link className="homeLink" to="/"> 
-							GO TO SMFD.ORG 
-						</Link>		
+							<div className="col-4 text-right">
+								{isLoggedIn ? (
+									<LogOutButton history={history}/>
+								) : (
+									<p></p>
+								)}
+							</div>
 						</div>
-
-						<div className="col-4 text-right">
-						{isLoggedIn ? (
-							<LogOutButton history={history}/>
-						) : (
-							<p></p>
-						)}
-						
 					
+						<div id="brand" className="position-relative pt-4 pb-5">
+							<a className="homeLink" href="/admin/roster"><h2 className="m-0">ADMINISTRATION SITE</h2>
+							<h1 className="m-0">ST. MICHAEL FIRE DEPARTMENT</h1></a>
 						</div>
-					</div>
-					<div id="brand" className="position-relative pt-4 pb-5">
-					<a className="homeLink" href="/admin/roster"><h2 className="m-0">ADMINISTRATION SITE</h2>
-						<h1 className="m-0">ST. MICHAEL FIRE DEPARTMENT</h1></a>
-					</div>
 				</header>
-            </div>
-
-        );
-
-    }
+			</div>
+		);
+  }
 }
 
 export default withRouter(AdminHeader);
