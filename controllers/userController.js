@@ -55,8 +55,9 @@ const userController = {
     },
     // logout
     logout(req, res) {
+      console.log("usercontroller is logging out")
       req.logout();
-      res.json({ user: null });
+       res.json({ user: null });
     },
     getCurrentUser(req, res) {
       console.log("usreController 63",req.isAuthenticated);

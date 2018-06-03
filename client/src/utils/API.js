@@ -66,6 +66,7 @@ export default {
     return axios.post("/api/admin/users/login",data)
   },
   logoutUser: function(){
+    console.log("API, Logging out...")
     return axios.get("/api/admin/users/logout")
   }
 };

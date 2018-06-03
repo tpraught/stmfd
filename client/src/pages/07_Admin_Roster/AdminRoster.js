@@ -92,7 +92,7 @@ class FireRoster extends Component {
 
     return (
       <div> 
-        <AdminHeader isLoggedIn = {isLoggedIn}/>
+        <AdminHeader isLoggedIn = {isLoggedIn} history = {this.props.history}/>
         <div className="col-md-8 offset-md-2 mb-5">
           <Row>
             <Col size="md-12">

@@ -55,7 +55,7 @@ class AdminLogin extends Component{
 						// pass user information to App.js
            
             this.props.onLogin(user);
-            
+                           console.log("Admin Login history", this.props.history) 
             
 						this.props.history.push('/admin/roster');
 						// close dialogue

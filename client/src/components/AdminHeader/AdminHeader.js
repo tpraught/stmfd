@@ -1,32 +1,52 @@
 import React,  { Component } from 'react';
+import { Button } from 'reactstrap';
 import "./AdminHeader.css";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import API from "../../utils/API";
+import PropTypes from 'prop-types';
+
+const LogOutButton = props => (
+	<button type="submit" className="homeLink btn btn-link text-secondary" {...props} onClick={() => {
+		API.logoutUser()
+		 props.history.push('/admin/users/login')}}>
+		 LOGOUT
+	</button>
+   );
+
 
 class AdminHeader extends Component {
-  
-
+	static propTypes = {
+        match: PropTypes.object.isRequired,
+        location: PropTypes.object.isRequired,
+        history: PropTypes.object.isRequired
+      }
     logout(event) {
         event.preventDefault()
         console.log('logging out')
+       
+        console.log("line20", this.props.history)
 		API.logoutUser()
 		.then(response => {
-          console.log(response.data)
-          if (response.status === 200) {
-            this.props.updateUser({
-              isLoggedIn: false,
-              currentUser: null
-            })
-          }
+          console.log("Response back from controller on logout", response.data)
+        //   if (response.status === 200) {
+        //     this.props.updateUser({
+        //       isLoggedIn: false,
+        //       currentUser: null
+        //     })
+		//   }
+		this.props.history.push('/admin/users/login');
         }).catch(error => {
-            console.log('Logout error')
-        })
+            console.log('Logout error', error)
+		})
+		// this.props.history.push('/admin/users/login');
       }
 
     render() {
-        const isLoggedIn = this.props.isLoggedIn;
+		const isLoggedIn = this.props.isLoggedIn;
+		const { match, location, history } = this.props
+		console.log("Admin header", this.props.history)
        
-        console.log("Passed logged in prop in Admin HEader",isLoggedIn);
+        console.log("Passed logged in prop in Admin Header",isLoggedIn);
         
         return (
             <div>
@@ -54,9 +74,12 @@ class AdminHeader extends Component {
 							GO TO SMFD.ORG 
 						</Link>	
 						&nbsp;&nbsp;|&nbsp;&nbsp;
-						<Link className="homeLink btn btn-link text-secondary" to="/admin/users/login" onClick={this.logout}>>
+						{/* <Button className ="homeLink " type = "submit"  onClick={this.logout}>LOGOUT</Button> */}
+						<LogOutButton isLoggedIn = {isLoggedIn} history={history}/>
+					
+						{/* <Link className="homeLink btn btn-link text-secondary"  onClick={this.logout}>>
 						LOGOUT
-						</Link>
+						</Link> */}
 						</div>
 					</div>
 					<div id="brand" className="position-relative pt-4 pb-5">
@@ -71,4 +94,4 @@ class AdminHeader extends Component {
     }
 }
 
-export default AdminHeader;
+export default withRouter(AdminHeader);
