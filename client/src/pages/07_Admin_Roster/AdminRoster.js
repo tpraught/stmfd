@@ -33,7 +33,7 @@ class FireRoster extends Component {
   }
 
   saveRecord = (newFireFighter) => {
-  //  console.log("I'm a new firefighter - 38", newFireFighter);
+
       this.setState({
         editing: false,
       })

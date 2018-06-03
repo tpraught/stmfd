@@ -100,9 +100,10 @@ class AdminEventsForm extends Component {
   };
 
   render() {
+    const isLoggedIn = this.props.isLoggedIn;
     return (
       <div>
-        <AdminHeader/>
+      <AdminHeader isLoggedIn = {isLoggedIn} history = {this.props.history}/>
         <Wrapper>
           <div className="pageTitle mb-5">
             <h1>ADD FD MEETING/TRAINING</h1>  
