@@ -1,12 +1,11 @@
 import React,  { Component } from 'react';
-import { Button } from 'reactstrap';
 import "./AdminHeader.css";
 import { Link, withRouter } from "react-router-dom";
 import API from "../../utils/API";
 import PropTypes from 'prop-types';
 
 const LogOutButton = props => (
-	<button type="submit" className="homeLink btn btn-link text-secondary" {...props} onClick={() => {
+	<button type="submit" className="homeLink btn btn-link text-light " {...props} onClick={() => {
 		API.logoutUser()
 		 props.history.push('/admin/users/login')}}>
 		 LOGOUT
@@ -16,9 +15,7 @@ const LogOutButton = props => (
 
 class AdminHeader extends Component {
 	static propTypes = {
-        match: PropTypes.object.isRequired,
-        location: PropTypes.object.isRequired,
-        history: PropTypes.object.isRequired
+         history: PropTypes.object.isRequired
       }
     logout(event) {
         event.preventDefault()
@@ -43,10 +40,7 @@ class AdminHeader extends Component {
 
     render() {
 		const isLoggedIn = this.props.isLoggedIn;
-		const { match, location, history } = this.props
-		console.log("Admin header", this.props.history)
-       
-        console.log("Passed logged in prop in Admin Header",isLoggedIn);
+		const {history } = this.props
         
         return (
             <div>
@@ -66,20 +60,20 @@ class AdminHeader extends Component {
 						<Link className="homeLink" to="/admin/explorerschedule"> 
 							EXPLORER SCHEDULE
 						</Link>			
-
+						&nbsp;&nbsp;|&nbsp;&nbsp;
+						<Link className="homeLink" to="/"> 
+							GO TO SMFD.ORG 
+						</Link>		
 						</div>
 
 						<div className="col-4 text-right">
-						<Link className="homeLink" to="/"> 
-							GO TO SMFD.ORG 
-						</Link>	
-						&nbsp;&nbsp;|&nbsp;&nbsp;
-						{/* <Button className ="homeLink " type = "submit"  onClick={this.logout}>LOGOUT</Button> */}
-						<LogOutButton isLoggedIn = {isLoggedIn} history={history}/>
+						{isLoggedIn ? (
+							<LogOutButton history={history}/>
+						) : (
+							<p></p>
+						)}
+						
 					
-						{/* <Link className="homeLink btn btn-link text-secondary"  onClick={this.logout}>>
-						LOGOUT
-						</Link> */}
 						</div>
 					</div>
 					<div id="brand" className="position-relative pt-4 pb-5">

@@ -17,8 +17,6 @@ class AdminLogin extends Component{
 	};
 
     static propTypes = {
-        match: PropTypes.object.isRequired,
-        location: PropTypes.object.isRequired,
         history: PropTypes.object.isRequired
       }
     
@@ -121,7 +119,7 @@ class AdminLogin extends Component{
 
     render() {
     //   const { classes } = this.props;
-    const { match, location, history } = this.props
+    const { history } = this.props
         return (
             <div>
                 <AdminHeader/>
