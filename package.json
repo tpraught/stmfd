@@ -21,9 +21,7 @@
     "supertest": "^3.0.0"
   },
   "dependencies": {
-    "availity-reactstrap-validation": "^2.0.2",
     "axios": "^0.18.0",
-    "bcrypt": "^2.0.1",
     "body-parser": "^1.17.2",
     "connect-mongo": "^2.0.1",
     "cookie-parser": "^1.4.3",
@@ -33,17 +31,12 @@
     "express": "^4.15.4",
     "express-rate-limit": "^2.11.0",
     "express-session": "^1.15.6",
-    "jsdom": "^11.10.0",
-    "mailgun-js": "^0.18.0",
     "mongoose": "^5.0.11",
     "morgan": "^1.9.0",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^5.0.0",
-    "react-redux": "^5.0.7",
     "react-router-dom": "^4.2.2",
-    "redux": "^4.0.0",
-    "redux-devtools": "^3.4.1",
     "whatwg-fetch": "^2.0.4"
   }
 }
