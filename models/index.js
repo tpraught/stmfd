@@ -1,6 +1,13 @@
+const Roster = require("./roster");
+const User = require("./user");
+const explorerSchedule = require("./explorerSchedule");
+const departmentSchedule = require("./departmentSchedule");
+
+
+
 module.exports = {
-  Roster: require("./roster"),
-  Admin: require("./user"),
-  explorerSchedule: require("./explorerSchedule"),
-  departmentSchedule: require("./departmentSchedule")
+  Roster,
+  User,
+  explorerSchedule,
+  departmentSchedule,
 };

@@ -1,8 +1,9 @@
 //Main logic that assembles all components  
 //=====================TO BE UPDATED
 
-import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import React, {Component} from "react";
+import { BrowserRouter as Router, Route, Switch, Redirect
+ } from "react-router-dom";
 
 import Home from "./pages/00_Home";
 
@@ -45,71 +46,103 @@ import AdminEventsSchedule from "./pages/07_Admin_Events_Schedule";
 import ContactUs from "./pages/08_ContactUs";
 
 import AdminLogin from "./pages/07_Admin_Login";
-import Register from "./components/Account/Register";
-import RegisterSuccess from "./components/Account/RegisterSuccess";
+import AdminRegister from "./pages/07_Admin_Register";
+// import RegisterSuccess from "./components/Account/RegisterSuccess";
 
-const App = () => (
-  <Router>
-    <div>
-      {/* <Nav /> */}
-      <Switch>
+function AuthenticatedRoute({component:Component, isLoggedIn, ...rest}) {
+  console.log("Authenticated function is being triggered. Is user logged in?", isLoggedIn);
+  return (
+    <Route  {...rest}  render = {(props) => isLoggedIn === true
+      ? <Component { ... props} isLoggedIn = {isLoggedIn} { ...rest } />
+      : <Redirect to= '/admin/users/login' />} /> 
+  )
+}
 
-        {/* Hompage */}
-        <Route exact path="/" component={Home} />
+class App extends Component {
 
-        {/* Community Pages */}
-        <Route exact path="/CarSeatChecks" component={CarSeat} />
-        <Route exact path="/SevereWeather" component={SevereWeather} />
-        <Route exact path="/RecFires" component={RecFires} />
-        <Route exact path="/Kids" component={Kids} />
-        <Route exact path="/JoinSMFD" component={JoinSMFD} />
+  state = {
+    currentUser: '',
+    isLoggedIn:false
+  };
 
-        {/* Fire Safety Pages */}
-        <Route exact path="/HomeSafety" component={HomeSafety} />
-        <Route exact path="/SchoolSafety" component={SchoolSafety} />
-        <Route exact path="/Burning" component={Burning} />
-        <Route exact path="/CampfireSafety" component={CampfireSafety} />
-        <Route exact path="/CoFAQs" component={CoFAQs} />
-        <Route exact path="/WinterSurvival" component={WinterSurvival} />
-        <Route exact path="/LinksResources" component={LinksResources} />
+  // pass to Login component
+  handleLogin = (currentUser) => {
+    if (!currentUser) {
+      this.setState({
+          currentUser:null,
+          isLoggedIn:false });
+    } else {
+      this.setState({
+        currentUser:currentUser,
+        isLoggedIn:true});
+      console.log("Login successful", this.state.currentUser, this.state.isLoggedIn)
+    }
+  }
 
-        {/* News & Events Pages */}
-        <Route exact path="/Events" component={Events} />
+  render() {
+    return (
+     <Router>
+       <div>
+         <Switch>
+          {/* Hompage */}
+           <Route exact path="/" component={Home} />
 
-        {/* About Pages */}
-        <Route exact path="/About" component={About} />
-        <Route exact path="/History" component={History} />
-        <Route exact path="/Apparatus" component={Apparatus} />
+          {/* Community Pages */}
+          <Route exact path="/CarSeatChecks" component={CarSeat} />
+          <Route exact path="/SevereWeather" component={SevereWeather} />
+          <Route exact path="/RecFires" component={RecFires} />
+          <Route exact path="/Kids" component={Kids} />
+          <Route exact path="/JoinSMFD" component={JoinSMFD} />
 
-        {/* FF & EMT Pages */}
-        <Route exact path="/Roster" component={FrontEndRoster} />
-        <Route exact path="/MedicalRoster" component={MedicalRoster} />
-        <Route exact path="/Schedule" component={Schedule} />
+          {/* Fire Safety Pages */}
+          <Route exact path="/HomeSafety" component={HomeSafety} />
+          <Route exact path="/SchoolSafety" component={SchoolSafety} />
+          <Route exact path="/Burning" component={Burning} />
+          <Route exact path="/CampfireSafety" component={CampfireSafety} />
+          <Route exact path="/CoFAQs" component={CoFAQs} />
+          <Route exact path="/WinterSurvival" component={WinterSurvival} />
+          <Route exact path="/LinksResources" component={LinksResources} />
 
-        {/* Explorers Pages */}
-        <Route exact path="/ExplorerAbout" component={ExplorerAbout} />
-        <Route exact path="/ExplorerSchedule" component={ExplorerSchedule} />
-        <Route exact path="/ExplorerEvents" component={ExplorerEvents} />
-        <Route exact path="/JoinExplorers" component={JoinExplorers} />
+          {/* News & Events Pages */}
+          <Route exact path="/Events" component={Events} />
 
-        {/* Admin Pages */}
-        <Route exact path="/admin/add" component={AdminForm} />
-        <Route exact path="/admin/roster" component={AdminRoster} />
-        <Route exact path="/admin/explorerform" component={AdminExplorerForm} />
-        <Route exact path="/admin/explorerschedule" component={AdminExplorerSchedule} />
-        <Route exact path="/admin/trainingform" component={AdminEventsForm} />
-        <Route exact path="/admin/trainingschedule" component={AdminEventsSchedule} />
-        <Route exact path="/admin/login" component={AdminLogin} />
-        <Route exact path="/Account/Register" component={Register} />
-        <Route exact path="/Account/RegisterSuccess" component={RegisterSuccess} />
+          {/* About Pages */}
+          <Route exact path="/About" component={About} />
+          <Route exact path="/History" component={History} />
+          <Route exact path="/Apparatus" component={Apparatus} />
+
+          {/* FF & EMT Pages */}
+          <Route exact path="/Roster" component={FrontEndRoster} />
+          <Route exact path="/MedicalRoster" component={MedicalRoster} />
+          <Route exact path="/Schedule" component={Schedule} />
+
+          {/* Explorers Pages */}
+          <Route exact path="/ExplorerAbout" component={ExplorerAbout} />
+          <Route exact path="/ExplorerSchedule" component={ExplorerSchedule} />
+          <Route exact path="/ExplorerEvents" component={ExplorerEvents} />
+          <Route exact path="/JoinExplorers" component={JoinExplorers} />
+
+          {/*Contact Us */}
+          <Route exact path="/ContactUs" component={ContactUs} />
+
+          {/* Admin Pages */}
+          <Route exact path="/admin/users/register" component={AdminRegister} />
         
-        <Route exact path="/ContactUs" component={ContactUs} />
-        
-        {/* <Route component={NoMatch} /> */}
+          <Route path="/admin/users/login" render={() => <AdminLogin  onLogin={this.handleLogin} currentUser={this.state.currentUser} {...this.state} />} />
 
-      </Switch>
-    </div>
-  </Router>
-);
+          {/*Protected pages that are only visible if a user is logged in*/}
+          <AuthenticatedRoute  exact path="/admin/add"  isLoggedIn={this.state.isLoggedIn}  component={AdminForm } />
+          <AuthenticatedRoute  exact path="/admin/roster"  isLoggedIn ={this.state.isLoggedIn}  component={AdminRoster} />
+          
+          <AuthenticatedRoute exact path="/admin/explorerschedule"    isLoggedIn ={this.state.isLoggedIn}  component={AdminExplorerSchedule} />
+          <AuthenticatedRoute exact path="/admin/trainingform"     isLoggedIn ={this.state.isLoggedIn} component={AdminEventsForm} />
+          <AuthenticatedRoute exact path="/admin/trainingschedule" isLoggedIn ={this.state.isLoggedIn} component={AdminEventsSchedule} />
+          <AuthenticatedRoute  exact path="/admin/explorerform"  isLoggedIn ={this.state.isLoggedIn} component={AdminExplorerForm} />
+        </Switch>
+      </div>
+     </Router>
+   );
+  }
+};
 
 export default App;

@@ -39,10 +39,10 @@ class AdminEventsSchedule extends Component {
      
  
   render() {
-
+    const isLoggedIn = this.props.isLoggedIn;
     return (
       <div> 
-        <AdminHeader/>
+      <AdminHeader isLoggedIn = {isLoggedIn} history = {this.props.history}/>
         <div className="col-md-8 offset-md-2 mb-5">
           <Row>
             <Col size="md-12">

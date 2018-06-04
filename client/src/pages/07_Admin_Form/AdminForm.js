@@ -118,9 +118,10 @@ class AdminTable extends Component {
   };
 
   render() {
+    const isLoggedIn = this.props.isLoggedIn;
     return (
       <div>
-        <AdminHeader/>
+      <AdminHeader isLoggedIn = {isLoggedIn} history = {this.props.history}/>
         <Wrapper>
       
           <div className="pageTitle mb-5">

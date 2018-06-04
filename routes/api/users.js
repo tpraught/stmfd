@@ -1,33 +1,21 @@
-const express = require('express');
+//Authenticaion API routes
+const router = require("express").Router();
+const userController = require("../../controllers/userController");
 
-const router = express.Router();
+router.route("/register")
+ .post(userController.register);
 
-const User = require('../../models/user');
+// api route for login action
+router.route("/login")
+.post(userController.login);
 
-// POST to /find
-router.post('/find', (req, res, next) => {
-  // Get the requested user
-  User.findOne({ username: req.body.username }, (err, user) => {
-    if (err) {
-      return res.json({ error: err });
-    }
-    if (!user) {
-      return res.json({ error: 'Username not found' });
-    }
-    // later additions for chat
-    const { username } = user;
-    return res.json({ username });
-  });
-});
+// api route for logout action
+router.route("/logout")
+.get(userController.logout);
 
-// GET User List.
-router.get('/list', (req, res, next) => {
-  User.find((err, users) => {
-    if (err) {
-      return res.send(err);
-    }
-    return res.json(users);
-  });
-});
+
+// api rout to get current user
+router.route("/getCurrentUser")
+ .get(userController.getCurrentUser);
 
 module.exports = router;

@@ -33,7 +33,7 @@ class FireRoster extends Component {
   }
 
   saveRecord = (newFireFighter) => {
-  //  console.log("I'm a new firefighter - 38", newFireFighter);
+
       this.setState({
         editing: false,
       })
@@ -54,7 +54,6 @@ class FireRoster extends Component {
   }
   
   loadRoster = () => {
-    console.log("I'm triggered")
     API.getRoster()
    .then(res => this.setState({ fireFighters: res.data}))
    .catch(err => console.log(err));
@@ -87,10 +86,11 @@ class FireRoster extends Component {
    
  
   render() {
-
+    const isLoggedIn = this.props.isLoggedIn;
+ 
     return (
       <div> 
-        <AdminHeader/>
+        <AdminHeader isLoggedIn = {isLoggedIn} history = {this.props.history}/>
         <div className="col-md-8 offset-md-2 mb-5">
           <Row>
             <Col size="md-12">

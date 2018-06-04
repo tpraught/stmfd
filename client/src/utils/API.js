@@ -54,8 +54,19 @@ export default {
   getFrontEndSchedule: function() {
     return axios.get("/api/Schedule");
   },
-  saveUser: function(eventData) {
-    console.log("I'm saving a user", eventData);
-    return axios.post("/api/account/register", eventData);
+  registerUser: function(data) {
+    console.log("Register user", data);
+    return axios.post("/api/admin/users/register", data);
+  },
+  getCurrentUser: function(){
+    return axios.get ("/api/admin/users/getCurrentUser")
+  },
+  loginUser: function(data){
+    console.log("Logging in...", data)
+    return axios.post("/api/admin/users/login",data)
+  },
+  logoutUser: function(){
+    console.log("API, Logging out...")
+    return axios.get("/api/admin/users/logout")
   }
 };
