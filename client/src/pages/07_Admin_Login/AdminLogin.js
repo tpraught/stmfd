@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Label, Button, Row, Col, Card } from 'reactstrap';
 import { Form, FormGroup, Input } from 'reactstrap';
 import API from "../../utils/API";
-import AdminHeader from "../../components/AdminHeader";
+import DefaultAdminHeader from "../../components/DefaultAdminHeader";
 import { withRouter } from 'react-router-dom'
 import Wrapper from "../../components/Wrapper";
 import PropTypes from 'prop-types';
@@ -59,7 +59,7 @@ class AdminLogin extends Component{
       // const { history } = this.props
         return (
           <div>
-            <AdminHeader/>
+            <DefaultAdminHeader/>
             <Wrapper>
               <Col className="mt-5">
                 <Row className="justify-content-center">
