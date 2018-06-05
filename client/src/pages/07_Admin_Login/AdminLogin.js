@@ -2,9 +2,10 @@ import React, { Component } from "react";
 import { Label, Button, Row, Col, Card } from 'reactstrap';
 import { Form, FormGroup, Input } from 'reactstrap';
 import API from "../../utils/API";
-import AdminHeader from "../../components/AdminHeader";
+import DefaultAdminHeader from "../../components/DefaultAdminHeader";
 import { withRouter } from 'react-router-dom'
 import Wrapper from "../../components/Wrapper";
+// import FormErrors from "../../components/Errors";
 import PropTypes from 'prop-types';
 
 class AdminLogin extends Component{
@@ -12,8 +13,9 @@ class AdminLogin extends Component{
 	state = {
 			username: '',
 			password: '',
-			message: ''
-	};
+      message: '',
+      authError:''
+	}
 
     static propTypes = {
         history: PropTypes.object.isRequired
@@ -50,16 +52,22 @@ class AdminLogin extends Component{
          //redirect to Admin Roster page
          this.props.history.push('/admin/roster');
       })
-      .catch(err => console.log('error on login', err));
+      .catch(err => {
+        console.log('error on login', err);
+        this.setState({authError:"Your login was not successful. Please try again." });
+        console.log("line 58",this.state.authError);
+      
+      
+      });
     }
 	
 		handleInputChange = event => this.setState({ [event.target.name]: event.target.value })
 
     render() {
-      // const { history } = this.props
+      const error = this.state.authError;
         return (
           <div>
-            <AdminHeader/>
+            <DefaultAdminHeader/>
             <Wrapper>
               <Col className="mt-5">
                 <Row className="justify-content-center">
@@ -70,6 +78,18 @@ class AdminLogin extends Component{
                         <h1>LOGIN</h1>  
                       </div>
                       <div className="Login mt-5">
+                   {error? ( 
+                      <Col sm="12">
+                        <Row className="clearfix text-center justify-content-center">
+                          <Col sm="12" md="8" className="error">
+                            <p> {this.state.authError} </p>
+                          </Col>
+                        </Row>
+                      </Col>
+                    ) : (
+                        <div></div>
+
+                    )}    
                         <Form >
                           <FormGroup>
                             <Label for="username">
