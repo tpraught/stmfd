@@ -87,6 +87,7 @@ class EditModal extends React.Component {
                           id="rank"
                           defaultValue ={this.props.rank}
                           onChange={this.props.handleInputChange}>
+                              <option></option>
                               <option>Fire Fighter</option>
                               <option>Officer</option>
                         </Input>
@@ -99,6 +100,7 @@ class EditModal extends React.Component {
                           id="station"
                           defaultValue ={this.props.station}
                           onChange={this.props.handleInputChange}>
+                            <option></option>
                             <option>Station #1</option>
                             <option>Station #2</option>
                         </Input>
@@ -111,6 +113,7 @@ class EditModal extends React.Component {
                           id="company"
                           defaultValue ={this.props.company}
                           onChange={this.props.handleInputChange}> 
+                            <option></option>
                             <option>Company A</option>
                             <option>Company B</option>
                             <option>Company C</option>
