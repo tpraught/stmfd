@@ -4,45 +4,10 @@ import { Modal,ModalBody, ModalFooter } from 'reactstrap';
 import { Button, Form, FormGroup, Label, Input} from 'reactstrap';
 
 class EditModal extends React.Component {
-  state = {
-    id: "",
-    firstName: "",
-    lastName: "",
-    fireNumber: "",
-    memberSince: "",
-    title: "",
-    rank: "",
-    station: "",
-    company: ""
-  }
 
-  handleInputChange = event => {
-    const { name, value } = event.target;
-    this.setState({
-      [name]: value
-    });
-  };
-
-  save = () => {
-  
-    let newFireFighter = {
-      id:this.props.id,
-      firstName: this.state.firstName,
-      lastName: this.state.lastName,
-      fireNumber: this.state.fireNumber,
-      memberSince: this.state.memberSince,
-      title: this.state.title,
-      rank: this.state.rank,
-      station: this.state.station,
-      company: this.state.company
-
-    }
-    console.log ("I'm editing");
-    // get the data from the form
-    this.props.onSave(newFireFighter)
-  }
 
   render() {
+  
     return (
       <div>
         
@@ -65,7 +30,7 @@ class EditModal extends React.Component {
                           name="firstName"
                           id="firstName"
                           defaultValue ={this.props.firstName}
-                          onChange={this.handleInputChange} />
+                          onChange={this.props.handleInputChange} />
                       </Col>
                       <Col sm="12" md="6">
                         <Label for="lastName">LAST NAME</Label>
@@ -74,7 +39,7 @@ class EditModal extends React.Component {
                           name="lastName"
                           id="lastName"
                           defaultValue ={this.props.lastName}
-                          onChange={this.handleInputChange}/>
+                          onChange={this.props.handleInputChange}/>
                       </Col>
                     </Row>
                     <Row>
@@ -85,7 +50,7 @@ class EditModal extends React.Component {
                           name="fireNumber" 
                           id="fireNumber"
                           defaultValue ={this.props.fireNumber}
-                          onChange={this.handleInputChange}/>
+                          onChange={this.props.handleInputChange}/>
                       </Col>
                       <Col sm="12" md="4">
                         <Label for="memberSince">MEMBER SINCE</Label>
@@ -94,16 +59,16 @@ class EditModal extends React.Component {
                           name="memberSince"
                           id="memberSince"
                           defaultValue ={this.props.memberSince}
-                          onChange={this.handleInputChange}/>
+                          onChange={this.props.handleInputChange}/>
                       </Col>
                       <Col sm="12" md="6">
-                        <Label for="title">TITE</Label>
+                        <Label for="title">TITLE</Label>
                         <Input 
                           type="select"
                           name="title"
                           id="title"
                           defaultValue ={this.props.title}
-                          onChange={this.handleInputChange}>
+                          onChange={this.props.handleInputChange}>
                           <option></option>
                           <option>Fire Chief</option>
                           <option>Assistant Chief</option>
@@ -121,7 +86,8 @@ class EditModal extends React.Component {
                           name="rank"
                           id="rank"
                           defaultValue ={this.props.rank}
-                          onChange={this.handleInputChange}>
+                          onChange={this.props.handleInputChange}>
+                              <option></option>
                               <option>Fire Fighter</option>
                               <option>Officer</option>
                         </Input>
@@ -133,7 +99,8 @@ class EditModal extends React.Component {
                           name="station" 
                           id="station"
                           defaultValue ={this.props.station}
-                          onChange={this.handleInputChange}>
+                          onChange={this.props.handleInputChange}>
+                            <option></option>
                             <option>Station #1</option>
                             <option>Station #2</option>
                         </Input>
@@ -145,7 +112,8 @@ class EditModal extends React.Component {
                           name="company"
                           id="company"
                           defaultValue ={this.props.company}
-                          onChange={this.handleInputChange}> 
+                          onChange={this.props.handleInputChange}> 
+                            <option></option>
                             <option>Company A</option>
                             <option>Company B</option>
                             <option>Company C</option>
@@ -158,7 +126,7 @@ class EditModal extends React.Component {
 
           </ModalBody>
           <ModalFooter>
-            <Button className="greenButton btn" id = {this.props.id} onClick={this.save}>SAVE</Button>
+            <Button className="greenButton btn" id = {this.props.id} onClick={this.props.onSave}>SAVE</Button>
             <Button className="redButton btn" onClick={this.props.onCancel}><i className="fas fa-ban"></i></Button>
           </ModalFooter>
         </Modal>

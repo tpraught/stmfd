@@ -30,29 +30,35 @@ class FireRoster extends Component {
 
   componentDidMount() {
     this.loadRoster()
-  }
-
-  saveRecord = (newFireFighter) => {
+  };
+  saveRecord = () => {
 
       this.setState({
         editing: false,
       })
 
     API.editRecord({
-      id: newFireFighter.id,
-      first_name: newFireFighter.firstName,
-      last_name: newFireFighter.lastName,
-      fire_number: newFireFighter.fireNumber,
-      year_started: newFireFighter.memberSince,
-      title: newFireFighter.title,
-      rank: newFireFighter.rank,
-      station: newFireFighter.station,
-      company: newFireFighter.company
+      id: this.state.id,
+      first_name: this.state.firstName,
+      last_name: this.state.lastName,
+      fire_number: this.state.fireNumber,
+      year_started: this.state.memberSince,
+      title: this.state.title,
+      rank: this.state.rank,
+      station: this.state.station,
+      company: this.state.company
     })
    
     this.loadRoster();
-  }
+  };
   
+  handleInputChange = event => {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value
+    });
+  };
+
   loadRoster = () => {
     API.getRoster()
    .then(res => this.setState({ fireFighters: res.data}))
@@ -67,7 +73,7 @@ class FireRoster extends Component {
   };
 
   editRecord = (fireFighter) => {
-    console.log(fireFighter);
+    console.log("edited fire fighter",fireFighter);
     
     this.setState({
       editing: true,
@@ -98,7 +104,7 @@ class FireRoster extends Component {
               <EditModal
                 currentFireFighter = {this.state.currentFireFighter}
                 isOpen = {this.state.editing}
-                onSave = { (newFireFighter) => { this.saveRecord(newFireFighter); } }
+                onSave = { () => { this.saveRecord(); } }
                 id = {this.state.id}
                 firstName = {this.state.firstName}
                 lastName = {this.state.lastName}
@@ -108,6 +114,7 @@ class FireRoster extends Component {
                 rank = {this.state.rank}
                 station = {this.state.station} 
                 company = {this.state.company}
+                handleInputChange = {this.handleInputChange}
                 onCancel = {() => {
                   this.setState({
                     editing: false
