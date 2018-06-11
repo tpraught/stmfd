@@ -6,20 +6,8 @@ import { Button, Form, FormGroup, Label, Input} from 'reactstrap';
 class EditModal extends React.Component {
 
 
-  state = {
-    firstName: this.props.firstName,
-    lastName: this.props.lastName,
-    fireNumber:this.props.fireNumber,
-    memberSince: this.props.memberSince,
-    title: this.props.title,
-    rank: this.props.rank,
-    station: this.props.station,
-    company: this.props.company,
-  }
-
-
   render() {
-    console.log(this.state.fireNumber);
+  
     return (
       <div>
         

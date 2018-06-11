@@ -30,31 +30,9 @@ class FireRoster extends Component {
 
   componentDidMount() {
     this.loadRoster()
-  }
-
-  // saveRecord = (newFireFighter) => {
-
-  //     this.setState({
-  //       editing: false,
-  //     })
-
-  //   API.editRecord({
-  //     id: newFireFighter.id,
-  //     first_name: newFireFighter.firstName,
-  //     last_name: newFireFighter.lastName,
-  //     fire_number: newFireFighter.fireNumber,
-  //     year_started: newFireFighter.memberSince,
-  //     title: newFireFighter.title,
-  //     rank: newFireFighter.rank,
-  //     station: newFireFighter.station,
-  //     company: newFireFighter.company
-  //   })
-   
-  //   this.loadRoster();
-  // }
-  
+  };
   saveRecord = () => {
-    console.log("I'm getting edited state: ", this.state.firstName, this.state.lastName, this .state.fireNumber);
+
       this.setState({
         editing: false,
       })
@@ -72,7 +50,7 @@ class FireRoster extends Component {
     })
    
     this.loadRoster();
-  }
+  };
   
   handleInputChange = event => {
     const { name, value } = event.target;
@@ -80,6 +58,7 @@ class FireRoster extends Component {
       [name]: value
     });
   };
+
   loadRoster = () => {
     API.getRoster()
    .then(res => this.setState({ fireFighters: res.data}))
@@ -125,7 +104,6 @@ class FireRoster extends Component {
               <EditModal
                 currentFireFighter = {this.state.currentFireFighter}
                 isOpen = {this.state.editing}
-                /*onSave = { (newFireFighter) => { this.saveRecord(newFireFighter); } }*/
                 onSave = { () => { this.saveRecord(); } }
                 id = {this.state.id}
                 firstName = {this.state.firstName}
